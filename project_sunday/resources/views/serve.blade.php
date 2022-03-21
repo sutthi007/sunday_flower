@@ -321,7 +321,7 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        รายการ
+                        รายงานการบริการ
                     </h2>
                     <div class="bg-EBEBEB h-100% rounded-md  mb-6">
                         <div class="w-1115px m-auto mt-5  ">
@@ -386,7 +386,7 @@
                     <div class="bg-EBEBEB h-100% rounded-md mb-6">
                         <div class="w-1115px  m-auto mt-5  ">
                             <button class="bg-pink w-150px h-30px rounded-md  float-right text-white"" type=" button"">
-                                แก้ไข
+                              <a href="/serve-editor-1">  แก้ไข</a>
                             </button>
                         </div>
                         <div class=" m-auto w-1115px mt-16">

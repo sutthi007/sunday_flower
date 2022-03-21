@@ -49,3 +49,6 @@ Route::get('/serve', function(){
 Route::get('/serve-editor', function(){
     return view('serve-editor');
 });
+Route::get('/serve-editor-1',function(){
+    return view('serve-editor-1');
+});

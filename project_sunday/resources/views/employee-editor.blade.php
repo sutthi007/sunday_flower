@@ -11,6 +11,8 @@
     {{-- Js --}}
 
     <script src="/js/init-alpine.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="icon" type="/img/svg" href="img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -456,6 +458,22 @@
             </main>
         </div>
     </div>
+    <script>
+        $(function() {
+            $("#image_input").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#display_image").attr("src", x);
+                console.log(event)
+            })
+        })
+        $(function() {
+            $("#image_inputs").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#display_images").attr("src", x);
+                console.log(event)
+            })
+        })
+    </script>
 </body>
 
 </html>

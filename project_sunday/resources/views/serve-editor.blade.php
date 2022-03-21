@@ -199,7 +199,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -321,13 +321,46 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        แก้ไขรายการ
+                        แก้ไขรายงานการบริการส่งพัสดุภัณท์
                     </h2>
-                    <div class="bg-EBEBEB h-100%"> 
-                        <div class="m-auto w-1115px mt-16 bg-white">
-                          <div class="">
-                            
-                          </div>
+                    <div class="bg-EBEBEB h-100%">
+                        <div class="m-auto w-1115px mt-16 bg-white mb-6">
+                            <div class="bg-whtie w-1115px ">
+                                <div class="flex p-8 grid grid-cols-3 gap-4 ml-6">
+                                    <div class="bg-235 w-320px  h-40px mb-6">
+                                        <div class="p-2">
+                                            <label for="">
+                                                รายการ :
+                                            </label>
+                                            <input class="bg-235 w-150px" type="text" placeholder="กล่องโฟม" >
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-320px h-40px">
+                                        <div class="p-2">
+                                            <label for="">
+                                                ราคาที่ 1 :
+                                            </label>
+                                            <input class="bg-235 w-200px" type="text" placeholder="150" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-320px h-40px mb-6">
+                                        <div class="p-2">
+                                            <label for="">
+                                                ราคาที่ 2 :
+                                            </label>
+                                            <input class="bg-235 w-200px" type="text" placeholder="200" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-320px h-40px">
+                                        <div class="p-2">
+                                            <label for="">
+                                                ราคาที่ 3 :
+                                            </label>
+                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
