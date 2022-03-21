@@ -377,13 +377,13 @@
                                                 <h3 class="text-3xl font-semibold">
                                                     เพิ่มรายการส่ง
                                                 </h3>
-                                                <button
-                                                    class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                                                    onclick="toggleModal('modal-id')">
-                                                    <span
-                                                        class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                                        ×
-                                                    </span>
+                                                <button class="p-1 ml-auto  " onclick="toggleModal('modal-id')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                                        <path
+                                                            d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                                                        </path>
+                                                    </svg>
                                                 </button>
                                             </div>
                                             <!--body-->

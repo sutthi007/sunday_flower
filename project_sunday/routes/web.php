@@ -52,3 +52,15 @@ Route::get('/serve-editor', function(){
 Route::get('/serve-editor-1',function(){
     return view('serve-editor-1');
 });
+Route::get('/customer', function(){
+    return view('customer');
+});
+Route::get('/summarize', function(){
+    return view('summarize');
+});
+Route::get('/account', function(){
+    return view('account');
+});
+Route::get('/transport', function(){
+    return view('transport');
+});

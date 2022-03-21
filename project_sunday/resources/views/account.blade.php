@@ -4,24 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>หนัาหลัก</title>
-    <link rel="icon" type="/img/svg" href="/img/icon.svg">
-  {{-- CSS --}}
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  {{-- Js --}}
-  <script src="./js/charts-lines.js" defer></script>
-  <script src="/js/charts-pie.js" defer></script>
-  <script src="/js/init-alpine.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-    
+    <title>ข้อมูลลูกค้า</title>
+
+    {{-- CSS --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- Js --}}
+
+    <script src="/js/init-alpine.js"></script>
+    <script src="/js/popup-ouput.js"></script>
+
+    <link rel="icon" type="/img/svg" href="/img/icon.svg" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
+
 </head>
 
 <body class="font-prompt">
@@ -34,9 +34,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="/index">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/employee"">
+                            href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -72,7 +70,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -87,7 +86,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/serve">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -103,8 +103,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/customer">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -115,7 +116,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/summarize">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -146,10 +149,8 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/index">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="index.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -195,12 +196,13 @@
                                 <line x1="3" y1="9" x2="21" y2="9"></line>
                                 <line x1="9" y1="21" x2="9" y2="9"></line>
                             </svg>
-                            <span class="ml-4">ฟอร์มออเดอร์</span>
+                            <span class="ml-4">ฟอร์ออเดอร์</span>
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/serve">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -215,7 +217,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -227,7 +230,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/summarize">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -268,9 +273,6 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
-
-
-
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -319,187 +321,146 @@
                     </ul>
                 </div>
             </header>
+            <!-- Form Order -->
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        หน้าหลัก
+                        รายงาน บัญชี
                     </h2>
+                    <div class="bg-EBEBEB h-700px rounded-md  mb-6">
 
-                    <!-- Cards -->
-                    <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-800 place-content-center">
-                        <!-- Card -->
-                        <div
-                            class="flex items-center p-4 bg-white rounded-lg shadow-xs bg-fuchsia-400 place-content-center">
-                            <div class="place-content-center w-250px h-150px">
-                                <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
-                                <path>
-                                    <img src="/img/order.svg" alt="" class="w-100px h-100px" />
-                                </path>
+                        <div class=" m-auto  mt-8 w-1115px  text-center ">
+                            <div class="mt-4 mb-6 text-xl ">
+                                <p class="">รายวัน</p>
                             </div>
-                            <div class="p-3 mr-69 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                <p class="text-50px text-white">89</p>
+                            <!-- New Table -->
+                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full whitespace-no-wrap">
+                                        <thead>
+                                            <tr
+                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                <th class="px-4 py-3">ลำดับ</th>
+                                                <th class="px-4 py-3">วันที่</th>
+                                                <th class="px-8 py-3">จังหวัด</th>
+                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <!-- Card -->
-                        <div class="flex items-center p-4 rounded-lg shadow-xs w-69 bg-amber-400 place-content-center">
-                            <div class="place-content-center w-250px">
-                                <p class="mb-2 text-2xl text-white">กำลังส่ง</p>
-                                <path>
-                                    <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
-                                </path>
+                        <div class=" m-auto  mt-8 w-1115px  text-center ">
+                            <div class="mt-4 mb-6 text-xl ">
+                                <p class="">รายเดือน</p>
                             </div>
-                            <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                <p class="text-50px text-white">3</p>
+                            <!-- New Table -->
+                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full whitespace-no-wrap">
+                                        <thead>
+                                            <tr
+                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                <th class="px-4 py-3">ลำดับ</th>
+                                                <th class="px-4 py-3">วันที่</th>
+                                                <th class="px-8 py-3">จังหวัด</th>
+                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
-                        <!-- Card -->
-                        <div
-                            class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 bg-green-300 place-content-center">
-                            <div class="place-content-center w-250px">
-                                <p class="mb-2 text-2xl text-white">สำเร็จ</p>
-                                <path>
-                                    <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
-                                </path>
-                            </div>
-                            <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500 ml-55">
-                                <p class="text-50px text-white">6</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                        <div class="w-full overflow-x-auto">
-                            <table class="w-full whitespace-no-wrap">
-                                <thead>
-                                    <tr
-                                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">เลขที่</th>
-                                        <th class="px-4 py-3">ชื่อ</th>
-                                        <th class="px-4 py-3">ที่อยู่</th>
-                                        <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3">รหัสติดตาม</th>
-                                        <th class="px-4 py-3">เพื่มเติม</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3">
-                                            <div class="flex items-center text-sm">
-                                                <!-- Avatar with inset shadow -->
-                                                <div>
-                                                    <p class="font-semibold">1</p>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-xs">
-                                            <div class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                                นีออน
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            chingmai sunday flower.co.
-                                        </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            chingmai sunday flower.co.
-                                        </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            โสด
-                                        </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            12313123123
-                                        </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            <button></button>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div
-                            class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-                            <span class="flex items-center col-span-3">
-                                Showing 21-30 of 100
-                            </span>
-                            <span class="col-span-2"></span>
-                            <!-- Pagination -->
-                            <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                                <nav aria-label="Table navigation">
-                                    <ul class="inline-flex items-center">
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
-                                                aria-label="Previous">
-                                                <svg aria-hidden="true" class="w-4 h-4 fill-current"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                        clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600">
-                                                1
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                2
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                3
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                4
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <span class="px-3 py-1">...</span>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                8
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                9
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
-                                                aria-label="Next">
-                                                <svg class="w-4 h-4 fill-current" aria-hidden="true"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </span>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
-    </div>
 </body>
 
 </html>
