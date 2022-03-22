@@ -4,32 +4,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>แก้ไข้ข้อมูลพนักงาน</title>
+    <title>ข้อมูลลูกค้า</title>
 
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
 
     <script src="/js/init-alpine.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/popup-ouput.js"></script>
 
-    <link rel="icon" type="/img/svg" href="img/icon.svg" />
+    <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-    <style>
-        .custom-file input[type='file']{
-            display:none;
-        }
-        .custom-file label{
-            cursor:pointer;
-        }
-    </style>
+
+
 </head>
 
 <body class="font-prompt">
@@ -56,8 +48,7 @@
                 </ul>
                 <ul>
                     <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -67,9 +58,7 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,8 +86,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="buttons.html">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="/serve">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -113,7 +103,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,8 +116,10 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="tables.html">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="/summarize">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -157,7 +150,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/index">
+                            href="index.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -170,8 +163,7 @@
                 </ul>
                 <ul>
                     <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors   duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -181,9 +173,7 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -195,7 +185,6 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -211,7 +200,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -227,7 +217,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -239,8 +230,10 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="tables.html">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="/summarize">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -328,152 +321,146 @@
                     </ul>
                 </div>
             </header>
-            <!-- Employeee Information -->
+            <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <form >
-                <div class="px-6 mx-auto grid   ">
-                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
-                        ข้อมูลพนักงาน
+                <div class="px-6 mx-auto grid w-1250px ">
+                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                        รายงาน บัญชี
                     </h2>
-                    <div class="bg-white w-1250px h-auto m-auto rounded-md">
-                        <div class="flex justify-center  ">
-                            <div class=" w-40 h-40">
-                                <img src="img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-5 ">
+                    <div class="bg-EBEBEB h-700px rounded-md  mb-6">
+
+                        <div class=" m-auto  mt-8 w-1115px  text-center ">
+                            <div class="mt-4 mb-6 text-xl ">
+                                <p class="">รายวัน</p>
                             </div>
-                        </div>
-                        <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md">
-                            <div class="flex p-8 grid grid-cols-3 gap-4 ml-6  ">
-                                <div class="bg-235 w-300px  h-40px mb-6">
-                                    <div class="p-2">
-                                        <label for="">
-                                            ชื่อ :
-                                        </label>
-                                        <input class="bg-235 w-240px" type="text"  placeholder="นาย ตู่ จันทร์อังคาร" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px ">
-                                    <div class="p-2">
-                                        <label for="">
-                                            ตำแหน่ง :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text" placeholder="นายก" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            เลขผู้ใช้ :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text" placeholder="23232323" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px mb-6">
-                                    <div class="p-2">
-                                        <label for="">
-                                            วันเกิด :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text" placeholder="12/12/2512" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            ถนน :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="พระราม5" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            เลขที่บ้าน :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="121/1" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            ตำบล :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="พระราม" >
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            อำเภอ :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="เมือง">
-                                    </div>
-                                </div>
-                                <div class="bg-235 w-300px h-40px">
-                                    <div class="p-2">
-                                        <label for="">
-                                            จังหวัด :
-                                        </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="กรุงเทพ">
-                                    </div>
+                            <!-- New Table -->
+                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full whitespace-no-wrap">
+                                        <thead>
+                                            <tr
+                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                <th class="px-4 py-3">ลำดับ</th>
+                                                <th class="px-4 py-3">วันที่</th>
+                                                <th class="px-8 py-3">จังหวัด</th>
+                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-220 w-1115px h-350px m-auto mb-3 mt-10 rounded-md">
-                            <div class="p-8 flex m-auto ml-10">
-                                <div class="p-8 grid ml-6 text-center"> 
-                                    <h1 class="font-bold">บัตรประชาชน ด้านหน้า</h1>
-                                    <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                        <img src="/img/image-alt.svg" id="display_image" class="  h-200px w-380px">
-                                        </div>
-                                   <div class="custom-file">
-                                       <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                        <label  for="image_input">อัปโหลดภาพ</label>
-                                    </div>
-                                        <input type="file" id="image_input"
-                                        accept="image/png, image/ipg, image/jpeg"  >
-                                    </div>
-                                </div>
-                                <div class="p-8 grid ml-6 text-center"> 
-                                    <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
-                                    <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                    <img src="/img/image-alt.svg" id="display_images" class="  h-200px w-380px">
-                                    </div>
-                                   <div class="custom-file">
-                                    <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                        <label  for="image_inputs">อัปโหลดภาพ</label>
-                                    </div>
-                                        <input type="file" id="image_inputs"
-                                        accept="image/png, image/ipg, image/jpeg"  >
-                                    </div>
-                                </div>
+                        <div class=" m-auto  mt-8 w-1115px  text-center ">
+                            <div class="mt-4 mb-6 text-xl ">
+                                <p class="">รายเดือน</p>
                             </div>
-                        </div>
-                        <div class=" w-1115px  m-auto  mt-10 rounded-md  ">
-                            <div class="float-right mb-6">
-                            <button class="bg-pink w-100px h-30px rounded-md text-white"><a href="/employee-data">บันทึก</a></button>
+                            <!-- New Table -->
+                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
+                                <div class="w-full overflow-x-auto">
+                                    <table class="w-full whitespace-no-wrap">
+                                        <thead>
+                                            <tr
+                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                <th class="px-4 py-3">ลำดับ</th>
+                                                <th class="px-4 py-3">วันที่</th>
+                                                <th class="px-8 py-3">จังหวัด</th>
+                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody
+                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">1</td>
+                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                                <td class="px-4 py-3 text-sm"> 
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        PDF
+                                                    </button>
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white"
+                                                        type="button"
+                                                        onclick="toggleModal('modal-id')">
+                                                        Excel
+                                                    </button>
+                                                    </td>
+                                            </tr> 
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                </form>
             </main>
         </div>
-    </div>
-    <script>
-        $(function() {
-            $("#image_input").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_image").attr("src", x);
-                console.log(event)
-            })
-        })
-        $(function() {
-            $("#image_inputs").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_images").attr("src", x);
-                console.log(event)
-            })
-        })
-    </script>
 </body>
 
 </html>
