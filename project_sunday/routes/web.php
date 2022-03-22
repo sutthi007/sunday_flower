@@ -64,3 +64,15 @@ Route::get('/account', function(){
 Route::get('/transport', function(){
     return view('transport');
 });
+Route::get('/employee-2',function(){
+    return view('employee/employee');
+});
+Route::get('/employee-profile',function(){
+    return view('employee/employee-profile');
+});
+Route::get('/employee-profile-editor',function(){
+    return view('employee/employee-profile-editor');
+});
+Route::get('/login',function(){
+    return view('login');
+});

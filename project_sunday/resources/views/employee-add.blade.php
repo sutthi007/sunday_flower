@@ -11,7 +11,7 @@
     {{-- Js --}}
 
     <script src="/js/init-alpine.js"></script>
-  s
+  
 
     <link rel="icon" type="/img/svg" href="img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>

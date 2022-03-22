@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>โปรไฟล์</title>
+    <title>แก้ไขโปรไฟล์</title>
 
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -34,7 +34,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/index">
+                            href="/employee-2">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -50,78 +50,12 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/profile">
+                            href="/employee-profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                             </svg>
                             <span class="ml-4">โปรไฟล์</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/employee">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                                </path>
-                            </svg>
-                            <span class="ml-4">ข้อมูลพนักงาน</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/order">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-layout">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="3" y1="9" x2="21" y2="9"></line>
-                                <line x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
-                            <span class="ml-4">ฟอร์มออเดอร์</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="buttons.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <line x1="18" y1="10" x2="6" y2="10"></line>
-                                <line x1="21" y1="6" x2="3" y2="6"></line>
-                                <line x1="21" y1="14" x2="3" y2="14"></line>
-                                <line x1="18" y1="18" x2="6" y2="18"></line>
-                            </svg>
-                            <span class="ml-4">รายงานการบริการ</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="modals.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <span class="ml-4">ข้อมูลลูกค้า</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="tables.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-                            </svg>
-                            <span class="ml-4">สรุป</span>
                         </a>
                     </li>
                 </ul>
@@ -147,7 +81,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/index">
+                            href="/employee-2">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -161,80 +95,14 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/profile">
+                        aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="/employee-profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                             </svg>
                             <span class="ml-4">โปรไฟล์</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/employee">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                                </path>
-                            </svg>
-                            <span class="ml-4">ข้อมูลพนักงาน</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/order">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-layout">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <line x1="3" y1="9" x2="21" y2="9"></line>
-                                <line x1="9" y1="21" x2="9" y2="9"></line>
-                            </svg>
-                            <span class="ml-4">ฟอร์ออเดอร์</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="buttons.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <line x1="18" y1="10" x2="6" y2="10"></line>
-                                <line x1="21" y1="6" x2="3" y2="6"></line>
-                                <line x1="21" y1="14" x2="3" y2="14"></line>
-                                <line x1="18" y1="18" x2="6" y2="18"></line>
-                            </svg>
-                            <span class="ml-4">รายงานการบริการ</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="modals.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z">
-                                </path>
-                            </svg>
-                            <span class="ml-4">ข้อมูลลูกค้า</span>
-                        </a>
-                    </li>
-                    <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="tables.html">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
-                            </svg>
-                            <span class="ml-4">สรุป</span>
                         </a>
                     </li>
                 </ul>
@@ -329,64 +197,65 @@
                             </div>
                             <div class="w-500px mx-auto  ">
                                 <div class=" pt-15px w-350px m-auto ">
-                                    <div class="bg-neutral-300   h-50px mb-3">
+                                    <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             วันเดือนปีเกิด :
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นาย ตู่ จันทร์อังคาร" disabled>
+                                            placeholder="นาย ตู่ จันทร์อังคาร">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             ตำบล:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="2323232323" disabled>
+                                            placeholder="2323232323">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             อำเภอ:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             จังหวัด:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             ที่อยู่:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             ถนน:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             หมู่บ้าน:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
                                             ไปรษณีย์:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="นายก" disabled>
+                                            placeholder="นายก">
                                     </div>
                                 </div>
-                                <button class="bg-pink w-145px h-30px rounded-lg mt-150px text-white"><a href="/profile-editor">แก้ไข</a></button>
+                                <button class="bg-pink w-145px h-30px rounded-lg mt-150px text-white"><a
+                                        href="/profile">บันทึก</a></button>
                             </div>
                             <div class="wu">
                                 <div>
@@ -403,7 +272,7 @@
                                 </div>
                                 <div class="w-500px mx-auto  ">
                                     <div class=" pt-15px w-350px m-auto ">
-                                        <div class="bg-neutral-300 h-50px mb-3">
+                                        <div class="bg-neutral-300  h-50px mb-3">
                                             <label for="">
                                                 ชื่อ:
                                             </label>
@@ -432,10 +301,22 @@
                                 <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10">
                                     บัตรประชาชน
                                 </h2>
-                                  <div class=" w-350px h-150px m-auto border-4 border-green-000 p-8 text-center mt-24" >
-                                      <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
-                                      <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
-                                  </div>
+                                <div class=" W-500p m-auto pt-15  ">
+                                    <label for="">
+                                        เอกสารประจำประชาชน หน้า
+                                    </label>
+                                    <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                    </div>
+
+                                    <label class="pt-16" for="">
+                                        เอกสารประจำประชาชน หลัง
+                                    </label>
+
+                                    <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </form>

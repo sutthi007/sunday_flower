@@ -332,7 +332,7 @@
                             <div class="bg-white ml-10 mb-6 w-500px h-400px  rounded-lg ">
                                 <div class="w-150px mt-45px m-auto">
                                     <img src="img/accounts.png" class="">
-                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px" >
+                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white" >
                                     <a href="/account">รายงาน บัญชี</a>
                                 </button>
                             </div>
@@ -340,7 +340,7 @@
                             <div class="bg-white ml-10 mb-6 w-500px h-400px  rounded-lg ">
                                 <div class="w-150px mt-45px m-auto">
                                     <img src="img/package.png" class="">
-                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px">
+                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white">
                                    <a href="/transport">รายงาน ขนส่ง</a>
                                 </button>
                             </div>
