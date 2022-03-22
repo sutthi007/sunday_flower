@@ -2162,7 +2162,9 @@ module.exports = {
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // import Alpine from 'alpinejs';
+// window.Alpine = Alpine;
+// Alpine.start();
 
 /***/ }),
 

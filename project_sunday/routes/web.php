@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\userController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,36 +22,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/index', function(){
-    return view('index');
-});
-Route::get('/order', function(){
-    return view('order');
-});
-Route::get('/order-step-1', function(){
-    return view('order-step-1');
-});
-Route::get('/profile', function(){
-    return view('profile');
-});
-Route::get('/profile-editor', function(){
-    return view('profile-editor');
-});
-Route::get('/employee', function(){
-    return view('employee-information');
-});
-Route::get('/employee-data', function(){
-    return view('employee-data');
-});
-Route::get('/employee-editor', function(){
-    return view('employee-editor');
-});
-Route::get('/employee-add', function(){
-    return view('employee-add');
-});
-Route::get('/serve', function(){
-    return view('serve');
-});
-Route::get('/serve-editor', function(){
-    return view('serve-editor');
-});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+Route::resource('projects',userController::class);
+
+Route::resource('FormOrder',OrderController::class);
+
+Route::resource('Profile',ProfileController::class);
+
+Route::resource('Employee',EmployeeController::class);
+
+Route::resource('service',ServiceController::class);
+
+Route::resource('customer-systems',CustomerController::class);
