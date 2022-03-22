@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\SummaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +41,5 @@ Route::resource('Employee',EmployeeController::class);
 Route::resource('service',ServiceController::class);
 
 Route::resource('customer-systems',CustomerController::class);
+
+Route::resource('summary',SummaryController::class);
