@@ -43,3 +43,10 @@ Route::resource('service',ServiceController::class);
 Route::resource('customer-systems',CustomerController::class);
 
 Route::resource('summary',SummaryController::class);
+
+Route::get('Account',function(){
+    return view('summary.account');
+});
+Route::get('transport',function(){
+    return view('summary.transport');
+});
