@@ -23,20 +23,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <style>
-        .custom-file input[type='file']{
-            display:none;
+        .custom-file input[type='file'] {
+            display: none;
         }
-        .custom-file label{
-            cursor:pointer;
+
+        .custom-file label {
+            cursor: pointer;
         }
+
     </style>
 
 </head>
 
 <body class="font-prompt">
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
-         <!-- Desktop sidebar -->
-         <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
+        <!-- Desktop sidebar -->
+        <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
             <div class="py-4 text-gray-500 dark:text-gray-400">
                 <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
                     SUNDAY FLOWER
@@ -44,7 +46,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -59,7 +61,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -69,9 +71,9 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -84,7 +86,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -99,7 +101,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -115,7 +117,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -127,7 +129,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -158,7 +160,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -173,7 +175,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors   duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -183,9 +185,9 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -198,7 +200,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -213,7 +215,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -229,7 +231,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -241,7 +243,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -423,27 +425,29 @@
                                         <div class="p-8 grid ml-6 text-center">
                                             <h1 class="font-bold">บัตรประชาชน ด้านหน้า</h1>
                                             <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                                <img src="/img/image-alt.svg" id="display_image" class="  h-200px w-380px">
-                                                </div>
-                                           <div class="custom-file">
-                                               <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                                <label  for="image_input">อัปโหลดภาพ</label>
+                                                <img src="/img/image-alt.svg" id="display_image"
+                                                    class="  h-200px w-380px">
                                             </div>
+                                            <div class="custom-file">
+                                                <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4">
+                                                    <label for="image_input">อัปโหลดภาพ</label>
+                                                </div>
                                                 <input type="file" id="image_input"
-                                                accept="image/png, image/ipg, image/jpeg"  >
+                                                    accept="image/png, image/ipg, image/jpeg">
                                             </div>
                                         </div>
                                         <div class="p-8 grid ml-6 text-center">
                                             <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
                                             <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                            <img src="/img/image-alt.svg" id="display_images" class="  h-200px w-380px">
+                                                <img src="/img/image-alt.svg" id="display_images"
+                                                    class="  h-200px w-380px">
                                             </div>
-                                           <div class="custom-file">
-                                            <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                                <label  for="image_inputs">อัปโหลดภาพ</label>
-                                            </div>
+                                            <div class="custom-file">
+                                                <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4">
+                                                    <label for="image_inputs">อัปโหลดภาพ</label>
+                                                </div>
                                                 <input type="file" id="image_inputs"
-                                                accept="image/png, image/ipg, image/jpeg"  >
+                                                    accept="image/png, image/ipg, image/jpeg">
                                             </div>
                                         </div>
                                     </div>
