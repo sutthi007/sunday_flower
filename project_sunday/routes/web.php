@@ -50,3 +50,6 @@ Route::get('Account',function(){
 Route::get('transport',function(){
     return view('summary.transport');
 });
+Route::get('customer/add',function(){
+    return view('Employee.employee-add');
+});

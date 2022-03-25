@@ -34,5 +34,12 @@ class OrderController extends Controller
         return view('Order.order-step-1', compact('customer'));
     }
 
+    public function destroy($id){
+
+        $order = Order::find($id);
+        $order->delete();
+
+        return redirect()->route('projects.index');
+    }
 
 }

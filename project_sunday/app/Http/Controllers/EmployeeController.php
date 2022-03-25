@@ -40,4 +40,25 @@ class EmployeeController extends Controller
     public function delete(){
 
     }
+    public function store(Request $request)
+    {
+
+        User::create([
+            'name' => $request->name,
+            'role' => $request->role,
+            'Idcard' => $request->Idcard,
+            'birthday' => $request->birthday,
+            'address' => $request->address,
+            'city' => $request->city,
+            'province' => $request->province,
+            'email' =>$request->email,
+            'password' =>$request->password,
+            'IDuser' =>$request->IDuser,
+            'phone' =>$request->phone,
+            'zipcode' =>$request->zipcode,
+            'picture' =>$request->picture,
+        ]);
+
+        return redirect()->route('Employee.index');
+    }
 }

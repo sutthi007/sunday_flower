@@ -333,7 +333,8 @@
             </header>
             <!-- Employeee Information -->
             <main class="h-full overflow-y-auto">
-                <form>
+                <form action="{{route('Employee.store')}}" method="post">
+                    @csrf
                     <div class="px-6 mx-auto grid   ">
                         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
                             เพิ่มข้อมูลพนักงาน
@@ -348,8 +349,7 @@
                                                 <label for="">
                                                     ชื่อ :
                                                 </label>
-                                                <input class="bg-235 w-240px" type="text"
-                                                    placeholder="นาย ตู่ จันทร์อังคาร">
+                                                <input class="bg-235 w-240px" type="text"  placeholder="กรอก ชื่อ-นามสกุล" name="name">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px ">
@@ -357,16 +357,15 @@
                                                 <label for="">
                                                     ตำแหน่ง :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="นายก">
+                                                <input class="bg-235 w-200px" type="text" placeholder="แอดมิน" name="role">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
                                                 <label for="">
-                                                    เลขผู้ใช้ :
+                                                    ประชาชน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"
-                                                    placeholder="9-9999-99999-99-9">
+                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px mb-6">
@@ -374,7 +373,7 @@
                                                 <label for="">
                                                     วันเกิด :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="12/12/2512">
+                                                <input class="bg-235 w-200px" type="text" placeholder="12/12/2512" name="birthday">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -382,15 +381,15 @@
                                                 <label for="">
                                                     ถนน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="พระราม5">
+                                                <input class="bg-235 w-200px" type="text"placeholder="พระราม5" name="road">
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px h-40px">
+                                        <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
                                                 <label for="">
                                                     เลขที่บ้าน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="121/1">
+                                                <input class="bg-235 w-200px" type="text"placeholder="121/1" name="address">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -398,7 +397,7 @@
                                                 <label for="">
                                                     ตำบล :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="พระราม">
+                                                <input class="bg-235 w-200px" type="text"placeholder="พระราม" name="sub">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -406,15 +405,22 @@
                                                 <label for="">
                                                     อำเภอ :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="เมือง">
+                                                <input class="bg-235 w-200px" type="text"placeholder="เมือง" name="city" >
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px h-40px">
+                                        <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
                                                 <label for="">
                                                     จังหวัด :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="กรุงเทพ">
+                                                <input class="bg-235 w-200px" type="text"placeholder="กรุงเทพ" name="province">
+                                                <input type="hidden" value="asdasdasd@test.com" name="email">
+                                                <input type="hidden" value="123456789" name="password">
+                                                <input type="hidden" value="sunday11" name="IDuser">
+                                                <input type="hidden" value="123456" name="phone">
+                                                <input type="hidden" value="123456" name="zipcode">
+                                                <input type="hidden" value="123456" name="picture">
+
                                             </div>
                                         </div>
                                     </div>
@@ -453,8 +459,7 @@
                                     </div>
                                 </div>
                                 <div class="text-center mb-6">
-                                    <button class="bg-pink w-100px h-30px rounded-md text-white"><a
-                                            href="/employee">บันทึก</a></button>
+                                    <button class="bg-pink w-100px h-30px rounded-md text-white">บันทึก</button>
                                 </div>
                             </div>
                         </div>

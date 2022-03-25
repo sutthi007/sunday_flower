@@ -25,7 +25,12 @@ class userController extends Controller
 
         return redirect()->route('FormOrder.show',$customer);
     }
+    public function destroy($id){
+        $order = Order::find($id);
+        $order->delete();
 
+        return redirect()->route('projects.index');
+    }
 
 
 }

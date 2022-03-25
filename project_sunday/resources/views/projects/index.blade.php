@@ -6,21 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>หนัาหลัก</title>
     <link rel="icon" type="/img/svg" href="/img/icon.svg">
-  {{-- CSS --}}
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  {{-- Js --}}
-  <script src="./js/charts-lines.js" defer></script>
-  <script src="/js/charts-pie.js" defer></script>
-  <script src="/js/init-alpine.js"></script>
+    {{-- CSS --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- Js --}}
+    <script src="/js/popup-ouput.js"></script>
+    <script src="/js/init-alpine.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
 
 </head>
 
@@ -37,7 +36,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -51,7 +50,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route("Profile.index")}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -73,7 +72,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -88,7 +87,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -104,7 +103,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -116,7 +115,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -149,7 +148,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -163,7 +162,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -185,7 +184,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route("FormOrder.index")}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -200,7 +199,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -346,7 +345,7 @@
                                 </path>
                             </div>
                             <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                <p class="text-50px text-white">3</p>
+                                <p class="text-50px text-white">{{ $orders->where('status', 'send')->count() }}</p>
                             </div>
                         </div>
                         <!-- Card -->
@@ -359,7 +358,7 @@
                                 </path>
                             </div>
                             <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500 ml-55">
-                                <p class="text-50px text-white">6</p>
+                                <p class="text-50px text-white">{{ $orders->where('status', 'success')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -371,49 +370,92 @@
                                     <tr
                                         class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">เลขที่</th>
+                                        <th class="px-4 py-3">รายการ</th>
                                         <th class="px-4 py-3">ชื่อ</th>
                                         <th class="px-4 py-3">ที่อยู่</th>
                                         <th class="px-4 py-3">วันที่</th>
                                         <th class="px-4 py-3">สถานะ</th>
                                         <th class="px-4 py-3">รหัสติดตาม</th>
-                                        <th class="px-4 py-3">เพื่มเติม</th>
+                                        <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
                                 @php($i = 1)
-
-                                @foreach ( $orders as $order)
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" >
-                                            <tr class="text-gray-700 dark:text-gray-400">
+                                @php($s = 1)
+                                @foreach ($orders as $order)
+                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                        <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3">
                                                 <div class="flex items-center text-sm">
-                                                <!-- Avatar with inset shadow -->
-                                                <div>
-                                                    <p class="font-semibold">{{$i++}}</p>
-                                                </div>
+                                                    <!-- Avatar with inset shadow -->
+                                                    <div>
+                                                        <p class="font-semibold">{{ $i++ }}</p>
+                                                    </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-3 text-sm">{{$order->type}}</td>
-                                                <td class="px-4 py-3 text-xs">
-                                                    <div class="px-2 py-1 font-semibold leading-tight rounded-full" >
-                                                        {{$order->name}}
+                                            <td class="px-4 py-3 text-sm">{{ $order->type }}</td>
+                                            <td class="px-4 py-3 text-xs">
+                                                <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                    {{ $order->name }}
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-3 text-sm ">
+                                                {{ $order->province }},{{ $order->city }}
+                                            </td>
+                                            <td class="px-4 py-3 text-sm ">
+                                                {{ $order->created_at }}
+                                            </td>
+                                            @if ($order->status == 'order')
+                                                <td class="px-4 py-3 text-sm ">
+                                                    <div
+                                                        class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                        ออเดอร์
                                                     </div>
                                                 </td>
+                                            @elseif($order->status == 'send')
+                                                @php($s++)
                                                 <td class="px-4 py-3 text-sm ">
-                                                    {{$order->province}},{{$order->city}}
+                                                    <div
+                                                        class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                        กำลังจัดส่ง
+                                                    </div>
                                                 </td>
+                                            @elseif($order->status == 'success')
                                                 <td class="px-4 py-3 text-sm ">
-                                                    {{$order->created_at}}
+                                                    <div
+                                                        class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                        จัดสังสำเร็จ
+                                                    </div>
                                                 </td>
-                                                <td class="px-4 py-3 text-sm ">
-                                                    ส่งเสร็จสิ้น
-                                                </td>
-                                                <td class="px-4 py-3 text-sm ">
-                                                    5421545TH
-                                                </td>
-                                                <td class="px-4 py-3 text-sm ">
-                                                    edit
-                                                </td>
-                                            </tr>
+                                            @endif
+
+                                            <td class="px-4 py-3 text-sm ">
+                                                5421545TH
+                                            </td>
+                                            <td class="flex px-4 py-3 text-sm ">
+                                                <button class="w-6 h-6 mr-2" type="button"
+                                                    onclick="toggleModal('modal-id')" data-target="{{$order->id}}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                    </svg>
+                                                </button>
+                                                <form action="{{ route('projects.destroy', $order->id) }}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button id="" class="w-6 h-6"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                        </svg></button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 @endforeach
                             </table>
@@ -498,7 +540,193 @@
                     </div>
                 </div>
             </main>
+            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                id="modal-id">
+                <div class="relative w-auto my-6 mx-auto max-w-3xl">
+                    <!--content-->
+                    <div
+                        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                        <!--header-->
+                        <div
+                            class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t ">
+                            <h3 class="text-3xl font-semibold ">
+                                แก้ไข
+                            </h3>
+                            <button class="p-1 ml-auto  " onclick="toggleModal('modal-id')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                    <path
+                                        d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <!--body-->
+                        <div class="relative p-6 flex-auto">
+                            <form action="">
+                                <div class="">
+                                    <div class="w-200px m-auto text-center mb-6 text-xl">
+                                        <h1>ผู้ส่ง</h1>
+                                    </div>
+                                    <div class="flex flex-wrap -mx-3 mb-6">
+                                        <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                ประเภท
+                                            </label>
+                                            <select
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" placeholder="">
+                                                <option value="">---เลือก----</option>
+                                                <option value="">แมว</option>
+                                                <option value="">ผลไม้และผัก</option>
+                                                <option value="">พัสดุภัณฑ์</option>
+                                                <option value="">พัสดุมอไซต์</option>
+                                            </select>
+                                        </div>
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                ชื่อ
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" placeholder="{{ $order->name}}" />
+                                        </div>
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                อำเภอ
+                                            </label>
+                                            <select
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" placeholder="">
+                                                <option value="">---เลือก----</option>
+                                                <option value="">หนองหาร</option>
+                                                <option value="">สันผีเสื้น</option>
+                                                <option value="">เมือง</option>
+                                            </select>
+                                        </div>
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                จังหวัด
+                                            </label>
+                                            <select
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" placeholder="">
+                                                <option value="">---เลือก----</option>
+                                                <option value="">เชียงใหม่</option>
+                                                <option value="">ลำปาง</option>
+                                                <option value="">เชียงราย</option>
+                                            </select>
+                                        </div>
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                เบอร์โทร
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" placeholder="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-200px m-auto text-center mb-6 text-xl">
+                                    <h1>ผู้รับ</h1>
+                                </div>
+                                <div class="flex flex-wrap -mx-3 mb-6">
+
+                                    <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            ประเภท
+                                        </label>
+                                        <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">แมว</option>
+                                            <option value="">ผลไม้และผัก</option>
+                                            <option value="">พัสดุภัณฑ์</option>
+                                            <option value="">พัสดุมอไซต์</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            ชื่อ
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="" />
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            อำเภอ
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="" />
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            จังหวัด
+                                        </label>
+                                        <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">เชียงใหม่</option>
+                                            <option value="">ลำปาง</option>
+                                            <option value="">เชียงราย</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            เบอร์โทร
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--footer-->
+                        <div
+                            class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                            <button
+                                class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" onclick="toggleModal('modal-id')">
+                                ยกเลิก
+                            </button>
+                            <button
+                                class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button" onclick="toggleModal('modal-id')">
+                                ยีนยัน
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop">
+            </div>
         </div>
     </div>
 </body>
+
 </html>

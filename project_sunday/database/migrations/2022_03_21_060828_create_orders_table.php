@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('price');
             $table->foreign('customer_id')->references('id')->on('customers');
+            $table->enum('status',['order','send','success'])->default('order');
             $table->timestamps();
         });
     }

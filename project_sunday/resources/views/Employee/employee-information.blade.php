@@ -326,7 +326,7 @@
                         ข้อมูลพนักงาน
                     </h2>
                     <div class="w-1250px m-auto">
-                    <button class="bg-pink w-150px h-30px rounded-md mr-15 float-right text-white"><a href="">เพิ่มรายชื่อ พนักงาน</a></button>
+                    <button class="bg-pink w-150px h-30px rounded-md mr-15 float-right text-white"><a href="customer/add">เพิ่มรายชื่อ พนักงาน</a></button>
                 </div>
                     <!-- New Table -->
                     <div class="w-full overflow-hidden rounded-lg shadow-xs">
