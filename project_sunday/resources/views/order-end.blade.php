@@ -407,7 +407,7 @@
                                 </div>
                                 <div class="mr-auto flex justify-end w-1115px m-auto">
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
-                                        <a class="text-white" href=""> ปิด </a>
+                                        <a class="text-white" href="/index"> ปิด </a>
                                     </div>
                                 </div>
                             </form>

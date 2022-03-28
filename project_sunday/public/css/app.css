@@ -645,6 +645,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.ml-8 {
+  margin-left: 2rem;
+}
 .block {
   display: block;
 }
