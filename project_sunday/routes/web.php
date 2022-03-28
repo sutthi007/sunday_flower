@@ -9,6 +9,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SummaryController;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +33,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('projects',userController::class);
+Route::get('search',[userController::class,'search'])->name('search');
 
 Route::resource('FormOrder',OrderController::class);
 

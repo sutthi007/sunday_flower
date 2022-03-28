@@ -5,14 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\customer;
 use App\Models\Order;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 class userController extends Controller
 {
     //
     public function index(){
 
-        $orders = Order::all();
-        return view('projects.index',compact('orders'));
+        $orders = Order::orderBy('id', 'DESC')->paginate(10);
+        $status = Order::all();
+        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function store(Request $request){
 
@@ -30,6 +31,13 @@ class userController extends Controller
         $order->delete();
 
         return redirect()->route('projects.index');
+    }
+    public function search(Request $request){
+        $status = Order::all();
+        $search = $request->get('search');
+        $orders = Order::where('name', 'LIKE', '%'.$search. '%')->orWhere('type', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+
+        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
 
 

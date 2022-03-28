@@ -29,17 +29,30 @@ class OrderController extends Controller
     return redirect()->route('FormOrder.show',$customer);
 }
 
-   public function show($test){
-        $customer = customer::find($test);
+   public function show($id){
+        $customer = customer::find($id);
         return view('Order.order-step-1', compact('customer'));
     }
 
-    public function destroy($id){
+    public function destroy($idorder){
 
-        $order = Order::find($id);
+        $order = Order::find($idorder);
+        $customer = $order->customer->id;
         $order->delete();
+        return redirect()->route('FormOrder.show',$customer);
+    }
+    public function edit($id){
+        $order = Order::find($id);
+        return view('projects.index-editor',compact('order'));
+    }
 
-        return redirect()->route('projects.index');
+    public function update(Request $request,$id){
+        $order = Order::find($id);
+
+        $order->update($request->all());
+
+        return redirect()->route('projects.index')
+                        ->with('success','อัปเดทสำเร็จ ');
     }
 
 }

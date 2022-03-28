@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('province');
             $table->string('address');
-            $table->integer('phone');
+            $table->string('phone');
             $table->integer('Idcard');
             $table->integer('zipcode');
             $table->integer('picture')->nullable();

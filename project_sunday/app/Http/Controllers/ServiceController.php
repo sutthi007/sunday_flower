@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\service;
 
 class ServiceController extends Controller
 {
@@ -18,7 +19,7 @@ class ServiceController extends Controller
             'price' => $request->price,
         ]);
     }
-    public function update($id){
+    public function update($id,Request $request){
         $service = service::find($id);
 
         $service->update($request->all());

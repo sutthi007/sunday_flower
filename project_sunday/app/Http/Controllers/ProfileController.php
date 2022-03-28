@@ -29,7 +29,7 @@ class ProfileController extends Controller
 
         $user->update($request->all());
 
-        return redirect()->route('projects.index')
+        return redirect()->route('Profile.index')
                         ->with('success','อัปเดทสำเร็จ ');
     }
 }

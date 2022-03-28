@@ -9,7 +9,6 @@
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
-    <script src="/js/popup-ouput.js"></script>
     <script src="/js/init-alpine.js"></script>
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -261,9 +260,12 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <input
-                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                type="text" placeholder="Search for projects" aria-label="Search" />
+                            <form action="{{ route('search')}}" method="get">
+                                @csrf
+                                <input
+                                    class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
+                                    type="text" placeholder="Search for name" aria-label="Search" name="search"/>
+                            </form>
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
@@ -432,15 +434,14 @@
                                                 5421545TH
                                             </td>
                                             <td class="flex px-4 py-3 text-sm ">
-                                                <button class="w-6 h-6 mr-2" type="button"
-                                                    onclick="toggleModal('modal-id')" data-target="{{$order->id}}">
+                                                <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                         stroke-width="2">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                     </svg>
-                                                </button>
+                                                </a>
                                                 <form action="{{ route('projects.destroy', $order->id) }}"
                                                     method="post">
                                                     @csrf
@@ -460,7 +461,8 @@
                                 @endforeach
                             </table>
                         </div>
-                        <div
+                        {{ $orders->links() }}
+                        {{-- <div
                             class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
                             <span class="flex items-center col-span-3">
                                 Showing 21-30 of 100
@@ -536,195 +538,10 @@
                                     </ul>
                                 </nav>
                             </span>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </main>
-            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
-                id="modal-id">
-                <div class="relative w-auto my-6 mx-auto max-w-3xl">
-                    <!--content-->
-                    <div
-                        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                        <!--header-->
-                        <div
-                            class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t ">
-                            <h3 class="text-3xl font-semibold ">
-                                แก้ไข
-                            </h3>
-                            <button class="p-1 ml-auto  " onclick="toggleModal('modal-id')">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
-                                    <path
-                                        d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
-                                    </path>
-                                </svg>
-                            </button>
-                        </div>
-                        <!--body-->
-                        <div class="relative p-6 flex-auto">
-                            <form action="">
-                                <div class="">
-                                    <div class="w-200px m-auto text-center mb-6 text-xl">
-                                        <h1>ผู้ส่ง</h1>
-                                    </div>
-                                    <div class="flex flex-wrap -mx-3 mb-6">
-                                        <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                for="grid-first-name">
-                                                ประเภท
-                                            </label>
-                                            <select
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="">
-                                                <option value="">---เลือก----</option>
-                                                <option value="">แมว</option>
-                                                <option value="">ผลไม้และผัก</option>
-                                                <option value="">พัสดุภัณฑ์</option>
-                                                <option value="">พัสดุมอไซต์</option>
-                                            </select>
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                for="grid-first-name">
-                                                ชื่อ
-                                            </label>
-                                            <input
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="{{ $order->name}}" />
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                for="grid-first-name">
-                                                อำเภอ
-                                            </label>
-                                            <select
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="">
-                                                <option value="">---เลือก----</option>
-                                                <option value="">หนองหาร</option>
-                                                <option value="">สันผีเสื้น</option>
-                                                <option value="">เมือง</option>
-                                            </select>
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                for="grid-first-name">
-                                                จังหวัด
-                                            </label>
-                                            <select
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="">
-                                                <option value="">---เลือก----</option>
-                                                <option value="">เชียงใหม่</option>
-                                                <option value="">ลำปาง</option>
-                                                <option value="">เชียงราย</option>
-                                            </select>
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                for="grid-first-name">
-                                                เบอร์โทร
-                                            </label>
-                                            <input
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="w-200px m-auto text-center mb-6 text-xl">
-                                    <h1>ผู้รับ</h1>
-                                </div>
-                                <div class="flex flex-wrap -mx-3 mb-6">
-
-                                    <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            for="grid-first-name">
-                                            ประเภท
-                                        </label>
-                                        <select
-                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="">
-                                            <option value="">---เลือก----</option>
-                                            <option value="">แมว</option>
-                                            <option value="">ผลไม้และผัก</option>
-                                            <option value="">พัสดุภัณฑ์</option>
-                                            <option value="">พัสดุมอไซต์</option>
-                                        </select>
-                                    </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            for="grid-first-name">
-                                            ชื่อ
-                                        </label>
-                                        <input
-                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="" />
-                                    </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            for="grid-first-name">
-                                            อำเภอ
-                                        </label>
-                                        <input
-                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="" />
-                                    </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            for="grid-first-name">
-                                            จังหวัด
-                                        </label>
-                                        <select
-                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="">
-                                            <option value="">---เลือก----</option>
-                                            <option value="">เชียงใหม่</option>
-                                            <option value="">ลำปาง</option>
-                                            <option value="">เชียงราย</option>
-                                        </select>
-                                    </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            for="grid-first-name">
-                                            เบอร์โทร
-                                        </label>
-                                        <input
-                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="" />
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <!--footer-->
-                        <div
-                            class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                            <button
-                                class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" onclick="toggleModal('modal-id')">
-                                ยกเลิก
-                            </button>
-                            <button
-                                class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button" onclick="toggleModal('modal-id')">
-                                ยีนยัน
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop">
-            </div>
         </div>
     </div>
 </body>

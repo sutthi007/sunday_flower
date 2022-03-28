@@ -13,4 +13,5 @@ class CustomerController extends Controller
         $customers = customer::all();
         return view('customer.customer',compact('customers'));
     }
+
 }

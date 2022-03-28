@@ -2,39 +2,40 @@
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>กรอกข้อมูลลูกค้า</title>
-  {{-- CSS --}}
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  {{-- Js --}}
-  <script src="./js/charts-lines.js" defer></script>
-  <script src="/js/charts-pie.js" defer></script>
-  <script src="/js/init-alpine.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>หนัาหลัก</title>
+    <link rel="icon" type="/img/svg" href="/img/icon.svg">
+    {{-- CSS --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    {{-- Js --}}
+    <script src="/js/popup-ouput.js"></script>
+    <script src="/js/init-alpine.js"></script>
 
-  <link rel="icon" type="/img/svg" href="/img/icon.svg">
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <link rel="icon" type="/img/svg" href="/img/icon.svg" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
 
 </head>
 
 <body class="font-prompt">
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
-        <!-- Desktop sidebar -->
-        <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
+         <!-- Desktop sidebar -->
+         <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
             <div class="py-4 text-gray-500 dark:text-gray-400">
                 <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
                     SUNDAY FLOWER
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -48,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -58,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -69,10 +70,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -87,7 +86,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -103,7 +102,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -115,7 +114,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -145,9 +144,10 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -161,7 +161,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -171,7 +171,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -182,10 +182,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -195,12 +193,12 @@
                                 <line x1="3" y1="9" x2="21" y2="9"></line>
                                 <line x1="9" y1="21" x2="9" y2="9"></line>
                             </svg>
-                            <span class="ml-4">ฟอร์ออเดอร์</span>
+                            <span class="ml-4">ฟอร์มออเดอร์</span>
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -216,7 +214,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -228,7 +226,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -284,7 +282,7 @@
                                     </li>
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="#">
+                                            href="/login">
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 viewBox="0 0 24 24" stroke="currennColor">
@@ -301,62 +299,155 @@
                     </ul>
                 </div>
             </header>
-            <!-- Form Order -->
-            <main class="h-full overflow-y-auto">
-                <div class=" px-6 mx-auto grid w-1250px ">
-                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
-                        กรอกข้อมูลลูกค้า
+            <main class="h-full overflow-y-auto ">
+                <div class="px-6 mx-auto grid w-1250px ">
+                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                        แก้ไข
                     </h2>
-                    <div class="bg-EBEBEB  h-100% w-100%   ">
-                        <p class="text-2xl text-center mt-5">ผู้ส่ง</p>
-                        <div class=" m-auto w-90% mt-16 ">
-                            <div class=" m-auto w-500px mt-5 ">
-                                <form class="w-full max-w-lg " action="{{ route('projects.store')}}" method="post">
-                                    @csrf
-                                    <div class="flex flex-wrap -mx-3 mb-6 ">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+
+                    <div class="relative p-6 flex-auto">
+                        <form action="{{ route('FormOrder.update',$order->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="">
+                                <div class="w-200px m-auto text-center mb-6 text-xl">
+                                    <h1>ผู้ส่ง</h1>
+                                </div>
+                                <div class="flex flex-wrap -mx-3 mb-6">
+
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
                                             ชื่อ
-                                            </label>
-                                            <input class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Exeample" name="name">
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                                                จังหวัด
-                                            </label>
-                                            <select class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="value" name="province">
-                                                <option value="">---เลือก----</option>
-                                                <option value="เชียงใหม่">เชียงใหม่</option>
-                                                <option value="ลำปาง">ลำปาง</option>
-                                                <option value="เชียงราย">เชียงราย</option>
-                                            </select>
-                                        </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                                                อำเภอ
-                                            </label>
-                                            <select class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="" name="subdistrict">
-                                                <option value="">---เลือก----</option>
-                                                <option value="หนองหาร">หนองหาร</option>
-                                                <option value="สันผีเสื้อ">สันผีเสื้อ</option>
-                                                <option value="เมือง">เมือง</option>
-                                            </select>
-                                        </div> <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                                                เบอร์โทร
-                                            </label>
-                                            <input class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="08x-xxxxxxx" name="phone">
-                                            {{-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> --}}
+                                        </label>
+                                        <div
+                                            class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" >{{ $order->customer->name}}</div>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            อำเภอ
+                                        </label>
+                                        <div
+                                            class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" >
+                                            {{$order->customer->subdistrict}}
                                         </div>
                                     </div>
-                                    <div class="w-200px h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 " >
-                                        <button class="text-white">ถัดไป</button>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            จังหวัด
+                                        </label>
+                                        <div
+                                            class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" >
+                                            {{$order->customer->province}}
+                                        </div>
                                     </div>
-                                </form>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            เบอร์โทร
+                                        </label>
+                                        <div
+                                            class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" >{{ $order->customer->phone}}</div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="w-200px m-auto text-center mb-6 text-xl">
+                                <h1>ผู้รับ</h1>
+                            </div>
+                            <div class="flex flex-wrap -mx-3 mb-6">
+
+                                <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        ประเภท
+                                    </label>
+                                    <select
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" name="type">
+                                        <option value="{{ $order->type }}">{{ $order->type }}</option>
+                                        <option value="แมว">แมว</option>
+                                        <option value="ผลไม้และผัก">ผลไม้และผัก</option>
+                                        <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
+                                        <option value="พัสดุมอไซต์">พัสดุมอไซต์</option>
+                                    </select>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        ชื่อ
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" name="name" value="{{ $order->name}}"/>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        อำเภอ
+                                    </label>
+                                    <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" name="city">
+                                            <option value="{{$order->city}}">{{$order->city}}</option>
+                                            <option value="สันผีเสื้น">สันผีเสื้น</option>
+                                            <option value="เมือง">เมือง</option>
+                                        </select>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        จังหวัด
+                                    </label>
+                                    <select
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" name="province">
+                                        <option value="{{$order->province}}">{{$order->province}}</option>
+                                        <option value="เชียงใหม่">เชียงใหม่</option>
+                                        <option value="เชียงราย">เชียงราย</option>
+                                    </select>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        เบอร์โทร
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="" >
+                                </div>
+                            </div>
+
                     </div>
+
+                    <div
+                    class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                    <button
+                        class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="reset">
+                        ยกเลิก
+                    </button>
+                    <button
+                        class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" >
+                        ยีนยัน
+                    </button>
+                </div> </form>
                 </div>
+
             </main>
         </div>
     </div>

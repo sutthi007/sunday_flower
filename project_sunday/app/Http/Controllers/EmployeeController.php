@@ -37,7 +37,7 @@ class EmployeeController extends Controller
         return redirect()->route('Employee.show',$user->id)
                         ->with('success','อัปเดทสำเร็จ ');
     }
-    public function delete(){
+    public function destroy($id){
 
     }
     public function store(Request $request)
