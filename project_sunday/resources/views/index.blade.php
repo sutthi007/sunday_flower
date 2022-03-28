@@ -317,7 +317,7 @@
                     </ul>
                 </div>
             </header>
-            <main class="h-full overflow-y-auto">
+            <main class="h-full overflow-y-auto ">
                 <div class="px-6 mx-auto grid w-1250px ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         หน้าหลัก
@@ -326,7 +326,7 @@
                     <!-- Cards -->
 
                     <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-800 place-content-center">
+                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-900 place-content-center">
                         <!-- Card -->
                         <a href="">
                             <div
@@ -337,7 +337,7 @@
                                         <img src="/img/order.svg" alt="" class="w-100px h-100px" />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-69 rounded-full dark:text-orange-100 dark:bg-orange-500">
+                                <div class="p-3 mr-69 rounded-full ">
                                     <p class="text-50px text-white">89</p>
                                 </div>
                             </div>
@@ -352,7 +352,7 @@
                                         <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500">
+                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 ">
                                     <p class="text-50px text-white">3</p>
                                 </div>
                             </div>
@@ -360,14 +360,14 @@
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 bg-green-300 place-content-center">
+                                class="flex items-center p-4 bg-white rounded-lg shadow-xs  bg-green-300 place-content-center">
                                 <div class="place-content-center w-250px">
                                     <p class="mb-2 text-2xl text-white">สำเร็จ</p>
                                     <path>
                                         <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500 ml-55">
+                                <div class="p-3 mr-4 rounded-full    ml-55">
                                     <p class="text-50px text-white">6</p>
                                 </div>
                             </div>
@@ -375,12 +375,12 @@
                     </div>
 
                     <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center">
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center ">
                         <div class="w-full overflow-x-auto">
                             <table class="w-full whitespace-no-wrap">
                                 <thead>
                                     <tr
-                                        class="text-xs text-center font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        class="text-xs text-center font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:text-white bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">เลขที่</th>
                                         <th class="px-4 py-3">ชื่อ</th>
                                         <th class="px-4 py-3">ที่อยู่</th>
@@ -390,8 +390,8 @@
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y text-center dark:divide-gray-700 dark:bg-gray-800">
-                                    <tr class="text-gray-700 dark:text-gray-400">
+                                <tbody class="bg-white divide-y text-center dark:divide-gray-700 dark:bg-gray-800 ">
+                                    <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
                                         <td class="   px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
@@ -418,7 +418,7 @@
                                                 </svg></button>
                                         </td>
                                     </tr>
-                                    <tr class="text-gray-700 dark:text-gray-400">
+                                    <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
                                         <td class="   px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
@@ -445,7 +445,7 @@
                                                 </svg></button>
                                         </td>
                                     </tr>
-                                    <tr class="text-gray-700 dark:text-gray-400">
+                                    <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
                                         <td class="   px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
@@ -458,7 +458,18 @@
                                         </td>
                                         <td class="px-4 py-3 text-sm "> 1212121212th </td>
                                         <td class="px-4 py-3 text-sm ">
-                                            
+                                            <button class="w-6 h-6 mr-2" type="button" onclick="toggleModal('modal-id')"><svg xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round"  stroke-linejoin="round"
+                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                            </svg></button>
+                                        <button class="w-6 h-6 "><svg xmlns="http://www.w3.org/2000/svg"
+                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg></button>
                                         </td>
                                     </tr>
                                 </tbody>
