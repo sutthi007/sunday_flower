@@ -565,6 +565,9 @@
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="text-white" href="/order-end"> ยีนยัน </a>
                                     </div>
+                                    <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
+
+                                    </div>
                                 </div>
                             </form>
                         </div>

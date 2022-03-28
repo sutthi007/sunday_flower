@@ -321,7 +321,7 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid">
                     <form class="h-100% text-center flex mt-6 m-auto  ">
-                        <div class="w-568px bg-white h-974px rounded-lg shadow-lg ">
+                        <div class="w-568px bg-white dark:bg-white dark:bg-opacity-10 h-974px rounded-lg shadow-lg ">
                             <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-16">
                                 โปรไฟล์
                             </h2>
