@@ -323,53 +323,74 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        ข้อมูลลูกค้า
+                        แก้ไขข้อมูลลูกค้า
                     </h2>
-                    <div class="bg-EBEBEB  rounded-md  mb-6">
-                        <div class=" m-auto  mt-16 w-1115px   ">
-                            <!-- New Table -->
-                            <div class=" rounded-lg shadow-xs mb-6 w-1115px overflow-auto">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap">
-                                        <thead>
-                                            <tr
-                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">ลำดับ</th>
-                                                <th class="px-4 py-3">ชื่อ</th>
-                                                <th class="px-8 py-3">จังหวัด</th>
-                                                <th class="px-4 py-3">สถานะ</th>
-                                                <th class="px-4 py-3">Systems</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody
-                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">เชียงใหม่</td>
-                                                <td class="px-4 py-3 text-sm">ผู้รับ</td>
-                                                <td class="px-4 py-3 text-sm"> 
-                                                    <a href="/customer-editor"
-                                                        class="bg-pink w-94px h-20px p-1 rounded-md text-white"
-                                                        type="button"
-                                                        >รายละเอียด</a>
-                                                    </td>
-                                            </tr>
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">เชียงใหม่</td>
-                                                <td class="px-4 py-3 text-sm">ผู้รับ</td>
-                                                <td class="px-4 py-3 text-sm"> 
-                                                    <a href="/customer-editor"
-                                                        class="bg-pink w-94px h-20px p-1 rounded-md text-white"
-                                                        type="button"
-                                                        >รายละเอียด</a>
-                                                    </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                    <div class="bg-EBEBEB h-600px rounded-md  mb-6">
+                        <div class=" m-auto mt-16 w-1115px   ">
+                            <div class="relative p-6 flex-auto">
+                                <div class="overflow-hidden rounded-lg shadow-xs mb-6 ">
+                                    <div class=" overflow-x-auto ">
+                                        <div class="whitespace-no-wrap bg-white rounded-md  mb-6 ">
+                                            <div class="p-6 text-xl ">
+                                                <p>นาย ใจดี มีชัย</p>
+                                                <p>จังหวัด เชียงใหม่ อำเภอ เมือง ตำบล สันผีเสือ รหัสไปรษณีย์ 50000
+                                                </p>
+                                                <p>เบอร์โทรติดต่อ 089-666-6666 สถานะ ผู้รับ</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <p class="">ประวัติการบริการ</p>
+                                        </div>
+                                        <div class="h-250px rounded-md overflow-auto">
+                                            <table class="w-full  whitespace-no-wrap overflow-auto">
+                                                <thead>
+                                                    <tr
+                                                        class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                        <th class="px-4 py-3">ลำดับ</th>
+                                                        <th class="px-4 py-3">ประเภท</th>
+                                                        <th class="px-4 py-3">ต้นทาง</th>
+                                                        <th class="px-8 py-3">ปลายทาง</th>
+                                                        <th class="px-4 py-3">สถานะ</th>
+                                                        <th class="px-4 py-3">วันที่</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody
+                                                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                                    <tr class="text-gray-700 dark:text-gray-400">
+                                                        <td class="px-4 py-3 text-sm">1</td>
+                                                        <td class="px-4 py-3 text-sm">ดอกไม้</td>
+                                                        <td class="px-4 py-3 text-sm">เชียงใหม่</td>
+                                                        <td class="px-4 py-3 text-sm">โคราช</td>
+                                                        <td class="px-4 py-3 text-sm">ผู้รับ</td>
+                                                        <td class="px-4 py-3 text-sm">01/02/2564</td>
+                                                    </tr>
+                                                    <tr class="text-gray-700 dark:text-gray-400">
+                                                        <td class="px-4 py-3 text-sm">1</td>
+                                                        <td class="px-4 py-3 text-sm">ดอกไม้</td>
+                                                        <td class="px-4 py-3 text-sm">เชียงใหม่</td>
+                                                        <td class="px-4 py-3 text-sm">โคราช</td>
+                                                        <td class="px-4 py-3 text-sm">ผู้รับ</td>
+                                                        <td class="px-4 py-3 text-sm">01/02/2564</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <!--footer-->
+                            <div
+                                class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                <button
+                                    class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button" onclick="toggleModal('modal-id')">
+                                    ยกเลิก
+                                </button>
+                                <button
+                                    class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                    type="button" onclick="toggleModal('modal-id')">
+                                    ยีนยัน
+                                </button>
                             </div>
                         </div>
                     </div>

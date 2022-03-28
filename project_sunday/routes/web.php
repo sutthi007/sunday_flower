@@ -58,6 +58,9 @@ Route::get('/serve-editor-1',function(){
 Route::get('/customer', function(){
     return view('customer');
 });
+Route::get('/customer-editor', function(){
+    return view('customer-editor');
+});
 Route::get('/summarize', function(){
     return view('summarize');
 });
