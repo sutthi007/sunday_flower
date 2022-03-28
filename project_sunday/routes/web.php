@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::get('/order', function(){
 });
 Route::get('/order-step-1', function(){
     return view('order-step-1');
+});
+Route::get('/order-end',function(){
+    return view('order-end');
 });
 Route::get('/profile', function(){
     return view('profile');
