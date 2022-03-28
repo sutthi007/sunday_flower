@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/index', function(){
     return view('index');
 });
+Route::get('/index-editor',function(){
+    return view('index-editor');
+});
 Route::get('/order', function(){
     return view('order');
 });

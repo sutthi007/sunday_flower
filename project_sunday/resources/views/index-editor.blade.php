@@ -9,6 +9,7 @@
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
+    <script src="/js/popup-ouput.js"></script>
     <script src="/js/init-alpine.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
@@ -319,154 +320,170 @@
             <main class="h-full overflow-y-auto ">
                 <div class="px-6 mx-auto grid w-1250px ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        หน้าหลัก
+                        แก้ไข
                     </h2>
 
-                    <!-- Cards -->
+                    <div class="relative p-6 flex-auto">
+                        <form action="">
+                            <div class="">
+                                <div class="w-200px m-auto text-center mb-6 text-xl">
+                                    <h1>ผู้ส่ง</h1>
+                                </div>
+                                <div class="flex flex-wrap -mx-3 mb-6">
+                                    <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            ประเภท
+                                        </label>
+                                        <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">แมว</option>
+                                            <option value="">ผลไม้และผัก</option>
+                                            <option value="">พัสดุภัณฑ์</option>
+                                            <option value="">พัสดุมอไซต์</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            ชื่อ
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="" />
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            อำเภอ
+                                        </label>
+                                        <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">หนองหาร</option>
+                                            <option value="">สันผีเสื้น</option>
+                                            <option value="">เมือง</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            จังหวัด
+                                        </label>
+                                        <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">เชียงใหม่</option>
+                                            <option value="">ลำปาง</option>
+                                            <option value="">เชียงราย</option>
+                                        </select>
+                                    </div>
+                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            for="grid-first-name">
+                                            เบอร์โทร
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-200px m-auto text-center mb-6 text-xl">
+                                <h1>ผู้รับ</h1>
+                            </div>
+                            <div class="flex flex-wrap -mx-3 mb-6">
+                                
+                                <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        ประเภท
+                                    </label>
+                                    <select
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="">
+                                        <option value="">---เลือก----</option>
+                                        <option value="">แมว</option>
+                                        <option value="">ผลไม้และผัก</option>
+                                        <option value="">พัสดุภัณฑ์</option>
+                                        <option value="">พัสดุมอไซต์</option>
+                                    </select>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        ชื่อ
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="" />
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        อำเภอ
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="" />
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        จังหวัด
+                                    </label>
+                                     <select
+                                            class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            id="grid-first-name" type="text" placeholder="">
+                                            <option value="">---เลือก----</option>
+                                            <option value="">เชียงใหม่</option>
+                                            <option value="">ลำปาง</option>
+                                            <option value="">เชียงราย</option>
+                                        </select>
+                                </div>
+                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        เบอร์โทร
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" placeholder="" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
                     <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-900 place-content-center">
-                        <!-- Card -->
-                        <a href="">
-                            <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs bg-fuchsia-400 place-content-center">
-                                <div class="place-content-center w-250px ">
-                                    <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
-                                    <path>
-                                        <img src="/img/order.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-69 rounded-full ">
-                                    <p class="text-50px text-white">89</p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="">
-                            <div
-                                class="flex items-center p-4 rounded-lg shadow-xs w-69 bg-amber-400 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">กำลังส่ง</p>
-                                    <path>
-                                        <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 ">
-                                    <p class="text-50px text-white">3</p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="">
-                            <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs  bg-green-300 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">สำเร็จ</p>
-                                    <path>
-                                        <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-4 rounded-full    ml-55">
-                                    <p class="text-50px text-white">6</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center ">
-                        <div class="w-full overflow-x-auto">
-                            <table class="w-full whitespace-no-wrap">
-                                <thead>
-                                    <tr
-                                        class="text-xs text-center font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:text-white bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">เลขที่</th>
-                                        <th class="px-4 py-3">ชื่อ</th>
-                                        <th class="px-4 py-3">ที่อยู่</th>
-                                        <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3">รหัสติดตาม</th>
-                                        <th class="px-4 py-3"></th>
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y text-center dark:divide-gray-700 dark:bg-gray-800 ">
-                                    <tr class="text-gray-700 dark:text-white">
-                                        <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="   px-4 py-3 text-sm"> นีออน</td>
-                                        <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
-                                        <td class="px-4 py-3 text-sm ">12/2/56</td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            <div
-                                                class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto ">
-                                                ออเดอร​์
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm "> 1212121212th </td>
-                                        <td class="px-4 py-3 text-sm  flex">
-                                            <a href="/index-editor" class="w-6 h-6 mr-2" ><svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round"  stroke-linejoin="round"
-                                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg></a>
-                                            <button class="w-6 h-6 "><svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700 dark:text-white">
-                                        <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="   px-4 py-3 text-sm"> นีออน</td>
-                                        <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
-                                        <td class="px-4 py-3 text-sm ">12/2/56</td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            <div
-                                                class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto ">
-                                                กำลังส่ง
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm "> 1212121212th </td>
-                                        <td class="px-4 py-3 text-sm flex">
-                                            <a href="/index-editor" class="w-6 h-6 mr-2" ><svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round"  stroke-linejoin="round"
-                                                        d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                </svg></a>
-                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg></button>
-                                        </td>
-                                    </tr>
-                                    <tr class="text-gray-700 dark:text-white">
-                                        <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="   px-4 py-3 text-sm"> นีออน</td>
-                                        <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
-                                        <td class="px-4 py-3 text-sm ">12/2/56</td>
-                                        <td class="px-4 py-3 text-sm ">
-                                            <div
-                                                class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto ">
-                                                สำเร็จ
-                                            </div>
-                                        </td>
-                                        <td class="px-4 py-3 text-sm "> 1212121212th </td>
-                                        <td class="px-4 py-3 text-sm ">
-                                       
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                    <button
+                        class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" onclick="toggleModal('modal-id')">
+                        ยกเลิก
+                    </button>
+                    <button
+                        class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                        type="button" onclick="toggleModal('modal-id')">
+                        ยีนยัน
+                    </button>
+                </div>    
                 </div>
             </main>
-        </div>
+        </div>  
     </div>
 </body>
 
