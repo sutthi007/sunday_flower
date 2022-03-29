@@ -319,9 +319,9 @@
                                                 for="grid-first-name">
                                                 ชื่อ
                                             </label>
-                                            <input
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
-                                                id="grid-first-name" type="text" placeholder="{{ $customer->name }}" disabled />
+                                            <div
+                                                class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name">{{ $customer->name }}</div>
                                         </div>
                                         <div class="w-200px px-3 mb-6 md:mb-0">
                                             <label
@@ -329,9 +329,9 @@
                                                 for="grid-first-name">
                                                 จังหวัด
                                             </label>
-                                            <input
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
-                                                id="grid-first-name" type="text" placeholder="{{$customer->province}}" disabled />
+                                            <div
+                                                class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name" >{{$customer->province}}</div>
                                         </div>
                                         <div class="w-200px px-3 mb-6 md:mb-0">
                                             <label
@@ -339,9 +339,9 @@
                                                 for="grid-first-name">
                                                 เบอร์โทร
                                             </label>
-                                            <input
-                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
-                                                id="grid-first-name" type="text" placeholder="{{$customer->phone}}" disabled />
+                                            <div
+                                                class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name">{{$customer->phone}}</div>
                                         </div>
                                         <div class="w-250px px-3 mb-6 md:mb-0 mt-6  ">
                                             <button
@@ -387,7 +387,7 @@
                                                                 </label>
                                                                 <input
                                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
-                                                                    id="grid-first-name" type="text" placeholder="" name="name"/>
+                                                                    id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล" name="name"/>
                                                             </div>
                                                             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
                                                                 <label
@@ -492,7 +492,7 @@
                                                     ยกเลิก
                                                 </button>
                                                 <button class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-                                                    ยีนยัน
+                                                    ยืนยัน
                                                   </button>
                                             </div>
                                         </form>
@@ -509,7 +509,7 @@
                                             <thead>
                                                 <tr
                                                     class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                    <th class="px-4 py-3">ลำ</th>
+                                                    <th class="px-4 py-3">ลำดับ</th>
                                                     <th class="px-4 py-3">รายการ</th>
                                                     <th class="px-4 py-3">จำนวน</th>
                                                     <th class="px-4 py-3">ชื่อผู้รับ</th>
@@ -579,12 +579,16 @@
                                         </table>
                                     </div>
                                 </div>
+                            <form method="post" action="{{route('save')}}">
+                                @csrf
                                 <div class="mb-4 flex justify-end w-1115px m-auto">
                                     <label class=""> ทั้งหมด : </label>
                                     <input
                                         class="h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center"
                                         type="text" placeholder="{{$cost}}" disabled />
                                     บาท
+                                    <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                                    <input type="hidden" name="total" value="{{$cost}}">
                                 </div>
                                 <div class="mr-auto flex justify-end w-1115px m-auto">
                                     <div class="h-30px bg-pink rounded mb-6 w-100px text-center p-1">
@@ -593,7 +597,7 @@
                                         </a>
                                     </div>
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
-                                        <a class="text-white" href=""> ยีนยัน </a>
+                                        <button class="text-white"> ยืนยัน </button>
                                     </div>
                                 </div>
                             </form>

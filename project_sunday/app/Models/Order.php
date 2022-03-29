@@ -18,7 +18,12 @@ class Order extends Model
         'list',
         'quantity',
         'price',
-        'customer_id'
+        'customer_id',
+        'total',
+    ];
+
+    protected $casts = [
+
     ];
 
     public function customer(){

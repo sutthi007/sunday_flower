@@ -18,6 +18,7 @@ class OrderController extends Controller
         'name' => $request->name,
         'city'=> $request->city,
         'province'=> $request->province,
+        'phone'=> $request->phone,
         'type'=> $request->type,
         'list'=> $request->list,
         'quantity'=> $request->quantity,
@@ -53,6 +54,17 @@ class OrderController extends Controller
 
         return redirect()->route('projects.index')
                         ->with('success','อัปเดทสำเร็จ ');
+    }
+    public function sum($id){
+        $customer = customer::find($id);
+        return view('Order.order-end',compact('customer'));
+    }
+    public function total(Request $request){
+
+        Order::where('total',$request->total)->get();
+        $customer = $request->customer_id;
+
+        return redirect()->route('bill',$customer);
     }
 
 }

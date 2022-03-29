@@ -414,7 +414,7 @@
                                                     จังหวัด :
                                                 </label>
                                                 <input class="bg-235 w-200px" type="text"placeholder="กรุงเทพ" name="province">
-                                                <input type="hidden" value="asdasdasd@test.com" name="email">
+                                                <input type="hidden" value="sssss@test.com" name="email">
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
                                                 <input type="hidden" value="123456" name="phone">

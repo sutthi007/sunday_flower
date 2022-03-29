@@ -36,6 +36,8 @@ Route::resource('projects',userController::class);
 Route::get('search',[userController::class,'search'])->name('search');
 
 Route::resource('FormOrder',OrderController::class);
+Route::post('save',[OrderController::class,'total'])->name('save');
+Route::get('bill/summary/{id}',[OrderController::class,'sum'])->name('bill');
 
 Route::resource('Profile',ProfileController::class);
 

@@ -352,20 +352,6 @@
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3">
                                         <label for="">
-                                            ถนน:
-                                        </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text" placeholder=""
-                                            disabled>
-                                    </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
-                                            หมู่บ้าน:
-                                        </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text" placeholder=""
-                                            disabled>
-                                    </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
                                             ไปรษณีย์:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"

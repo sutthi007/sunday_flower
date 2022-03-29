@@ -428,12 +428,10 @@
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                        id="grid-first-name" type="text" placeholder="" >
+                                        id="grid-first-name" type="text" placeholder="" value="{{$order->phone}}" >
                                 </div>
                             </div>
-
                     </div>
-
                     <div
                     class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                     <button
