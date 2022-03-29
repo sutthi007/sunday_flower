@@ -9,7 +9,9 @@ class ServiceController extends Controller
 {
     //
     public function index(){
-       return view('Serviceprojects.serve');
+
+        $services = service::all();
+       return view('Serviceprojects.serve',compact('services'));
     }
 
     public function store(Request $request){

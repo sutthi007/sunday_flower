@@ -14,4 +14,11 @@ class CustomerController extends Controller
         return view('customer.customer',compact('customers'));
     }
 
+    public function show($id){
+
+        $customers = customer::find($id);
+
+        return view('customer.customer-editor', compact('customers'));
+    }
+
 }
