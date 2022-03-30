@@ -518,6 +518,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .float-right {
   float: right;
 }
+.float-left {
+  float: left;
+}
+.float-none {
+  float: none;
+}
 .m-auto {
   margin: auto;
 }
@@ -740,6 +746,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-250px {
   height: 250px;
 }
+.h-24px {
+  height: 24px;
+}
 .h-10 {
   height: 2.5rem;
 }
@@ -838,6 +847,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-48 {
   width: 12rem;
+}
+.w-94px {
+  width: 94px;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -1055,9 +1067,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(79 70 229 / var(--tw-border-opacity));
 }
-.border-green-400 {
+.border-green-000 {
   --tw-border-opacity: 1;
-  border-color: rgb(74 222 128 / var(--tw-border-opacity));
+  border-color: rgb(72 212 172 / var(--tw-border-opacity));
 }
 .border-gray-300 {
   --tw-border-opacity: 1;
@@ -1073,10 +1085,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-purple-600 {
   --tw-border-opacity: 1;
   border-color: rgb(147 51 234 / var(--tw-border-opacity));
-}
-.border-green-000 {
-  --tw-border-opacity: 1;
-  border-color: rgb(72 212 172 / var(--tw-border-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;

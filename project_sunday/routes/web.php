@@ -54,12 +54,4 @@ Route::resource('customer-systems',CustomerController::class);
 
 Route::resource('summary',SummaryController::class);
 
-Route::get('Account',function(){
-    return view('summary.account');
-});
-Route::get('transport',function(){
-    return view('summary.transport');
-});
-Route::get('customer/add',function(){
-    return view('Employee.employee-add');
-});
+Route::get('/export-excel',[OrderController::class,'export'])->name('export');

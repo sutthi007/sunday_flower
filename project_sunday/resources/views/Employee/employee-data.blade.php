@@ -354,25 +354,25 @@
                                 <div class="bg-235 w-300px h-40px">
                                     <div class="p-2">
                                         <label for="">
-                                            ถนน :
+                                            อีเมล์ :
                                         </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="" disabled>
+                                        <input class="bg-235 w-200px" type="text"placeholder="{{ $user->email}}" disabled>
                                     </div>
                                 </div>
                                 <div class="bg-235 w-300px h-40px">
                                     <div class="p-2">
                                         <label for="">
-                                            เลขที่บ้าน :
+                                             เบอร์โทร :
                                         </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="{{  $user->address }}" disabled>
+                                        <input class="bg-235 w-200px" type="text"placeholder="{{  $user->phone }}" disabled>
                                     </div>
                                 </div>
                                 <div class="bg-235 w-300px h-40px">
                                     <div class="p-2">
                                         <label for="">
-                                            ตำบล :
+                                            ที่อยู่ :
                                         </label>
-                                        <input class="bg-235 w-200px" type="text"placeholder="" disabled>
+                                        <input class="bg-235 w-200px" type="text"placeholder="{{ $user->address}}" disabled>
                                     </div>
                                 </div>
                                 <div class="bg-235 w-300px h-40px">

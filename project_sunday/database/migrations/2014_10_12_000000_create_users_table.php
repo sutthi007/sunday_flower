@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('birthday');
             $table->string('IDuser');
             $table->string('city');
+            $table->string('subdistrict');
             $table->string('province');
             $table->string('address');
             $table->string('phone');

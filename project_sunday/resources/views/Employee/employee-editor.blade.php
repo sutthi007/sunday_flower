@@ -341,7 +341,7 @@
                     <div class="bg-white w-1250px h-auto m-auto rounded-md">
                         <div class="flex justify-center  ">
                             <div class=" w-40 h-40">
-                                <img src="../../img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-5 ">
+                                <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full mt-5 ">
                             </div>
                         </div>
                         <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md">

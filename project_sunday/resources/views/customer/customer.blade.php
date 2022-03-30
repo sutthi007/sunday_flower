@@ -352,7 +352,7 @@
                                                     <td class="px-4 py-3 text-sm">ผู้รับ</td>
 
                                                     <td class="px-4 py-3 text-sm">
-                                                        <a href="{{route('customer-systems.show',$customer->id)}}" class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</a>
+                                                        <a href="{{route('customer-systems.show',$customer->id)}}" class="bg-pink w-150px h-30px rounded-md  text-white" > รายละเอียด </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

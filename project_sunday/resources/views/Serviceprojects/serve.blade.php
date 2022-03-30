@@ -310,7 +310,7 @@
                     </h2>
                     <div class="bg-EBEBEB h-100% rounded-md  mb-6">
                         <div class="w-1115px m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white"" type=" button"">
+                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
                              <a href="/serve-editor">เพิ่มรายการ</a>
                             </button>
                         </div>
@@ -435,7 +435,7 @@
                     </div>
                     <div class="bg-EBEBEB h-100% rounded-md  mb-6">
                         <div class="w-1115px   m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white"" type=" button"">
+                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white">
                                 เพิ่มรายการ
                             </button>
                         </div>

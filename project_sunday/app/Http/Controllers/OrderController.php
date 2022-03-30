@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\customer;
 use App\Models\Order;
+use App\Exports\TransportsDaysExport;
+use Excel;
 
 class OrderController extends Controller
 {
@@ -65,6 +67,11 @@ class OrderController extends Controller
         $customer = $request->customer_id;
 
         return redirect()->route('bill',$customer);
+    }
+    public function exportIntoExcel($id){
+        $order = Order::find($id);
+
+        return Excel::download(new TransportsDaysExport,$order->created_at . 'รายงานขนส่ง.xlsx');
     }
 
 }
