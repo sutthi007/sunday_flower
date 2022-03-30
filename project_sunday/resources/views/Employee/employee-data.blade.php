@@ -314,7 +314,7 @@
                     <div class="bg-white w-1250px h-auto m-auto rounded-md">
                         <div class="flex justify-center  ">
                             <div class=" w-40 h-40">
-                                <img src="../../img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-5 ">
+                                <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full mt-5 ">
                             </div>
                         </div>
                         <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md">
@@ -393,26 +393,26 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md  ">
-                            <div class="flex p-8 grid grid-cols-3 gap-4  ">
-                                <div class=" bg-235 w-380px  h-200px text-center ">
+                        <div class="bg-220 w-1115px h-350px m-auto mb-3 mt-10 rounded-md  ">
+                            <div class="p-8 flex m-auto ml-10 ">
+                                <div class=" p-8 grid ml-6 text-center ">
                                     <div class="p-2">
                                         <div class="flex justify-center  ">
-                                            <div class="  w-300px h-40 mb-6 ">
-                                                <img src="../../img/ggg.jpeg" class="object-cover h-full w-full mt-5">
-                                            </div>
+                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
+                                                <img src="../../img/Front/{{$user->Path_imageFront}}" id="display_image" class="  h-200px w-380px">
+                                                </div>
 
                                         </div>
                                     </div>
                                     <p>เอกสาร บัตรประชาชน ด้านหน้า</p>
                                 </div>
 
-                                <div class=" bg-235 w-380px h-200px ml-300px text-center ">
+                                <div class="  p-8 grid ml-6 text-center ">
                                     <div class="p-2">
                                         <div class="flex justify-center  ">
-                                            <div class=" w-300px h-40 mb-6">
-                                                <img src="../../img/ggg.jpeg" class="object-cover h-full w-full mt-5 ">
-                                            </div>
+                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
+                                                <img src="../../img/Back/{{$user->Path_imageBack}}" id="display_images" class="  h-200px w-380px">
+                                                </div>
                                         </div>
                                     </div>
                                     <p>เอกสาร บัตรประชาชน ด้านหลัง</p>

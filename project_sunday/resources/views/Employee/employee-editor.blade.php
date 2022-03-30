@@ -15,6 +15,9 @@
     <link rel="icon" type="/img/svg" href="img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -328,7 +331,7 @@
             </header>
             <!-- Employeee Information -->
             <main class="h-full overflow-y-auto">
-                <form action="{{ route('Employee.update',$user->id) }}" method="POST">
+                <form action="{{ route('Employee.update',$user->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                 <div class="px-6 mx-auto grid   ">
@@ -422,27 +425,26 @@
                                 <div class="p-8 grid ml-6 text-center">
                                     <h1 class="font-bold">บัตรประชาชน ด้านหน้า</h1>
                                     <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                        <img src="/img/image-alt.svg" id="display_image" class="  h-200px w-380px">
+                                        <img src="../../img/Front/{{$user->Path_imageFront}}" id="display_image" class="  h-200px w-380px">
                                         </div>
                                    <div class="custom-file">
                                        <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
                                         <label  for="image_input">อัปโหลดภาพ</label>
                                     </div>
                                         <input type="file" id="image_input"
-                                        accept="image/png, image/ipg, image/jpeg"  >
+                                        accept="image/png, image/ipg, image/jpeg"  name="image_Front" value="{{$user->Path_imageFront}}">
                                     </div>
                                 </div>
                                 <div class="p-8 grid ml-6 text-center">
                                     <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
                                     <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                    <img src="/img/image-alt.svg" id="display_images" class="  h-200px w-380px">
+                                    <img src="../../img/Back/{{$user->Path_imageBack}}" id="display_images" class="  h-200px w-380px">
                                     </div>
                                    <div class="custom-file">
                                     <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
                                         <label  for="image_inputs">อัปโหลดภาพ</label>
                                     </div>
-                                        <input type="file" id="image_inputs"
-                                        accept="image/png, image/ipg, image/jpeg"  >
+                                        <input type="file" id="image_inputs" name="image_Back" accept="image/png, image/ipg, image/jpeg" value="{{$user->Path_imageBack}}">
                                     </div>
                                 </div>
                             </div>
@@ -458,6 +460,22 @@
             </main>
         </div>
     </div>
+       <script>
+           $(function() {
+            $("#image_input").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#display_image").attr("src", x);
+                console.log(event)
+            })
+        });
+        $(function() {
+            $("#image_inputs").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#display_images").attr("src", x);
+                console.log(event)
+            })
+        });
+        </script>
 </body>
 
 </html>

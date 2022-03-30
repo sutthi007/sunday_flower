@@ -305,7 +305,7 @@
             <!-- Profile -->
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid">
-                    <form class="h-100% text-center flex mt-6 m-auto " action="{{ route('Profile.update',Auth::user()->id)}}" method="post">
+                    <form class="h-100% text-center flex mt-6 m-auto " action="{{ route('Profile.update',Auth::user()->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -369,13 +369,16 @@
                             </div>
                         </div>
                         <div class=" ml-4">
-                            <div class="w-568px bg-white h-477px rounded-lg shadow-lg ">
-                                <div class="flex justify-center  ">
-                                    <div class=" w-40 h-40">
-                                        <img src="../../img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-12">
+                            <div class="w-568px bg-white h-477px rounded-lg shadow-lg relative">
+                                <div class="flex justify-center relative">
+                                    <div class=" w-40 h-40 absolute -top-5">
+                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full mt-12">
+                                    </div>
+                                    <div class="absolute top-52 left-48">
+                                        <input type="file" value="{{$user->profile}}" name="image_Profile">
                                     </div>
                                 </div>
-                                <div class="w-500px mx-auto  ">
+                                <div class="w-500px mx-auto  mt-48">
                                     <div class=" pt-15px w-350px m-auto ">
                                         <div class="bg-neutral-300  h-50px mb-3">
                                             <label for="">
@@ -411,15 +414,14 @@
                                         เอกสารประจำประชาชน หน้า
                                     </label>
                                     <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file" name="image_Front" value="{{$user->Path_imageFront}}">
                                     </div>
 
                                     <label class="pt-16" for="">
                                         เอกสารประจำประชาชน หลัง
                                     </label>
-
                                     <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file" name="image_Back" value="{{$user->Path_imageBack}}">
                                     </div>
                                 </div>
                             </div>

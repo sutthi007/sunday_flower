@@ -30,8 +30,9 @@ class User extends Authenticatable
         'phone',
         'IDcard',
         'zipcode',
-        'picture',
         'Idcard',
+        'Path_imageFront',
+        'Path_imageBack',
     ];
 
     /**

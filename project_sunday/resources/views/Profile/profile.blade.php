@@ -374,7 +374,7 @@
                             <div class="w-568px bg-white h-477px rounded-lg shadow-lg ">
                                 <div class="flex justify-center  ">
                                     <div class=" w-40 h-40">
-                                        <img src="img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-12">
+                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full mt-12">
                                     </div>
                                 </div>
                                 <div class="w-500px mx-auto  ">
@@ -408,21 +408,29 @@
                                 <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10">
                                     บัตรประชาชน
                                 </h2>
-                                <div class=" W-500p m-auto pt-15  ">
-                                    <label for="">
-                                        เอกสารประจำประชาชน หน้า
-                                    </label>
-                                    <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                    </div>
+                                <div class=" W-500p m-auto pt-15 ">
 
-                                    <label class="pt-16" for="">
-                                        เอกสารประจำประชาชน หลัง
-                                    </label>
+                                    @if (Auth::user()->where('Path_imageFront','Path_imageBack') == null)
 
-                                    <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                    </div>
+                                        <label for="">
+                                            เอกสารประจำประชาชน หน้า
+                                            </label>
+                                            <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
+                                                <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                            </div>
+
+                                            <label class="pt-16" for="">
+                                                เอกสารประจำประชาชน หลัง
+                                            </label>
+
+                                            <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
+                                                <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                            </div>
+                                    @endif
+                                    <div class=" w-350px h-150px m-auto border-4 border-green-000 p-8 text-center mt-24" >
+                                            <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
+                                            <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
+                                        </div>
                                 </div>
                             </div>
                         </div>

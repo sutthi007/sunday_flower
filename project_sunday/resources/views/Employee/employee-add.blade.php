@@ -333,7 +333,7 @@
             </header>
             <!-- Employeee Information -->
             <main class="h-full overflow-y-auto">
-                <form action="{{route('Employee.store')}}" method="post">
+                <form action="{{route('Employee.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="px-6 mx-auto grid   ">
                         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
@@ -342,7 +342,7 @@
                         <div class="bg-white w-1250px h-auto m-auto rounded-md">
 
                             <div class=" w-1115px  m-auto  mt-10 rounded-md  ">
-                                <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md">
+                                <div class="bg-220 w-1115px h-320px m-auto mb-3 mt-10 rounded-md">
                                     <div class="flex p-8 grid grid-cols-3 gap-4 ml-6">
                                         <div class="bg-235 w-300px  h-40px mb-6">
                                             <div class="p-2">
@@ -373,7 +373,7 @@
                                                 <label for="">
                                                     วันเกิด :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="12/12/2512" name="birthday">
+                                                <input class="bg-235 w-200px" type="date" placeholder="12/12/2512" name="birthday">
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -417,12 +417,33 @@
                                                 <input type="hidden" value="sssss@test.com" name="email">
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
-                                                <input type="hidden" value="123456" name="phone">
-                                                <input type="hidden" value="123456" name="zipcode">
-                                                <input type="hidden" value="123456" name="picture">
-
                                             </div>
                                         </div>
+                                        <div class="bg-235 w-300px h-40px">
+                                            <div class="p-2">
+                                                <label for="">
+                                                    ไปรษณีย์ :
+                                                </label>
+                                                <input class="bg-235 w-200px" type="text"placeholder="" name="zipcode" >
+                                            </div>
+                                        </div>
+                                        <div class="bg-235 w-300px h-40px">
+                                            <div class="p-2">
+                                                <label for="">
+                                                    เบอร์โทร :
+                                                </label>
+                                                <input class="bg-235 w-200px" type="text"placeholder="0588888" name="phone" >
+                                            </div>
+                                        </div>
+                                        <div class="bg-235 w-300px h-40px">
+                                            <div class="p-2">
+                                                <label for="">
+                                                    อีเมล์ :
+                                                </label>
+                                                <input class="bg-235 w-200px" type="text"placeholder="example@gmail.com" name="email" >
+                                            </div>
+                                        </div>
+                                    </div>
                                     </div>
 
                                 </div>
@@ -439,7 +460,8 @@
                                                     <label for="image_input">อัปโหลดภาพ</label>
                                                 </div>
                                                 <input type="file" id="image_input"
-                                                    accept="image/png, image/ipg, image/jpeg">
+                                                    accept="image/png, image/ipg, image/jpeg"
+                                                    name="image_front">
                                             </div>
                                         </div>
                                         <div class="p-8 grid ml-6 text-center">
@@ -453,7 +475,8 @@
                                                     <label for="image_inputs">อัปโหลดภาพ</label>
                                                 </div>
                                                 <input type="file" id="image_inputs"
-                                                    accept="image/png, image/ipg, image/jpeg">
+                                                    accept="image/png, image/ipg, image/jpeg"
+                                                    name="image_Back">
                                             </div>
                                         </div>
                                     </div>

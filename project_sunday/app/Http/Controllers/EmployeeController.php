@@ -31,7 +31,28 @@ class EmployeeController extends Controller
     public function update($id,Request $request){
 
         $user = User::find($id);
+        if($request->hasfile('image_Front')){
+            $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
+            $request->image_Front->extension();
 
+            // $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
+            // $request->image_Back->extension();
+
+            $request->image_Front->move(public_path('img/Front'),$ImageFront);
+            // $request->image_Back->move(public_path('img/Back'),$ImageBack);
+
+            $user->Path_imageFront = $ImageFront;
+            // $user->Path_imageBack = $ImageBack;
+        }
+
+        if($request->hasfile('image_Back')){
+            $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
+            $request->image_Back->extension();
+
+            $request->image_Back->move(public_path('img/Back'),$ImageBack);
+
+            $user->Path_imageBack = $ImageBack;
+        }
         $user->update($request->all());
 
         return redirect()->route('Employee.show',$user->id)
@@ -42,6 +63,14 @@ class EmployeeController extends Controller
     }
     public function store(Request $request)
     {
+        $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
+        $request->image_front->extension();
+
+        $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
+        $request->image_Back->extension();
+
+        $request->image_front->move(public_path('img/Front'),$ImageFront);
+        $request->image_Back->move(public_path('img/Back'),$ImageBack);
 
         User::create([
             'name' => $request->name,
@@ -56,7 +85,8 @@ class EmployeeController extends Controller
             'IDuser' =>$request->IDuser,
             'phone' =>$request->phone,
             'zipcode' =>$request->zipcode,
-            'picture' =>$request->picture,
+            'Path_imageFront' => $ImageFront,
+            'Path_imageBack' => $ImageBack,
         ]);
 
         return redirect()->route('Employee.index');

@@ -28,7 +28,6 @@ return new class extends Migration
             $table->string('phone');
             $table->integer('Idcard');
             $table->integer('zipcode');
-            $table->integer('picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

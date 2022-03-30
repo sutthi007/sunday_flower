@@ -82,7 +82,8 @@ module.exports = {
           'EBEBEB':'#EBEBEB',
           'pink':'rgba(226, 137, 227, 1)',
           '220':'rgba(220, 220, 220, 1)',
-          '235':'rgba(235, 233, 233, 1)'
+          '235':'rgba(235, 233, 233, 1)',
+          'green-000':'#48d4ac'
         },
         padding:{
           '15px':'65px'

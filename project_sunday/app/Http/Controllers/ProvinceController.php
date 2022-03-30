@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\province;
 
 class ProvinceController extends Controller
 {
     //
-    
+
     public function index(){
-        
+
     }
 
     public function store(Request $requset){
@@ -20,7 +21,7 @@ class ProvinceController extends Controller
         ]);
     }
     public function edit($id){
-        
+
         return redirect()->route('.update');
     }
     public function update($id,Request $requset){

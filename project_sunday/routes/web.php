@@ -32,9 +32,14 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+// Route for dashboard
 Route::resource('projects',userController::class);
 Route::get('search',[userController::class,'search'])->name('search');
+Route::get('projects-order',[userController::class,'order'])->name('projects-order');
+Route::get('projects-transit',[userController::class,'transit'])->name('projects-transit');
+Route::get('projects-success',[userController::class,'success'])->name('projects-success');
 
+// Route for order
 Route::resource('FormOrder',OrderController::class);
 Route::post('save',[OrderController::class,'total'])->name('save');
 Route::get('bill/summary/{id}',[OrderController::class,'sum'])->name('bill');
