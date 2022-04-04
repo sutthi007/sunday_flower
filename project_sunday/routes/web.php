@@ -44,13 +44,31 @@ Route::get('/employee-add', function(){
     return view('employee-add');
 });
 Route::get('/serve', function(){
-    return view('serve');
+    return view('serve/serve');
 });
-Route::get('/serve-editor', function(){
-    return view('serve-editor');
+Route::get('/serve-increase-1', function(){
+    return view('serve/increase/serve-increase-1');
 });
-Route::get('/serve-editor-1',function(){
-    return view('serve-editor-1');
+Route::get('/serve-increase-2', function(){
+    return view('serve/increase/serve-increase-2');
+});
+Route::get('/serve-increase-3', function(){
+    return view('serve/increase/serve-increase-3');
+});
+Route::get('/serve-increase',function(){
+    return view('serve/increase/serve-increase');
+});
+Route::get('/serve-editor-1', function(){
+    return view('serve/editor/serve-editor-1');
+});
+Route::get('/serve-editor-2', function(){
+    return view('serve/editor/serve-editor-2');
+});
+Route::get('/serve-editor-3', function(){
+    return view('serve/editor/serve-editor-3');
+});
+Route::get('/serve-editor',function(){
+    return view('serve/editor/serve-editor');
 });
 Route::get('/customer', function(){
     return view('customer');
