@@ -321,13 +321,13 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        แก้ไขรายงานการบริการส่งดอกไม้สด
+                        เพิ่มรายงานการบริการส่งดอกไม้สด
                     </h2>
                     <div class="bg-EBEBEB h-100%">
                         <div class="m-auto w-1115px mt-16 bg-white mb-6">
                             <div class="bg-whtie w-1115px ">
-                                <div class="flex p-8 grid grid-cols-3 gap-4 ml-6">
-                                    <div class="bg-235 w-320px  h-40px mb-6">
+                                <div class=" p-8 w-full  ml-6">
+                                    <div class="bg-235 w-320px m-auto  h-40px mb-6">
                                         <div class="p-2">
                                             <label for="">
                                                 จังหวัด :
@@ -335,7 +335,7 @@
                                             <input class="bg-235 w-150px" type="text" placeholder="กล่องโฟม" disabled>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px h-40px">
+                                    <div class="bg-235  w-320px m-auto  h-40px mb-6">
                                         <div class="p-2">
                                             <label for="">
                                                 อำเภอ :
@@ -343,7 +343,7 @@
                                             <input class="bg-235 w-200px" type="text" placeholder="150" disabled>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px h-40px mb-6">
+                                    <div class="bg-235  w-320px m-auto h-40px mb-6">
                                         <div class="p-2">
                                             <label for="">
                                                 ราคาค่าบริการ:
@@ -351,54 +351,25 @@
                                             <input class="bg-235 w-200px" type="text" placeholder="200" disabled>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px h-40px mb-6">
+                                    <div class="bg-235  w-320px m-auto h-40px mb-6">
                                         <div class="p-2">
                                             <label for="">
-                                                ราคาที่ 3 :
+                                                จังหวัดที่ส่งต่อ :
                                             </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
+                                            <input class="bg-235 w-150px" type="text" placeholder="250" disabled>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px h-40px">
+                                    <div class="bg-235  w-320px m-auto h-40px">
                                         <div class="p-2">
                                             <label for="">
-                                                ราคาที่ 3 :
+                                                ราคาค่าบริการ :
                                             </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
+                                            <input class="bg-235 w-150px" type="text" placeholder="250" disabled>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px h-40px">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาที่ 3 :
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="bg-235  w-320px h-40px">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาที่ 3 :
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="bg-235  w-320px h-40px">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาที่ 3 :
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="bg-235  w-320px h-40px">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาที่ 3 :
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
+                                     <div class=" w-150px h-30px m-auto mt-6" >
+                                    <button class="bg-pink w-150px h-30px rounded-md  text-white"><a href="/serve">บันทึก</a></button>
+                                </div>
                                 </div>
                             </div>
                         </div>
