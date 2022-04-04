@@ -51,6 +51,11 @@ Route::post('Profile/update-password',[ProfileController::class,'update_password
 Route::resource('Employee',EmployeeController::class);
 
 Route::resource('service',ServiceController::class);
+Route::get('/service/add/parcel',[ServiceController::class,'addlistP'])->name('parcel');
+Route::get('/service/add/flower',[ServiceController::class,'addlistflower'])->name('flower');
+Route::get('/service/add/animal',[ServiceController::class,'addlistanimal'])->name('animal');
+Route::get('/service/add/motorcycle',[ServiceController::class,'addlistmotorcle'])->name('motorcycle');
+
 
 Route::resource('customer-systems',CustomerController::class);
 

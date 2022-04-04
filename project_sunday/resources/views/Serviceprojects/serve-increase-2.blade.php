@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
 
-    <script src="/js/init-alpine.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="/js/popup-ouput.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
@@ -35,7 +35,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                            href="/index">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -49,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -72,7 +72,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('FormOrder.index')}}">
+                            href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -89,7 +89,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="/serve">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -105,7 +105,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -117,7 +117,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
+                            href="tables.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -148,7 +148,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="index.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -162,7 +162,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Profile.index')}}">
+                            href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -172,7 +172,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('FormOrder.index')}}">
+                            href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -184,7 +184,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('service.index')}}">
+                            href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -199,9 +199,9 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('service.index')}}">
+                            href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -217,7 +217,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -229,7 +229,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
+                            href="tables.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -243,7 +243,7 @@
         <div class="flex flex-col flex-1 w-full">
             <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
                 <div
-                    class="container flex items-center justify-end h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
+                    class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300">
                     <!-- Mobile hamburger -->
                     <button class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
                         @click="toggleSideMenu" aria-label="Menu">
@@ -253,6 +253,21 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <!-- Search input -->
+                    <div class="flex justify-center flex-1 lg:mr-32">
+                        <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
+                            <div class="absolute inset-y-0 flex items-center pl-2">
+                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <input
+                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
+                                type="text" placeholder="Search for projects" aria-label="Search" />
+                        </div>
+                    </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <!-- Profile menu -->
                         <li class="relative">
@@ -260,7 +275,7 @@
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
+                                    src="https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=aa3a807e1bbdfd4364d1f449eaa96d82"
                                     alt="" aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
@@ -304,250 +319,45 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="px-6 mx-auto grid w-1250px">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        รายการ
+                        เพิ่มรายงานการบริการส่งมอเตอร์ไซต์
                     </h2>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                             <a href="{{ route('parcel')}}">เพิ่มรายการ</a>
-                            </button>
-                        </div>
-                        <div class=" m-auto  mt-16 w-1115px">
-                            <div class="mt-4">
-                                <p class="">อัตราต่าบริการส่งพัสดุภัณท์</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap">
-                                        <thead>
-                                            <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">รายการ</th>
-                                                <th class="px-4 py-3"></th>
-                                                <th class="px-8 py-3">ราคาค่าบริการ(เริ่มต้น)</th>
-                                                <th class="px-4 py-3"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            @foreach ($parcel as $p )
-                                                <tr class="text-gray-700 dark:text-gray-400">
-                                                    <td class="px-4 py-3 text-sm">{{$p->list}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$p->priceS}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$p->priceM}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$p->PriceL}}</td>
-                                                    <td class="flex px-4 py-3 text-sm ">
-                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                            </svg>
-                                                        </a>
-                                                        <form action="{{ route('projects.destroy', $order->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button id="" class="w-6 h-6"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                    stroke-width="2">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                                </svg></button>
-                                                        </form>
-
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-
-                                        </tbody>
-                                    </table>
+                    <div class="bg-EBEBEB h-100%">
+                        <div class="m-auto w-1115px mt-16 bg-white mb-6">
+                            <div class="bg-whtie w-1115px ">
+                                <div class=" p-8 w-full  ml-6">
+                                <form action="{{route('service.store')}}" method="POST">
+                                        @csrf
+                                    <div class="bg-235 w-320px m-auto  h-40px mb-6">
+                                        <div class="p-2">
+                                            <label for="">
+                                                จังหวัด :
+                                            </label>
+                                            <input class="bg-235 w-150px" type="text" placeholder="กล่องโฟม" name="province">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-320px m-auto  h-40px mb-6">
+                                        <div class="p-2">
+                                            <label for="">
+                                                อำเภอ :
+                                            </label>
+                                            <input class="bg-235 w-200px" type="text" placeholder="150" name="sub">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-320px m-auto h-40px mb-6">
+                                        <div class="p-2">
+                                            <label for="">
+                                                ราคาค่าบริการ:
+                                            </label>
+                                            <input class="bg-235 w-200px" type="text" placeholder="200" name="price">
+                                            <input type="hidden" value="2" name="type">
+                                        </div>
+                                    </div>
+                                     <div class=" w-150px h-30px m-auto mt-6" >
+                                    <button class="bg-pink w-150px h-30px rounded-md  text-white">บันทึก</button>
+                                </form>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-EBEBEB h-100% rounded-md mb-6">
-                        <div class="w-1115px  m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('flower') }}">เพิ่มรายการ</a> 
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px mt-16">
-                            <div class="mt-4">
-                                <p class="">อัตราต่าบริการส่งดอกไม้สด</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap text-center">
-                                        <thead>
-                                            <tr
-                                                class=" text-center text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">จังหวัด</th>
-                                                <th class="px-4 py-3">อำเภอ</th>
-                                                <th class="px-4 py-3">ราคาค่าบริการ</th>
-                                                <th class="px-4 py-3">จังหวัดที่ส่งต่อ</th>
-                                                <th class="px-4 py-3">ราคาค่าบริการ</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                            @foreach ($flower as $f )
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">{{$f->list}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->priceS}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->priceM}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->PriceL}}</td>
-                                                <td class="flex px-4 py-3 text-sm ">
-                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                        </svg>
-                                                    </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px   m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white">
-                               <a href="{{route('motorcycle')}}">เพิ่มรายการ</a> 
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px   mt-16">
-                            <div class="mt-4">
-                                <p class="">อัตราต่าบริการส่งมอเตอร์ไซต์</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap ">
-                                        <thead>
-                                            <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">จังหวัด</th>
-                                                <th class="px-4 py-3">อำเภอ</th>
-                                                <th class="px-4 py-3">ราคาค่าบริการ</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            @foreach ($motorcycle as $m )
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">{{$m->list}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->priceS}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->priceM}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->PriceL}}</td>
-                                                <td class="flex px-4 py-3 text-sm ">
-                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                        </svg>
-                                                    </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px   m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('animal')}}">เพิ่มรายการ</a> 
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px   mt-16">
-                            <div class="mt-4">
-                                <p class="">อัตราต่าบริการส่งสัตว์เลี้ยง</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px ">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap">
-                                        <thead>
-                                            <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">รายการ</th>
-                                                <th class="px-4 py-3">ราคาค่าบริการ</th>
-                                            </tr>
-                                        </thead>
-                                        @foreach ($animal as $a )
-                                                <tr class="text-gray-700 dark:text-gray-400">
-                                                    <td class="px-4 py-3 text-sm">{{$a->list}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->priceS}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->priceM}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->PriceL}}</td>
-                                                    <td class="flex px-4 py-3 text-sm ">
-                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                            </svg>
-                                                        </a>
-                                                        <form action="{{ route('projects.destroy', $order->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button id="" class="w-6 h-6"><svg
-                                                                    xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                    stroke-width="2">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                                </svg></button>
-                                                        </form>
-
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
