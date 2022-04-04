@@ -39,12 +39,14 @@ Route::get('projects-order',[userController::class,'order'])->name('projects-ord
 Route::get('projects-transit',[userController::class,'transit'])->name('projects-transit');
 Route::get('projects-success',[userController::class,'success'])->name('projects-success');
 
+
 // Route for order
 Route::resource('FormOrder',OrderController::class);
 Route::post('save',[OrderController::class,'total'])->name('save');
 Route::get('bill/summary/{id}',[OrderController::class,'sum'])->name('bill');
 
 Route::resource('Profile',ProfileController::class);
+Route::post('Profile/update-password',[ProfileController::class,'update_password'])->name('update_password');
 
 Route::resource('Employee',EmployeeController::class);
 

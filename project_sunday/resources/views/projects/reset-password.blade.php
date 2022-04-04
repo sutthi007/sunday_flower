@@ -4,21 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>หนัาหลัก</title>
-    <link rel="icon" type="/img/svg" href="/img/icon.svg">
+    <title>ข้อมูลลูกค้า</title>
+
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
+
     <script src="/js/init-alpine.js"></script>
+    <script src="/js/popup-ouput.js"></script>
 
+    <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+
 
 </head>
 
@@ -32,10 +34,8 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index') }}">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="{{ route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -49,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index') }}">
+                            href="{{route('Profile.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index') }}">
+                            href="{{route('Employee.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -70,8 +70,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index') }}">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="{{ route('FormOrder.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -85,8 +86,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index') }}">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="{{route('service.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -101,8 +103,10 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index') }}">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="{{route('customer-systems.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -114,7 +118,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index') }}">
+                            href="{{route('summary.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -144,10 +148,8 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index') }}">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            href="index.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -161,7 +163,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index') }}">
+                            href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -171,7 +173,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index') }}">
+                            href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -183,7 +185,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index') }}">
+                            href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -193,12 +195,13 @@
                                 <line x1="3" y1="9" x2="21" y2="9"></line>
                                 <line x1="9" y1="21" x2="9" y2="9"></line>
                             </svg>
-                            <span class="ml-4">ฟอร์มออเดอร์</span>
+                            <span class="ml-4">ฟอร์ออเดอร์</span>
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index') }}">
+
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -213,8 +216,10 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index') }}">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -226,7 +231,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index') }}">
+                            href="tables.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -260,12 +265,9 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </div>
-                            <form action="{{ route('search')}}" method="get">
-                                @csrf
-                                <input
-                                    class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                    type="text" placeholder="Search for name" aria-label="Search" name="search"/>
-                            </form>
+                            <input
+                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
+                                type="text" placeholder="Search for projects" aria-label="Search" />
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
@@ -286,8 +288,7 @@
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{route('Profile.show',Auth::user()->id)}}">
-                                            @csrf
+                                            href="#">
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 viewBox="0 0 24 24" stroke="currentColor">
@@ -296,7 +297,7 @@
                                                 </path>
                                                 <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                             </svg>
-                                            <span>เปลี่ยนรหัสผ่าน</span>
+                                            <span>Settings</span>
                                         </a>
                                     </li>
                                     <li class="flex">
@@ -309,7 +310,7 @@
                                                     d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
                                                 </path>
                                             </svg>
-                                            <span>ออกจากระบบ</span>
+                                            <span>Log out</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -318,162 +319,75 @@
                     </ul>
                 </div>
             </header>
+            <!-- Form Order -->
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px ">
-                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        หน้าหลัก
+                    <h2 class="text-center my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                        เปลี่ยนรหัสผ่าน
                     </h2>
-                    <!-- Cards -->
-                    <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-800 place-content-center">
-                        <!-- Card -->
-                        <a href="{{route('projects-order')}}">
-                            <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs bg-fuchsia-400 place-content-center">
-                                <div class="place-content-center w-250px h-150px">
-                                    <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
-                                    <path>
-                                        <img src="/img/order.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-69 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                    <p class="text-50px text-white">{{ $orders->count() }}</p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="{{ route('projects-transit')}}">
-                            <div class="flex items-center p-4 rounded-lg shadow-xs w-69 bg-amber-400 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">กำลังส่ง</p>
-                                    <path>
-                                        <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500">
-                                    <p class="text-50px text-white">{{ $orders->where('status', 'send')->count() }}</p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="{{ route('projects-success')}}">
-                            <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 bg-green-300 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">สำเร็จ</p>
-                                    <path>
-                                        <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500 ml-55">
-                                    <p class="text-50px text-white">{{ $orders->where('status', 'success')->count() }}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                        <div class="w-full overflow-x-auto">
-                            <table class="w-full whitespace-no-wrap">
-                                <thead>
-                                    <tr
-                                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">เลขที่</th>
-                                        <th class="px-4 py-3">รายการ</th>
-                                        <th class="px-4 py-3">ชื่อ</th>
-                                        <th class="px-4 py-3">ที่อยู่</th>
-                                        <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3">รหัสติดตาม</th>
-                                        <th class="px-4 py-3"></th>
-                                    </tr>
-                                </thead>
-                                @php($i = 1)
-                                @php($s = 1)
-                                @foreach ($orders as $order)
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div>
-                                                        <p class="font-semibold">{{ $i++ }}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">{{ $order->type }}</td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <div class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                                    {{ $order->name }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $order->province }},{{ $order->city }}
-                                            </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $order->created_at }}
-                                            </td>
-                                            @if ($order->status == 'order')
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        ออเดอร์
-                                                    </div>
-                                                </td>
-                                            @elseif($order->status == 'send')
-                                                @php($s++)
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        กำลังจัดส่ง
-                                                    </div>
-                                                </td>
-                                            @elseif($order->status == 'success')
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        จัดสังสำเร็จ
-                                                    </div>
-                                                </td>
+                    <div class="bg-EBEBEB h-1050px rounded-md  mb-6">
+                        <div class=" m-auto  mt-16 w-1115px   ">
+                            <!-- New Table -->
+                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-950px overflow-auto">
+                                <div class="w-full overflow-x-auto">
+                                    <form action="{{route('update_password')}}" method="POST">
+                                        @csrf
+                                        <div class="flex justify-center p-2">
+                                            <label for="">
+                                                รหัสผ่านเดิม :
+                                            </label>
+                                            <div class="ml-2 w-300px h-30px">
+                                            <input class="p-4 ml-2 w-200px h-30px" type="text" name="old_password" id="old_password">
+                                        </div>
+                                        </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('old_password'))
+                                                    <span class="text-rose-600">{{$errors->first('old_password')}}</span>
+                                                @endif
+                                            </div>
+                                        <div class="flex justify-center p-2">
+                                            <label for="">
+                                                รหัสผ่านใหม่ :
+                                            </label>
+                                            <div class="ml-2 w-300px h-30px">
+                                            <input class="p-4 ml-2 w-200px h-30px" type="text" name="new_password" id="new_password"></div>
+
+                                        </div>
+                                        <div class="text-center text-xs mt-2" >
+                                            @if ($errors->any('new_password'))
+                                                <span class="text-rose-600">{{$errors->first('new_password')}}</span>
                                             @endif
+                                            </div>
+                                        <div class="flex justify-center p-2" >
+                                            <label for="">
+                                                ยืนยันรหัสผ่าน :
+                                            </label>
+                                            <div class="ml-2 w-300px h-30px ">
+                                            <input class="p-4 ml-2 w-200px h-30px" type="password" name="confirm_password" id="confirm_password"></div>
+                                            <input type="hidden" value="{{Auth::user()->id}}" name="id">
 
-                                            <td class="px-4 py-3 text-sm ">
-                                                5421545TH
-                                            </td>
-                                            <td class="flex px-4 py-3 text-sm ">
-                                                <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                        stroke-width="2">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                    </svg>
-                                                </a>
-                                                <form action="{{ route('projects.destroy', $order->id) }}"
-                                                    method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button id="" class="w-6 h-6"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                        </svg></button>
-                                                </form>
-
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                @endforeach
-                            </table>
+                                        </div>
+                                        <div class="text-center text-xs mt-2" >
+                                            @if ($errors->any('confirm_password'))
+                                                <span class="text-rose-600">{{$errors->first('confirm_password')}}</span>
+                                            @endif
+                                            @if ($message = Session::get('error'))
+                                                <div class="text-rose-600">
+                                                    {{ $message }}
+                                                </div>
+                                            @endif
+                                            </div>
+                                        <div class="flex justify-center p-2">
+                                            <button type="submit"class="bg-pink w-150px h-30px rounded-md text-white">ยืนยันเปลี่ยนรหัสผ่าน</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        {{ $orders->links() }}
                     </div>
                 </div>
             </main>
         </div>
-    </div>
 </body>
 
 </html>

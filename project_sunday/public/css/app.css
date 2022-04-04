@@ -518,12 +518,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .float-right {
   float: right;
 }
-.float-left {
-  float: left;
-}
-.float-none {
-  float: none;
-}
 .m-auto {
   margin: auto;
 }
@@ -662,6 +656,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-45px {
   margin-top: 45px;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -746,14 +743,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-250px {
   height: 250px;
 }
-.h-24px {
-  height: 24px;
-}
 .h-10 {
   height: 2.5rem;
 }
+.h-24px {
+  height: 24px;
+}
 .h-400px {
   height: 400px;
+}
+.h-20px {
+  height: 20px;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -1270,6 +1270,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1416,6 +1419,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-indigo-700 {
   --tw-text-opacity: 1;
   color: rgb(67 56 202 / var(--tw-text-opacity));
+}
+.text-rose-600 {
+  --tw-text-opacity: 1;
+  color: rgb(225 29 72 / var(--tw-text-opacity));
 }
 .underline {
   -webkit-text-decoration-line: underline;
