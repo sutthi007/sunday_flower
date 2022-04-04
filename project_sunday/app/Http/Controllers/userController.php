@@ -40,19 +40,19 @@ class userController extends Controller
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function order(){
-        $orders = Order::orderBy('id', 'DESC')->paginate(10);
+        $orders = Order::where('status','order')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::all();
-        return view('projects.index-order',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function transit(){
-        $orders = Order::orderBy('id', 'DESC')->paginate(10);
+        $orders = Order::where('status','send')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::all();
-        return view('projects.index-transit',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function success(){
-        $orders = Order::orderBy('id', 'DESC')->paginate(10);
+        $orders = Order::where('status','success')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::all();
-        return view('projects.index-success',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
 
 }
