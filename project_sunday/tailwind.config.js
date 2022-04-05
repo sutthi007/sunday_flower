@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode:'class',
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
@@ -95,7 +96,7 @@ module.exports = {
       },
       padding:{
         '15px':'65px'
-      }
+      },
     },
   },
   themeVariants: ['dark'],
