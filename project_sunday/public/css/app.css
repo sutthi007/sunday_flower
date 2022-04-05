@@ -645,9 +645,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
-.ml-8 {
-  margin-left: 2rem;
-}
 .block {
   display: block;
 }
@@ -1088,9 +1085,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
-.bg-opacity-30 {
-  --tw-bg-opacity: 0.3;
-}
 .bg-fixed {
   background-attachment: fixed;
 }
@@ -1217,10 +1211,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 .text-5xl {
   font-size: 3rem;
@@ -1469,22 +1459,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     background-color: rgb(55 65 81 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-orange-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(249 115 22 / var(--tw-bg-opacity));
-  }
-
   .dark\:bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
-  .dark\:bg-opacity-30 {
-    --tw-bg-opacity: 0.3;
-  }
-
-  .dark\:bg-opacity-70 {
-    --tw-bg-opacity: 0.7;
+  .dark\:bg-orange-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 115 22 / var(--tw-bg-opacity));
   }
 
   .dark\:bg-opacity-10 {
