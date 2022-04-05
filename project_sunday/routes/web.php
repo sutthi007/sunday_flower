@@ -82,7 +82,7 @@ Route::get('/serve-editor',function(){
 Route::get('/customer', function(){
     return view('customer/customer');
 });
-Route::get('/customer', function(){
+Route::get('/customer-editor', function(){
     return view('customer/customer-editor');
 });
 Route::get('/summarize', function(){
@@ -106,3 +106,13 @@ Route::get('/employee-profile-editor',function(){
 Route::get('/login',function(){
     return view('login');
 });
+Route::get('/province',function(){
+    return view('transport-route/route-province');
+});
+Route::get('/district',function(){
+    return view('transport-route/route-district');
+});
+Route::get('/tambon',function(){
+    return view('transport-route/route-tambon');
+});
+

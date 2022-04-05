@@ -10,6 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
     <script src="/js/init-alpine.js"></script>
+  
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -99,6 +100,69 @@
                             <span class="ml-4">รายงานการบริการ</span>
                         </a>
                     </li>
+                    <li class="relative px-6 py-3">
+                        <button
+                          class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                          @click="togglePagesMenu"
+                          aria-haspopup="true"
+                        >
+                          <span class="inline-flex items-center">
+                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-align-center">
+                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
+                            </svg>
+                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                          </span>
+                          <svg
+                            class="w-4 h-4"
+                            aria-hidden="true"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                          <ul
+                            x-transition:enter="transition-all ease-in-out duration-300"
+                            x-transition:enter-start="opacity-25 max-h-0"
+                            x-transition:enter-end="opacity-100 max-h-xl"
+                            x-transition:leave="transition-all ease-in-out duration-300"
+                            x-transition:leave-start="opacity-100 max-h-xl"
+                            x-transition:leave-end="opacity-0 max-h-0"
+                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                            aria-label="submenu"
+                          >
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="/province">จังหวัด</a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="/district">
+                                อำเภอ
+                              </a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="/tambon">
+                                ตำบล
+                              </a>
+                            </li>
+                          </ul>
+                        </template>
+                      </li>
+
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/customer">
@@ -212,6 +276,79 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
+                        <button
+                          class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                          @click="togglePagesMenu"
+                          aria-haspopup="true"
+                        >
+                          <span class="inline-flex items-center">
+                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-align-center">
+                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
+                            </svg>
+                            <span class="ml-4">เส้นทางขนส่ง</span>
+                          </span>
+                          <svg
+                            class="w-4 h-4"
+                            aria-hidden="true"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                          <ul
+                            x-transition:enter="transition-all ease-in-out duration-300"
+                            x-transition:enter-start="opacity-25 max-h-0"
+                            x-transition:enter-end="opacity-100 max-h-xl"
+                            x-transition:leave="transition-all ease-in-out duration-300"
+                            x-transition:leave-start="opacity-100 max-h-xl"
+                            x-transition:leave-end="opacity-0 max-h-0"
+                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                            aria-label="submenu"
+                          >
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="pages/login.html">Login</a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="pages/create-account.html">
+                                Create account
+                              </a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="pages/forgot-password.html">
+                                Forgot password
+                              </a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="pages/404.html">404</a>
+                            </li>
+                            <li
+                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            >
+                              <a class="w-full" href="pages/blank.html">Blank</a>
+                            </li>
+                          </ul>
+                        </template>
+                      </li>
+                      
+                    <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -265,7 +402,40 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
-
+                        <li class="flex">
+                            <button
+                              class="rounded-md focus:outline-none focus:shadow-outline-purple"
+                              @click="toggleTheme"
+                              aria-label="Toggle color mode"
+                            >
+                              <template x-if="!dark">
+                                <svg
+                                  class="w-5 h-5"
+                                  aria-hidden="true"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                                  ></path>
+                                </svg>
+                              </template>
+                              <template x-if="dark">
+                                <svg
+                                  class="w-5 h-5"
+                                  aria-hidden="true"
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path
+                                    fill-rule="evenodd"
+                                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                    clip-rule="evenodd"
+                                  ></path>
+                                </svg>
+                              </template>
+                            </button>
+                          </li>
 
 
                         <!-- Profile menu -->

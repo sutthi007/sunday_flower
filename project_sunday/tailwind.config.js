@@ -98,6 +98,7 @@ module.exports = {
       }
     },
   },
+  themeVariants: ['dark'],
   plugins: [
     require('@tailwindcss/typography'),
   ],
