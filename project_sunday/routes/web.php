@@ -39,7 +39,6 @@ Route::get('projects-order',[userController::class,'order'])->name('projects-ord
 Route::get('projects-transit',[userController::class,'transit'])->name('projects-transit');
 Route::get('projects-success',[userController::class,'success'])->name('projects-success');
 
-
 // Route for order
 Route::resource('FormOrder',OrderController::class);
 Route::post('save',[OrderController::class,'total'])->name('save');
@@ -49,6 +48,7 @@ Route::resource('Profile',ProfileController::class);
 Route::post('Profile/update-password',[ProfileController::class,'update_password'])->name('update_password');
 
 Route::resource('Employee',EmployeeController::class);
+Route::get('customer/add',[EmployeeController::class,'add'])->name('customer/add');
 
 Route::resource('service',ServiceController::class);
 Route::get('/service/add/parcel',[ServiceController::class,'addlistP'])->name('parcel');

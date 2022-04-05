@@ -329,17 +329,18 @@
                                                 <th class="px-4 py-3"></th>
                                                 <th class="px-8 py-3">ราคาค่าบริการ(เริ่มต้น)</th>
                                                 <th class="px-4 py-3"></th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            @foreach ($parcel as $p )
+                                            @foreach ($percel as $p )
                                                 <tr class="text-gray-700 dark:text-gray-400">
                                                     <td class="px-4 py-3 text-sm">{{$p->list}}</td>
                                                     <td class="px-4 py-3 text-sm">{{$p->priceS}}</td>
                                                     <td class="px-4 py-3 text-sm">{{$p->priceM}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$p->PriceL}}</td>
+                                                    <td class="px-4 py-3 text-sm">{{$p->priceL}}</td>
                                                     <td class="flex px-4 py-3 text-sm ">
-                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
+                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$p->id)}}">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                 stroke-width="2">
@@ -347,7 +348,7 @@
                                                                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                             </svg>
                                                         </a>
-                                                        <form action="{{ route('projects.destroy', $order->id) }}"
+                                                        <form action="{{ route('projects.destroy',$p->id) }}"
                                                             method="post">
                                                             @csrf
                                                             @method('DELETE')
@@ -373,7 +374,7 @@
                     <div class="bg-EBEBEB h-100% rounded-md mb-6">
                         <div class="w-1115px  m-auto mt-5  ">
                             <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('flower') }}">เพิ่มรายการ</a> 
+                               <a href="{{ route('flower') }}">เพิ่มรายการ</a>
                             </button>
                         </div>
                         <div class=" m-auto w-1115px mt-16">
@@ -392,17 +393,19 @@
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
                                                 <th class="px-4 py-3">จังหวัดที่ส่งต่อ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                             @foreach ($flower as $f )
                                             <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">{{$f->list}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->priceS}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->priceM}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$f->PriceL}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$f->province}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$f->subdistrict}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$f->price}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$f->nextsend}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$f->nextsend_price}}</td>
                                                 <td class="flex px-4 py-3 text-sm ">
-                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
+                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$f->id)}}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                             stroke-width="2">
@@ -410,7 +413,7 @@
                                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
+                                                    <form action="{{ route('projects.destroy',$f->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -436,7 +439,7 @@
                     <div class="bg-EBEBEB h-100% rounded-md  mb-6">
                         <div class="w-1115px   m-auto mt-5  ">
                             <button class="bg-pink w-150px h-30px rounded-md  float-right text-white">
-                               <a href="{{route('motorcycle')}}">เพิ่มรายการ</a> 
+                               <a href="{{route('motorcycle')}}">เพิ่มรายการ</a>
                             </button>
                         </div>
                         <div class=" m-auto w-1115px   mt-16">
@@ -453,17 +456,17 @@
                                                 <th class="px-4 py-3">จังหวัด</th>
                                                 <th class="px-4 py-3">อำเภอ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                             @foreach ($motorcycle as $m )
                                             <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">{{$m->list}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->priceS}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->priceM}}</td>
-                                                <td class="px-4 py-3 text-sm">{{$m->PriceL}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$m->province}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$m->subdistrict}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$m->price}}</td>
                                                 <td class="flex px-4 py-3 text-sm ">
-                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
+                                                    <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$m->id)}}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                             stroke-width="2">
@@ -471,7 +474,7 @@
                                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
+                                                    <form action="{{ route('projects.destroy',$m->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
@@ -497,7 +500,7 @@
                     <div class="bg-EBEBEB h-100% rounded-md  mb-6">
                         <div class="w-1115px   m-auto mt-5  ">
                             <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('animal')}}">เพิ่มรายการ</a> 
+                               <a href="{{ route('animal')}}">เพิ่มรายการ</a>
                             </button>
                         </div>
                         <div class=" m-auto w-1115px   mt-16">
@@ -513,16 +516,15 @@
                                                 class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">รายการ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
+                                                <th class="px-4 py-3"></th>
                                             </tr>
                                         </thead>
                                         @foreach ($animal as $a )
                                                 <tr class="text-gray-700 dark:text-gray-400">
                                                     <td class="px-4 py-3 text-sm">{{$a->list}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->priceS}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->priceM}}</td>
-                                                    <td class="px-4 py-3 text-sm">{{$a->PriceL}}</td>
+                                                    <td class="px-4 py-3 text-sm">{{$a->price}}</td>
                                                     <td class="flex px-4 py-3 text-sm ">
-                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit',$order->id)}}">
+                                                        <a class="w-6 h-6 mr-2" href="{{route('FormOrder.edit', $a->id)}}">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                 stroke-width="2">
@@ -530,7 +532,7 @@
                                                                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                             </svg>
                                                         </a>
-                                                        <form action="{{ route('projects.destroy', $order->id) }}"
+                                                        <form action="{{ route('projects.destroy', $a->id) }}"
                                                             method="post">
                                                             @csrf
                                                             @method('DELETE')

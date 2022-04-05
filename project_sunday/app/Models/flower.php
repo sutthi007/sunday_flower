@@ -14,6 +14,7 @@ class flower extends Model
         'subdistrict',
         'price',
         'nextsend',
-        'price_nextsend',
+        'nextsend_price',
+        'type_id'
     ];
 }

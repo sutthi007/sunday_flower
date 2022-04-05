@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\customer;
 use App\Models\Order;
 use App\Exports\TransportsDaysExport;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {

@@ -27,6 +27,9 @@ class EmployeeController extends Controller
 
         return view('Employee.employee-editor',compact('user'));
     }
+    public function add(){
+        return view('Employee.employee-add');
+    }
 
     public function update($id,Request $request){
 

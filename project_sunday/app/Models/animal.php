@@ -12,5 +12,6 @@ class animal extends Model
     protected $fillable = [
         'list',
         'price',
+        'type_id'
     ];
 }

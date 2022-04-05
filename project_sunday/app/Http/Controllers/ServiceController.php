@@ -14,22 +14,44 @@ class ServiceController extends Controller
     //
     public function index(){
 
-        $flower = flower::all();
-        $motorcycle = motorcycle::all();
-        $animal = animal::all();
-        $percel = parcel::all();
+        $flower = flower::orderBy('id', 'DESC')->paginate(5);
+        $motorcycle = motorcycle::orderBy('id', 'DESC')->paginate(5);
+        $animal = animal::orderBy('id', 'DESC')->paginate(5);
+        $percel = parcel::orderBy('id', 'DESC')->paginate(5);
        return view('Serviceprojects.serve',compact('flower','motorcycle','animal','percel'));
     }
 
     public function store(Request $request){
        if($request->type == 1){
-            flower::created($request->all());
+            flower::create([
+                'type_id'=>$request->type,
+                'province' => $request->province,
+                'subdistrict' => $request->sub,
+                'price' => $request->price,
+                'nextsend' => $request->next,
+                'nextsend_price' => $request->nextprice,
+            ]);
        }elseif($request->type == 2){
-            motorcycle::created($request->all);
+            motorcycle::create([
+                'type_id' => $request->type,
+                'province' => $request->province,
+                'subdistrict'=> $request->sub,
+                'price'=> $request->price,
+            ]);
        }elseif($request->type == 3){
-           animal::created($request->all());
+           animal::create([
+                'type_id' => $request->type,
+                'list' => $request->list,
+                'price' => $request->price,
+           ]);
        }elseif($request->type == 4){
-           parcel::created($request->all());
+           parcel::create([
+               'type_id' => $request->type,
+               'list' => $request->list,
+               'priceS' => $request->priceS,
+               'priceM' => $request->priceM,
+               'priceL' => $request->priceL,
+           ]);
         }
 
         return redirect()->route('service.index');

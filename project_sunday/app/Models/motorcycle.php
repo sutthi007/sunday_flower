@@ -13,6 +13,7 @@ class motorcycle extends Model
         'province',
         'subdistrict',
         'price',
+        'type_id'
 
     ];
 }
