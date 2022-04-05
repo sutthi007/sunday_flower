@@ -425,10 +425,11 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <form action="{{route('projects.update',$order->id)}}" method="POST">
+                                                    <form action="{{route('projects.update',$order->id)}}" method="post">
                                                         @csrf
+                                                        @method('PUT')
                                                         <input type="hidden" name="status" value="send">
-                                                        <button type="button" class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white" onclick="myFunction()">อัปเดทสถานะ</button>
+                                                        <button class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
                                                     </form>
                                                 </td>
                                             @elseif($order->status == 'send')
@@ -439,7 +440,14 @@
                                                         กำลังจัดส่ง
                                                     </div>
                                                 </td>
-                                                <td></td>
+                                                <td>
+                                                    <form action="{{route('projects.update',$order->id)}}" method="post">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <input type="hidden" name="status" value="success">
+                                                        <button class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                    </form>
+                                                </td>
 
                                             @elseif($order->status == 'success')
                                                 <td class="px-4 py-3 text-sm ">

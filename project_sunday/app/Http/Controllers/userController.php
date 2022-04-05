@@ -57,8 +57,6 @@ class userController extends Controller
     public function update($id,Request $request){
         $order = Order::find($id);
 
-        dd($request);
-
         $order->update([
             'status' => $request->status,
         ]);

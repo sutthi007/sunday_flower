@@ -20,6 +20,7 @@ class Order extends Model
         'price',
         'customer_id',
         'total',
+        'status'
     ];
 
     protected $casts = [
