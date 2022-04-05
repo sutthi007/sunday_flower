@@ -362,7 +362,13 @@
                                                 <label for="">
                                                     ตำแหน่ง :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="แอดมิน" name="role">
+                                                <select
+                                                    class="bg-235 w-200px text-center"
+                                                    id="grid-first-name" type="text" placeholder="" name="role">
+                                                    <option value="">---เลือก----</option>
+                                                    <option value="admin">แอดมิน</option>
+                                                    <option value="employee">พนักงานขนส่ง</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -419,7 +425,6 @@
                                                     จังหวัด :
                                                 </label>
                                                 <input class="bg-235 w-200px" type="text"placeholder="กรุงเทพ" name="province">
-                                                <input type="hidden" value="sssss@test.com" name="email">
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
                                             </div>
@@ -437,7 +442,7 @@
                                                 <label for="">
                                                     เบอร์โทร :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="0588888" name="phone" >
+                                                <input class="bg-235 w-200px" type="tel"placeholder="0588888" name="phone" >
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
