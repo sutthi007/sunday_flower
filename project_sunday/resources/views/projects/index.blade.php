@@ -388,8 +388,8 @@
                                         <th class="px-4 py-3">ที่อยู่</th>
                                         <th class="px-4 py-3">วันที่</th>
                                         <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3">รหัสติดตาม</th>
                                         <th class="px-4 py-3"></th>
+                                        <th class="px-4 py-3">รหัสติดตาม</th>
                                     </tr>
                                 </thead>
                                 @php($i = 1)
@@ -424,6 +424,13 @@
                                                         ออเดอร์
                                                     </div>
                                                 </td>
+                                                <td>
+                                                    <form action="{{route('projects.update',$order->id)}}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="status" value="send">
+                                                        <button type="button" class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white" onclick="myFunction()">อัปเดทสถานะ</button>
+                                                    </form>
+                                                </td>
                                             @elseif($order->status == 'send')
                                                 @php($s++)
                                                 <td class="px-4 py-3 text-sm ">
@@ -432,6 +439,8 @@
                                                         กำลังจัดส่ง
                                                     </div>
                                                 </td>
+                                                <td></td>
+
                                             @elseif($order->status == 'success')
                                                 <td class="px-4 py-3 text-sm ">
                                                     <div
@@ -439,6 +448,7 @@
                                                         จัดสังสำเร็จ
                                                     </div>
                                                 </td>
+                                                <td></td>
                                             @endif
 
                                             <td class="px-4 py-3 text-sm ">
@@ -478,6 +488,11 @@
             </main>
         </div>
     </div>
+    <script>
+        function myFunction() {
+          confirm("ยืนยันการอัปเดทสถานะ");
+        }
+    </script>
 </body>
 
 </html>

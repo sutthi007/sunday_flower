@@ -54,5 +54,16 @@ class userController extends Controller
         $status = Order::all();
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
+    public function update($id,Request $request){
+        $order = Order::find($id);
+
+        dd($request);
+
+        $order->update([
+            'status' => $request->status,
+        ]);
+
+        return redirect()->route('projects.index');
+    }
 
 }
