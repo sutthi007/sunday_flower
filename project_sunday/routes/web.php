@@ -17,37 +17,40 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/index', function(){
-    return view('index');
+    return view('index/index');
 });
 Route::get('/index-editor',function(){
-    return view('index-editor');
+    return view('index/index-editor');
 });
 Route::get('/index-update',function(){
-    return view('index-update');
+    return view('index/index-update');
 });
 Route::get('/order', function(){
-    return view('order');
+    return view('order/order');
 });
 Route::get('/order-step-1', function(){
-    return view('order-step-1');
+    return view('order/order-step-1');
+});
+Route::get('/order-end', function(){
+    return view('order/order-end');
 });
 Route::get('/profile', function(){
-    return view('profile');
+    return view('profile/profile');
 });
 Route::get('/profile-editor', function(){
-    return view('profile-editor');
+    return view('profile/profile-editor');
 });
 Route::get('/employee', function(){
-    return view('employee-information');
+    return view('employee-data/employee-information');
 });
 Route::get('/employee-data', function(){
-    return view('employee-data');
+    return view('employee-data/employee-data');
 });
 Route::get('/employee-editor', function(){
-    return view('employee-editor');
+    return view('employee-data/employee-editor');
 });
 Route::get('/employee-add', function(){
-    return view('employee-add');
+    return view('employee-data/employee-add');
 });
 Route::get('/serve', function(){
     return view('serve/serve');
@@ -77,7 +80,10 @@ Route::get('/serve-editor',function(){
     return view('serve/editor/serve-editor');
 });
 Route::get('/customer', function(){
-    return view('customer');
+    return view('customer/customer');
+});
+Route::get('/customer', function(){
+    return view('customer/customer-editor');
 });
 Route::get('/summarize', function(){
     return view('summarize');

@@ -10,7 +10,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
 
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="/js/init-alpine.js"></script>
     <script src="/js/popup-ouput.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/employee">
+                            href="cards.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -70,8 +70,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -86,10 +87,8 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/serve">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -172,7 +171,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="/employee">
+                            href="cards.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -183,7 +182,9 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -198,9 +199,7 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="buttons.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -321,62 +320,259 @@
             <main class="h-full overflow-y-auto">
                 <div class="px-6 mx-auto grid w-1250px">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        อัปเดตกำลังส่ง
+                        รายการ
                     </h2>
-                    <div class="bg-EBEBEB h-100%">
-                        <div class="m-auto w-1115px mt-16 bg-white mb-6">
-                            <div class="bg-whtie w-1115px ">
-                                <div class=" p-8 w-full  ml-6">
-                                    <div class="bg-235 w-320px m-auto  h-40px mb-6">
-                                        <div class="p-2">
-                                            <label for="">
-                                                จังหวัด :
+                    <div class="bg-EBEBEB h-100% ">
+                        <div class="m-auto w-1115px  mt-16 ">
+                            <form class="w-auto w-1115px  max-w-lg ">
+                                    <div class="flex w-1115px justify-between">
+                                        <div class=" w-200px px-3 mb-6 md:mb-0 w-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                ชื่อ
                                             </label>
-                                            <input class="bg-235 w-150px" type="text" placeholder="กล่องโฟม" disabled>
+                                            <input
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name" type="text" placeholder="นีออนรักเมย์" disabled />
+                                        </div>
+                                        <div class="w-200px px-3 mb-6 md:mb-0">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                จังหวัด
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name" type="text" placeholder="เชียงราย" disabled />
+                                        </div>
+                                        <div class="w-200px px-3 mb-6 md:mb-0">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                เบอร์โทร
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white w-200px mr-32"
+                                                id="grid-first-name" type="text" placeholder="0855555555" disabled />
+                                        </div>
+                                        <div class="w-250px px-3 mb-6 md:mb-0 mt-6  ">
+                                            <button
+                                                class="bg-pink rounded mb-6 m-auto w-150px text-center p-1 text-white float-right  "
+                                                type="button" onclick="toggleModal('modal-id')">
+                                                เพิ่มรายการส่ง
+                                            </button>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px m-auto  h-40px mb-6">
-                                        <div class="p-2">
-                                            <label for="">
-                                                อำเภอ :
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="150" disabled>
+                                    
+                                <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                                    id="modal-id">
+                                    <div class="relative w-auto my-6 mx-auto max-w-3xl">
+                                        <!--content-->
+                                        <div
+                                            class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                            <!--header-->
+                                            <div
+                                                class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                                <h3 class="text-3xl font-semibold">
+                                                    เพิ่มรายการส่ง
+                                                </h3>
+                                                <button class="p-1 ml-auto  " onclick="toggleModal('modal-id')">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;">
+                                                        <path
+                                                            d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z">
+                                                        </path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <!--body-->
+                                            <div class="relative p-6 flex-auto">
+                                                <form action="">
+                                                    <div class="">
+                                                        <div class="flex flex-wrap -mx-3 mb-6">
+                                                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                                <label
+                                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                    for="grid-first-name">
+                                                                    ชื่อ
+                                                                </label>
+                                                                <input
+                                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                    id="grid-first-name" type="text" placeholder="" />
+                                                            </div>
+                                                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                                <label
+                                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                    for="grid-first-name">
+                                                                    อำเภอ
+                                                                </label>
+                                                                <select
+                                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                    id="grid-first-name" type="text" placeholder="">
+                                                                    <option value="">---เลือก----</option>
+                                                                    <option value="">หนองหาร</option>
+                                                                    <option value="">สันผีเสื้น</option>
+                                                                    <option value="">เมือง</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                                <label
+                                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                    for="grid-first-name">
+                                                                    จังหวัด
+                                                                </label>
+                                                                <select
+                                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                    id="grid-first-name" type="text" placeholder="">
+                                                                    <option value="">---เลือก----</option>
+                                                                    <option value="">เชียงใหม่</option>
+                                                                    <option value="">ลำปาง</option>
+                                                                    <option value="">เชียงราย</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                                <label
+                                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                    for="grid-first-name">
+                                                                    เบอร์โทร
+                                                                </label>
+                                                                <input
+                                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                    id="grid-first-name" type="text" placeholder="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="flex flex-wrap -mx-3 mb-6">
+                                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                            <label
+                                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                for="grid-first-name">
+                                                                ประเภท
+                                                            </label>
+                                                            <select
+                                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                id="grid-first-name" type="text" placeholder="">
+                                                                <option value="">---เลือก----</option>
+                                                                <option value="">แมว</option>
+                                                                <option value="">ผลไม้และผัก</option>
+                                                                <option value="">พัสดุภัณฑ์</option>
+                                                                <option value="">พัสดุมอไซต์</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                            <label
+                                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                for="grid-first-name">
+                                                                รายการ
+                                                            </label>
+                                                            <input
+                                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                id="grid-first-name" type="text" placeholder="" />
+                                                        </div>
+                                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                            <label
+                                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                for="grid-first-name">
+                                                                จำนวน
+                                                            </label>
+                                                            <input
+                                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                id="grid-first-name" type="text" placeholder="" />
+                                                        </div>
+                                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                                            <label
+                                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                                for="grid-first-name">
+                                                                ราคา
+                                                            </label>
+                                                            <input
+                                                                class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                                id="grid-first-name" type="text" placeholder="" />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!--footer-->
+                                            <div
+                                                class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                                <button
+                                                    class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    ยกเลิก
+                                                </button>
+                                                <button
+                                                    class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    ยีนยัน
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="bg-235  w-320px m-auto h-40px mb-6">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาค่าบริการ:
-                                            </label>
-                                            <input class="bg-235 w-200px" type="text" placeholder="200" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="bg-235  w-320px m-auto h-40px mb-6">
-                                        <div class="p-2">
-                                            <label for="">
-                                                จังหวัดที่ส่งต่อ :
-                                            </label>
-                                            <input class="bg-235 w-150px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
-                                    <div class="bg-235  w-320px m-auto h-40px">
-                                        <div class="p-2">
-                                            <label for="">
-                                                ราคาค่าบริการ :
-                                            </label>
-                                            <input class="bg-235 w-150px" type="text" placeholder="250" disabled>
-                                        </div>
-                                    </div>
-                                     <div class=" w-150px h-30px m-auto mt-6" >
-                                    <button class="bg-pink w-150px h-30px rounded-md  text-white"><a href="/serve">บันทึก</a></button>
                                 </div>
+                                <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop">
                                 </div>
-                            </div>
+
+                                <!-- New Table -->
+                                <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px text-center">
+                                    <div class="w-full overflow-x-auto">
+                                        <table class="w-full whitespace-no-wrap">
+                                            <thead>
+                                                <tr
+                                                    class="text-xs font-semibold tracking-wide text-left text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                    <th class="px-4 py-3">ลำ</th>
+                                                    <th class="px-4 py-3">รายการ</th>
+                                                    <th class="px-4 py-3">จำนวน</th>
+                                                    <th class="px-4 py-3">ชื่อผู้รับ</th>
+                                                    <th class="px-4 py-3">ที่อยู่</th>
+                                                    <th class="px-4 py-3">เพื่มเติม</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                                <tr class="text-gray-700 dark:text-gray-400">
+                                                    <td class="px-4 py-3">1</td>
+                                                    <td class="px-4 py-3 text-sm">ดอกไม้</td>
+                                                    <td class="px-4 py-3 text-xs">45</td>
+                                                    <td class="px-4 py-3 text-sm">นีออน</td>
+                                                    <td class="px-4 py-3 text-sm">11/1 ต.สันผีเสื้น อ.เมือง จ.เชียงใหม่ </td>
+                                                    <td class="px-4 py-3 text-sm">
+                                                        <button class="w-6 h-6 mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                          </svg></button>
+                                                        <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                          </svg></button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="mb-4 flex justify-end w-1115px m-auto">
+                                    <label class=""> ทั้งหมด : </label>
+                                    <input
+                                        class="h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        type="text" placeholder="500,000,000,000" disabled />
+                                    บาท
+                                </div>
+                                <div class="mr-auto flex justify-end w-1115px m-auto">
+                                    <div class="h-30px bg-pink rounded mb-6 w-100px text-center p-1">
+                                        <a class="text-white" href="/dist/order.html">
+                                            ย้อนกลับ
+                                        </a>
+                                    </div>
+                                    <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
+                                        <a class="text-white" href="/order-end"> ยืนยัน </a>
+                                    </div>
+                                   
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
             </main>
         </div>
+    </div>
 </body>
 
 </html>
