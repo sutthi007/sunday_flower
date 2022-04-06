@@ -60,7 +60,7 @@
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/employee"">
-                            <svg class="    w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                            <svg class="      w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                             <path
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
@@ -439,22 +439,21 @@
                     </ul>
                 </div>
             </header>
-            <main class="h-full overflow-y-auto ">
-                <div class="px-6 mx-auto grid w-1250px ">
+            <main class="h-full overflow-y-auto">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         หน้าหลัก
                     </h2>
                     <!-- Cards -->
-                    <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-900 place-content-center">
+                    <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 ">
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs bg-fuchsia-400 place-content-center">
-                                <div class="place-content-center w-250px ">
+                                class="flex justify-between p-4 bg-white   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                <div class="place-content-center ">
                                     <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
                                     <path>
-                                        <img src="/img/order.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/order.svg" alt="" class="" />
                                     </path>
                                 </div>
                                 <div class="p-3 mr-69 rounded-full ">
@@ -465,11 +464,11 @@
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex items-center p-4 rounded-lg shadow-xs w-69 bg-amber-400 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">กำลังส่ง</p>
+                                class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
+                                <div class="place-content-center ">
+                                    <p class="text-2xl text-white">กำลังส่ง</p>
                                     <path>
-                                        <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/delivery-truck.svg" alt="" />
                                     </path>
                                 </div>
                                 <div class="p-3 mr-4 rounded-full dark:text-orange-100 ">
@@ -480,11 +479,11 @@
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs  bg-green-300 place-content-center">
-                                <div class="place-content-center w-250px">
+                                class="flex justify-between p-4 bg-white rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                <div class="place-content-center  ">
                                     <p class="mb-2 text-2xl text-white">สำเร็จ</p>
                                     <path>
-                                        <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/clipboard.svg" alt="" />
                                     </path>
                                 </div>
                                 <div class="p-3 mr-4 rounded-full    ml-55">
@@ -493,7 +492,27 @@
                             </div>
                         </a>
                     </div>
-
+                    {{-- show date --}}
+                    <div clas="w-full ">
+                        <div class="flex flex-row-reverse mb-4">
+                            <div class="bg-white rounded-lg h-50px w-200px dark:bg-gray-800">
+                                <div class="ml-6 pt-3">
+                                    <input class="dark:text-white dark:bg-gray-800" type="date">
+                                </div>
+                            </div>
+                            <div class="basis-1/6 mr-3">
+                                <div class="bg-white rounded-lg h-50px w-150px dark:bg-gray-800">
+                                    <div class="w-100px m-auto pt-3">
+                                    <select class="w-100px dark:text-white dark:bg-gray-800" type="date">
+                                        <option value="">ออเดอร์</option>
+                                        <option value="">กำลังส่ง</option>
+                                        <option value="">สำเร็จ</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- New Table -->
                     <div class="w-full overflow-hidden rounded-lg shadow-xs text-center ">
                         <div class="w-full overflow-x-auto">
@@ -514,7 +533,7 @@
                                 <tbody class="bg-white divide-y text-center dark:divide-gray-700 dark:bg-gray-800 ">
                                     <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="    px-4 py-3 text-sm"> นีออน</td>
+                                        <td class="      px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
                                         <td class="px-4 py-3 text-sm ">12/2/56</td>
                                         <td class="px-4 py-3 text-sm ">
@@ -549,7 +568,7 @@
                                     </tr>
                                     <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="    px-4 py-3 text-sm"> นีออน</td>
+                                        <td class="      px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
                                         <td class="px-4 py-3 text-sm ">12/2/56</td>
                                         <td class="px-4 py-3 text-sm ">
@@ -568,7 +587,7 @@
                                     </tr>
                                     <tr class="text-gray-700 dark:text-white">
                                         <td class="px-4 py-3 text-sm"">1</td>
-                                        <td class="    px-4 py-3 text-sm"> นีออน</td>
+                                        <td class="      px-4 py-3 text-sm"> นีออน</td>
                                         <td class="px-4 py-3 text-sm ">11/1 ต.สันผีเสื้อ อ.เมือง จ.เชียงใหม่ </td>
                                         <td class="px-4 py-3 text-sm ">12/2/56</td>
                                         <td class="px-4 py-3 text-sm ">

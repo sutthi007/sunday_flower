@@ -266,7 +266,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
-
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
 
 
                         <!-- Profile menu -->
@@ -318,7 +331,7 @@
                 </div>
             </header>
             <main class="h-full overflow-y-auto ">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         อัปเดตกำลังส่ง
                     </h2>
@@ -329,8 +342,8 @@
                                 <div class="w-200px m-auto text-center mb-6 text-xl">
                                     <h1>ผู้ส่ง</h1>
                                 </div>
-                                <div class="flex flex-wrap -mx-3 mb-6">
-                                    <div class="  md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
+                                    <div class="w-full   px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -342,7 +355,7 @@
                                            
                                        
                                     </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -352,7 +365,7 @@
                                             class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="นาย ใจดี และนะ" />
                                     </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -364,7 +377,7 @@
                                             
                                        
                                     </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -374,7 +387,7 @@
                                             class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="สันทราย">
                                     </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -384,7 +397,7 @@
                                             class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เชียงใหม่">
                                     </div>
-                                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="w-full px-3 mb-6 md:mb-0 ">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                             for="grid-first-name">
@@ -399,9 +412,9 @@
                             <div class="w-200px m-auto text-center mb-6 text-xl">
                                 <h1>ผู้รับ</h1>
                             </div>
-                            <div class="flex flex-wrap -mx-3 mb-6">
+                            <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
                                 
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         for="grid-first-name">
@@ -411,7 +424,7 @@
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         id="grid-first-name" type="text" placeholder="นางสาว ดีไม ไม่รู้" />
                                 </div>
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         for="grid-first-name">
@@ -421,7 +434,7 @@
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         id="grid-first-name" type="text" placeholder="สันผีเสื้อ" />
                                 </div>
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         for="grid-first-name">
@@ -431,7 +444,7 @@
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         id="grid-first-name" type="text" placeholder="เมือง" />
                                 </div>
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="w-full px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         for="grid-first-name">
@@ -442,7 +455,7 @@
                                             id="grid-first-name" type="text" placeholder="เชียงใหม่">
                                         
                                 </div>
-                                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                         for="grid-first-name">
@@ -473,6 +486,50 @@
             </main>
         </div>  
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

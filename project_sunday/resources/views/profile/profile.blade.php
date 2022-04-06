@@ -103,6 +103,56 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/province">จังหวัด</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/district">
+                                        อำเภอ
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/tambon">
+                                        ตำบล
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                    <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -184,7 +234,7 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -214,6 +264,56 @@
                             </svg>
                             <span class="ml-4">รายงานการบริการ</span>
                         </a>
+                    </li>
+                    <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/province">จังหวัด</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/district">
+                                        อำเภอ
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/tambon">
+                                        ตำบล
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -269,6 +369,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -319,130 +433,167 @@
             </header>
             <!-- Profile -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid">
-                    <form class="h-100% text-center flex mt-6 m-auto  ">
-                        <div class="w-568px bg-white dark:bg-white dark:bg-opacity-10 h-974px rounded-lg shadow-lg ">
-                            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-16">
+                <div class="container px-6 mx-auto grid  ">
+                    <div class="grid m-auto mb-8 md:grid-cols-1 xl:grid-cols-2 mt-6  ">
+                        <div class=" bg-white  dark:bg-gray-800 rounded-lg shadow-lg">
+                            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-7 text-center">
                                 โปรไฟล์
                             </h2>
-                            <div class="flex justify-center  ">
-                            </div>
-                            <div class="w-500px mx-auto  ">
-                                <div class=" pt-15px w-350px m-auto ">
-                                    <div class="bg-neutral-300   h-50px mb-3">
-                                        <label for="">
+                            <div class=" mx-auto mt-10  ">
+                                <div class=" w-350px m-auto items-center">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
+                                        <label class="ml-4 dark:text-white" for="">
                                             วันเดือนปีเกิด :
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นาย ตู่ จันทร์อังคาร" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ตำบล:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="2323232323" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             อำเภอ:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             จังหวัด:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ที่อยู่:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ถนน:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             หมู่บ้าน:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ไปรษณีย์:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="นายก" disabled>
                                     </div>
-                                </div>
-                                <button class="bg-pink w-145px h-30px rounded-lg mt-150px text-white"><a href="/profile-editor">แก้ไข</a></button>
-                            </div>
-                            <div class="wu">
-                                <div>
-
+                                    <div class=" text-center mt-45px">
+                                        <button class="bg-pink w-145px h-30px mb-6 rounded-lg text-white "><a
+                                                href="/profile-editor">แก้ไข</a></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class=" ml-4">
-                            <div class="w-568px bg-white h-477px rounded-lg shadow-lg ">
-                                <div class="flex justify-center  ">
-                                    <div class=" w-40 h-40">
-                                        <img src="img/hd.jpeg" class="object-cover rounded-full h-full w-full mt-12">
+                        <div class=" md:ml-0 xl:ml-3 mt-20px xl:mt-0 ">
+                            <div class="  bg-white dark:bg-gray-800 rounded-lg shadow-lg  h-400px">
+                                <div class="w-400px m-auto p-4">
+                                    <div class="m-auto w-40 h-40  ">
+                                        <img src="img/hd.jpeg" class="object-cover rounded-full h-full w-full ">
                                     </div>
                                 </div>
-                                <div class="w-500px mx-auto  ">
-                                    <div class=" pt-15px w-350px m-auto ">
-                                        <div class="bg-neutral-300 h-50px mb-3">
-                                            <label for="">
-                                                ชื่อ:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="นาย ตู่ จันทร์อังคาร" disabled>
-                                        </div>
-                                        <div class="bg-neutral-300  h-50px mb-3">
-                                            <label for="">
-                                                เลขผู้ใช้งาน:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="2323232323" disabled>
-                                        </div>
-                                        <div class="bg-neutral-300  h-50px mb-3">
-                                            <label for="">
-                                                ตำแหน่ง:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="นายก" disabled>
-                                        </div>
-
+                                <div class="m-auto w-350px ">
+                                    <div class="bg-neutral-300 h-50px mb-3 dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
+                                            ชื่อ:
+                                        </label>
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                            placeholder="นาย ตู่ จันทร์อังคาร" disabled>
+                                    </div>
+                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
+                                            เลขผู้ใช้งาน:
+                                        </label>
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                            placeholder="2323232323" disabled>
+                                    </div>
+                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900">
+                                        <label class="ml-4 dark:text-white" for="">
+                                            ตำแหน่ง:
+                                        </label>
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                            placeholder="นายก" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-568px bg-white h-476px mt-20px  rounded-lg shadow-lg ">
+                            <div class=" bg-white h-400px mt-20px text-center  rounded-lg shadow-lg dark:bg-gray-800">
                                 <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10">
                                     บัตรประชาชน
                                 </h2>
-                                  <div class=" w-350px h-150px m-auto border-4 border-green-000 p-8 text-center mt-24" >
-                                      <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
-                                      <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
-                                  </div>
+                                <div class=" w-350px h-150px m-auto border-4 border-green-000 p-8 text-center mt-24">
+                                    <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
+                                    <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </main>
         </div>
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>
