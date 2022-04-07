@@ -22,20 +22,20 @@
   <body class="font-prompt">
     <div class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
       <div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800" >
-        <div class="flex flex-col overflow-y-auto md:flex-row h-400px ">
-          <div class="h-32 md:h-auto md:w-1/2 bg-pink" >
-            <div class="bg-fixed h-full w-full " >
-              <img class="p-8 m-auto w-300px"  src="/img/logo.png" alt="">
-              <h1 class="p-8  w-full ml-2 text-3xl text-white ">Chian Mai Sunday flower</h1>
+        <div class="flex flex-col overflow-y-auto md:flex-row  ">
+          <div class="h-32 md:h-auto md:w-1/2 bg-pink  " >
+            <div class=" text-center p-10 mt-6" >
+              <img class="m-auto w-200px  md:block hidden"  src="/img/logo.png" alt="">
+              <h1 class="w-300px mt-6  text-3xl text-white m-auto md:block hidden">CHIAN MAI SUNDAY FLOWER</h1>
             </div>
           </div>
           <div class="flex items-center justify-center p-1 sm:p-12 md:w-1/2">
             <form action="{{ route('login') }}" method="POST">
               @csrf
 
-              <div class="w-full">
+              <div class="w-300px">
                 <h1
-                  class="mb-4 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+                  class="mb-4 text-4xl font-semibold text-gray-700 dark:text-gray-200"
                 >
                   Login
                 </h1>
@@ -66,7 +66,7 @@
                   Log in
                 </button>
                 <hr class="my-8" />
-                <p class="mt-4">
+                <p class="mt-4 mb-4">
                   <a
                     class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
                     href="{{ route('password.request') }}"
