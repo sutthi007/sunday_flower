@@ -445,8 +445,8 @@
                                         <label class="ml-4 dark:text-white" for="">
                                             วันเดือนปีเกิด :
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
-                                            placeholder="นาย ตู่ จันทร์อังคาร" disabled>
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900  dark:text-white" type="date"
+                                             >
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900">
                                         <label class="ml-4 dark:text-white" for="">
