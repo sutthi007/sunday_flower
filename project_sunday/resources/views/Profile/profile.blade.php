@@ -35,7 +35,7 @@
                 @can('admin')
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -51,7 +51,7 @@
                         <li class="relative px-6 py-3">
                             <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
-                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                                 href="{{ route('Profile.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -314,7 +314,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -394,15 +394,32 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <div class="flex justify-center flex-1 lg:mr-32">
+                       
+                    </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
-                                    alt="" aria-hidden="true" />
+                                    src="{{ asset('img/Profile/' . Auth::user()->Path_imageProfile) }}" alt=""
+                                    aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -412,7 +429,7 @@
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{route('Profile.show',Auth::user()->id)}}">
+                                            href="{{ route('Profile.show', Auth::user()->id) }}">
                                             @csrf
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -426,21 +443,21 @@
                                         </a>
                                     </li>
                                     <li class="flex">
-                                    <form method="POST" action="{{ route('logout') }}">
-                                         @csrf
-                                        <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                viewBox="0 0 24 24" stroke="currennColor">
-                                                <path
-                                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                                </path>
-                                            </svg>
-                                            <span>ออกจากระบบ</span>
-                                        </a>
-                                    </form>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currennColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
+                                                <span>ออกจากระบบ</span>
+                                            </a>
+                                        </form>
                                     </li>
                                 </ul>
                             </template>
@@ -450,132 +467,134 @@
             </header>
             <!-- Profile -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid">
-                    <form class="h-100% text-center flex mt-6 m-auto ">
-                        <div class="w-568px bg-white h-974px rounded-lg shadow-lg ">
-                            <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-16">
+                <div class="container px-6 mx-auto grid  ">
+                    <form class="grid m-auto mb-8 md:grid-cols-1 xl:grid-cols-2 mt-6  ">
+                        <div class=" bg-white  dark:bg-gray-800 rounded-lg shadow-lg md:w-auto w-350px">
+                            <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-7 text-center">
                                 โปรไฟล์
                             </h2>
-                            <div class="flex justify-center  ">
-                            </div>
-                            <div class="w-500px mx-auto  ">
-                                <div class=" pt-15px w-350px m-auto ">
-                                    <div class="bg-neutral-300   h-50px mb-3">
-                                        <label for="">
+                            <div class=" mx-auto mt-10  ">
+                                <div class=" w-300px m-auto items-center mx-auto ">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
+                                        <label class="ml-4 dark:text-white" for="">
                                             วันเดือนปีเกิด :
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="{{ $user->birthday }}" disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30px w-94px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->birthday }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ตำบล:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text" placeholder=""
-                                            disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30pxw-100px  mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
                                             อำเภอ:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="{{ $user->city }}" disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30pxw-100px  mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->city }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
                                             จังหวัด:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="{{ $user->province }}" disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->province }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ที่อยู่:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="{{ $user->address }}" disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30pxw-100px  mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->address }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3">
-                                        <label for="">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
                                             ไปรษณีย์:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                            placeholder="{{ $user->zipcode }}" disabled>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg h-30px w-50px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->zipcode }}" disabled>
                                     </div>
-                                </div>
-                                <a href="{{ route('Profile.edit',Auth::user()->id) }}">
-                                    <div class="bg-pink w-145px h-30px rounded-lg mt-150px text-white p-1 m-auto ">
-                                        แก้ไข
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="wu">
-                                <div>
-
                                 </div>
                             </div>
                         </div>
-                        <div class=" ml-4">
-                            <div class="w-568px bg-white h-477px rounded-lg shadow-lg ">
-                                <div class="flex justify-center  ">
-                                    <div class=" w-40 h-40">
-                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full mt-12">
+                        <div class=" md:ml-0 xl:ml-3 mt-20px xl:mt-0  w-350px">
+                            <div class="  bg-white dark:bg-gray-800 rounded-lg shadow-lg  h-400px">
+                                <div class=" m-auto p-4">
+                                    <div class=" m-auto w-40 h-40  ">
+                                        <img src="{{ asset('img/Profile/' . $user->Path_imageProfile) }}"
+                                            class="object-cover rounded-full h-full w-full ">
                                     </div>
                                 </div>
-                                <div class="w-500px mx-auto  ">
-                                    <div class=" pt-15px w-350px m-auto ">
-                                        <div class="bg-neutral-300 h-50px mb-3">
-                                            <label for="">
-                                                ชื่อ:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="{{ $user->name }}" disabled>
-                                        </div>
-                                        <div class="bg-neutral-300  h-50px mb-3">
-                                            <label for="">
-                                                เลขผู้ใช้งาน:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="{{ $user->IDuser }}" disabled>
-                                        </div>
-                                        <div class="bg-neutral-300  h-50px mb-3">
-                                            <label for="">
-                                                ตำแหน่ง:
-                                            </label>
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="text"
-                                                placeholder="{{ $user->role }}" disabled>
-                                        </div>
-
+                                <div class="m-auto w-300px ">
+                                    <div class="bg-neutral-300 h-50px mb-3 dark:bg-gray-900 rounded-lg" >
+                                        <label class="ml-4 dark:text-white" for="">
+                                            ชื่อ:
+                                        </label>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->name }}" disabled>
+                                    </div>
+                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
+                                            เลขผู้ใช้งาน:
+                                        </label>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-94px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->IDuser }}" disabled>
+                                    </div>
+                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                        <label class="ml-4 dark:text-white" for="">
+                                            ตำแหน่ง:
+                                        </label>
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->role }}" disabled>
                                     </div>
                                 </div>
                             </div>
-                            <div class="w-568px bg-white h-476px mt-20px  rounded-lg shadow-lg ">
+                            <div class=" bg-white h-400px mt-20px text-center  rounded-lg shadow-lg dark:bg-gray-800">
                                 <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10">
                                     บัตรประชาชน
                                 </h2>
                                 <div class=" W-500p m-auto pt-15 ">
 
-                                    @if (Auth::user()->where('Path_imageFront','Path_imageBack') == null)
-
+                                    @if (Auth::user()->where('Path_imageFront', 'Path_imageBack') == null)
                                         <label for="">
                                             เอกสารประจำประชาชน หน้า
-                                            </label>
-                                            <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
-                                                <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                            </div>
-
-                                            <label class="pt-16" for="">
-                                                เอกสารประจำประชาชน หลัง
-                                            </label>
-
-                                            <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
-                                                <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                            </div>
-                                    @endif
-                                    <div class=" w-350px h-150px m-auto border-4 border-green-000 p-8 text-center mt-24" >
-                                            <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
-                                            <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
+                                        </label>
+                                        <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
+                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
                                         </div>
+
+                                        <label class="pt-16" for="">
+                                            เอกสารประจำประชาชน หลัง
+                                        </label>
+
+                                        <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
+                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
+                                        </div>
+                                    @endif
+                                    <div
+                                        class=" w-250px h-150px m-auto border-4 border-green-000 p-8 text-center mt-10">
+                                        <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
+                                        <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
+                                        
+                                    
+                                    </div>
+                                    <a href="{{ route('Profile.edit', Auth::user()->id) }}">
+                                            <div  href="{{ route('Profile.edit', Auth::user()->id) }}" class="bg-pink w-145px h-30px  rounded-lg text-white p-1 m-auto text-center mt-10 ">
+                                                แก้ไข
+                                            </div>
+                                        </a>
                                 </div>
                             </div>
                         </div>
@@ -584,6 +603,50 @@
             </main>
         </div>
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

@@ -410,6 +410,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -423,7 +437,7 @@
                                 <ul x-transition:leave="transition ease-in duration-150"
                                     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                     @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu"
-                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                                    class="absolute right-0 w-40 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -465,38 +479,38 @@
                 </div>
             </header>
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         หน้าหลัก
                     </h2>
                     <!-- Cards -->
                     <div
-                        class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-3 ml-69 dark:bg-gray-800 place-content-center">
+                        class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 container mx-auto">
                         <!-- Card -->
                         <a href="{{route('projects-order')}}">
                             <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs bg-fuchsia-400 place-content-center">
-                                <div class="place-content-center w-250px h-150px">
+                                class="flex justify-between p-4   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                <div class="place-content-center">
                                     <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
                                     <path>
-                                        <img src="/img/order.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/order.svg" alt="" />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-69 rounded-full dark:text-orange-100 dark:bg-orange-500">
+                                <div class="p-3 mr-4 rounded-full   ">
                                     <p class="text-50px text-white">{{ $status->where('status', 'order')->count() }}</p>
                                 </div>
                             </div>
                         </a>
                         <!-- Card -->
                         <a href="{{ route('projects-transit')}}">
-                            <div class="flex items-center p-4 rounded-lg shadow-xs w-69 bg-amber-400 place-content-center">
-                                <div class="place-content-center w-250px">
-                                    <p class="mb-2 text-2xl text-white">กำลังส่ง</p>
+                            <div class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
+                                <div class="place-content-center">
+                                    <p class=" text-2xl text-white">กำลังส่ง</p>
                                     <path>
-                                        <img src="/img/delivery-truck.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/delivery-truck.svg" alt="" />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500">
+                                <div class="p-3 mr-4 rounded-full">
                                     <p class="text-50px text-white">{{ $status->where('status', 'send')->count() }}</p>
                                 </div>
                             </div>
@@ -504,18 +518,39 @@
                         <!-- Card -->
                         <a href="{{ route('projects-success')}}">
                             <div
-                                class="flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800 bg-green-300 place-content-center">
-                                <div class="place-content-center w-250px">
+                                class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                <div class="place-content-center">
                                     <p class="mb-2 text-2xl text-white">สำเร็จ</p>
                                     <path>
-                                        <img src="/img/clipboard.svg" alt="" class="w-100px h-100px" />
+                                        <img src="/img/clipboard.svg" alt=""  />
                                     </path>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full dark:text-orange-100 dark:bg-orange-500 ml-55">
+                                <div class="p-3 mr-4 rounded-full">
                                     <p class="text-50px text-white">{{ $status->where('status', 'success')->count() }}</p>
                                 </div>
                             </div>
                         </a>
+                    </div>
+                    {{-- show date --}}
+                    <div clas="w-full ">
+                        <div class="flex flex-row-reverse mb-4">
+                            <div class="bg-white rounded-lg h-50px w-200px dark:bg-gray-800">
+                                <div class="ml-6 pt-3">
+                                    <input class="dark:text-white dark:bg-gray-800" type="date">
+                                </div>
+                            </div>
+                            <div class="basis-1/6 mr-3">
+                                <div class="bg-white rounded-lg h-50px w-150px dark:bg-gray-800">
+                                    <div class="w-100px m-auto pt-3">
+                                    <select class="w-100px dark:text-white dark:bg-gray-800" type="date">
+                                        <option value="">ออเดอร์</option>
+                                        <option value="">กำลังส่ง</option>
+                                        <option value="">สำเร็จ</option>
+                                    </select>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- New Table -->
                     <div class="w-full overflow-hidden rounded-lg shadow-xs">
@@ -532,6 +567,7 @@
                                         <th class="px-4 py-3">สถานะ</th>
                                         <th class="px-4 py-3"></th>
                                         <th class="px-4 py-3">รหัสติดตาม</th>
+                                        <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
                                 @php($i = 1)
@@ -651,7 +687,50 @@
             </main>
         </div>
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
 
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

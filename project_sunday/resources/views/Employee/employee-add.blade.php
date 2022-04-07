@@ -348,7 +348,7 @@
 
                             <div class=" w-1115px  m-auto  mt-10 rounded-md  ">
                                 <div class="bg-220 w-1115px h-320px m-auto mb-3 mt-10 rounded-md">
-                                    <div class="flex p-8 grid grid-cols-3 gap-4 ml-6">
+                                    <div class="p-8 grid grid-cols-3 gap-4 ml-6">
                                         <div class="bg-235 w-300px  h-40px mb-6">
                                             <div class="p-2">
                                                 <label for="">
