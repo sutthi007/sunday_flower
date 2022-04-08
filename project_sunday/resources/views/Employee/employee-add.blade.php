@@ -356,6 +356,11 @@
                                                 </label>
                                                 <input class="bg-235 w-240px" type="text"  placeholder="กรอก ชื่อ-นามสกุล" name="name">
                                             </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('name'))
+                                                    <span class="text-rose-600">{{$errors->first('name')}}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px ">
                                             <div class="p-2">
@@ -370,13 +375,23 @@
                                                     <option value="employee">พนักงานขนส่ง</option>
                                                 </select>
                                             </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('role'))
+                                                    <span class="text-rose-600">{{$errors->first('role')}}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
                                                 <label for="">
                                                     ประชาชน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard">
+                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard" size="15" maxlength="15">
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('Idcard'))
+                                                    <span class="text-rose-600">{{$errors->first('Idcard')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px mb-6">
@@ -385,6 +400,11 @@
                                                     วันเกิด :
                                                 </label>
                                                 <input class="bg-235 w-200px" type="date" placeholder="12/12/2512" name="birthday">
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('birthday'))
+                                                    <span class="text-rose-600">{{$errors->first('birthday')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -410,6 +430,11 @@
                                                 </label>
                                                 <input class="bg-235 w-200px" type="text"placeholder="พระราม" name="sub">
                                             </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('sub'))
+                                                    <span class="text-rose-600">{{$errors->first('sub')}}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
@@ -417,6 +442,11 @@
                                                     อำเภอ :
                                                 </label>
                                                 <input class="bg-235 w-200px" type="text"placeholder="เมือง" name="city" >
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('city'))
+                                                    <span class="text-rose-600">{{$errors->first('city')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -428,13 +458,23 @@
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
                                             </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('province'))
+                                                    <span class="text-rose-600">{{$errors->first('province')}}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
                                             <div class="p-2">
                                                 <label for="">
                                                     ไปรษณีย์ :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="" name="zipcode" >
+                                                <input class="bg-235 w-200px" type="text"placeholder="" name="zipcode" size="5" maxlength="5">
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('zipcode'))
+                                                    <span class="text-rose-600">{{$errors->first('zipcode')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -442,7 +482,12 @@
                                                 <label for="">
                                                     เบอร์โทร :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="tel"placeholder="0588888" name="phone" >
+                                                <input class="bg-235 w-200px" type="tel"placeholder="0588888" name="phone" size="10" maxlength="10" >
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('phone'))
+                                                    <span class="text-rose-600">{{$errors->first('phone')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <div class="bg-235 w-300px h-40px">
@@ -451,6 +496,11 @@
                                                     อีเมล์ :
                                                 </label>
                                                 <input class="bg-235 w-200px" type="text"placeholder="example@gmail.com" name="email" >
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('email'))
+                                                    <span class="text-rose-600">{{$errors->first('email')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -473,6 +523,11 @@
                                                     accept="image/png, image/ipg, image/jpeg"
                                                     name="image_front">
                                             </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('image_Front'))
+                                                    <span class="text-rose-600">{{$errors->first('image_Front')}}</span>
+                                                @endif
+                                            </div>
                                         </div>
                                         <div class="p-8 grid ml-6 text-center">
                                             <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
@@ -487,6 +542,11 @@
                                                 <input type="file" id="image_inputs"
                                                     accept="image/png, image/ipg, image/jpeg"
                                                     name="image_Back">
+                                            </div>
+                                            <div class="text-center text-xs mt-2" >
+                                                @if ($errors->any('image_Back'))
+                                                    <span class="text-rose-600">{{$errors->first('image_Back')}}</span>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

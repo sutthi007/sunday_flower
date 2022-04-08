@@ -240,8 +240,6 @@
                 @can('employee')
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                                aria-hidden="true"></span>
                             <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -256,6 +254,8 @@
                     </ul>
                     <ul>
                         <li class="relative px-6 py-3">
+                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                                aria-hidden="true"></span>
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('Profile.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -543,16 +543,16 @@
                                     <div class=" m-auto w-40 h-40  ">
                                         <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full " id="display_image">
                                     </div>
-                                    {{-- <div class="absolute top-52 left-48">
+                                         <!-- <div class="absolute top-52 left-48">
                                         <input type="file" value="{{$user->profile}}" name="image_Profile">
-                                    </div> --}}
+                                    </div>  -->
                                     <div class="custom-file">
                                         <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
                                             <label for="image_input">อัปโหลดภาพ</label>
                                         </div>
                                         <input type="file" id="image_input"
                                             accept="image/png, image/ipg, image/jpeg"
-                                            name="image_front" value="{{$user->profile}}" name="image_Profile">
+                                            value="{{$user->profile}}" name="image_Profile">
                                     </div>
                                 </div>
                                 <div class="m-auto w-300px ">
@@ -602,7 +602,7 @@
                                     </div>
                                 </div>
                                 <div class=" text-center mt-5">
-                                    <button class="bg-pink w-145px h-30px  rounded-lg text-white " type="submit"">บันทึก</button>
+                                    <button class="bg-pink w-145px h-30px  rounded-lg text-white " type="submit">บันทึก</button>
                                 </div>
                             </div>
                         </div>

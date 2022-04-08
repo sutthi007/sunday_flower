@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
@@ -32,7 +33,6 @@ class EmployeeController extends Controller
     }
 
     public function update($id,Request $request){
-
         $user = User::find($id);
         if($request->hasfile('image_Front')){
             $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
@@ -66,6 +66,22 @@ class EmployeeController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'role' => 'required',
+            'Idcard' => 'required|min:15|unique:Idcard|numeric',
+            'birthday' => 'required',
+            'city' => 'required', //อำเภอ
+            'sub' => 'required',
+            'province' => 'required',
+            'email' => 'required|unique:email',
+            'IDuser' => 'required',
+            'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
+            'zipcode' => 'required',
+            'image_Front' => 'required',
+            'image_Back' => 'required',
+        ]);
+
         $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
         $request->image_front->extension();
 
@@ -74,7 +90,7 @@ class EmployeeController extends Controller
 
         $request->image_front->move(public_path('img/Front'),$ImageFront);
         $request->image_Back->move(public_path('img/Back'),$ImageBack);
-
+ 
         User::create([
             'name' => $request->name,
             'role' => $request->role,
@@ -82,9 +98,10 @@ class EmployeeController extends Controller
             'birthday' => $request->birthday,
             'address' => $request->address,
             'city' => $request->city,
+            'subdistrict' => $request->sub,
             'province' => $request->province,
             'email' =>$request->email,
-            'password' =>$request->password,
+            'password' =>Hash::make($request->password),
             'IDuser' =>$request->IDuser,
             'phone' =>$request->phone,
             'zipcode' =>$request->zipcode,

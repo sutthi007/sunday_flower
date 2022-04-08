@@ -481,8 +481,8 @@
                                                 รหัสผ่านเดิม :
                                             </label>
                                             <div class="ml-2 w-300px h-30px">
-                                            <input class="p-4 ml-2 w-200px h-30px" type="text" name="old_password" id="old_password">
-                                        </div>
+                                                <input class="p-4 ml-2 w-200px h-30px" type="text" name="old_password" id="old_password">
+                                            </div>
                                         </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('old_password'))
