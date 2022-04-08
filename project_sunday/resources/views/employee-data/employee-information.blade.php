@@ -47,7 +47,7 @@
                 </ul>
                 <ul>
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:hover:text-gray-200 dark:text-gray-100"
                             href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -161,7 +161,7 @@
                 </ul>
                 <ul>
                     <li class="relative px-6 py-3">
-                      
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors   duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/profile">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -173,7 +173,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -186,7 +186,7 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="/order">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -271,6 +271,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -321,16 +335,18 @@
             </header>
             <!-- Employeee Information -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid   ">
-                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
+                <div class="container px-6 mx-auto grid">
+                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         ข้อมูลพนักงาน
                     </h2>
-                    <div class="w-1250px m-auto">
-                    <button class="bg-pink w-150px h-30px rounded-md mr-15 float-right text-white"><a href="/employee-add">เพิ่มรายชื่อ พนักงาน</a></button>
-                </div>
+                    <div class="relative  mb-10">
+                        <button
+                            class="absolute bg-pink w-150px h-30px rounded-md mr-15  text-white inset-y-0 right-0 "><a
+                                href="/employee-add">เพิ่มรายชื่อ พนักงาน</a></button>
+                    </div>
                     <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center">
-                        <div class="w-full overflow-x-auto w-1250px m-auto">
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center ">
+                        <div class="w-full overflow-x-auto">
                             <table class="w-full whitespace-no-wrap ">
                                 <thead>
                                     <tr
@@ -340,7 +356,7 @@
                                         <th class="px-4 py-3">ตำแหน่ง</th>
                                         <th class="px-4 py-3">เลขผู้ใช้</th>
                                         <th class="px-4 py-3">ระบบ</th>
-                                       
+
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -350,12 +366,19 @@
                                         <td class="px-4 py-3 text-sm">นายก</td>
                                         <td class="px-4 py-3 text-sm">1212121212</td>
                                         <td class="px-4 py-3 text-sm">
-                                           <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                              </svg></button></a>
-                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                              </svg></button>
+                                            <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                    </svg></button></a>
+                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg></button>
                                         </td>
                                     </tr>
                                     <tr class="text-gray-700 dark:text-gray-400">
@@ -364,12 +387,19 @@
                                         <td class="px-4 py-3 text-sm">นายก</td>
                                         <td class="px-4 py-3 text-sm">1212121212</td>
                                         <td class="px-4 py-3 text-sm">
-                                           <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                              </svg></button></a>
-                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                              </svg></button>
+                                            <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                    </svg></button></a>
+                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg></button>
                                         </td>
                                     </tr>
                                     <tr class="text-gray-700 dark:text-gray-400">
@@ -378,12 +408,19 @@
                                         <td class="px-4 py-3 text-sm">นายก</td>
                                         <td class="px-4 py-3 text-sm">1212121212</td>
                                         <td class="px-4 py-3 text-sm">
-                                           <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                              </svg></button></a>
-                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                              </svg></button>
+                                            <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                    </svg></button></a>
+                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg></button>
                                         </td>
                                     </tr>
                                     <tr class="text-gray-700 dark:text-gray-400">
@@ -392,99 +429,73 @@
                                         <td class="px-4 py-3 text-sm">นายก</td>
                                         <td class="px-4 py-3 text-sm">1212121212</td>
                                         <td class="px-4 py-3 text-sm">
-                                           <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                              </svg></button></a>
-                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                              </svg></button>
+                                            <a href="/employee-data"> <button class="w-6 h-6 mr-2"><svg
+                                                        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                        fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                        stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                    </svg></button></a>
+                                            <button class="w-6 h-6"><svg xmlns="http://www.w3.org/2000/svg"
+                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                    stroke="currentColor" stroke-width="2">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                </svg></button>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div
-                            class="grid px-4 py-3 text-xs font-semibold w-1250px m-auto tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-                            <span class="flex items-center col-span-3">
-                                Showing 21-30 of 100
-                            </span>
-                            <span class="col-span-2"></span>
-                            <!-- Pagination -->
-                            <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-                                <nav aria-label="Table navigation">
-                                    <ul class="inline-flex items-center">
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple"
-                                                aria-label="Previous">
-                                                <svg aria-hidden="true" class="w-4 h-4 fill-current"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                        clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple text-white transition-colors duration-150 bg-purple-600 border border-r-0 border-purple-600">
-                                                1
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                2
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                3
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                4
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <span class="px-3 py-1">...</span>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                8
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                                                9
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button
-                                                class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple"
-                                                aria-label="Next">
-                                                <svg class="w-4 h-4 fill-current" aria-hidden="true"
-                                                    viewBox="0 0 20 20">
-                                                    <path
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd" fill-rule="evenodd"></path>
-                                                </svg>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </span>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                          </svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

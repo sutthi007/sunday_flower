@@ -89,7 +89,8 @@ module.exports = {
         '500px':'500px',
         '1050px':'1050px',
         '950px':'950px',
-        '26px':'26px'
+        '26px':'26px',
+        '189px':'189px',
       },
       fontSize: {
         '50px':'50px'

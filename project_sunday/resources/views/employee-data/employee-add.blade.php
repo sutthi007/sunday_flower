@@ -11,10 +11,12 @@
     {{-- Js --}}
 
     <script src="/js/init-alpine.js"></script>
-  
+
 
     <link rel="icon" type="/img/svg" href="img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,12 +24,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <style>
-        .custom-file input[type='file']{
-            display:none;
+        .custom-file input[type='file'] {
+            display: none;
         }
-        .custom-file label{
-            cursor:pointer;
+
+        .custom-file label {
+            cursor: pointer;
         }
+
     </style>
 
 </head>
@@ -42,7 +46,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="/index">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,7 +73,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="/employee">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -280,6 +284,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -330,131 +348,149 @@
             </header>
             <!-- Employeee Information -->
             <main class="h-full overflow-y-auto">
-                <form>
-                    <div class="px-6 mx-auto grid   ">
-                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
-                            เพิ่มข้อมูลพนักงาน
-                        </h2>
-                        <div class="bg-white w-1250px h-auto m-auto rounded-md">
-
-                            <div class=" w-1115px  m-auto  mt-10 rounded-md  ">
-                                <div class="bg-220 w-1115px h-272px m-auto mb-3 mt-10 rounded-md">
-                                    <div class="flex p-8 grid grid-cols-3 gap-4 ml-6">
-                                        <div class="bg-235 w-300px  h-40px mb-6">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    ชื่อ :
-                                                </label>
-                                                <input class="bg-235 w-240px" type="text"
-                                                    placeholder="นาย ตู่ จันทร์อังคาร">
-                                            </div>
+                <div class="container px-6 mx-auto grid">
+                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                        เพิ่มข้อมูลพนักงาน
+                    </h2>
+                    <form>
+                        <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                            <div class="m-auto rounded-md p-5">
+                                <div class="grid  text-center m-auto">
+                                    <div class="m-auto w-40 h-40  ">
+                                        <img src="" class="object-cover rounded-full h-full w-full " id="imag_s">
+                                    </div>
+                                    <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-5 mb-5">
+                                        <div class=" text-white mt-1">
+                                            <label class="mt-1" for="imag">อัปโหลดภาพ</label>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px ">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    ตำแหน่ง :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="นายก">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    เลขผู้ใช้ :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text"
-                                                    placeholder="9-9999-99999-99-9">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235 w-300px h-40px mb-6">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    วันเกิด :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="12/12/2512">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    ถนน :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="พระราม5">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235  w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    เลขที่บ้าน :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="121/1">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    ตำบล :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="พระราม">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    อำเภอ :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="เมือง">
-                                            </div>
-                                        </div>
-                                        <div class="bg-235  w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    จังหวัด :
-                                                </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="กรุงเทพ">
-                                            </div>
+                                        <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg">
+                                    </div>
+                                </div>
+                                <div class=" grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 ">
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                ชื่อ :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900" type="text"
+                                                placeholder="นาย ตู่ จันทร์อังคาร">
                                         </div>
                                     </div>
-
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                ตำแหน่ง :
+                                            </label>
+                                            <input class="bg-235 w-100px dark:bg-gray-900" type="text"
+                                                placeholder="นายก">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4 ">
+                                            <label class="text-white" for="">
+                                                เลขผู้ใช้ :
+                                            </label>
+                                            <input class="bg-235 w-200px  dark:bg-gray-900  " type="text"
+                                                placeholder="9-9999-99999-99-9">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                วันเกิด :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900  " type="text"
+                                                placeholder="12/12/2512">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto  dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                ถนน :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900" type="text"
+                                                placeholder="พระราม5">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                เลขที่บ้าน :
+                                            </label>
+                                            <input class="bg-235 w-150px dark:bg-gray-900  " type="text"
+                                                placeholder="121/1">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                ตำบล :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900" type="text"
+                                                placeholder="พระราม">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2">
+                                            <label class="text-white" for="">
+                                                อำเภอ :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900  " type="text"
+                                                placeholder="เมือง">
+                                        </div>
+                                    </div>
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class="text-white" for="">
+                                                จังหวัด :
+                                            </label>
+                                            <input class="bg-235 w-200px dark:bg-gray-900  " type="text"
+                                                placeholder="กรุงเทพ">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bg-220 w-1115px h-350px m-auto mb-3 mt-10 rounded-md">
-                                    <div class="p-8 flex m-auto ml-10">
-                                        <div class="p-8 grid ml-6 text-center"> 
-                                            <h1 class="font-bold">บัตรประชาชน ด้านหน้า</h1>
-                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                                <img src="/img/image-alt.svg" id="display_image" class="  h-200px w-380px">
+                                <div class="mt-10 ">
+                                    <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2">
+                                        <div class=" grid  text-center w-300px h-189px m-auto">
+                                            <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหน้า</h1>
+                                            <div
+                                                class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900">
+                                                <img src="/img/image-alt.svg" id="display_image"
+                                                    class=" w-300px h-189px m-auto">
+                                            </div>
+                                            <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
+                                                <div class=" text-white mt-1">
+                                                    <label for="image_input">อัปโหลดภาพ</label>
                                                 </div>
-                                           <div class="custom-file">
-                                               <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                                <label  for="image_input">อัปโหลดภาพ</label>
-                                            </div>
                                                 <input type="file" id="image_input"
-                                                accept="image/png, image/ipg, image/jpeg"  >
+                                                    accept="image/png, image/ipg, image/jpeg">
                                             </div>
                                         </div>
-                                        <div class="p-8 grid ml-6 text-center"> 
-                                            <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
-                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
-                                            <img src="/img/image-alt.svg" id="display_images" class="  h-200px w-380px">
+                                        <div class=" grid  text-center w-300px h-189px m-auto">
+                                            <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหลัง</h1>
+                                            <div
+                                                class="bg-white rounded-md  border-indigo-600  shadow-lg dark:bg-gray-900">
+                                                <img src="/img/image-alt.svg" id="display_images"
+                                                    class="w-300px h-189px m-auto">
                                             </div>
-                                           <div class="custom-file">
-                                            <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4" >
-                                                <label  for="image_inputs">อัปโหลดภาพ</label>
-                                            </div>
+                                            <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
+                                                <div class=" text-white mt-1">
+                                                    <label class="mt-1" for="image_inputs">อัปโหลดภาพ</label>
+                                                </div>
                                                 <input type="file" id="image_inputs"
-                                                accept="image/png, image/ipg, image/jpeg"  >
+                                                    accept="image/png, image/ipg, image/jpeg">
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="text-center mb-6">
-                                    <button class="bg-pink w-100px h-30px rounded-md text-white"><a
-                                            href="/employee">บันทึก</a></button>
                                 </div>
                             </div>
+                            <div class="text-center  mt-9">
+                                <button class="bg-rose-600 w-100px h-30px rounded-md text-white  mb-6 mt-6"><a href="/employee">ยกเลิก</a></button>
+                                <button class="bg-pink w-100px h-30px rounded-md text-white  mb-6 mt-6"><a href="/employee">บันทึก</a></button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </main>
         </div>
     </div>
@@ -473,6 +509,57 @@
                 console.log(event)
             })
         })
+        $(function() {
+            $("#imag").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#imag_s").attr("src", x);
+                console.log(event)
+            })
+        })
+    </script>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
     </script>
 </body>
 

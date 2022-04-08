@@ -449,7 +449,7 @@
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex justify-between p-4 bg-white   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                class="flex justify-between p-4    rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
                                 <div class="place-content-center ">
                                     <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
                                     <path>
@@ -479,7 +479,7 @@
                         <!-- Card -->
                         <a href="">
                             <div
-                                class="flex justify-between p-4 bg-white rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
                                 <div class="place-content-center  ">
                                     <p class="mb-2 text-2xl text-white">สำเร็จ</p>
                                     <path>
