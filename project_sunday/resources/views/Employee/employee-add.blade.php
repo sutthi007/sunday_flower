@@ -283,6 +283,20 @@
                         </div>
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -340,21 +354,30 @@
             <main class="h-full overflow-y-auto">
                 <form action="{{route('Employee.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="px-6 mx-auto grid   ">
-                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 text-center">
+                    <div class="container px-6 mx-auto grid">
+                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                             เพิ่มข้อมูลพนักงาน
                         </h2>
-                        <div class="bg-white w-1250px h-auto m-auto rounded-md">
-
-                            <div class=" w-1115px  m-auto  mt-10 rounded-md  ">
-                                <div class="bg-220 w-1115px h-320px m-auto mb-3 mt-10 rounded-md">
-                                    <div class="p-8 grid grid-cols-3 gap-4 ml-6">
-                                        <div class="bg-235 w-300px  h-40px mb-6">
-                                            <div class="p-2">
-                                                <label for="">
-                                                    ชื่อ :
-                                                </label>
-                                                <input class="bg-235 w-240px" type="text"  placeholder="กรอก ชื่อ-นามสกุล" name="name">
+                        <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
+                            <div class="m-auto rounded-md p-5">
+                                <div class="grid  text-center m-auto">
+                                    <div class="m-auto w-40 h-40  ">
+                                        <img src="" class="object-cover rounded-full h-full w-full " id="imag_s">
+                                    </div>
+                                    <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-5 mb-5">
+                                        <div class=" text-white mt-1">
+                                            <label class="mt-1" for="imag">อัปโหลดภาพ</label>
+                                        </div>
+                                        <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg">
+                                    </div>
+                                </div>
+                                <div class=" grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 ">
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="p-2 ml-4">
+                                            <label class=" dark:text-white"  for="">
+                                                ชื่อ :
+                                            </label> 
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"  placeholder="กรอก ชื่อ-นามสกุล" name="name">
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('name'))
@@ -362,13 +385,13 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px ">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     ตำแหน่ง :
                                                 </label>
                                                 <select
-                                                    class="bg-235 w-200px text-center"
+                                                    class="bg-235 w-150px text-center dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="role">
                                                     <option value="">---เลือก----</option>
                                                     <option value="admin">แอดมิน</option>
@@ -381,12 +404,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     ประชาชน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard" >
+                                                <input class="bg-235 w-155px dark:bg-gray-900" type="text" placeholder="9-9999-99999-99-9" name="Idcard" >
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('Idcard'))
@@ -394,12 +417,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px mb-6">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     วันเกิด :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="date" placeholder="12/12/2512" name="birthday">
+                                                <input class="bg-235 w-200px dark:bg-gray-900 dark:text-white" type="date" placeholder="12/12/2512" name="birthday">
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('birthday'))
@@ -407,28 +430,28 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     ถนน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="พระราม5" name="road">
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="พระราม5" name="road">
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     เลขที่บ้าน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="121/1" name="address">
+                                                <input class="bg-235 w-150px dark:bg-gray-900" type="text"placeholder="121/1" name="address">
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     ตำบล :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="พระราม" name="sub">
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="พระราม" name="sub">
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('sub'))
@@ -436,12 +459,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     อำเภอ :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="เมือง" name="city" >
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="เมือง" name="city" >
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('city'))
@@ -449,12 +472,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     จังหวัด :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="กรุงเทพ" name="province">
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="กรุงเทพ" name="province">
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
                                             </div>
@@ -464,12 +487,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     ไปรษณีย์ :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="" name="zipcode" size="5" maxlength="5">
+                                                <input class="bg-235 w-150px dark:bg-gray-900" type="text"placeholder="" name="zipcode" size="5" maxlength="5">
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('zipcode'))
@@ -477,12 +500,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     เบอร์โทร :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="tel"placeholder="0588888" name="phone" size="10" maxlength="10" >
+                                                <input class="bg-235 w-150px dark:bg-gray-900" type="tel"placeholder="0588888" name="phone" size="10" maxlength="10" >
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('phone'))
@@ -490,12 +513,12 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235 w-300px h-40px">
-                                            <div class="p-2">
-                                                <label for="">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                            <div class="p-2 ml-4">
+                                                <label class=" dark:text-white" for="">
                                                     อีเมล์ :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text"placeholder="example@gmail.com" name="email" >
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="example@gmail.com" name="email" >
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('email'))
@@ -504,19 +527,17 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
-
                                 </div>
-                                <div class="bg-220 w-1115px h-350px m-auto mb-3 mt-10 rounded-md">
-                                    <div class="p-8 flex m-auto ml-10">
-                                        <div class="p-8 grid ml-6 text-center">
-                                            <h1 class="font-bold">บัตรประชาชน ด้านหน้า</h1>
-                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
+                                <div class="mt-10  h-full mb-9">
+                                    <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2">
+                                        <div class=" grid  text-center h-200px w-380px m-auto">
+                                            <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหน้า</h1>
+                                            <div class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900">
                                                 <img src="/img/image-alt.svg" id="display_image"
-                                                    class="  h-200px w-380px">
+                                                class=" h-200px w-380px m-auto">
                                             </div>
-                                            <div class="custom-file">
-                                                <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4">
+                                            <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
+                                                <div class=" text-white mt-1">
                                                     <label for="image_input">อัปโหลดภาพ</label>
                                                 </div>
                                                 <input type="file" id="image_input"
@@ -529,14 +550,15 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="p-8 grid ml-6 text-center">
-                                            <h1 class="font-bold">บัตรประชาชน ด้านหลัง</h1>
-                                            <div class="bg-white rounded-md  border-indigo-600 h-200px w-380px">
+                                        <div class=" grid  text-center h-200px w-380px m-auto">
+                                            <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหลัง</h1>
+                                            <div
+                                                class="bg-white rounded-md  border-indigo-600  shadow-lg dark:bg-gray-900">
                                                 <img src="/img/image-alt.svg" id="display_images"
-                                                    class="  h-200px w-380px">
+                                                    class="h-200px w-380px m-auto">
                                             </div>
-                                            <div class="custom-file">
-                                                <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-4">
+                                            <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
+                                                <div class=" text-white mt-1">
                                                     <label for="image_inputs">อัปโหลดภาพ</label>
                                                 </div>
                                                 <input type="file" id="image_inputs"
@@ -550,9 +572,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="text-center mb-6">
-                                    <button class="bg-pink w-100px h-30px rounded-md text-white">บันทึก</button>
+                                    <div class="text-center mt-36 ">
+                                        <button class="bg-rose-600 w-100px h-30px rounded-md text-white  mb-6 mt-6">ยกเลิก</button>
+                                        <button class="bg-pink w-100px h-30px rounded-md text-white  mb-6 mt-6">บันทึก</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -576,6 +599,57 @@
                 console.log(event)
             })
         })
+        $(function() {
+            $("#imag").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#imag_s").attr("src", x);
+                console.log(event)
+            })
+        })
+    </script>
+     <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
     </script>
 </body>
 
