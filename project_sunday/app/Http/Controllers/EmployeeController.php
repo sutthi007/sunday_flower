@@ -62,7 +62,11 @@ class EmployeeController extends Controller
                         ->with('success','อัปเดทสำเร็จ ');
     }
     public function destroy($id){
+        $user = User::find($id);
 
+        $user->delete();
+
+        return redirect()->route('Employee.index')->with('success', ',ลบบัญชีผู้ใช้สำเร็จ');
     }
     public function store(Request $request)
     {

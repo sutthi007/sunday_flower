@@ -503,7 +503,7 @@
                                             ตำบล:
                                         </label>
                                         <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
-                                            placeholder="" name="sub-district">
+                                            value="{{ $user->subdistrict }}" name="sub-district">
                                     </div>
                                     <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
