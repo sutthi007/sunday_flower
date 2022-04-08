@@ -386,7 +386,7 @@
                                                 <label for="">
                                                     ประชาชน :
                                                 </label>
-                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard" size="15" maxlength="15">
+                                                <input class="bg-235 w-200px" type="text" placeholder="9-9999-99999-99-9" name="Idcard" >
                                             </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('Idcard'))
@@ -524,8 +524,8 @@
                                                     name="image_front">
                                             </div>
                                             <div class="text-center text-xs mt-2" >
-                                                @if ($errors->any('image_Front'))
-                                                    <span class="text-rose-600">{{$errors->first('image_Front')}}</span>
+                                                @if ($errors->any('image_front'))
+                                                    <span class="text-rose-600">{{$errors->first('image_front')}}</span>
                                                 @endif
                                             </div>
                                         </div>

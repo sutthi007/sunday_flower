@@ -69,16 +69,16 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required',
             'role' => 'required',
-            'Idcard' => 'required|min:15|unique:Idcard|numeric',
+            'Idcard' => 'required|min:15|numeric',
             'birthday' => 'required',
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
-            'email' => 'required|unique:email',
+            'email' => 'required',
             'IDuser' => 'required',
             'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
             'zipcode' => 'required',
-            'image_Front' => 'required',
+            'image_front' => 'required',
             'image_Back' => 'required',
         ]);
 
