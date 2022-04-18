@@ -314,7 +314,24 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <div class="flex justify-center flex-1 lg:mr-32">
+                       
+                    </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -370,53 +387,54 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class=" px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid  ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
                         กรอกข้อมูลลูกค้า
                     </h2>
-                    <div class="bg-EBEBEB  h-100% w-100%   ">
-                        <p class="text-2xl text-center mt-5">ผู้ส่ง</p>
-                        <div class=" m-auto w-90% mt-16 ">
-                            <div class=" m-auto w-500px mt-5 ">
-                                <form class="w-full max-w-lg " action="{{ route('projects.store')}}" method="post">
+                    <div class="bg-white  rounded-lg shadow-lg">
+                        <div class="m-auto  mt-16 ">  
+                             <p class="text-2xl text-center mt-5">ผู้ส่ง</p>
+                            <div class="  mt-5 ">
+                                <form class="w-full m-auto" action="{{ route('projects.store')}}" method="post">
                                     @csrf
-                                    <div class="flex flex-wrap -mx-3 mb-6 ">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 w-5">
+                                    <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 ">
+                                        <div class="w-300px  px-3  md:mb-0 m-auto">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
                                             ชื่อ
                                             </label>
-                                            <input class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Exeample" name="name">
+                                            <input class="appearance-none block w-300px text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Exeample" name="name">
                                         </div>
-                                        <div class="w-full md:w-1/2 px-3">
+                                        <div class="w-300px px-3 m-auto">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                                 จังหวัด
                                             </label>
-                                            <select class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="value" name="province">
+                                            <select class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="value" name="province">
                                                 <option value="">---เลือก----</option>
                                                 <option value="เชียงใหม่">เชียงใหม่</option>
                                                 <option value="ลำปาง">ลำปาง</option>
                                                 <option value="เชียงราย">เชียงราย</option>
                                             </select>
                                         </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                        <div class="w-300px px-3   m-auto">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                                 อำเภอ
                                             </label>
-                                            <select class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="" name="subdistrict">
+                                            <select class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="" name="subdistrict">
                                                 <option value="">---เลือก----</option>
                                                 <option value="หนองหาร">หนองหาร</option>
                                                 <option value="สันผีเสื้อ">สันผีเสื้อ</option>
                                                 <option value="เมือง">เมือง</option>
                                             </select>
-                                        </div> <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                        </div> 
+                                        <div class="w-300px  px-3  m-auto">
                                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                                                 เบอร์โทร
                                             </label>
-                                            <input class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="08x-xxxxxxx" name="phone">
+                                            <input class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="08x-xxxxxxx" name="phone">
                                             {{-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> --}}
                                         </div>
                                     </div>
-                                    <div class="w-200px h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 " >
+                                    <div class="h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 " >
                                         <button class="text-white">ถัดไป</button>
                                     </div>
                                 </form>

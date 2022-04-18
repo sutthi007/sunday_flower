@@ -12,7 +12,8 @@
   <!-- <script src="./js/charts-lines.js" defer></script>
   <script src="/js/charts-pie.js" defer></script> -->
   <script src="/js/init-alpine.js"></script>
-   
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="icon" type="/img/svg" href="/img/icon.svg">
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
@@ -458,7 +459,7 @@
                             <div class=" m-auto w-500px mt-5 ">
                                 <form class="w-full max-w-lg " action="" method="post">
                                     <div class=" -mx-3 mb-6  ">
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto w-5">
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto ">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
                                                 for="grid-first-name">
@@ -475,7 +476,7 @@
                                          
                                         </div>
                                         {{csrf_field()}} 
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto w-5">
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
                                                 for="grid-first-name">
@@ -487,7 +488,7 @@
                                                 <option value="">---เลือกอำเภอ----</option>
                                             </select>
                                         </div>
-                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto w-5">
+                                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
                                                 for="grid-first-name">
@@ -498,7 +499,7 @@
                                                 id="grid-first-name" type="text" placeholder="">
                                         </div>
                                     </div>
-                                    <div class="w-200px h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 ">
+                                    <div class="w-200px h-30px bg-pink  rounded mb-6 m-auto text-center p-1 ">
                                         <button class="text-white"><a href="/order-step-1">บันทึก</a></button>
                                     </div>
                                 </form>
@@ -511,6 +512,23 @@
     </div>
 </body>
 <script type="text/javascript">
+  $('.provinces').change(function() {
+      if($(this).val()!=''){
+          var select=$(this).val();
+          var _token=$('input[name="_token"]').val();
+          console.log(select);
+          $.ajax({
+              url:"{{route('fetch')}}",
+              method:'POST',
+              data:{select:select,_token:_token},
+              sucess:function(result){
+
+              }
+          });
+      }
+  });
+</script>
+{{-- <script type="text/javascript">
     $('.provinces').change(function(){
         if($(this).val()!=''){
             var select=$(this).val();
@@ -525,6 +543,5 @@
             });
         }
     });
-</script>
-
+</script> --}}
 </html>

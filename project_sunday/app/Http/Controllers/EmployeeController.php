@@ -73,18 +73,42 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required',
             'role' => 'required',
-            'Idcard' => 'required|min:15|numeric',
+            'Idcard' => 'required|min:13|numeric',
             'birthday' => 'required',
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'IDuser' => 'required',
             'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
             'zipcode' => 'required',
             'image_front' => 'required',
             'image_Back' => 'required',
-        ]);
+        ],
+        [
+            'name.required'=> 'กรุณากรอกชื่อ',
+            'role.required'=> 'กรุณาเลือกตำแหน่ง',
+            'Idcard.required'=> 'กรุณากรอกเลขประชาชน',
+            'Idcard.min'=> 'กรุณากรอกเลขบัตรประชาชนให้ครบ 13 ตัว',
+            'Idcard.numeric'=> 'กรุณากรอกเลขบัตรประชาชนเป็นตัวเลข',
+            'birthday.required'=> 'กรุณากรอกวัน/เดือน/ปี เกิด',
+            'city.required'=> 'กรุณากรอกอำเภอ',
+            'sub.required'=> 'กรุณากรอกตำบล',
+            'province.required'=> 'กรุณากรอกจังหวัด',
+            'zipcode.required'=> 'กรุณากรอกไปรษณีย์',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'image_front.required'=>'กรุณาอัปโหลดภาพด้านหน้าบัตรประชาชน',
+            'image_Back.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
+            'email.required'=>'กรุณากรอกอีเมล',
+            'email.email'=> 'กรุณากรอบ @gmail'
+
+
+          
+            
+        ]
+    );
 
         $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
         $request->image_front->extension();

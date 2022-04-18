@@ -8,8 +8,7 @@
   {{-- CSS --}}
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   {{-- Js --}}
-  <script src="./js/charts-lines.js" defer></script>
-  <script src="/js/charts-pie.js" defer></script>
+ 
   <script src="/js/init-alpine.js"></script>
    
   <link rel="icon" type="/img/svg" href="/img/icon.svg">

@@ -45,7 +45,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,7 +72,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -221,7 +221,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -248,7 +248,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -331,18 +331,7 @@
                     </button>
                     <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                        <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
-                            <div class="absolute inset-y-0 flex items-center pl-2">
-                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <input
-                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                type="text" placeholder="Search for projects" aria-label="Search" />
-                        </div>
+                       
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -426,28 +415,30 @@
                                     <div class="m-auto w-40 h-40  ">
                                         <img src="" class="object-cover rounded-full h-full w-full " id="imag_s">
                                     </div>
-                                    <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-5 mb-5">
-                                        <div class=" text-white mt-1">
+                                    <div class="custom-file">
+                                        <div
+                                            class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
                                             <label class="mt-1" for="imag">อัปโหลดภาพ</label>
                                         </div>
-                                        <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg">
+                                        <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg" name="image_Profile">
+                                        {{-- @if ($errors->any('Path_imagePorfile'))
+                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
+                                    @endif --}}
                                     </div>
                                 </div>
-                                <div class=" grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 ">
-                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
-                                        <div class="p-2 ml-4">
+                                <div class=" grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-3 mt-3">
+                                    <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
+                                        <div class="p-2 ml-4 ">
                                             <label class=" dark:text-white"  for="">
                                                 ชื่อ :
                                             </label> 
                                                 <input class="bg-235 w-200px dark:bg-gray-900" type="text"  placeholder="กรอก ชื่อ-นามสกุล" name="name">
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('name'))
-                                                    <span class="text-rose-600">{{$errors->first('name')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
+                                            @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     ตำแหน่ง :
@@ -459,42 +450,38 @@
                                                     @can('owner')
                                                     <option value="admin">แอดมิน</option>
                                                     @endcan
-                                                    <option value="employee">พนักงานขนส่ง</option>
+                                                    <option value="employee">พนักงานขนส่ง</option>  
                                                 </select>
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('role'))
-                                                    <span class="text-rose-600">{{$errors->first('role')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('role')}}</p>
+                                            @endif
                                             </div>
+                                           
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     ประชาชน :
                                                 </label>
                                                 <input class="bg-235 w-155px dark:bg-gray-900" type="text" placeholder="9-9999-99999-99-9" name="Idcard" >
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('Idcard'))
-                                                    <span class="text-rose-600">{{$errors->first('Idcard')}}</span>
+                                                    <p class="text-red-500 text-xs italic text-center">{{$errors->first('Idcard')}}</p>
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     วันเกิด :
                                                 </label>
                                                 <input class="bg-235 w-200px dark:bg-gray-900 dark:text-white" type="date" placeholder="12/12/2512" name="birthday">
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
+                                           
                                                 @if ($errors->any('birthday'))
-                                                    <span class="text-rose-600">{{$errors->first('birthday')}}</span>
+                                                    <p class="text-red-500 text-xs italic text-center">{{$errors->first('birthday')}}</p>
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     ถนน :
@@ -502,7 +489,7 @@
                                                 <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="พระราม5" name="road">
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     เลขที่บ้าน :
@@ -510,33 +497,30 @@
                                                 <input class="bg-235 w-150px dark:bg-gray-900" type="text"placeholder="121/1" name="address">
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     ตำบล :
                                                 </label>
-                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="พระราม" name="sub">
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
+                                                <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="พระราม" name="sub"> 
                                                 @if ($errors->any('sub'))
-                                                    <span class="text-rose-600">{{$errors->first('sub')}}</span>
+                                                    <p class="text-red-500 text-xs italic text-center">{{$errors->first('sub')}}</p>
                                                 @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     อำเภอ :
                                                 </label>
                                                 <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="เมือง" name="city" >
+                                                    @if ($errors->any('city'))
+                                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('city')}}</p>
+                                                    @endif
                                             </div>
-                                            <div class="text-center text-xs mt-2" >
-                                                @if ($errors->any('city'))
-                                                    <span class="text-rose-600">{{$errors->first('city')}}</span>
-                                                @endif
-                                            </div>
+                                            
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     จังหวัด :
@@ -544,61 +528,56 @@
                                                 <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="กรุงเทพ" name="province">
                                                 <input type="hidden" value="123456789" name="password">
                                                 <input type="hidden" value="sunday11" name="IDuser">
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('province'))
-                                                    <span class="text-rose-600">{{$errors->first('province')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('province')}}</p>
+                                            @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     ไปรษณีย์ :
                                                 </label>
                                                 <input class="bg-235 w-150px dark:bg-gray-900" type="text"placeholder="" name="zipcode" size="5" maxlength="5">
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('zipcode'))
-                                                    <span class="text-rose-600">{{$errors->first('zipcode')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('zipcode')}}</p>
+                                            @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     เบอร์โทร :
                                                 </label>
                                                 <input class="bg-235 w-150px dark:bg-gray-900" type="tel"placeholder="0588888" name="phone" size="10" maxlength="10" >
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('phone'))
-                                                    <span class="text-rose-600">{{$errors->first('phone')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('phone')}}</p>
+                                            @endif
                                             </div>
                                         </div>
-                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg">
+                                        <div class="bg-235  w-300px m-auto dark:bg-gray-900 rounded-lg h-50px">
                                             <div class="p-2 ml-4">
                                                 <label class=" dark:text-white" for="">
                                                     อีเมล์ :
                                                 </label>
                                                 <input class="bg-235 w-200px dark:bg-gray-900" type="text"placeholder="example@gmail.com" name="email" >
-                                            </div>
-                                            <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('email'))
-                                                    <span class="text-rose-600">{{$errors->first('email')}}</span>
-                                                @endif
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('email')}}</p>
+                                            @endif
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mt-10  h-full mb-9">
-                                    <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2">
-                                        <div class=" grid  text-center h-200px w-380px m-auto">
+                                <div class="mt-10  mb-9">
+                                    <div class="grid  gap-7 mb-3 md:grid-cols-1 xl:grid-cols-2 ">
+                                        <div class=" grid  text-center  m-auto" >
                                             <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหน้า</h1>
-                                            <div class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900">
+                                            @if ($errors->any('image_front'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('image_front')}}</p>
+                                        @endif
+                                            <div class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900 ">
                                                 <img src="/img/image-alt.svg" id="display_image"
-                                                class=" h-200px w-380px m-auto">
+                                                class=" h-200px xl:w-380px m-auto md:w-200px">
                                             </div>
                                             <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
                                                 <div class=" text-white mt-1">
@@ -608,18 +587,16 @@
                                                     accept="image/png, image/ipg, image/jpeg"
                                                     name="image_front">
                                             </div>
-                                            <div class="text-center text-xs mt-2" >
-                                                @if ($errors->any('image_front'))
-                                                    <span class="text-rose-600">{{$errors->first('image_front')}}</span>
-                                                @endif
-                                            </div>
                                         </div>
-                                        <div class=" grid  text-center h-200px w-380px m-auto">
+                                        <div class=" grid  text-center   m-auto ">
                                             <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหลัง</h1>
+                                            @if ($errors->any('image_Back'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('image_Back')}}</p>
+                                        @endif
                                             <div
                                                 class="bg-white rounded-md  border-indigo-600  shadow-lg dark:bg-gray-900">
                                                 <img src="/img/image-alt.svg" id="display_images"
-                                                    class="h-200px w-380px m-auto">
+                                                    class="h-200px xl:w-380px m-auto md:w-200px">
                                             </div>
                                             <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
                                                 <div class=" text-white mt-1">
@@ -629,11 +606,7 @@
                                                     accept="image/png, image/ipg, image/jpeg"
                                                     name="image_Back">
                                             </div>
-                                            <div class="text-center text-xs mt-2" >
-                                                @if ($errors->any('image_Back'))
-                                                    <span class="text-rose-600">{{$errors->first('image_Back')}}</span>
-                                                @endif
-                                            </div>
+                                          
                                         </div>
                                     </div>
                                     <div class="text-center mt-36 ">
