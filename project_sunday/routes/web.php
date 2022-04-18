@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\cityController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
@@ -7,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
 
 
@@ -44,21 +47,31 @@ Route::resource('FormOrder',OrderController::class);
 Route::post('save',[OrderController::class,'total'])->name('save');
 Route::get('bill/summary/{id}',[OrderController::class,'sum'])->name('bill');
 
+//Route for Profile
 Route::resource('Profile',ProfileController::class);
 Route::post('Profile/update-password',[ProfileController::class,'update_password'])->name('update_password');
 
+//Route for Employee
 Route::resource('Employee',EmployeeController::class);
 Route::get('customer/add',[EmployeeController::class,'add'])->name('customer/add');
 
+//Route for service
 Route::resource('service',ServiceController::class);
 Route::get('/service/add/parcel',[ServiceController::class,'addlistP'])->name('parcel');
 Route::get('/service/add/flower',[ServiceController::class,'addlistflower'])->name('flower');
 Route::get('/service/add/animal',[ServiceController::class,'addlistanimal'])->name('animal');
 Route::get('/service/add/motorcycle',[ServiceController::class,'addlistmotorcle'])->name('motorcycle');
 
+//Route for transport
+Route::resource('transport',ProvinceController::class);
+Route::resource('subdistrict',subController::class);
+Route::resource('city',cityController::class);
+Route::post('province/fetch',[subController::class,'fetch'])->name('fetch');
 
 Route::resource('customer-systems',CustomerController::class);
 
 Route::resource('summary',SummaryController::class);
+Route::get('summary-transport',[SummaryController::class,'transport'])->name('sumTransport');
+Route::get('summary-account',[SummaryController::class,'account'])->name('sumAccount');
 
 Route::get('/export-excel',[OrderController::class,'export'])->name('export');

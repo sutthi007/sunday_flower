@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class province extends Model
+class sub extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'province',
+        'province_id',
+        'city_id',
+        'sub',
     ];
-
-    public function city(){
-        return $this->hasMany(city::class);
-    }
 }
