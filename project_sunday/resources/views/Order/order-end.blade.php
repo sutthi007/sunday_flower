@@ -410,13 +410,17 @@
                                     <p>ทั้งหมด</p>
                                         @php
                                             $total = 0;
+                                            $cost =0;
                                         @endphp
                                         @foreach ( $customer->orders as $totals )
                                             @php
-                                                $total = $totals->price + $total
+                                                $total = $totals->price * $totals->quantity
+                                            @endphp
+                                            @php
+                                                $cost = $total + $cost;
                                             @endphp
                                         @endforeach
-                                    <h1 class="text-2xl bg-pink text-white">{{$total}}</h1>
+                                    <h1 class="text-2xl bg-pink text-white">{{$cost}}</h1>
                                 </div>
                             </div>
                             </div>
@@ -436,12 +440,16 @@
                                                 </tr>
                                             </thead>
                                             @php
-                                            $cost = 0;
-                                            $i = 1;
+                                                $cost = 0;
+                                                $i = 1;
+                                                $total = 0 ;
                                              @endphp
                                             @foreach ( $customer->orders as $order)
+                                                @php 
+                                                    $total = $order->price * $order->quantity
+                                                @endphp
                                                 @php
-                                                    $cost = $order->price + $cost
+                                                    $cost = $total + $cost
                                                 @endphp
                                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                                     <tr class="text-gray-700 dark:text-gray-400">
