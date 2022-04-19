@@ -8,8 +8,6 @@
   {{-- CSS --}}
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   {{-- Js --}}
-  <script src="./js/charts-lines.js" defer></script>
-  <script src="/js/charts-pie.js" defer></script>
   <script src="/js/init-alpine.js"></script>
 
   <link rel="icon" type="/img/svg" href="/img/icon.svg">
@@ -33,7 +31,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
 
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,7 +69,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -246,7 +244,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -391,57 +389,114 @@
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
                         กรอกข้อมูลลูกค้า
                     </h2>
-                    <div class="bg-white  rounded-lg shadow-lg">
-                        <div class="m-auto  mt-16 ">  
-                             <p class="text-2xl text-center mt-5">ผู้ส่ง</p>
+                    <div class="bg-white  rounded-lg shadow-lg dark:bg-gray-800">
+                        <div class="m-auto  mt-4 ">  
+                             <p class="text-2xl text-center mt-5 dark:text-white">ผู้ส่ง</p>
                             <div class="  mt-5 ">
                                 <form class="w-full m-auto" action="{{ route('projects.store')}}" method="post">
                                     @csrf
                                     <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 ">
-                                        <div class="w-300px  px-3  md:mb-0 m-auto">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 " for="grid-first-name">
+                                        <div class="w-full  px-3  md:mb-0 m-auto">
+                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white" for="grid-first-name">
                                             ชื่อ
                                             </label>
-                                            <input class="appearance-none block w-300px text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Exeample" name="name">
+                                            <input class="appearance-none block w-full text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"  type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" autofocus>
+                                            @if ($errors->any('name'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
+                                        @endif
                                         </div>
-                                        <div class="w-300px px-3 m-auto">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                        <div class="w-full px-3 m-auto">
+                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white" for="grid-first-name">
                                                 จังหวัด
                                             </label>
-                                            <select class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="value" name="province">
+                                            <select class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="value" name="province">
                                                 <option value="">---เลือก----</option>
                                                 <option value="เชียงใหม่">เชียงใหม่</option>
                                                 <option value="ลำปาง">ลำปาง</option>
                                                 <option value="เชียงราย">เชียงราย</option>
                                             </select>
+                                            @if ($errors->any('province'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('province')}}</p>
+                                            @endif
                                         </div>
-                                        <div class="w-300px px-3   m-auto">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                        <div class="w-full px-3   m-auto">
+                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white" for="grid-first-name">
                                                 อำเภอ
                                             </label>
-                                            <select class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="" name="subdistrict">
+                                            <select class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900" id="grid-first-name" type="text" placeholder="" name="subdistrict">
                                                 <option value="">---เลือก----</option>
                                                 <option value="หนองหาร">หนองหาร</option>
                                                 <option value="สันผีเสื้อ">สันผีเสื้อ</option>
                                                 <option value="เมือง">เมือง</option>
                                             </select>
+                                            @if ($errors->any('subdistrict'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('subdistrict')}}</p>
+                                            @endif
                                         </div> 
-                                        <div class="w-300px  px-3  m-auto">
-                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                                        <div class="w-full  px-3  m-auto">
+                                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white" for="grid-first-name">
                                                 เบอร์โทร
                                             </label>
-                                            <input class="appearance-none block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="08x-xxxxxxx" name="phone">
-                                            {{-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> --}}
+                                            <input class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900" id="grid-first-name" type="text" placeholder="08x-xxxxxxx" name="phone">
+                                            
+                                            @if ($errors->any('phone'))
+                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('phone')}}</p>
+                                            @endif
+                                           
                                         </div>
                                     </div>
-                                    <div class="h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 " >
-                                        <button class="text-white">ถัดไป</button>
+                                    <div class="h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 mt-5 " >
+                                        <button type="submit" class="text-white">ถัดไป</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
+                <script>
+                    const switchToggle = document.querySelector('#switch-toggle');
+                    const html = document.querySelector('html');
+                    let isDarkmode = false
+                    const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+                    const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>`
+                    const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>`
+                    // Jika ada isDarkmode di localstorage 
+                    if (localDarkmode) {
+                        isDarkmode = localDarkmode
+                        html.classList.add('dark')
+                    } else {
+                        html.classList.remove('dark')
+                    }
+            
+                    function toggleTheme() {
+                        isDarkmode = !isDarkmode
+                        localStorage.setItem('isDarkmode', isDarkmode)
+                        switchTheme()
+                    }
+            
+                    function switchTheme() {
+                        if (isDarkmode) {
+                            html.classList.add('dark')
+                            switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                            switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                            setTimeout(() => {
+                                switchToggle.innerHTML = darkIcon
+                            }, 250);
+                        } else {
+                            html.classList.remove('dark')
+                            switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                            switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                            setTimeout(() => {
+                                switchToggle.innerHTML = lightIcon
+                            }, 250);
+                        }
+                    }
+                    switchTheme()
+                </script>
             </main>
         </div>
     </div>

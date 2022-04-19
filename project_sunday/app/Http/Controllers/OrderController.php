@@ -18,6 +18,18 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' =>'required',
+            'city' =>'required',
+            'province' =>'required',
+            'phone' =>'required',
+            'type' =>'required',
+            'list' =>'required',
+            'list' => 'required',
+            'quantity' =>'required',
+            'price' =>'required',
+            'customer_id' =>'required',
+        ]);
         $order = Order::create([
             'name' => $request->name,
             'city' => $request->city,

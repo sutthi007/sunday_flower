@@ -34,7 +34,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
 
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -72,7 +72,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -209,7 +209,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
 
-                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -247,7 +247,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -315,22 +315,24 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                        <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
-                            <div class="absolute inset-y-0 flex items-center pl-2">
-                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <input
-                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                type="text" placeholder="Search for projects" aria-label="Search" />
-                        </div>
+                       
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -386,24 +388,24 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px">
+                <div class="container px-6 mx-auto grid">
                     <div class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
 
                     </div>
-                    <div class="bg-EBEBEB h-100% ">
-                        <div class="m-auto w-1115px  mt-16 ">
+                    <div class="bg-white dark:bg-gray-800 rounded">
+                        <div class="m-auto   mt-5 ">
                             <div class="mb-6">
-                                <div class="text-3xl font-semibold text-center mb-6">
+                                <div class="text-3xl font-semibold text-center mb-6 dark:text-white">
                                     <h1>สรุปบิล</h1>
                                 </div>
-                            <img class="w-200px" src="/img/icon.svg" alt="">
+                            <img class="w-150px" src="/img/icon.svg" alt="">
                             <div class=" flex w-full justify-between ">
-                                <div class="p-2 ">
+                                <div class="p-2 dark:text-white">
                                     <p class="text-3xl" >บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
                                     <p>เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
                                     <p>จังหวัด เชียงใหม่ 50000</p>
                                 </div>
-                                <div class="p-2 w-200px  text-center ">
+                                <div class="p-2 w-200px  text-center dark:text-white">
                                     <h1 class="text-2xl">{{$customer->name}}</h1>
                                     <p>ทั้งหมด</p>
                                         @php
@@ -418,13 +420,13 @@
                                 </div>
                             </div>
                             </div>
-                            <form class="w-auto w-1115px  max-w-lg ">
-                                <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px text-center">
+                            <form  ">
+                                <div class="w-full overflow-hidden rounded-lg shadow-xs p-3">
                                     <div class="w-full overflow-x-auto">
                                         <table class="w-full whitespace-no-wrap">
                                             <thead>
                                                 <tr
-                                                    class="text-xs font-semibold tracking-wide text-left text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                    class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                     <th class="px-4 py-3">ลำดับ</th>
                                                     <th class="px-4 py-3">รายการ</th>
                                                     <th class="px-4 py-3">จำนวน</th>
@@ -458,21 +460,22 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="mb-4 flex justify-end w-1115px m-auto">
-                                    <label class=""> ยอดค้างชำระ : </label>
+                                <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
+                                    บาท
                                     <input
-                                        class="h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center"
+                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
                                         type="text" placeholder="" value="150" disabled />
-                                    บาท
+                                    
+                                    <label class=""> ยอดค้างชำระ : </label>
                                 </div>
-                                <div class="mb-4 flex justify-end w-1115px m-auto">
-                                    <label class=""> ทั้งหมด : </label>
+                                <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
+                                   บาท
                                     <input
-                                        class="h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center"
+                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
                                         type="text" placeholder="" value="{{$cost}}" disabled />
-                                    บาท
+                                    <label class=""> ทั้งหมด : </label>
                                 </div>
-                                <div class="mr-auto flex justify-end w-1115px m-auto">
+                                <div class="mr-auto flex flex-row-reverse m-auto p-3 dark:text-white">
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="text-white" href="{{route('projects.index')}}"> ปิด </a>
                                     </div>
@@ -483,6 +486,50 @@
             </main>
         </div>
     </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

@@ -16,6 +16,21 @@ class userController extends Controller
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function store(Request $request){
+       $request->validate([
+            'name' =>'bail',
+            'province' =>'required',
+            'subdistrict' =>'required',
+            'phone' =>'required|regex:/(0)[0-9]{9}/|size:10',
+        ],
+        [
+            'name.bail'=> 'กรุณากรอกชื่อ',
+            'province.required'=>'กรุณาเลือกจังหวัด',
+            'subdistrict.required'=>'กรุณาเลือกอำเภอ',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว', 
+        ]
+    );
 
         $customer = customer::create([
             'name' => $request->name,
