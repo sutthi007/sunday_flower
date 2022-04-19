@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\customer;
 use App\Models\Order;
 use App\Exports\TransportsDaysExport;
+use Maatwebsite\Excel\Excel as ExcelExcel;
 use Maatwebsite\Excel\Facades\Excel;
+use Symfony\Component\Mailer\Transport;
 
 class OrderController extends Controller
 {
@@ -88,10 +90,16 @@ class OrderController extends Controller
 
         return redirect()->route('bill', $customer);
     }
-    public function exportIntoExcel($id)
+    public function exporttoexcel($id)
     {
         $order = Order::find($id);
 
         return Excel::download(new TransportsDaysExport, $order->created_at . 'รายงานขนส่ง.xlsx');
+    }
+    public function export(){
+        return (new TransportsDaysExport)->download('active.xlsx');
+    }
+    public function pdf(){
+        return (new TransportsDaysExport)->download('active.pdf');
     }
 }

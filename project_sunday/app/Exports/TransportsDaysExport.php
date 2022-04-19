@@ -3,22 +3,31 @@
 namespace App\Exports;
 
 use App\Models\Order;
-use Maatwebsite\Excel\Concerns\FromCollection;
+use App\Models\User;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\FromQuery;
 
-class TransportsDaysExport implements FromCollection
+class TransportsDaysExport implements FromQuery
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function headings():array{
-        return [
-            ''
-        ];
-    }
+     use Exportable;
 
-    public function collection()
+    public function query()
     {
-
-        return Order::all();
+        return user::query()
+        ->where('role','admin');
     }
+    // /**
+    // * @return \Illuminate\Support\Collection
+    // */
+    // public function headings():array{
+    //     return [
+    //         ''
+    //     ];
+    // }
+
+    // public function collection()
+    // {
+
+    //     return Order::all();
+    // }
 }

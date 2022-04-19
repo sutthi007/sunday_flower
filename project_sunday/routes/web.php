@@ -75,3 +75,4 @@ Route::get('summary-transport',[SummaryController::class,'transport'])->name('su
 Route::get('summary-account',[SummaryController::class,'account'])->name('sumAccount');
 
 Route::get('/export-excel',[OrderController::class,'export'])->name('export');
+Route::get('/export-pdf',[OrderController::class,'pdf']);
