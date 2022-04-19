@@ -475,7 +475,6 @@
                                             </select>
                                          
                                         </div>
-                                        {{csrf_field()}} 
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
@@ -483,11 +482,12 @@
                                                 อำเภอ
                                             </label>
                                             <select
-                                                class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="">
+                                                class="city appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                 type="text" placeholder="" name="city">
                                                 <option value="">---เลือกอำเภอ----</option>
                                             </select>
                                         </div>
+                                        {{csrf_field()}} 
                                         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 m-auto">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 "
@@ -516,32 +516,15 @@
       if($(this).val()!=''){
           var select=$(this).val();
           var _token=$('input[name="_token"]').val();
-          console.log(select);
           $.ajax({
               url:"{{route('fetch')}}",
-              method:'POST',
+              method:'GET',
               data:{select:select,_token:_token},
-              sucess:function(result){
-
+              success:function(result){
+                    $('.city').html(result);
               }
           });
       }
   });
 </script>
-{{-- <script type="text/javascript">
-    $('.provinces').change(function(){
-        if($(this).val()!=''){
-            var select=$(this).val();
-            var _token=$('input[name="_token"]').val();
-            $.ajax({
-                url:"{{route('fetch')}}",
-                method:'POST',
-                data:{select:select,_token:_token},
-                success:function(result){
-
-                }
-            });
-        }
-    });
-</script> --}}
 </html>

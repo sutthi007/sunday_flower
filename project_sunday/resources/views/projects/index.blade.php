@@ -819,7 +819,11 @@
                         <div class="flex flex-row-reverse mb-4">
                             <div class="bg-white rounded-lg h-50px w-200px dark:bg-gray-800">
                                 <div class="ml-6 pt-3">
-                                    <input class="dark:text-white dark:bg-gray-800" type="date">
+                                    <form action="{{ route('date') }}" method="get">
+                                        @csrf
+                                        <input class="dark:text-white dark:bg-gray-800" type="date" name="date" >
+                                        <button>ค้นหา</button>
+                                    </form>
                                 </div>
                             </div>
                             <div class="basis-1/6 mr-3">

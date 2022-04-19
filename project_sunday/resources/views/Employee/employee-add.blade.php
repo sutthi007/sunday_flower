@@ -463,7 +463,7 @@
                                                 <label class=" dark:text-white" for="">
                                                     ประชาชน :
                                                 </label>
-                                                <input class="bg-235 w-155px dark:bg-gray-900" type="text" placeholder="9-9999-99999-99-9" name="Idcard" >
+                                                <input class="bg-235 w-155px dark:bg-gray-900" type="text" placeholder="9-9999-99999-99-9" name="Idcard" id="telInput" onkeypress="addSpace()" maxlength="17">
                                                 @if ($errors->any('Idcard'))
                                                     <p class="text-red-500 text-xs italic text-center">{{$errors->first('Idcard')}}</p>
                                                 @endif
@@ -549,7 +549,7 @@
                                                 <label class=" dark:text-white" for="">
                                                     เบอร์โทร :
                                                 </label>
-                                                <input class="bg-235 w-150px dark:bg-gray-900" type="tel"placeholder="0588888" name="phone" size="10" maxlength="10" >
+                                                <input class="bg-235 w-150px dark:bg-gray-900" type="tel"placeholder="0588888" name="phone" size="10" maxlength="11" id="tell" onkeypress="addSpaceTEl()">
                                                 @if ($errors->any('phone'))
                                                 <p class="text-red-500 text-xs italic text-center">{{$errors->first('phone')}}</p>
                                             @endif
@@ -687,6 +687,24 @@
             }
         }
         switchTheme()
+    </script>
+    <script>
+        function addSpace(){
+            var inputValue = document.getElementById("telInput").value;
+            var inputValueLength = inputValue.length;
+            
+            if(inputValueLength == 1 || inputValueLength == 6|| inputValueLength == 12 || inputValueLength == 15){
+                document.getElementById("telInput").value = inputValue+"-"; 
+            }
+        }
+        function addSpaceTEl(){
+            var inputValue = document.getElementById("tell").value;
+            var inputValueLength = inputValue.length;
+            
+            if(inputValueLength == 3 ){
+                document.getElementById("tell").value = inputValue+"-"; 
+            }
+        }
     </script>
 </body>
 

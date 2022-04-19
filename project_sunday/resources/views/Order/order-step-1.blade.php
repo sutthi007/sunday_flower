@@ -12,6 +12,7 @@
 
     <script src="/js/init-alpine.js"></script>
     <script src="/js/popup-ouput.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -451,23 +452,8 @@
                                                         id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
                                                         name="name" />
                                                         @if ($errors->any('name'))
-                                            <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
-                                            @endif
-                                                </div>
-                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        อำเภอ
-                                                    </label>
-                                                    <select
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="city">
-                                                        <option value="">---เลือก----</option>
-                                                        <option value="หนองหาร">หนองหาร</option>
-                                                        <option value="สันผีเสื้น">สันผีเสื้น</option>
-                                                        <option value="เมือง">เมือง</option>
-                                                    </select>
+                                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
+                                                        @endif
                                                 </div>
                                                 <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                     <label
@@ -476,14 +462,27 @@
                                                         จังหวัด
                                                     </label>
                                                     <select
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="province">
+                                                        class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        id="grid-first-name" type="text" placeholder="" name="province" id="provinces">
                                                         <option value="">---เลือก----</option>
-                                                        <option value="เชียงใหม่">เชียงใหม่</option>
-                                                        <option value="ลำปาง">ลำปาง</option>
-                                                        <option value="เชียงราย">เชียงราย</option>
+                                                        @foreach($province as $row)
+                                                        <option value="{{$row->id}}">{{$row->province}}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
+                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                                    <label
+                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                        for="grid-first-name">
+                                                        อำเภอ
+                                                    </label>
+                                                    <select
+                                                        class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        id="grid-first-name" type="text" placeholder="" name="city">
+                                                        <option value="">---เลือก----</option>
+                                                    </select>
+                                                </div>
+                                                
                                                 <div class="w-full px-3 mb-6 md:mb-0 ">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -492,7 +491,7 @@
                                                     </label>
                                                     <input
                                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="phone" />
+                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="phone" maxlength="11" />
                                                 </div>
                                             </div>
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
@@ -587,10 +586,14 @@
                                 @php
                                     $cost = 0;
                                     $i = 1;
+                                    $total = 0;
                                 @endphp
                                 @foreach ($customer->orders as $order)
                                     @php
-                                        $cost = $order->price + $cost;
+                                        $total = $order->price * $order->quantity
+                                    @endphp
+                                    @php
+                                        $cost = $total + $cost;
                                     @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
@@ -612,7 +615,8 @@
                                                 {{ $order->city }},{{ $order->province }}
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->phone }}</td>
-                                            <td class="px-4 py-3 text-xs">{{ $order->price }}</td>
+                                           
+                                            <td class="px-4 py-3 text-xs">{{$total }}</td>
                                             <td class="flex px-4 py-3 text-xs ">
                                                 <a class="w-6 h-6 mr-2"
                                                     href="{{ route('FormOrder.edit', $order->id) }}">
@@ -652,9 +656,9 @@
                             <input
                                 class="h-30px  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center w-150px "
                                 type="text" placeholder="{{ $cost }}" disabled />
-                            <label "> ทั้งหมด : </label>
-                            <input " type="hidden" name="customer_id" value="{{ $customer->id }}">
-                            <input " type="hidden" name="total" value="{{ $cost }}">
+                            <label > ทั้งหมด : </label>
+                            <input type="hidden" name="customer_id" value="{{ $customer->id }}">
+                            <input type="hidden" name="total" value="{{ $cost }}">
                         </div>
                         <div class="mr-auto flex  flex-row-reverse  m-auto p-3">
                             <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
@@ -716,6 +720,32 @@
         }
         switchTheme()
     </script>
+    <script>
+    function addSpace(){
+        var inputValue = document.getElementById("telInput").value;
+        var inputValueLength = inputValue.length;
+        
+        if(inputValueLength == 3 ){
+            document.getElementById("telInput").value = inputValue+"-"; 
+        }
+    }
+    </script>
+    <script type="text/javascript">
+  $('.provinces').change(function() {
+      if($(this).val()!=''){
+          var select=$(this).val();
+          var _token=$('input[name="_token"]').val();
+          $.ajax({
+              url:"{{route('fetch')}}",
+              method:'GET',
+              data:{select:select,_token:_token},
+              success:function(result){
+                    $('.city').html(result);
+              }
+          });
+      }
+  });
+</script>
 </body>
 
 </html>

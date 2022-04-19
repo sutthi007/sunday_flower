@@ -11,8 +11,8 @@ class userController extends Controller
     //
     public function index(){
 
-        $orders = Order::orderBy('id', 'DESC')->paginate(10);
-        $status = Order::all();
+        $orders = Order::whereDate('created_at',Carbon::today())->orderBy('id', 'DESC')->paginate(10);
+        $status = Order::whereDate('created_at',Carbon::today());
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function store(Request $request){
@@ -54,19 +54,27 @@ class userController extends Controller
 
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
+    public function dateScan(Request $request){
+        
+        $date = $request->get('date');
+        $status =  Order::whereDate('created_at',$date);      
+        $orders = Order::whereDate('created_at',$date)->paginate(10);
+
+       return view('projects.index',compact('status','orders'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+    }
     public function order(){
-        $orders = Order::where('status','order')->orderBy('id', 'DESC')->paginate(10);
-        $status = Order::all();
+        $orders = Order::whereDate('created_at',Carbon::today())->Where('status','order')->orderBy('id', 'DESC')->paginate(10);
+        $status = Order::whereDate('created_at',Carbon::today());
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function transit(){
-        $orders = Order::where('status','send')->orderBy('id', 'DESC')->paginate(10);
-        $status = Order::all();
+        $orders = Order::whereDate('created_at',Carbon::today())->where('status','send')->orderBy('id', 'DESC')->paginate(10);
+        $status = Order::whereDate('created_at',Carbon::today());
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function success(){
-        $orders = Order::where('status','success')->orderBy('id', 'DESC')->paginate(10);
-        $status = Order::all();
+        $orders = Order::whereDate('created_at',Carbon::today())->where('status','success')->orderBy('id', 'DESC')->paginate(10);
+        $status = Order::whereDate('created_at',Carbon::today());
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function update($id,Request $request){

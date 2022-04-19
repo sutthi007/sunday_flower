@@ -38,6 +38,7 @@ require __DIR__.'/auth.php';
 // Route for dashboard
 Route::resource('projects',userController::class);
 Route::get('search',[userController::class,'search'])->name('search');
+Route::get('date',[userController::class,'dateScan'])->name('date');
 Route::get('projects-order',[userController::class,'order'])->name('projects-order');
 Route::get('projects-transit',[userController::class,'transit'])->name('projects-transit');
 Route::get('projects-success',[userController::class,'success'])->name('projects-success');
@@ -66,7 +67,7 @@ Route::get('/service/add/motorcycle',[ServiceController::class,'addlistmotorcle'
 Route::resource('transport',ProvinceController::class);
 Route::resource('subdistrict',subController::class);
 Route::resource('city',cityController::class);
-Route::post('province/fetch',[subController::class,'fetch'])->name('fetch');
+Route::get('province/fetch',[subController::class,'fetch'])->name('fetch');
 
 Route::resource('customer-systems',CustomerController::class);
 

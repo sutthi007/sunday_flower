@@ -9,6 +9,8 @@ use App\Exports\TransportsDaysExport;
 use Maatwebsite\Excel\Excel as ExcelExcel;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\Mailer\Transport;
+use App\Models\province;
+use App\Models\service;
 
 class OrderController extends Controller
 {
@@ -51,7 +53,9 @@ class OrderController extends Controller
     public function show($id)
     {
         $customer = customer::find($id);
-        return view('Order.order-step-1', compact('customer'));
+        $province  = province::all();
+       
+        return view('Order.order-step-1', compact('customer','province',));
     }
 
     public function destroy($idorder)
