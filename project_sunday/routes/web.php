@@ -77,3 +77,6 @@ Route::get('summary-account',[SummaryController::class,'account'])->name('sumAcc
 
 Route::get('/export-excel',[OrderController::class,'export'])->name('export');
 Route::get('/export-pdf',[OrderController::class,'pdf']);
+Route::get('/pdf',[OrderController::class,'downloadPDF']);
+
+Route::get('test',[OrderController::class,'viewReport'])->name('report');

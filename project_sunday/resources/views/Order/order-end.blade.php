@@ -424,7 +424,7 @@
                                 </div>
                             </div>
                             </div>
-                            <form  ">
+                            <form>
                                 <div class="w-full overflow-hidden rounded-lg shadow-xs p-3">
                                     <div class="w-full overflow-x-auto">
                                         <table class="w-full whitespace-no-wrap">

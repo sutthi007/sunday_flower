@@ -16,4 +16,7 @@ class province extends Model
     public function city(){
         return $this->hasMany(city::class);
     }
+    public function orderForm(){
+        return $this->hasMany(Order::class);
+    }
 }

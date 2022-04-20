@@ -20,7 +20,8 @@ class Order extends Model
         'price',
         'customer_id',
         'total',
-        'status'
+        'status',
+        'tracking',
     ];
 
     protected $casts = [
@@ -29,5 +30,8 @@ class Order extends Model
 
     public function customer(){
         return $this->belongsTo(customer::class);
+    }
+    public function province(){
+        return $this->belongsTo(province::class);
     }
 }

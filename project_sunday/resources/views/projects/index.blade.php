@@ -807,7 +807,7 @@
                                     </path>
                                 </div>
                                 <div class="p-3 mr-4 rounded-full">
-                                    <p class="text-50px text-white">{{ $status->where('status', 'send')->count() }}
+                                    <p class="text-50px text-white">{{ $orders->where('status','send')->count() }}
                                     </p>
                                 </div>
                             </div>

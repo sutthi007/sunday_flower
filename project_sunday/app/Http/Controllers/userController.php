@@ -48,16 +48,16 @@ class userController extends Controller
         return redirect()->route('projects.index');
     }
     public function search(Request $request){
-        $status = Order::all();
+        $status = Order::whereDate('created_at',Carbon::today());
         $search = $request->get('search');
-        $orders = Order::where('name', 'LIKE', '%'.$search. '%')->orWhere('type', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+        $orders = Order::whereDate('created_at',Carbon::today())->where('name', 'LIKE', '%'.$search. '%')->orWhere('type', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
 
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function dateScan(Request $request){
         
         $date = $request->get('date');
-        $status =  Order::whereDate('created_at',$date);      
+        $status = Order::whereDate('created_at',$date);      
         $orders = Order::whereDate('created_at',$date)->paginate(10);
 
        return view('projects.index',compact('status','orders'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
@@ -84,7 +84,7 @@ class userController extends Controller
             'status' => $request->status,
         ]);
 
-        return redirect()->route('projects.index');
+        return redirect()->back();
     }
 
 }

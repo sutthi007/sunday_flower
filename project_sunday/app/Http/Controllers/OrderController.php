@@ -11,6 +11,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\Mailer\Transport;
 use App\Models\province;
 use App\Models\service;
+use Barryvdh\DomPDF\Facade\PDF;
+use Dompdf\Adapter\PDFLib;
 
 class OrderController extends Controller
 {
@@ -44,6 +46,7 @@ class OrderController extends Controller
             'quantity' => $request->quantity,
             'price' => $request->price,
             'customer_id' => $request->customer_id,
+            'tracking' => 'SD'.$request->province.$request->type.time().random_int(00,99),
         ]);
         $customer = $request->customer_id;
 
@@ -105,5 +108,24 @@ class OrderController extends Controller
     }
     public function pdf(){
         return (new TransportsDaysExport)->download('active.pdf');
+    }
+    public function downloadPDF(){
+        $orders = Order::select('province')
+                        ->groupBy('province')
+                        ->get();
+
+        $types = Order::all();
+        $pdf = PDF::loadView('report',compact('orders','types'));
+        return @$pdf->stream();
+    }
+
+    public function viewReport(){
+        $orders = Order::select('province')
+                        ->groupBy('province')
+                        ->get();
+
+        $types = Order::all();
+
+        return view('report',compact('orders','types'));
     }
 }

@@ -18,13 +18,15 @@ return new class extends Migration
             $table->string('name');
             $table->integer('customer_id');
             $table->string('city');
-            $table->string('province');
+            $table->integer('province');
             $table->string('type');
             $table->string('list');
             $table->integer('quantity');
             $table->integer('price');
             $table->string('phone');
+            $table->string('tracking');
             $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('province')->references('id')->on('provinces');
             $table->enum('status',['order','send','success'])->default('order');
             $table->timestamps();
         });
