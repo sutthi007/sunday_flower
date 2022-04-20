@@ -102,67 +102,55 @@
                             </a>
                         </li>
                         <li class="relative px-6 py-3">
-                        <button
-                          class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                          @click="togglePagesMenu"
-                          aria-haspopup="true"
-                        >
-                          <span class="inline-flex items-center">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
-                            </svg>
-                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
-                          </span>
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            ></path>
-                          </svg>
-                        </button>
-                        <template x-if="isPagesMenuOpen">
-                          <ul
-                            x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
-                            x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
-                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-                            aria-label="submenu"
-                          >
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('transport.index')}}">จังหวัด</a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('city.index') }}">
-                                อำเภอ
-                              </a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('subdistrict.index')}}">
-                                ตำบล
-                              </a>
-                            </li>
-                          </ul>
-                        </template>
-                      </li>
+                            <button
+                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                @click="togglePagesMenu" aria-haspopup="true">
+                                <span class="inline-flex items-center">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-align-center">
+                                        <path
+                                            d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                                </span>
+                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <template x-if="isPagesMenuOpen">
+                                <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                    x-transition:enter-start="opacity-25 max-h-0"
+                                    x-transition:enter-end="opacity-100 max-h-xl"
+                                    x-transition:leave="transition-all ease-in-out duration-300"
+                                    x-transition:leave-start="opacity-100 max-h-xl"
+                                    x-transition:leave-end="opacity-0 max-h-0"
+                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                    aria-label="submenu">
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            อำเภอ
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                            ตำบล
+                                        </a>
+                                    </li>
+                                </ul>
+                            </template>
+                        </li>
                         <li class="relative px-6 py-3">
                             <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
@@ -260,67 +248,55 @@
                             </a>
                         </li>
                         <li class="relative px-6 py-3">
-                        <button
-                          class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                          @click="togglePagesMenu"
-                          aria-haspopup="true"
-                        >
-                          <span class="inline-flex items-center">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
-                            </svg>
-                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
-                          </span>
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            ></path>
-                          </svg>
-                        </button>
-                        <template x-if="isPagesMenuOpen">
-                          <ul
-                            x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
-                            x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
-                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-                            aria-label="submenu"
-                          >
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('transport.index')}}">จังหวัด</a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('city.index') }}">
-                                อำเภอ
-                              </a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('subdistrict.index')}}">
-                                ตำบล
-                              </a>
-                            </li>
-                          </ul>
-                        </template>
-                      </li>
+                            <button
+                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                @click="togglePagesMenu" aria-haspopup="true">
+                                <span class="inline-flex items-center">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-align-center">
+                                        <path
+                                            d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                                </span>
+                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <template x-if="isPagesMenuOpen">
+                                <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                    x-transition:enter-start="opacity-25 max-h-0"
+                                    x-transition:enter-end="opacity-100 max-h-xl"
+                                    x-transition:leave="transition-all ease-in-out duration-300"
+                                    x-transition:leave-start="opacity-100 max-h-xl"
+                                    x-transition:leave-end="opacity-0 max-h-0"
+                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                    aria-label="submenu">
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            อำเภอ
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                            ตำบล
+                                        </a>
+                                    </li>
+                                </ul>
+                            </template>
+                        </li>
                         <li class="relative px-6 py-3">
                             <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
@@ -375,7 +351,7 @@
                             </a>
                         </li>
                         <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('customer-systems.index') }}">
@@ -399,7 +375,8 @@
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
-        <aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
+        <aside
+            class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
             x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
             x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
@@ -520,28 +497,32 @@
                     </button>
                     <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                        <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
-                            <div class="absolute inset-y-0 flex items-center pl-2">
-                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <input
-                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                type="text" placeholder="Search for projects" aria-label="Search" />
-                        </div>
+
                     </div>
+
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
-                                    alt="" aria-hidden="true" />
+                                    src="{{ asset('img/Profile/' . Auth::user()->Path_imageProfile) }}" alt=""
+                                    aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -551,7 +532,7 @@
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{route('Profile.show',Auth::user()->id)}}">
+                                            href="{{ route('Profile.show', Auth::user()->id) }}">
                                             @csrf
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -565,21 +546,21 @@
                                         </a>
                                     </li>
                                     <li class="flex">
-                                    <form method="POST" action="{{ route('logout') }}">
-                                         @csrf
-                                        <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                viewBox="0 0 24 24" stroke="currennColor">
-                                                <path
-                                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                                </path>
-                                            </svg>
-                                            <span>ออกจากระบบ</span>
-                                        </a>
-                                    </form>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currennColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
+                                                <span>ออกจากระบบ</span>
+                                            </a>
+                                        </form>
                                     </li>
                                 </ul>
                             </template>
@@ -589,73 +570,107 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
 
                     </h2>
-                    <div class="bg-EBEBEB h-600px rounded-md  mb-6">
-                       <h2 class="my-6 text-2xl font-semibold text-center">ข้อมูลการใช้งาน</h2>
-                        <div class=" m-auto mt-16 w-1115px   ">
-                            <div class="relative p-6 flex-auto">
-                                <div class="overflow-hidden rounded-lg shadow-xs mb-6 ">
-                                    <div class=" overflow-x-auto ">
-                                        <div class="whitespace-no-wrap bg-white rounded-md  mb-6 ">
-                                            <div class="p-6 text-xl ">
-                                                <p>{{$customers->name}}</p>
-                                                <p>จังหวัด {{$customers->province}} อำเภอ {{$customers->city}} ตำบล {{$customers->subdistrict}}
-                                                </p>
-                                                <p>เบอร์โทรติดต่อ {{$customers->phone}} สถานะ ผู้รับ</p>
-                                            </div>
-                                        </div>
-                                        <div class="mt-4">
-                                            <p class="">ประวัติการบริการ</p>
-                                        </div>
-                                        <div class="h-250px rounded-md overflow-auto">
-                                            <table class="w-full  whitespace-no-wrap overflow-auto">
-                                                <thead>
-                                                    <tr
-                                                        class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                        <th class="px-4 py-3">ลำดับ</th>
-                                                        <th class="px-4 py-3">ประเภท</th>
-                                                        <th class="px-4 py-3">ต้นทาง</th>
-                                                        <th class="px-8 py-3">ปลายทาง</th>
-                                                        <th class="px-4 py-3">สถานะ</th>
-                                                        <th class="px-4 py-3">วันที่</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody
-                                                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                                    @php($i =1)
-                                                    @foreach ($customers->orders as $customer)
-                                                        <tr class="text-gray-700 dark:text-gray-400">
-                                                            <td class="px-4 py-3 text-sm">{{$i++}}</td>
-                                                            <td class="px-4 py-3 text-sm">{{$customer->type}}</td>
-                                                            <td class="px-4 py-3 text-sm">{{$customers->province}}</td>
-                                                            <td class="px-4 py-3 text-sm">{{$customer->province}}</td>
-                                                            <td class="px-4 py-3 text-sm">ผู้รับ</td>
-                                                            <td class="px-4 py-3 text-sm">{{$customer->created_at}}</td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--footer-->
-                            <div
-                                class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                <a
-                                    class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                    href="{{route('customer-systems.index')}}">
-                                    ปิด
-                                </a>
-                            </div>
+                    <h2 class="my-6 text-2xl font-semibold text-center w-full m-auto dark:text-white">ข้อมูลการใช้งาน</h2>
+                    <div class="whitespace-no-wrap bg-white rounded-md dark:bg-gray-800">
+                        <div class="p-6 text-xl dark:text-white">
+                            <p>{{ $customers->name }}</p>
+                            <p>จังหวัด {{ $customers->province }} อำเภอ {{ $customers->city }} ตำบล
+                                {{ $customers->subdistrict }}
+                            </p>
+                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} สถานะ ผู้รับ</p>
                         </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="dark:text-white">ประวัติการบริการ</p>
+                    </div>
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs ">
+                        <div class="w-full overflow-x-auto">
+                            <table class="w-full whitespace-no-wrap">
+                                <thead>
+                                    <tr
+                                        class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        <th class="px-4 py-3">ลำดับ</th>
+                                        <th class="px-4 py-3">ประเภท</th>
+                                        <th class="px-4 py-3">ต้นทาง</th>
+                                        <th class="px-8 py-3">ปลายทาง</th>
+                                        <th class="px-4 py-3">สถานะ</th>
+                                        <th class="px-4 py-3">วันที่</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                    @php($i = 1)
+                                    @foreach ($customers->orders as $customer)
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->type }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customers->province }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
+                                            <td class="px-4 py-3 text-sm">ผู้รับ</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->created_at }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--footer-->
+                    <div class="text-center flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                        <a class="w-100px  bg-pink text-white active:bg-fuchsia-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                            href="{{ route('customer-systems.index') }}">
+                            ปิด
+                        </a>
                     </div>
                 </div>
             </main>
         </div>
+        <script>
+            const switchToggle = document.querySelector('#switch-toggle');
+            const html = document.querySelector('html');
+            let isDarkmode = false
+            const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+            const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>`
+            const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+            // Jika ada isDarkmode di localstorage 
+            if (localDarkmode) {
+                isDarkmode = localDarkmode
+                html.classList.add('dark')
+            } else {
+                html.classList.remove('dark')
+            }
+
+            function toggleTheme() {
+                isDarkmode = !isDarkmode
+                localStorage.setItem('isDarkmode', isDarkmode)
+                switchTheme()
+            }
+
+            function switchTheme() {
+                if (isDarkmode) {
+                    html.classList.add('dark')
+                    switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = darkIcon
+                    }, 250);
+                } else {
+                    html.classList.remove('dark')
+                    switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = lightIcon
+                    }, 250);
+                }
+            }
+            switchTheme()
+        </script>
 </body>
 
 </html>

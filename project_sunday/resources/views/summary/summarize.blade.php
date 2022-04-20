@@ -35,7 +35,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -49,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -72,7 +72,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -88,7 +88,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -104,70 +104,58 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <button
-                          class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                          @click="togglePagesMenu"
-                          aria-haspopup="true"
-                        >
-                          <span class="inline-flex items-center">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
-                          </span>
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            ></path>
-                          </svg>
                         </button>
                         <template x-if="isPagesMenuOpen">
-                          <ul
-                            x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
-                            x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
-                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-                            aria-label="submenu"
-                          >
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('transport.index')}}">จังหวัด</a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('city.index') }}">
-                                อำเภอ
-                              </a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('subdistrict.index')}}">
-                                ตำบล
-                              </a>
-                            </li>
-                          </ul>
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('city.index') }}">
+                                        อำเภอ
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                        ตำบล
+                                    </a>
+                                </li>
+                            </ul>
                         </template>
-                      </li>
+                    </li>
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -181,7 +169,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -212,7 +200,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -226,7 +214,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -236,7 +224,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -248,7 +236,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -264,7 +252,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -281,7 +269,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -295,7 +283,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -326,8 +314,8 @@
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
-                                    alt="" aria-hidden="true" />
+                                    src="{{ asset('img/Profile/' . Auth::user()->Path_imageProfile) }}" alt=""
+                                    aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -370,27 +358,27 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         สรุป
                     </h2>
-                    <div class="bg-EBEBEB h-700px rounded-md  mb-6">
-                        <div class=" m-auto  mt-8 w-1115px flex text-center ">
+                    <div class="bg-EBEBEB  rounded-md  mb-6">
+                        <div class=" m-auto mt-8 flex text-center ">
                             <div class="bg-white ml-10 mb-6 w-500px h-400px  rounded-lg ">
                                 <div class="w-150px mt-45px m-auto">
                                     <img src="../../img/accounts.png" class="">
-                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white" >
-                                    <a href="{{ route('sumAccount')}}">รายงาน บัญชี</a>
-                                </button>
-                            </div>
+                                    <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white">
+                                        <a href="{{ route('sumAccount') }}">รายงาน บัญชี</a>
+                                    </button>
+                                </div>
                             </div>
                             <div class="bg-white ml-10 mb-6 w-500px h-400px  rounded-lg ">
                                 <div class="w-150px mt-45px m-auto">
                                     <img src="../../img/package.png" class="">
-                                <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white">
-                                   <a href="{{route('sumTransport')}}">รายงาน ขนส่ง</a>
-                                </button>
-                            </div>
+                                    <button class="bg-pink w-150px h-30px mt-6 rounded-lg mt-45px text-white">
+                                        <a href="{{ route('sumTransport') }}">รายงาน ขนส่ง</a>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -398,4 +386,5 @@
             </main>
         </div>
 </body>
+
 </html>

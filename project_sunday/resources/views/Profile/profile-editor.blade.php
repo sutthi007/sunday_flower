@@ -552,46 +552,46 @@
                             </h2>
                             <div class=" mx-auto mt-10  ">
                                 <div class=" w-300px m-auto items-center mx-auto ">
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             วันเดือนปีเกิด :
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-150px mt-2 dark:bg-gray-900 dark:text-white" type="date"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-150px  dark:bg-gray-900 dark:text-white" type="date"
                                             placeholder="{{ $user->birthday }}" name="birthday" value="{{ $user->birthday }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             ตำบล:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px  dark:bg-gray-900 dark:text-white" type="text"
                                             value="{{ $user->subdistrict }}" name="subdistrict">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             อำเภอ:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->city }}" name="city" value="{{ $user->city }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             จังหวัด:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->province }}" name="province" value="{{ $user->province }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             ที่อยู่:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->address }}" name="address" value="{{ $user->address }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class="ml-4 dark:text-white" for="">
                                             ไปรษณีย์:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-100px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px w-180px dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->zipcode }}" name="zipcode" value="{{ $user->zipcode }}">
                                     </div>
                                 </div>
@@ -618,7 +618,7 @@
                                             <label class="ml-4 dark:text-white" for="">
                                                 ชื่อ:
                                             </label>
-                                            <input class="bg-neutral-300 rounded-lg w-100px h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
+                                            <input class="bg-neutral-300 rounded-lg w-200px h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                                 placeholder="{{ $user->name }}" name="name" value="{{ $user->name }}">
                                         </div>
                                         <div class="bg-neutral-300 h-50px mb-3 dark:bg-gray-900 rounded-lg" >

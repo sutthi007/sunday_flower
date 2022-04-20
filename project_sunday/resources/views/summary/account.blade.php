@@ -34,8 +34,8 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{ route('projects.index')}}">
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -49,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -72,7 +72,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -88,7 +88,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -104,70 +104,58 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <button
-                          class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                          @click="togglePagesMenu"
-                          aria-haspopup="true"
-                        >
-                          <span class="inline-flex items-center">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
-                          </span>
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            ></path>
-                          </svg>
                         </button>
                         <template x-if="isPagesMenuOpen">
-                          <ul
-                            x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
-                            x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
-                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-                            aria-label="submenu"
-                          >
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('transport.index')}}">จังหวัด</a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('city.index') }}">
-                                อำเภอ
-                              </a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('subdistrict.index')}}">
-                                ตำบล
-                              </a>
-                            </li>
-                          </ul>
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('city.index') }}">
+                                        อำเภอ
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                        ตำบล
+                                    </a>
+                                </li>
+                            </ul>
                         </template>
-                      </li>
+                    </li>
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -178,16 +166,48 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                            aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200 dark:text-gray-100">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -212,7 +232,7 @@
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="{{route('projects.index')}}">
+                            href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -226,7 +246,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Profile.index')}}">
+                            href="{{ route('Profile.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -236,7 +256,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -248,7 +268,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('FormOrder.index')}}">
+                            href="{{ route('FormOrder.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -264,7 +284,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('service.index')}}">
+                            href="{{ route('service.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -281,7 +301,7 @@
                     <li class="relative px-6 py-3">
 
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors  duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('customer-systems.index')}}">
+                            href="{{ route('customer-systems.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -295,7 +315,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
+                            href="{{ route('summary.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
@@ -319,15 +339,32 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <div class="flex justify-center flex-1 lg:mr-32">
+                        
+                    </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
-                                    alt="" aria-hidden="true" />
+                                    src="{{ asset('img/Profile/' . Auth::user()->Path_imageProfile) }}" alt=""
+                                    aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -370,144 +407,131 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         รายงาน บัญชี
                     </h2>
-                    <div class="bg-EBEBEB h-700px rounded-md  mb-6">
+                   
+                        <div class="mt-4 mb-6 text-xl dark:text-white">
+                            <p class="">รายวัน</p>
+                        </div>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">ลำดับ</th>
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-8 py-3">จังหวัด</th>
+                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
-                        <div class=" m-auto  mt-8 w-1115px  text-center ">
-                            <div class="mt-4 mb-6 text-xl ">
-                                <p class="">รายวัน</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap">
-                                        <thead>
-                                            <tr
-                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">ลำดับ</th>
-                                                <th class="px-4 py-3">วันที่</th>
-                                                <th class="px-8 py-3">จังหวัด</th>
-                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
-
-                                            </tr>
-                                        </thead>
-                                        <tbody
-                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        PDF
-                                                    </button>
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        Excel
-                                                    </button>
-                                                    </td>
-                                            </tr>
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        PDF
-                                                    </button>
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        Excel
-                                                    </button>
-                                                    </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">1</td>
+                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                            <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                            <td class="px-4 py-3 text-sm">
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    PDF
+                                                </button>
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    Excel
+                                                </button>
+                                            </td>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                        <div class=" m-auto  mt-8 w-1115px  text-center ">
-                            <div class="mt-4 mb-6 text-xl ">
-                                <p class="">รายเดือน</p>
-                            </div>
-                            <!-- New Table -->
-                            <div class=" rounded-lg shadow-xs mb-6 w-1115px h-350px overflow-auto">
-                                <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap">
-                                        <thead>
-                                            <tr
-                                                class="text-xs  font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                                <th class="px-4 py-3">ลำดับ</th>
-                                                <th class="px-4 py-3">วันที่</th>
-                                                <th class="px-8 py-3">จังหวัด</th>
-                                                <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                        <div class="mt-4 mb-6 text-xl dark:text-white">
+                            <p class="">รายเดือน</p>
+                        </div>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">ลำดับ</th>
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-8 py-3">จังหวัด</th>
+                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody
-                                            class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        PDF
-                                                    </button>
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        Excel
-                                                    </button>
-                                                    </td>
-                                            </tr>
-                                            <tr class="text-gray-700 dark:text-gray-400">
-                                                <td class="px-4 py-3 text-sm">1</td>
-                                                <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                                <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
-                                                <td class="px-4 py-3 text-sm">
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        PDF
-                                                    </button>
-                                                    <button
-                                                        class="bg-pink w-94px h-24px rounded-md text-white"
-                                                        type="button"
-                                                        onclick="toggleModal('modal-id')">
-                                                        Excel
-                                                    </button>
-                                                    </td>
-                                            </tr>
-
-                                        </tbody>
-                                    </table>
-                                </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">1</td>
+                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                            <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                            <td class="px-4 py-3 text-sm ">
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    PDF
+                                                </button>
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white "
+                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    Excel
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-                    </div>
                 </div>
             </main>
         </div>
+        <script>
+            const switchToggle = document.querySelector('#switch-toggle');
+            const html = document.querySelector('html');
+            let isDarkmode = false
+            const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+            const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>`
+            const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+            // Jika ada isDarkmode di localstorage 
+            if (localDarkmode) {
+                isDarkmode = localDarkmode
+                html.classList.add('dark')
+            } else {
+                html.classList.remove('dark')
+            }
+    
+            function toggleTheme() {
+                isDarkmode = !isDarkmode
+                localStorage.setItem('isDarkmode', isDarkmode)
+                switchTheme()
+            }
+    
+            function switchTheme() {
+                if (isDarkmode) {
+                    html.classList.add('dark')
+                    switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = darkIcon
+                    }, 250);
+                } else {
+                    html.classList.remove('dark')
+                    switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = lightIcon
+                    }, 250);
+                }
+            }
+            switchTheme()
+        </script>
 </body>
 
 </html>

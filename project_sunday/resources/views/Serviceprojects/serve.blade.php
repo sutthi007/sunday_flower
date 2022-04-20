@@ -34,7 +34,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +88,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('service.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -209,7 +209,7 @@
                 </a>
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{route('projects.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -262,7 +262,7 @@
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                         aria-hidden="true"></span>
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{route('service.index')}}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
@@ -315,7 +315,24 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
+                    <div class="flex justify-center flex-1 lg:mr-32">
+                       
+                    </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -371,27 +388,21 @@
             </header>
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
-                <div class="px-6 mx-auto grid w-1250px ">
+                <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         รายการ
                     </h2>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                             <a href="{{ route('parcel')}}">เพิ่มรายการ</a>
-                            </button>
-                        </div>
-                        <div class=" m-auto  mt-16 w-1115px">
-                            <div class="mt-4">
+                    <div class="bg-white rounded-md shadow mb-6 dark:bg-gray-800">
+                            <div class="dark:text-white p-4">
                                 <p class="">อัตราต่าบริการส่งพัสดุภัณท์</p>
                             </div>
                             <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
+                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-3 p-3">
                                 <div class="w-full overflow-x-auto">
                                     <table class="w-full whitespace-no-wrap">
                                         <thead>
                                             <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">รายการ</th>
                                                 <th class="px-4 py-3"></th>
                                                 <th class="px-8 py-3">ราคาค่าบริการ(เริ่มต้น)</th>
@@ -435,26 +446,22 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
                         </div>
+                        <button class="bg-pink w-150px h-30px rounded-md mt-4 float-right mr-3 mb-3 text-white" type=" button">
+                            <a href="{{ route('parcel')}}">เพิ่มรายการ</a>
+                           </button>
                     </div>
-                    <div class="bg-EBEBEB h-100% rounded-md mb-6">
-                        <div class="w-1115px  m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('flower') }}">เพิ่มรายการ</a>
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px mt-16">
-                            <div class="mt-4">
+                    <div class="bg-white rounded-md shadow mb-6 dark:bg-gray-800">
+                            <div class="dark:text-white p-4">
                                 <p class="">อัตราต่าบริการส่งดอกไม้สด</p>
                             </div>
                             <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
+                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-3 p-3">
                                 <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap text-center">
+                                    <table class="w-full whitespace-no-wrap">
                                         <thead>
                                             <tr
-                                                class=" text-center text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                class=" text-center text-xs font-semibold tracking-wide text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">จังหวัด</th>
                                                 <th class="px-4 py-3">อำเภอ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
@@ -501,25 +508,21 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                            <button class="bg-pink w-150px h-30px rounded-md mt-4 float-right mr-3 mb-3 text-white" type=" button">
+                                <a href="{{ route('flower') }}">เพิ่มรายการ</a>
+                             </button>
                     </div>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px   m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white">
-                               <a href="{{route('motorcycle')}}">เพิ่มรายการ</a>
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px   mt-16">
-                            <div class="mt-4">
+                    <div class="bg-white rounded-md shadow  mb-6 dark:bg-gray-800">
+                        <div class="dark:text-white p-4">
                                 <p class="">อัตราต่าบริการส่งมอเตอร์ไซต์</p>
                             </div>
                             <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px">
+                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-3 p-3">
                                 <div class="w-full overflow-x-auto">
-                                    <table class="w-full whitespace-no-wrap ">
+                                    <table class="w-full whitespace-no-wrap">
                                         <thead>
                                             <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">จังหวัด</th>
                                                 <th class="px-4 py-3">อำเภอ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
@@ -562,25 +565,21 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                            <button class="bg-pink w-150px h-30px rounded-md mt-4 float-right mr-3 mb-3 text-white" type=" button">
+                                <a href="{{route('motorcycle')}}">เพิ่มรายการ</a>
+                             </button>
                     </div>
-                    <div class="bg-EBEBEB h-100% rounded-md  mb-6">
-                        <div class="w-1115px   m-auto mt-5  ">
-                            <button class="bg-pink w-150px h-30px rounded-md  float-right text-white" type=" button">
-                               <a href="{{ route('animal')}}">เพิ่มรายการ</a>
-                            </button>
-                        </div>
-                        <div class=" m-auto w-1115px   mt-16">
-                            <div class="mt-4">
+                    <div class="bg-white rounded-md shadow  mb-6 dark:bg-gray-800">
+                            <div class="dark:text-white p-4">
                                 <p class="">อัตราต่าบริการส่งสัตว์เลี้ยง</p>
                             </div>
                             <!-- New Table -->
-                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-6 w-1115px ">
+                            <div class="w-full overflow-hidden rounded-lg shadow-xs mb-3 p-3">
                                 <div class="w-full overflow-x-auto">
                                     <table class="w-full whitespace-no-wrap">
                                         <thead>
                                             <tr
-                                                class="text-xs font-semibold text-center tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                                class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                                 <th class="px-4 py-3">รายการ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
                                                 <th class="px-4 py-3"></th>
@@ -619,11 +618,57 @@
                                     </table>
                                 </div>
                             </div>
-                        </div>
+                            <button class="bg-pink w-150px h-30px rounded-md mt-4 float-right mr-3 mb-3 text-white" type=" button">
+                                <a href="{{ route('animal')}}">เพิ่มรายการ</a>
+                             </button>
                     </div>
                 </div>
             </main>
         </div>
+        <script>
+            const switchToggle = document.querySelector('#switch-toggle');
+            const html = document.querySelector('html');
+            let isDarkmode = false
+            const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+            const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>`
+            const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>`
+            // Jika ada isDarkmode di localstorage 
+            if (localDarkmode) {
+                isDarkmode = localDarkmode
+                html.classList.add('dark')
+            } else {
+                html.classList.remove('dark')
+            }
+    
+            function toggleTheme() {
+                isDarkmode = !isDarkmode
+                localStorage.setItem('isDarkmode', isDarkmode)
+                switchTheme()
+            }
+    
+            function switchTheme() {
+                if (isDarkmode) {
+                    html.classList.add('dark')
+                    switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = darkIcon
+                    }, 250);
+                } else {
+                    html.classList.remove('dark')
+                    switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                    switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                    setTimeout(() => {
+                        switchToggle.innerHTML = lightIcon
+                    }, 250);
+                }
+            }
+            switchTheme()
+        </script>
 </body>
 
 </html>

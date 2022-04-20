@@ -508,6 +508,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .m-auto {
   margin: auto;
 }
+.m-4 {
+  margin: 1rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -608,6 +611,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-10 {
   margin-bottom: 2.5rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .mr-auto {
   margin-right: auto;
 }
@@ -628,9 +634,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-.mt-5 {
-  margin-top: 1.25rem;
 }
 .mt-20px {
   margin-top: 20px;
@@ -725,17 +728,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-250px {
   height: 250px;
 }
-.h-1050px {
-  height: 1050px;
-}
-.h-950px {
-  height: 950px;
-}
 .h-10 {
   height: 2.5rem;
 }
 .h-26px {
   height: 26px;
+}
+.h-1050px {
+  height: 1050px;
+}
+.h-950px {
+  height: 950px;
 }
 .h-350px {
   height: 350px;
@@ -806,14 +809,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-50px {
   width: 50px;
 }
-.w-1250px {
-  width: 1250px;
-}
-.w-1115px {
-  width: 1115px;
-}
 .w-350px {
   width: 350px;
+}
+.w-180px {
+  width: 180px;
 }
 .w-94px {
   width: 94px;
@@ -830,20 +830,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-20 {
   width: 5rem;
 }
-.w-320px {
-  width: 320px;
-}
 .w-48 {
   width: 12rem;
 }
+.w-1250px {
+  width: 1250px;
+}
+.w-1115px {
+  width: 1115px;
+}
 .w-500px {
   width: 500px;
-}
-.w-100\% {
-  width: 100%;
-}
-.w-90\% {
-  width: 90%;
 }
 .max-w-7xl {
   max-width: 80rem;
@@ -856,9 +853,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.max-w-lg {
-  max-width: 32rem;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -925,9 +919,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.flex-row {
-  flex-direction: row;
 }
 .flex-row-reverse {
   flex-direction: row-reverse;
@@ -1123,16 +1114,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
-.bg-EBEBEB {
-  --tw-bg-opacity: 1;
-  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
-}
 .bg-transparent {
   background-color: transparent;
 }
 .bg-neutral-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 212 / var(--tw-bg-opacity));
+}
+.bg-220 {
+  background-color: rgba(220, 220, 220, 1);
 }
 .bg-gray-800 {
   --tw-bg-opacity: 1;
@@ -1141,6 +1131,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
+}
+.bg-EBEBEB {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 235 235 / var(--tw-bg-opacity));
 }
 .bg-fuchsia-400 {
   --tw-bg-opacity: 1;
@@ -1711,6 +1705,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+.active\:bg-fuchsia-200:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 208 254 / var(--tw-bg-opacity));
+}
+.active\:bg-fuchsia-700:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(162 28 175 / var(--tw-bg-opacity));
+}
 .disabled\:opacity-25:disabled {
   opacity: 0.25;
 }
@@ -1736,10 +1738,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:bg-gray-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-.dark .dark\:bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;
@@ -1772,10 +1770,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:text-purple-300 {
   --tw-text-opacity: 1;
   color: rgb(216 180 254 / var(--tw-text-opacity));
-}
-.dark .dark\:text-gray-800 {
-  --tw-text-opacity: 1;
-  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 .dark .dark\:placeholder-gray-500::-moz-placeholder {
   --tw-placeholder-opacity: 1;
