@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>รายการ</title>
 
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
-
+    <script type="text/javascript" src="/js/jquery.printPage.js"></script>
     <script src="/js/init-alpine.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
@@ -19,7 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 </head>
 
@@ -487,6 +488,9 @@
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="text-white" href="{{route('projects.index')}}"> ปิด </a>
                                     </div>
+                                    <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
+                                        <a class="btnprn text-white" href="{{ url('/prnpriview/'.$customer->id) }}"> พิมพ์ </a>
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -537,6 +541,11 @@
             }
         }
         switchTheme()
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+         $('.btnprn').printPage();
+        });
     </script>
 </body>
 

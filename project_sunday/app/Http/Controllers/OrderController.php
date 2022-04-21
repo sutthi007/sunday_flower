@@ -89,6 +89,11 @@ class OrderController extends Controller
         $customer = customer::find($id);
         return view('Order.order-end', compact('customer'));
     }
+    public function prnpriview($id)
+      {
+            $customer = customer::find($id);
+            return view('Order.bill', compact('customer'));
+      }
     public function total(Request $request)
     {
 
@@ -104,11 +109,11 @@ class OrderController extends Controller
         return Excel::download(new TransportsDaysExport, $order->created_at . 'รายงานขนส่ง.xlsx');
     }
     public function export(){
-        return (new TransportsDaysExport)->download('active.xlsx');
+        return Excel::download(new TransportsDaysExport(),'test.xlsx');
     }
-    public function pdf(){
-        return (new TransportsDaysExport)->download('active.pdf');
-    }
+    // public function pdf(){
+    //     return (new TransportsDaysExport)->download('active.pdf');
+    // }
     public function downloadPDF(){
         $orders = Order::select('province')
                         ->groupBy('province')

@@ -35,56 +35,84 @@
         body {
             font-family: "THSarabunNew";
         }
+        h2{
+            text-align: center;
+        }
+        #emp{
+            border-collapse:collapse ;
+           width: 100%;
+        }
+        #emp td{
+            text-align: center;
+        }
+        #emp td,#emp th{
+           border: 1px solid ; 
+           padding: 8px;
+        }
+        #province{
+            background-color: #5adf5a;
+        }
+        #total{
+            background-color: red;
+        }
+        #emp th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4caf50;
+        }
+        
     </style>
 
 </head>
-<body ">
+<body>
     <div>
-    <div>
-        <h2>สรุปรายงานขนส่ง</h2>
-    </div>
-    <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
-        <div class="w-full overflow-x-auto">
-            <table class="w-full whitespace-no-wrap">
-                <thead>
-                    <tr 
-                        class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                        <th class="px-4 py-3">จังหวัด</th>
-                        <th class="px-4 py-3">ประเภท</th>
-                        <th class="px-4 py-3">รายการ</th>
-                        <th class="px-4 py-3">ชื่อ - เบอร์โทร</th>
-                        <th class="px-d py-3">จำนวน</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y ">
-                    @foreach($orders as $order)
-                        
-                    <tr class="text-gray-700 dark:text-gray-400">
-                        <td class="px-4 py-3">{{$order->province}}</td>
-                    </tr>
-                        @php
-                            $i = 0
-                        @endphp
-                        @foreach($types->where('province',$order->province) as $type)
-                            <tr>
-                                <td class="px-4 py-3 text-sm"></td>
-                                <td class="px-4 py-3 text-sm">{{$type->type}}</td>
-                                <td class="px-4 py-3 text-sm">{{$type->list}}</td>
-                                <td class="px-4 py-3 text-sm">{{$type->name}}{{'('.$type->phone .')'}}</td>
-                                <td class="px-4 py-3 text-sm">{{$type->quantity}}</td>  
-                            </tr>
-                            @php
-                                $i = $type->quantity + $i
-                            @endphp
+        <div>
+            <h2>สรุปรายงานขนส่ง</h2>
+        </div>
+        <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
+            <div class="w-full overflow-x-auto">
+                <table id="emp" class="w-full whitespace-no-wrap">
+                    <thead>
+                        <tr 
+                            class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                             
-                        @endforeach
-                        <td class="px-4 py-3"> ทั้งหมด {{$i}} </td>
-                    @endforeach 
+                            <th class="px-4 py-3">ประเภท</th>
+                            <th class="px-4 py-3">รายการ</th>
+                            <th class="px-4 py-3">ชื่อ - เบอร์โทร</th>
+                            <th class="px-d py-3">จำนวน</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y ">
+                        @foreach($orders as $order)
+                            
+                        <tr class="text-gray-700 dark:text-gray-400">
+                            <td id="province" class="px-4 py-3" colspan="4">{{$order->province}}</td>
+                        </tr>
+                            @php
+                                $i = 0
+                            @endphp
+                            @foreach($types->where('province',$order->province) as $type)
+                                <tr>
+                                    
+                                    <td class="px-4 py-3 text-sm">{{$type->type}}</td>
+                                    <td class="px-4 py-3 text-sm">{{$type->list}}</td>
+                                    <td class="px-4 py-3 text-sm">{{$type->name}}{{'('.$type->phone .')'}}</td>
+                                    <td class="px-4 py-3 text-sm">{{$type->quantity}}</td>  
+                                </tr>
+                                @php
+                                    $i = $type->quantity + $i
+                                @endphp
+                                
+                            @endforeach
+                            <td colspan="3"></td>
+                            <td id="total" class="px-4 py-3"> ทั้งหมด {{$i}}  รายการ</td>
+                        @endforeach 
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
- </div>
 </body>
 </html>

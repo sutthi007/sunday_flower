@@ -521,7 +521,7 @@
                                             </div>
                                             </td>
                                             <td class="px-4 py-3 text-sm w-100px ">
-                                                <form action="{{ route('projects.destroy', $user->id) }}"
+                                                <form action="{{ route('Employee.destroy', $user->id) }}"
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')

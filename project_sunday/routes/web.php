@@ -47,6 +47,7 @@ Route::get('projects-success',[userController::class,'success'])->name('projects
 Route::resource('FormOrder',OrderController::class);
 Route::post('save',[OrderController::class,'total'])->name('save');
 Route::get('bill/summary/{id}',[OrderController::class,'sum'])->name('bill');
+Route::get('/prnpriview/{id}',[OrderController::class,'prnpriview']);
 
 //Route for Profile
 Route::resource('Profile',ProfileController::class);

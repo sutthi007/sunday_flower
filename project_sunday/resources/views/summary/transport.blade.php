@@ -435,14 +435,16 @@
                                             <td class="px-4 py-3 text-sm">26/01/2564</td>
                                             <td class="px-4 py-3 text-sm">50</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')"
+                                                    href="/pdf">
                                                     PDF
-                                                </button>
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                </a>
+                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')"
+                                                    href="/export-excel">
                                                     Excel
-                                                </button>
+                                                </a>
                                                 <a href="/transport-details-day">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
@@ -474,14 +476,17 @@
                                             <td class="px-4 py-3 text-sm">1-31/01/2564</td>
                                             <td class="px-4 py-3 text-sm">500</td>
                                             <td class="px-4 py-3 text-sm ">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
+                                                    type="button" onclick="toggleModal('modal-id')"
+                                                    href="/pdf">
                                                     PDF
-                                                </button>
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white "
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                </a>
+                                                <a class="bg-pink w-94px h-24px rounded-md text-white "
+                                                    type="button" onclick="toggleModal('modal-id')"
+                                                    href="/export-excel"
+                                                    >
                                                     Excel
-                                                </button>
+                                                </a>
                                                 <a href="/transport-details-month">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
