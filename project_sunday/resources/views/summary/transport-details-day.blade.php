@@ -409,12 +409,8 @@
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        รายงานขนส่ง
+                        รายงานขนส่งรายวัน
                     </h2>
-                   
-                        <div class="mt-4 mb-6 text-xl dark:text-white">
-                            <p class="">รายวัน</p>
-                        </div>
                         <!-- New Table -->
                         <div class="w-full overflow-hidden rounded-lg shadow-xs">
                             <div class="w-full overflow-x-auto">
@@ -424,6 +420,9 @@
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-4 py-3">จังหวัด</th>
+                                            <th class="px-4 py-3">ตำบล</th>
+                                            <th class="px-4 py-3">อำเภอ</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
@@ -433,6 +432,9 @@
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">1</td>
                                             <td class="px-4 py-3 text-sm">26/01/2564</td>
+                                            <td class="px-4 py-3 text-sm">เชียงใหม่</td>
+                                            <td class="px-4 py-3 text-sm">หนองหาร</td>
+                                            <td class="px-4 py-3 text-sm">สันทราย</td>
                                             <td class="px-4 py-3 text-sm">50</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
@@ -443,50 +445,7 @@
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel
                                                 </button>
-                                                <a href="/transport-details-day">
-                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
-                                                </a>
                                             </td>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="mt-4 mb-6 text-xl dark:text-white">
-                            <p class="">รายเดือน</p>
-                        </div>
-                        <!-- New Table -->
-                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                            <div class="w-full overflow-x-auto">
-                                <table class="w-full whitespace-no-wrap">
-                                    <thead>
-                                        <tr
-                                            class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                            <th class="px-4 py-3">ลำดับ</th>
-                                            <th class="px-4 py-3">เดือน</th>
-                                            <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
-                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">1-31/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">500</td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
-                                                    PDF
-                                                </button>
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white "
-                                                    type="button" onclick="toggleModal('modal-id')">
-                                                    Excel
-                                                </button>
-                                                <a href="/transport-details-month">
-                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
-                                                </a>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -80,3 +80,17 @@ Route::get('/export-pdf',[OrderController::class,'pdf']);
 Route::get('/pdf',[OrderController::class,'downloadPDF']);
 
 Route::get('test',[OrderController::class,'viewReport'])->name('report');
+
+//summary 
+Route::get('/account-details-day', function () {
+    return view('summary/account-details-day');
+});
+Route::get('/transport-details-day',function (){
+    return view('summary/transport-details-day');
+});
+Route::get('/account-details-month', function () {
+    return view('summary/account-details-month');
+});
+Route::get('/transport-details-month',function (){
+    return view('summary/transport-details-month');
+});

@@ -20,7 +20,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-         'prompt':[ 'Prompt', 'sans-serif']
+         'prompt':[ 'Prompt', 'sans-serif'],
+         'prompts':[ 'Prompt', 'sans-serif']
       },
       spacing: {
         '6px':'6px',
@@ -54,6 +55,7 @@ module.exports = {
         '600px':'600px',
         '640px':'640px',
         '150px':'150px',
+        '160px':'160px',
         '100px':'100px',
         '1060px':'1060px',
         '1250px':'1250px',

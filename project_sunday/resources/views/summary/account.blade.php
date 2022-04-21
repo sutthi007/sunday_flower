@@ -424,7 +424,7 @@
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
-                                            <th class="px-8 py-3">จังหวัด</th>
+                                            <th class="px-8 py-3">รายได้สุทธิ</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                         </tr>
@@ -433,7 +433,7 @@
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">1</td>
                                             <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
+                                            <td class="px-4 py-3 text-sm">12,000</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
@@ -443,6 +443,9 @@
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel
                                                 </button>
+                                                <a href="/account-details-day">
+                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
+                                                </a>
                                             </td>
                                     </tbody>
                                 </table>
@@ -459,8 +462,8 @@
                                         <tr
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">ลำดับ</th>
-                                            <th class="px-4 py-3">วันที่</th>
-                                            <th class="px-8 py-3">จังหวัด</th>
+                                            <th class="px-4 py-3">เดือน</th>
+                                            <th class="px-8 py-3">รายได้สุทธิ</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                         </tr>
@@ -468,17 +471,20 @@
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">นาย ใจดี มีชัย</td>
-                                            <td class="px-4 py-3 text-sm ">
+                                            <td class="px-4 py-3 text-sm">1-30/01/2564</td>
+                                            <td class="px-4 py-3 text-sm">500,000</td>
+                                            <td class="px-4 py-3 text-sm">
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     PDF
                                                 </button>
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white "
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel
                                                 </button>
+                                                <a href="/account-details-month">
+                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
+                                                </a>
                                             </td>
                                         </tr>
                                     </tbody>

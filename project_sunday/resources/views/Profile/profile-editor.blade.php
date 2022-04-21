@@ -47,7 +47,7 @@
                 @can('admin')
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
+                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +61,7 @@
                     </ul>
                     <ul>
                         <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                                 href="{{ route('Profile.index') }}">
@@ -116,67 +116,55 @@
                             </a>
                         </li>
                         <li class="relative px-6 py-3">
-                        <button
-                          class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                          @click="togglePagesMenu"
-                          aria-haspopup="true"
-                        >
-                          <span class="inline-flex items-center">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-align-center">
-                                <path  d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z"></path>
-                            </svg>
-                            <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
-                          </span>
-                          <svg
-                            class="w-4 h-4"
-                            aria-hidden="true"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fill-rule="evenodd"
-                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                            ></path>
-                          </svg>
-                        </button>
-                        <template x-if="isPagesMenuOpen">
-                          <ul
-                            x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
-                            x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
-                            class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
-                            aria-label="submenu"
-                          >
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('transport.index')}}">จังหวัด</a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('city.index') }}">
-                                อำเภอ
-                              </a>
-                            </li>
-                            <li
-                              class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            >
-                              <a class="w-full" href="{{ route('subdistrict.index')}}">
-                                ตำบล
-                              </a>
-                            </li>
-                          </ul>
-                        </template>
-                      </li>
+                            <button
+                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                @click="togglePagesMenu" aria-haspopup="true">
+                                <span class="inline-flex items-center">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-align-center">
+                                        <path
+                                            d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                                </span>
+                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <template x-if="isPagesMenuOpen">
+                                <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                    x-transition:enter-start="opacity-25 max-h-0"
+                                    x-transition:enter-end="opacity-100 max-h-xl"
+                                    x-transition:leave="transition-all ease-in-out duration-300"
+                                    x-transition:leave-start="opacity-100 max-h-xl"
+                                    x-transition:leave-end="opacity-0 max-h-0"
+                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                    aria-label="submenu">
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800  dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            อำเภอ
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                            ตำบล
+                                        </a>
+                                    </li>
+                                </ul>
+                            </template>
+                        </li>
                         <li class="relative px-6 py-3">
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('customer-systems.index') }}">
@@ -190,14 +178,49 @@
                             </a>
                         </li>
                         <li class="relative px-6 py-3">
-                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                                href="{{ route('summary.index') }}">
-                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                            <button
+                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                                @click="togglePagesMenus" aria-haspopup="true">
+                                <span class="inline-flex items-center">
+                                    <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-align-center">
+                                        <path
+                                            d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-4">สรุป</span>
+                                </span>
+
+                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd"></path>
                                 </svg>
-                                <span class="ml-4">สรุป</span>
-                            </a>
+                            </button>
+                            <template x-if="isPagesMenuOpens">
+                                <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                    x-transition:enter-start="opacity-25 max-h-0"
+                                    x-transition:enter-end="opacity-100 max-h-xl"
+                                    x-transition:leave="transition-all ease-in-out duration-300"
+                                    x-transition:leave-start="opacity-100 max-h-xl"
+                                    x-transition:leave-end="opacity-0 max-h-0"
+                                    class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                    aria-label="submenu">
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('sumTransport') }}">
+                                            สรุปรายงานขนส่ง
+                                        </a>
+                                    </li>
+                                </ul>
+                            </template>
                         </li>
                     </ul>
                 @endcan
@@ -273,6 +296,7 @@
                                 <span class="ml-4">รายงานการบริการ</span>
                             </a>
                         </li>
+                        ss
                         <li class="relative px-6 py-3">
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('customer-systems.index') }}">
@@ -315,7 +339,7 @@
                     </ul>
                     <ul>
                         <li class="relative px-6 py-3">
-                        <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                                 aria-hidden="true"></span>
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('Profile.index') }}">
@@ -349,7 +373,8 @@
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
-        <aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
+        <aside
+            class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
             x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
             x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
@@ -388,7 +413,7 @@
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('Employee.index')}}">
+                            href="{{ route('Employee.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                 stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
                                 <path
@@ -431,6 +456,56 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenu" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="m20.772 10.155-1.368-4.104A2.995 2.995 0 0 0 16.559 4H7.441a2.995 2.995 0 0 0-2.845 2.051l-1.368 4.104A2 2 0 0 0 2 12v5c0 .738.404 1.376 1 1.723V21a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h12v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2.277A1.99 1.99 0 0 0 22 17v-5a2 2 0 0 0-1.228-1.845zM7.441 6h9.117c.431 0 .813.274.949.684L18.613 10H5.387l1.105-3.316A1 1 0 0 1 7.441 6zM5.5 16a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 5.5 16zm13 0a1.5 1.5 0 1 1 .001-3.001A1.5 1.5 0 0 1 18.5 16z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">เพิ่มเส้นทางขนส่ง</span>
+                            </span>
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpen">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800  dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('transport.index') }}">จังหวัด</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('city.index') }}">
+                                        อำเภอ
+                                    </a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('subdistrict.index') }}">
+                                        ตำบล
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
+                    </li>
+                    <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             href="modals.html">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -443,14 +518,49 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index') }}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -499,7 +609,7 @@
                                 <ul x-transition:leave="transition ease-in duration-150"
                                     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                     @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu"
-                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                                    class="absolute right-0 w-40 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -522,13 +632,20 @@
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                             href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                            <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                viewBox="0 0 24 24" stroke="currennColor">
-                                                <path
-                                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                                </path>
-                                            </svg>
+                                           <svg
+                                           class="w-4 h-4 mr-3"
+                                           aria-hidden="true"
+                                           fill="none"
+                                           stroke-linecap="round"
+                                           stroke-linejoin="round"
+                                           stroke-width="2"
+                                           viewBox="0 0 24 24"
+                                           stroke="currentColor"
+                                         >
+                                           <path
+                                             d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                                           ></path>
+                                         </svg>
                                             <span>ออกจากระบบ</span>
                                         </a>
                                     </form>
@@ -546,60 +663,59 @@
                         @csrf
                         @method('PUT')
 
-                        <div class=" bg-white  dark:bg-gray-800 rounded-lg shadow-lg md:w-auto w-350px">
+                        <div class=" bg-white  dark:bg-gray-800 rounded-lg shadow-lg md:w-auto">
                             <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-7 text-center">
-                                แก้ไขโปรไฟล์
+                                โปรไฟล์
                             </h2>
                             <div class=" mx-auto mt-10  ">
-                                <div class=" w-300px m-auto items-center mx-auto ">
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                <div class="w-full  m-auto items-center mx-auto p-3">
+                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
                                         <label class="ml-4 dark:text-white" for="">
                                             วันเดือนปีเกิด :
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-150px  dark:bg-gray-900 dark:text-white" type="date"
-                                            placeholder="{{ $user->birthday }}" name="birthday" value="{{ $user->birthday }}">
+                                        <input class="bg-neutral-300 rounded-lg h-30px  mt-2 dark:bg-gray-900 dark:text-white"
+                                            placeholder="{{ $user->birthday }}" name="birthday" value="{{ $user->birthday }}" type="date">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
                                             ตำบล:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px  dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             value="{{ $user->subdistrict }}" name="subdistrict">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
                                             อำเภอ:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->city }}" name="city" value="{{ $user->city }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
                                             จังหวัด:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->province }}" name="province" value="{{ $user->province }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
                                             ที่อยู่:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-200px dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->address }}" name="address" value="{{ $user->address }}">
                                     </div>
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
                                         <label class="ml-4 dark:text-white" for="">
                                             ไปรษณีย์:
                                         </label>
-                                        <input class="bg-neutral-300 rounded-lg h-30px w-180px dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white" type="text"
                                             placeholder="{{ $user->zipcode }}" name="zipcode" value="{{ $user->zipcode }}">
                                     </div>
                                 </div>
-                              
                             </div>
                         </div>
-                        <div class=" md:ml-0 xl:ml-3 mt-20px xl:mt-0  w-350px">
-                            <div class="  bg-white dark:bg-gray-800 rounded-lg shadow-lg  h-430px">
+                        <div class=" md:ml-0 xl:ml-3 mt-20px xl:mt-0  w-full">
+                            <div class="  bg-white dark:bg-gray-800 rounded-lg shadow-lg  ">
                                 <div class=" m-auto p-4">
                                     <div class=" m-auto w-40 h-40  ">
                                         <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full " id="display_image">
@@ -613,7 +729,7 @@
                                             value="{{$user->profile}}" name="image_Profile">
                                     </div>
                                 </div>
-                                <div class="m-auto w-300px ">
+                                <div class="m-auto w-300px p-3">
                                     <div class="bg-neutral-300 h-50px mb-3 dark:bg-gray-900 rounded-lg" >
                                             <label class="ml-4 dark:text-white" for="">
                                                 ชื่อ:
@@ -638,7 +754,7 @@
                                 </div>
                             </div>
                             <div class=" bg-white h-400px mt-20px text-center  rounded-lg shadow-lg dark:bg-gray-800">
-                                <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10 dark:text-white">
+                                <h2 class="my-6 text-2xl font-semibold text-gray-700  pt-10 dark:text-white">
                                     บัตรประชาชน
                                 </h2>
                                 <div class="pt-15  ">
