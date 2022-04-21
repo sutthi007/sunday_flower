@@ -112,6 +112,15 @@ class EmployeeController extends Controller
             
         ]
     );
+        if($request->role == 'Employee'){
+            $type_role = 'em';
+            $num_role = '02';
+        }else{
+            $type_role = 'am';
+            $num_role = '01';
+        }
+
+        $userid = 'sunday'.$type_role.$num_role.random_int(00,99); 
         // make type file photo
         $ImageProfile = time() . '-' . $request->name  . 'Profile'. '.' .
         $request->image_Profile->extension();
@@ -138,7 +147,7 @@ class EmployeeController extends Controller
             'province' => $request->province,
             'email' =>$request->email,
             'password' =>Hash::make($request->password),
-            'IDuser' =>$request->IDuser,
+            'IDuser' => $userid,
             'phone' =>$request->phone,
             'zipcode' =>$request->zipcode,
             'Path_imageFront' => $ImageFront,

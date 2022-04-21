@@ -511,7 +511,6 @@
                                             <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
                                                 placeholder="กรุงเทพ" name="province">
                                             <input type="hidden" value="123456789" name="password">
-                                            <input type="hidden" value="sunday11" name="IDuser">
                                             @if ($errors->any('province'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
