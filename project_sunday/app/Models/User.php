@@ -34,6 +34,7 @@ class User extends Authenticatable
         'Idcard',
         'Path_imageFront',
         'Path_imageBack',
+        'Path_imageProfile',
     ];
 
     /**

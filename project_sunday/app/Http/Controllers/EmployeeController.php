@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
@@ -11,7 +12,7 @@ class EmployeeController extends Controller
     //
     public function index(){
 
-        $users = User::all();
+        $users = User::all()->where('role','employee','admin');
         return view('Employee.employee-information',compact('users'));
     }
 
@@ -84,6 +85,7 @@ class EmployeeController extends Controller
             'zipcode' => 'required',
             'image_front' => 'required',
             'image_Back' => 'required',
+            'image_Profile' => 'required',
         ],
         [
             'name.required'=> 'กรุณากรอกชื่อ',
@@ -101,6 +103,7 @@ class EmployeeController extends Controller
             'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
             'image_front.required'=>'กรุณาอัปโหลดภาพด้านหน้าบัตรประชาชน',
             'image_Back.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
+            'image_Profile.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
             'email.required'=>'กรุณากรอกอีเมล',
             'email.email'=> 'กรุณากรอบ @gmail'
 
@@ -109,6 +112,9 @@ class EmployeeController extends Controller
             
         ]
     );
+        // make type file photo
+        $ImageProfile = time() . '-' . $request->name  . 'Profile'. '.' .
+        $request->image_Profile->extension();
 
         $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
         $request->image_front->extension();
@@ -116,6 +122,8 @@ class EmployeeController extends Controller
         $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
         $request->image_Back->extension();
 
+        // path file from public
+        $request->image_Profile->move(public_path('img/Profile'),$ImageProfile);
         $request->image_front->move(public_path('img/Front'),$ImageFront);
         $request->image_Back->move(public_path('img/Back'),$ImageBack);
  
@@ -135,6 +143,7 @@ class EmployeeController extends Controller
             'zipcode' =>$request->zipcode,
             'Path_imageFront' => $ImageFront,
             'Path_imageBack' => $ImageBack,
+            'Path_Profile' => $ImageProfile,
         ]);
 
         return redirect()->route('Employee.index');

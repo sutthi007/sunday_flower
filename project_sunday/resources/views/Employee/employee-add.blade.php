@@ -410,9 +410,9 @@
                                         </div>
                                         <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg"
                                             name="image_Profile">
-                                        {{-- @if ($errors->any('Path_imagePorfile'))
-                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
-                                    @endif --}}
+                                             @if ($errors->any('Path_imagePorfile'))
+                                                <p class="text-red-500 text-xs italic text-center">{{$errors->first('image_Profile')}}</p>
+                                            @endif 
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
