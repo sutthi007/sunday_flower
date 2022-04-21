@@ -426,10 +426,11 @@
                                                                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                             </svg>
                                                         </a>
-                                                        <form action="{{ route('projects.destroy',$p->id) }}"
+                                                        <form action="{{ route('service.destroy',$p->id) }}"
                                                             method="post">
                                                             @csrf
                                                             @method('DELETE')
+                                                            <input type="hidden" value="4" name="type">
                                                             <button id="" class="w-6 h-6"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -467,10 +468,10 @@
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
                                                 <th class="px-4 py-3">จังหวัดที่ส่งต่อ</th>
                                                 <th class="px-4 py-3">ราคาค่าบริการ</th>
-                                                <th></th>
+                                                <th class="px-4 py-3"></th>
                                             </tr>
                                         </thead>
-                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                             @foreach ($flower as $f )
                                             <tr class="text-gray-700 dark:text-gray-400">
                                                 <td class="px-4 py-3 text-sm">{{$f->province}}</td>
@@ -487,10 +488,11 @@
                                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{ route('projects.destroy',$f->id) }}"
+                                                    <form action="{{ route('service.destroy',$f->id) }}"
                                                         method="post">
                                                         @csrf
                                                         @method('DELETE')
+                                                        <input type="hidden" value="1" name="type">
                                                         <button id="" class="w-6 h-6"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -499,7 +501,6 @@
                                                                     d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                             </svg></button>
                                                     </form>
-
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -544,8 +545,9 @@
                                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                         </svg>
                                                     </a>
-                                                    <form action="{{ route('projects.destroy',$m->id) }}"
+                                                    <form action="{{ route('service.destroy',$m->id) }}"
                                                         method="post">
+                                                        <input type="hidden" value="2" name="type">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button id="" class="w-6 h-6"><svg
@@ -585,6 +587,7 @@
                                                 <th class="px-4 py-3"></th>
                                             </tr>
                                         </thead>
+                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         @foreach ($animal as $a )
                                                 <tr class="text-gray-700 dark:text-gray-400">
                                                     <td class="px-4 py-3 text-sm">{{$a->list}}</td>
@@ -598,10 +601,11 @@
                                                                     d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                             </svg>
                                                         </a>
-                                                        <form action="{{ route('projects.destroy', $a->id) }}"
+                                                        <form action="{{ route('service.destroy', $a->id) }}"
                                                             method="post">
                                                             @csrf
                                                             @method('DELETE')
+                                                            <input type="hidden" value="3" name="type">
                                                             <button id="" class="w-6 h-6"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor"

@@ -62,8 +62,17 @@ class ServiceController extends Controller
         $service->update($request->all());
     }
     public function destroy($id,Request $request){
-        $service = service::find($id);
-        $service->delete($request->all());
+        if($request->type == 1){
+            $service = flower::find($id);
+        }elseif($request->type == 2){
+            $service = motorcycle::find($id);
+        }elseif($request->type == 3){
+            $service = animal::find($id);
+        }else{
+            $service = parcel::find($id);
+        }
+        $service->delete();
+        return redirect()->route('service.index');
     }
     public function edit($id){
         $service = service::find($id);

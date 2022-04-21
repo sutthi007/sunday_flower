@@ -514,7 +514,7 @@
                             <div class="m-auto rounded-md p-3">
                                 <div class="grid text-center m-auto">
                                     <div class="m-auto w-40 h-40">
-                                        <img src="{{ asset('img/Profile/' . $user->Path_imageProfile) }}"
+                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}"
                                             class="object-cover rounded-full h-full w-full ">
                                     </div>
                                 </div>

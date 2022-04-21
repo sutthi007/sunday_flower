@@ -12,7 +12,7 @@ class EmployeeController extends Controller
     //
     public function index(){
 
-        $users = User::all()->where('role','employee','admin');
+        $users = User::all()->whereNotIn('role','owner');
         return view('Employee.employee-information',compact('users'));
     }
 
@@ -71,16 +71,16 @@ class EmployeeController extends Controller
     }
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'name' => 'required',
             'role' => 'required',
-            'Idcard' => 'required|min:13|numeric',
+            'Idcard' => 'required|min:13',
             'birthday' => 'required',
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
             'email' => 'required|email',
-            'IDuser' => 'required',
             'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
             'zipcode' => 'required',
             'image_front' => 'required',
@@ -92,7 +92,7 @@ class EmployeeController extends Controller
             'role.required'=> 'กรุณาเลือกตำแหน่ง',
             'Idcard.required'=> 'กรุณากรอกเลขประชาชน',
             'Idcard.min'=> 'กรุณากรอกเลขบัตรประชาชนให้ครบ 13 ตัว',
-            'Idcard.numeric'=> 'กรุณากรอกเลขบัตรประชาชนเป็นตัวเลข',
+            
             'birthday.required'=> 'กรุณากรอกวัน/เดือน/ปี เกิด',
             'city.required'=> 'กรุณากรอกอำเภอ',
             'sub.required'=> 'กรุณากรอกตำบล',
@@ -112,7 +112,7 @@ class EmployeeController extends Controller
             
         ]
     );
-        if($request->role == 'Employee'){
+        if($request->role == 'employee'){
             $type_role = 'em';
             $num_role = '02';
         }else{
