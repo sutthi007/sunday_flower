@@ -419,7 +419,7 @@
                         <div class="relative w-auto my-6 mx-auto max-w-3xl">
                             <!--content-->
                             <div
-                                class="border-0 rounded-lg shadow-lg relative flex flex-col xl:w-full xl:h-full  bg-white outline-none focus:outline-none md:w-500px  md:h-500px sm:h-500px  ss:h-500px">
+                                class="border-0 rounded-lg shadow-lg relative flex flex-col xl:w-full xl:h-full  bg-white outline-none focus:outline-none xl:w-700px xl:h-500px md:w-500px  md:h-500px sm:h-500px  ss:h-500px">
                                 <!--header-->
                                 <div
                                     class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
@@ -482,7 +482,25 @@
                                                         <option value="">---เลือก----</option>
                                                     </select>
                                                 </div>
-                                                
+                                                <div class="flex w-full px-3 mb-6 md:mb-0 ">
+                                                   
+                                                    <input  type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                    <label
+                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                        for="grid-first-name">
+                                                         ราคาส่งต่อ
+                                                    </label>
+                                                </div>
+                                                <div class="w-full px-3 mb-6 md:mb-0 ">
+                                                    <label
+                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                        for="grid-first-name">
+                                                        ราคา
+                                                    </label>
+                                                    <input
+                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="phone" maxlength="11" />
+                                                </div>
                                                 <div class="w-full px-3 mb-6 md:mb-0 ">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -527,9 +545,14 @@
                                                     for="grid-first-name">
                                                     จำนวน
                                                 </label>
+                                                <div class="flex">
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-65 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="grid-first-name" type="text" placeholder="" name="quantity" />
+                                              <input
+                                                    class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    id="grid-first-name" type="text" placeholder="" name="" />
+                                                </div>
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <label
@@ -578,6 +601,7 @@
                                         <th class="px-4 py-3">จำนวน</th>
                                         <th class="px-4 py-3">ชื่อผู้รับ</th>
                                         <th class="px-4 py-3">ที่อยู่</th>
+                                        <th class="px-4 py-3">จุดลง</th>
                                         <th class="px-4 py-3">เบอร์โทร</th>
                                         <th class="px-4 py-3">ราคา</th>
                                         <th class="px-4 py-3"></th>
@@ -612,7 +636,10 @@
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->name }}</td>
                                             <td class="px-4 py-3 text-xs">
-                                                {{ $order->city }},{{ $order->province }}
+                                                {{ $order->province }}
+                                            </td>
+                                            <td class="px-4 py-3 text-xs">
+                                                {{ $order->city }}
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->phone }}</td>
                                            

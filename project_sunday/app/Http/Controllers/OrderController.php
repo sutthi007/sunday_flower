@@ -24,6 +24,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
+        
         $request->validate([
             'name' =>'required',
             'city' =>'required',
@@ -46,7 +47,7 @@ class OrderController extends Controller
             'quantity' => $request->quantity,
             'price' => $request->price,
             'customer_id' => $request->customer_id,
-            'tracking' => 'SD'.$request->province.$request->type.time().random_int(00,99),
+            'tracking' => 'SD'.$request->province.time().random_int(00,99),
         ]);
         $customer = $request->customer_id;
 
