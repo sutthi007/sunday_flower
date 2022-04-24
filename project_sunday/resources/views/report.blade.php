@@ -49,17 +49,10 @@
            border: 1px solid ; 
            padding: 8px;
         }
-        #province{
-            background-color: #5adf5a;
-        }
-        #total{
-            background-color: red;
-        }
         #emp th{
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #4caf50;
         }
         
     </style>

@@ -22,6 +22,9 @@ class Order extends Model
         'total',
         'status',
         'tracking',
+        'sendto',
+        'price_sendto',
+        'amount',
     ];
 
     protected $casts = [

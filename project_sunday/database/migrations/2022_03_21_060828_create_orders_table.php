@@ -21,6 +21,9 @@ return new class extends Migration
             $table->integer('province');
             $table->string('type');
             $table->string('list');
+            $table->string('sendto')->nullable();
+            $table->integer('price_to')->nullable();
+            $table->string('amount');
             $table->integer('quantity');
             $table->integer('price');
             $table->string('phone');

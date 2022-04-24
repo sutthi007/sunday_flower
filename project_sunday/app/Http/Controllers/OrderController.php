@@ -36,6 +36,9 @@ class OrderController extends Controller
             'quantity' =>'required',
             'price' =>'required',
             'customer_id' =>'required',
+            'sendto' => 'required',
+            'price_sendto' => 'require',
+            'amount' => 'require'
         ]);
         $order = Order::create([
             'name' => $request->name,
@@ -47,6 +50,9 @@ class OrderController extends Controller
             'quantity' => $request->quantity,
             'price' => $request->price,
             'customer_id' => $request->customer_id,
+            'sendto' => $request->sendto,
+            'price_sendto' => $request->price_sendto,
+            'amount' => $request->amount,
             'tracking' => 'SD'.$request->province.time().random_int(00,99),
         ]);
         $customer = $request->customer_id;
