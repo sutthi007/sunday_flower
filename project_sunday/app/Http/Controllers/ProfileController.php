@@ -37,28 +37,6 @@ class ProfileController extends Controller
             $user->Path_imageProfile = $ImgaeProfile;
         }
 
-        if($request->hasfile('image_Front')){
-            $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
-            $request->image_Front->extension();
-
-            // $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
-            // $request->image_Back->extension();
-
-            $request->image_Front->move(public_path('img/Front'),$ImageFront);
-            // $request->image_Back->move(public_path('img/Back'),$ImageBack);
-
-            $user->Path_imageFront = $ImageFront;
-            // $user->Path_imageBack = $ImageBack;
-        }
-
-        if($request->hasfile('image_Back')){
-            $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
-            $request->image_Back->extension();
-
-            $request->image_Back->move(public_path('img/Back'),$ImageBack);
-
-            $user->Path_imageBack = $ImageBack;
-        }
         $user->update($request->all());
 
         return redirect()->route('Profile.index')

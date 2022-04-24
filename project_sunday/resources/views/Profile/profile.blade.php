@@ -741,43 +741,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class=" bg-white h-400px mt-20px text-center  rounded-lg shadow-lg dark:bg-gray-800">
-                                <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-10">
-                                    บัตรประชาชน
-                                </h2>
-                                <div class="  m-auto pt-15 ">
-
-                                    @if (Auth::user()->where('Path_imageFront', 'Path_imageBack') == null)
-                                        <label for="">
-                                            เอกสารประจำประชาชน หน้า
-                                        </label>
-                                        <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto ">
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                        </div>
-
-                                        <label class="pt-16" for="">
-                                            เอกสารประจำประชาชน หลัง
-                                        </label>
-
-                                        <div class="bg-neutral-300 w-400px h-50px mb-3 m-auto">
-                                            <input class="bg-neutral-300 rounded-lg h-30px mt-2" type="file">
-                                        </div>
-                                    @endif
-                                    <div
-                                        class=" w-250px h-150px m-auto border-4 border-green-000 p-8 text-center mt-10">
-                                        <img class="h-20 w-20 m-auto -mt-4" src="/img/hook-1727484.svg" alt="">
-                                        <h1 class="text-xl text-green-000 ">อัปโหลดสำเร็จ</h1>
-
-
-                                    </div>
-                                    <a href="{{ route('Profile.edit', Auth::user()->id) }}">
-                                        <div href="{{ route('Profile.edit', Auth::user()->id) }}"
-                                            class="bg-pink w-145px h-30px  rounded-lg text-white p-1 m-auto text-center mt-10 ">
-                                            แก้ไข
-                                        </div>
-                                    </a>
+                            <a href="{{ route('Profile.edit', Auth::user()->id) }}">
+                                <div href="{{ route('Profile.edit', Auth::user()->id) }}"
+                                    class="bg-pink w-145px h-30px  rounded-lg text-white p-1 m-auto text-center mt-10 ">
+                                    แก้ไข
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </form>
                 </div>

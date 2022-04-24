@@ -32,8 +32,6 @@ class User extends Authenticatable
         'IDcard',
         'zipcode',
         'Idcard',
-        'Path_imageFront',
-        'Path_imageBack',
         'Path_imageProfile',
     ];
 

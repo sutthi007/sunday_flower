@@ -35,27 +35,13 @@ class EmployeeController extends Controller
 
     public function update($id,Request $request){
         $user = User::find($id);
-        if($request->hasfile('image_Front')){
-            $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
-            $request->image_Front->extension();
+        if($request->hasfile('image_Profile')) {
+            $ImgaeProfile = time() . '-' . $request->name  . 'Profile' . '.' .
+            $request->image_Profile->extension();
 
-            // $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
-            // $request->image_Back->extension();
+            $request->image_Profile->move(public_path('img/Profile'),$ImgaeProfile);
 
-            $request->image_Front->move(public_path('img/Front'),$ImageFront);
-            // $request->image_Back->move(public_path('img/Back'),$ImageBack);
-
-            $user->Path_imageFront = $ImageFront;
-            // $user->Path_imageBack = $ImageBack;
-        }
-
-        if($request->hasfile('image_Back')){
-            $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
-            $request->image_Back->extension();
-
-            $request->image_Back->move(public_path('img/Back'),$ImageBack);
-
-            $user->Path_imageBack = $ImageBack;
+            $user->Path_imageProfile = $ImgaeProfile;
         }
         $user->update($request->all());
 
@@ -81,10 +67,8 @@ class EmployeeController extends Controller
             'sub' => 'required',
             'province' => 'required',
             'email' => 'required|email',
-            'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
+            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
             'zipcode' => 'required',
-            'image_front' => 'required',
-            'image_Back' => 'required',
             'image_Profile' => 'required',
         ],
         [
@@ -101,8 +85,6 @@ class EmployeeController extends Controller
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
             'phone.regex'=> 'กรุณากรอก 09 08 05',
             'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
-            'image_front.required'=>'กรุณาอัปโหลดภาพด้านหน้าบัตรประชาชน',
-            'image_Back.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
             'image_Profile.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
             'email.required'=>'กรุณากรอกอีเมล',
             'email.email'=> 'กรุณากรอบ @gmail'
@@ -125,16 +107,8 @@ class EmployeeController extends Controller
         $ImageProfile = time() . '-' . $request->name  . 'Profile'. '.' .
         $request->image_Profile->extension();
 
-        $ImageFront = time() . '-' . $request->name  . 'Front'. '.' .
-        $request->image_front->extension();
-
-        $ImageBack = time() . '-' . $request->name . 'Back'. '.'  .
-        $request->image_Back->extension();
-
         // path file from public
         $request->image_Profile->move(public_path('img/Profile'),$ImageProfile);
-        $request->image_front->move(public_path('img/Front'),$ImageFront);
-        $request->image_Back->move(public_path('img/Back'),$ImageBack);
  
         User::create([
             'name' => $request->name,
@@ -150,8 +124,6 @@ class EmployeeController extends Controller
             'IDuser' => $userid,
             'phone' =>$request->phone,
             'zipcode' =>$request->zipcode,
-            'Path_imageFront' => $ImageFront,
-            'Path_imageBack' => $ImageBack,
             'Path_Profile' => $ImageProfile,
         ]);
 

@@ -527,18 +527,17 @@
                         </h2>
                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
                             <div class="m-auto rounded-md p-5">
-                                <div class="grid  text-center m-auto ">
-                                    <div class="m-auto w-40 h-40  ">
-                                        <img src="{{ asset('img/Profile/' . $user->Path_imageProfile) }}"
-                                            class="object-cover rounded-full h-full w-full " id=image_profiles">
+                                <div class=" m-auto p-4">
+                                    <div class=" m-auto w-40 h-40  ">
+                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full " id="display_image">
                                     </div>
                                     <div class="custom-file">
-                                        <div
-                                            class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
-                                            <label for="image_profile">อัปโหลดภาพ</label>
+                                        <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
+                                            <label for="image_input">อัปโหลดภาพ</label>
                                         </div>
-                                        <input type="file" id="image_profile" accept="image/png, image/ipg, image/jpeg"
-                                            value="{{ $user->profile }}" name="image_Profile">
+                                        <input type="file" id="image_input"
+                                            accept="image/png, image/ipg, image/jpeg"
+                                            value="{{$user->profile}}" name="image_Profile">
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
@@ -608,38 +607,6 @@
                                 </div>
                             </div>
                             <div class="mt-10  mb-9">
-                                <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2">
-                                    <div class=" grid  text-center h-200px mb-20 m-auto p-3">
-                                        <h1 class="font-bold dark:text-white">บัตรประชาชน ด้านหน้า</h1>
-                                        <div class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900">
-                                            <img src="../../img/Front/{{ $user->Path_imageFront }}"
-                                                id="display_image" class="  h-200px w-380px">
-                                        </div>
-                                        <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
-                                            <div class=" text-white mt-1">
-                                                <label for="image_input">อัปโหลดภาพ</label>
-                                            </div>
-                                            <input type="file" id="image_input"
-                                                accept="image/png, image/ipg, image/jpeg" name="image_Front"
-                                                value="{{ $user->Path_imageFront }}">
-                                        </div>
-                                    </div>
-                                    <div class=" grid  text-center h-200px  mb-20 m-auto p-3">
-                                        <h1 class="font-bold dark:text-white">บัตรประชาชน ด้านหลัง</h1>
-                                        <div class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900">
-                                            <img src="../../img/Back/{{ $user->Path_imageBack }}" id="display_images"
-                                                class="  h-200px w-380px">
-                                        </div>
-                                        <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
-                                            <div class=" text-white mt-1">
-                                                <label for="image_inputs">อัปโหลดภาพ</label>
-                                            </div>
-                                            <input type="file" id="image_inputs" name="image_Back"
-                                                accept="image/png, image/ipg, image/jpeg"
-                                                value="{{ $user->Path_imageBack }}">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="text-center mt-10 ">
                                     <button type="submit"
                                         class="bg-pink w-100px h-30px rounded-md text-white">บันทึก</button>
@@ -651,52 +618,16 @@
             </main>
         </div>
     </div>
+
     <script>
         $(function() {
-            $("#image_input").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_image").attr("src", x);
-                console.log(event)
-            })
-        });
-        $(function() {
-            $("#image_inputs").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_images").attr("src", x);
-                console.log(event)
-            })
-        });
-        $(function() {
-            $("#image_profile").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#image_profiles").attr("src", x);
-                console.log(event)
-            })
-        })
-    </script>
-    <script>
-        $(function() {
-            $("#image_input").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_image").attr("src", x);
-                console.log(event)
-            })
-        })
-        $(function() {
-            $("#image_inputs").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#display_images").attr("src", x);
-                console.log(event)
-            })
-        })
-        $(function() {
-            $("#imag").change(function(event) {
-                var x = URL.createObjectURL(event.target.files[0]);
-                $("#imag_s").attr("src", x);
-                console.log(event)
-            })
-        })
-    </script>
+           $("#image_input").change(function(event) {
+               var x = URL.createObjectURL(event.target.files[0]);
+               $("#display_image").attr("src", x);
+               console.log(event)
+           })
+       })
+   </script>
      <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');

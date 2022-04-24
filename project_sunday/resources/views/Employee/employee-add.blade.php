@@ -421,7 +421,7 @@
                                             ชื่อ :
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name">
+                                            type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" >
                                         @if ($errors->any('name'))
                                             <p class="text-red-500 text-xs italic text-center">
                                                 {{ $errors->first('name') }}</p>
@@ -553,47 +553,6 @@
                                 </div>
                             </div>
                             <div class="mt-10  mb-9">
-                                <div class="grid  gap-7 mb-3 md:grid-cols-1 xl:grid-cols-2 ">
-                                    <div class=" grid  text-center  m-auto">
-                                        <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหน้า</h1>
-                                        @if ($errors->any('image_front'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('image_front') }}</p>
-                                        @endif
-                                        <div
-                                            class="bg-white rounded-md  border-indigo-600 shadow-lg dark:bg-gray-900 ">
-                                            <img src="/img/image-alt.svg" id="display_image"
-                                                class=" h-200px xl:w-380px m-auto md:w-200px">
-                                        </div>
-                                        <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
-                                            <div class=" text-white mt-1">
-                                                <label for="image_input">อัปโหลดภาพ</label>
-                                            </div>
-                                            <input type="file" id="image_input"
-                                                accept="image/png, image/ipg, image/jpeg" name="image_front">
-                                        </div>
-                                    </div>
-                                    <div class=" grid  text-center   m-auto ">
-                                        <h1 class="font-bold dark:text-white mb-5">บัตรประชาชน ด้านหลัง</h1>
-                                        @if ($errors->any('image_Back'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('image_Back') }}</p>
-                                        @endif
-                                        <div
-                                            class="bg-white rounded-md  border-indigo-600  shadow-lg dark:bg-gray-900">
-                                            <img src="/img/image-alt.svg" id="display_images"
-                                                class="h-200px xl:w-380px m-auto md:w-200px">
-                                        </div>
-                                        <div class="rounded-md bg-pink h-30px w-150px m-auto custom-file mt-3">
-                                            <div class=" text-white mt-1">
-                                                <label for="image_inputs">อัปโหลดภาพ</label>
-                                            </div>
-                                            <input type="file" id="image_inputs"
-                                                accept="image/png, image/ipg, image/jpeg" name="image_Back">
-                                        </div>
-
-                                    </div>
-                                </div>
                                 <div class="text-center mt-36 ">
                                     <button
                                         class="bg-rose-600 w-100px h-30px rounded-md text-white  mb-6 mt-6">ยกเลิก</button>

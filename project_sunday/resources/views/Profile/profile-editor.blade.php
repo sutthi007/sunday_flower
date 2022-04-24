@@ -753,31 +753,8 @@
                                         </div>
                                 </div>
                             </div>
-                            <div class=" bg-white h-400px mt-20px text-center  rounded-lg shadow-lg dark:bg-gray-800">
-                                <h2 class="my-6 text-2xl font-semibold text-gray-700  pt-10 dark:text-white">
-                                    บัตรประชาชน
-                                </h2>
-                                <div class="pt-15  ">
-                                    <div class=" text-center mt-45px">
-                                    <label class="dark:text-white" for="">
-                                        เอกสารประจำประชาชน หน้า
-                                    </label>
-                                    <div class="bg-neutral-300 w-300px h-50px mb-3 m-auto dark:bg-gray-900">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 w-200px dark:text-white dark:bg-gray-800" type="file" name="image_Front" value="{{$user->Path_imageFront}}">
-                                    </div>
-                                    </div>
-                                    <div class=" text-center mt-45px">
-                                    <label class="pt-16 dark:text-white " for="">
-                                        เอกสารประจำประชาชน หลัง
-                                    </label>
-                                    <div class="bg-neutral-300 w-300px h-50px mb-3 m-auto dark:bg-gray-900">
-                                        <input class="bg-neutral-300 rounded-lg h-30px mt-2 w-200px dark:text-white dark:bg-gray-800" type="file" name="image_Back" value="{{$user->Path_imageBack}}">
-                                    </div>
-                                    </div>
-                                </div>
-                                <div class=" text-center mt-5">
-                                    <button class="bg-pink w-145px h-30px  rounded-lg text-white " type="submit">บันทึก</button>
-                                </div>
+                            <div class=" text-center mt-5">
+                                <button class="bg-pink w-145px h-30px  rounded-lg text-white " type="submit">บันทึก</button>
                             </div>
                         </div>
                     </form>

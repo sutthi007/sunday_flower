@@ -15,6 +15,9 @@
     <link rel="icon" type="/img/svg" href="img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -589,32 +592,6 @@
                                 </div>
                             </div>
                             <div class="mt-10 mb-9">
-                                <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2">
-                                    <div class=" grid  text-center h-200px  m-auto ">
-                                        <div class="p-2">
-                                            <div class="flex justify-center  ">
-                                                <div class="bg-white rounded-md  border-indigo-600 ">
-                                                    <img src="../../img/Front/{{ $user->Path_imageFront }}"
-                                                        id="display_image" class="  h-200px w-380px">
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <p class="dark:text-white">เอกสาร บัตรประชาชน ด้านหน้า</p>
-                                    </div>
-
-                                    <div class="  grid  text-center h-200px m-auto mt-4 mb-4">
-                                        <div class="p-2">
-                                            <div class="flex justify-center  ">
-                                                <div class="bg-white rounded-md  border-indigo-600 ">
-                                                    <img src="../../img/Back/{{ $user->Path_imageBack }}"
-                                                        id="display_images" class="  h-200px w-380px">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <p class="dark:text-white">เอกสาร บัตรประชาชน ด้านหลัง</p>
-                                    </div>
-                                </div>
                                 <div class="text-center ">
                                     <button class="bg-pink w-100px h-30px rounded-md text-white"><a
                                             href="{{ route('Employee.index') }}">ย้อนกลับ</a></button>
