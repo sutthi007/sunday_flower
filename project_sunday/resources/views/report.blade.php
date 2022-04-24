@@ -61,47 +61,41 @@
 <body>
     <div>
         <div>
-            <h2>สรุปรายงานขนส่ง</h2>
+            <h2>รายงานขนส่ง {{$province}}</h2>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
             <div class="w-full overflow-x-auto">
                 <table id="emp" class="w-full whitespace-no-wrap">
                     <thead>
                         <tr 
-                            class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                            
+                            class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">                            
                             <th class="px-4 py-3">ประเภท</th>
                             <th class="px-4 py-3">รายการ</th>
+                            <th class="px-4 py-3">จุดลง</th>
                             <th class="px-4 py-3">ชื่อ - เบอร์โทร</th>
                             <th class="px-d py-3">จำนวน</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y ">
-                        @foreach($orders as $order)
-                            
-                        <tr class="text-gray-700 dark:text-gray-400">
-                            <td id="province" class="px-4 py-3" colspan="4">{{$order->province}}</td>
+                        @php
+                            $sum = 0;
+                        @endphp
+                        @foreach( $orders as $order)
+                        <tr>
+                            <td>{{$order->type}}</td>
+                            <td>{{$order->list}}</td>
+                            <td>{{$order->city}}</td>
+                            <td>{{$order->name}}({{$order->phone}})</td>
+                            <td>{{$order->quantity}}</td>
                         </tr>
-                            @php
-                                $i = 0
-                            @endphp
-                            @foreach($types->where('province',$order->province) as $type)
-                                <tr>
-                                    
-                                    <td class="px-4 py-3 text-sm">{{$type->type}}</td>
-                                    <td class="px-4 py-3 text-sm">{{$type->list}}</td>
-                                    <td class="px-4 py-3 text-sm">{{$type->name}}{{'('.$type->phone .')'}}</td>
-                                    <td class="px-4 py-3 text-sm">{{$type->quantity}}</td>  
-                                </tr>
-                                @php
-                                    $i = $type->quantity + $i
-                                @endphp
-                                
-                            @endforeach
-                            <td colspan="3"></td>
-                            <td id="total" class="px-4 py-3"> ทั้งหมด {{$i}}  รายการ</td>
-                        @endforeach 
-
+                        @php
+                            $sum =$order->quantity + $sum ;
+                        @endphp
+                       @endforeach
+                       <tr>
+                           <td colspan="4">รวม</td>
+                           <td>ทั้งหมด {{$sum}} รายการ</td>
+                       </tr>
                     </tbody>
                 </table>
             </div>

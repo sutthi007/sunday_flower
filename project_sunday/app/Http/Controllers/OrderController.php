@@ -122,22 +122,21 @@ class OrderController extends Controller
     //     return (new TransportsDaysExport)->download('active.pdf');
     // }
     public function downloadPDF(){
-        $orders = Order::select('province')
-                        ->groupBy('province')
-                        ->get();
-
-        $types = Order::all();
-        $pdf = PDF::loadView('report',compact('orders','types'));
+        $orders = Order::all()->where('province','เชียงใหม่');
+        $province = 'เชียงใหม่';
+       
+        $pdf = PDF::loadView('report',compact('orders','province'));
         return @$pdf->stream();
     }
 
     public function viewReport(){
-        $orders = Order::select('province')
-                        ->groupBy('province')
+        $orders = Order::where('province','เชียงใหม่')
+                        
+                        ->groupBy('type','list','city')
+                        ->select('type','list','city')
                         ->get();
-
-        $types = Order::all();
-
-        return view('report',compact('orders','types'));
+        $province = 'เชียงใหม่';
+       
+        return view('report',compact('orders','province'));
     }
 }
