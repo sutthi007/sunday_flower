@@ -95,3 +95,9 @@ Route::get('/account-details-month', function () {
 Route::get('/transport-details-month',function (){
     return view('summary/transport-details-month');
 });
+Route::get('/order-be-paid',function (){
+    return view('Order/order-be-paid');
+});
+Route::get('/tranking',function (){
+    return view('tranking');
+});
