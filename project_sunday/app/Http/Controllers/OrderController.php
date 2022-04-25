@@ -96,7 +96,8 @@ class OrderController extends Controller
     public function prnpriview($id)
       {
             $customer = customer::find($id);
-            return view('Order.bill', compact('customer'));
+            $pdf = PDF::loadView('Order.bill',compact('customer'));
+            return @$pdf->stream();
       }
     public function total(Request $request)
     {
