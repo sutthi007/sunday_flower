@@ -523,7 +523,6 @@
                                     <form action="{{ route('FormOrder.store') }}" method="post">
                                         @csrf
 
-<<<<<<< Updated upstream
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
                                             <div class="w-full px-3 mb-6 md:mb-0">
                                                 <label
@@ -583,53 +582,6 @@
                                             <div class=" w-full px-3 mb-6 md:mb-0 ">
                                                 <div class="flex">
                                                     <input class="mr-4" type="checkbox" id="myCheck" onclick="myFunction()">
-=======
-                                            <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
-                                                <div class="w-full px-3 mb-6 md:mb-0">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        ชื่อผู้รับ
-                                                    </label>
-                                                    <input
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
-                                                        id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
-                                                        name="name" />
-                                                        @if ($errors->any('name'))
-                                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
-                                                        @endif
-                                                </div>
-                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        จังหวัดที่ส่ง
-                                                    </label>
-                                                    <select
-                                                        class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="province" id="provinces">
-                                                        <option value="">---เลือก----</option>
-                                                        @foreach($province as $row)
-                                                        <option value="{{$row->id}}">{{$row->province}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        อำเภอ
-                                                    </label>
-                                                    <select
-                                                        class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="city">
-                                                        <option value="">---เลือก----</option>
-                                                    </select>
-                                                </div>
-                                                <div class="flex w-full px-3 mb-6 md:mb-0 ">
-
-                                                    <input  type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
->>>>>>> Stashed changes
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                                         for="grid-first-name" name="sendto" value="ส่งต่อ">
@@ -639,33 +591,13 @@
                                                 <div class=" w-full px-3 mb-6 md:mb-0 " id="text" style="display:none">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-<<<<<<< Updated upstream
                                                         id="showthis" name="showthis" size="50" type="text"
                                                         value="text here">
-=======
-                                                        for="grid-first-name"
-                                                        >
->>>>>>> Stashed changes
                                                         ราคาส่งต่อ
                                                     </label>
                                                     <input
                                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-<<<<<<< Updated upstream
-                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
-                                                        name="phone" maxlength="11" />
-=======
-                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="price_sendto" />
-                                                </div>
-                                                <div class="w-full px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        เบอร์โทร
-                                                    </label>
-                                                    <input
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="phone" maxlength="11" />
->>>>>>> Stashed changes
+                                                        name="price_sendto" >
                                                 </div>
                                                
                                             </div>
@@ -699,7 +631,6 @@
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <div class="flex">
-<<<<<<< Updated upstream
                                                     <div class="mr-2">
                                                         <label
                                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -719,25 +650,8 @@
                                                         </label>
                                                         <input
                                                             class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                            id="grid-first-name" type="text" placeholder="" name="" />
+                                                            id="grid-first-name" type="text" placeholder="" name="amount" />
                                                     </div>
-=======
-                                                <input
-                                                    class="appearance-none block w-65 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="quantity" />
-                                                <div class="">
-                                                <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name"
-                                                    >
-                                                    หน่วย
-                                                </label>
-
-                                                <input
-                                                    class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="amount" />
-                                                </div>
->>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
@@ -809,17 +723,10 @@
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-xs">
 
-<<<<<<< Updated upstream
                                                 <!-- Avatar with inset shadow -->
                                                 <div class="text-center">
                                                     <p class="font-semibold">{{ $i++ }}</p>
                                                 </div>
-=======
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="text-center">
-                                                        <p class="font-semibold">{{ $i++ }}</p>
-                                                    </div>
->>>>>>> Stashed changes
 
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->list }}</td>
@@ -836,11 +743,7 @@
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->phone }}</td>
 
-<<<<<<< Updated upstream
                                             <td class="px-4 py-3 text-xs">{{ $total }}</td>
-=======
-                                            <td class="px-4 py-3 text-xs">{{$total }}</td>
->>>>>>> Stashed changes
                                             <td class="flex px-4 py-3 text-xs ">
                                                 <a class="w-6 h-6 mr-2"
                                                     href="{{ route('FormOrder.edit', $order->id) }}">
@@ -946,7 +849,6 @@
         switchTheme()
     </script>
     <script>
-<<<<<<< Updated upstream
         function addSpace() {
             var inputValue = document.getElementById("telInput").value;
             var inputValueLength = inputValue.length;
@@ -954,14 +856,6 @@
             if (inputValueLength == 3) {
                 document.getElementById("telInput").value = inputValue + "-";
             }
-=======
-    function addSpace(){
-        var inputValue = document.getElementById("telInput").value;
-        var inputValueLength = inputValue.length;
-
-        if(inputValueLength == 3 ){
-            document.getElementById("telInput").value = inputValue+"-";
->>>>>>> Stashed changes
         }
     </script>
     <script type="text/javascript">

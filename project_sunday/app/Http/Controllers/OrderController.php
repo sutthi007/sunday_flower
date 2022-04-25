@@ -31,7 +31,6 @@ class OrderController extends Controller
             'phone' =>'required',
             'type' =>'required',
             'list' =>'required',
-            'list' => 'required',
             'quantity' =>'required',
             'price' =>'required',
             'customer_id' =>'required',
