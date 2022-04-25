@@ -454,7 +454,7 @@
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                                <form  " action="" method="post">
+                                
                                     <div class="w-300px m-auto ">
                                         <div class="p-2">
                                             <label
@@ -464,9 +464,11 @@
                                             </label>
                                             <input
                                             class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
-                                            id="grid-first-name" type="text" placeholder="">
+                                            id="grid-first-name" type="text" placeholder="{{$customer->total}}" disabled>
                                          
                                         </div>
+                                <form action="{{ route('savemoney')}}" method="post">  
+                                        @csrf      
                                         <div class="p-2">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
@@ -475,7 +477,8 @@
                                             </label>
                                             <input
                                             class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
-                                            id="grid-first-name" type="text" placeholder="">
+                                            id="grid-first-name" type="text" placeholder="" name="getmoney">
+                                            <input type="hidden" name="customer_id" value="{{ $customer->id }}">
                                         </div>
                                     </div>
                                     <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
@@ -488,6 +491,7 @@
             </main>
         </div>
     </div>
+    
     <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');
@@ -499,7 +503,7 @@
         const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
 </svg>`
-        // Jika ada isDarkmode di localstorage 
+        // Jika ada isDarkmode di localstorage
         if (localDarkmode) {
             isDarkmode = localDarkmode
             html.classList.add('dark')
@@ -533,20 +537,4 @@
         switchTheme()
     </script>
 </body>
-<script type="text/javascript">
-  $('.provinces').change(function() {
-      if($(this).val()!=''){
-          var select=$(this).val();
-          var _token=$('input[name="_token"]').val();
-          $.ajax({
-              url:"{{route('fetch')}}",
-              method:'GET',
-              data:{select:select,_token:_token},
-              success:function(result){
-                    $('.city').html(result);
-              }
-          });
-      }
-  });
-</script>
 </html>

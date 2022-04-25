@@ -35,6 +35,8 @@ class ProvinceController extends Controller
     public function destroy($id){
         $province = province::find($id);
         $province->delete();
+
+        return redirect()->route('transport.index');
     }
     // public function sub(){
     //     return view('transport.sub');

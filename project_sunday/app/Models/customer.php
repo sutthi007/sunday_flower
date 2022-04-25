@@ -14,6 +14,8 @@ class customer extends Model
         'province',
         'subdistrict',
         'phone',
+        'total',
+        'getmoney'
 
     ];
 

@@ -20,4 +20,12 @@ class cityController extends Controller
                 'city'=> $request->city ]);
             return redirect()->route('city.index');
         }
+
+    public function destroy($id){
+            $city = city::find($id);
+
+            $city->delete();
+
+            return redirect()->route('city.index');
+    }
 }

@@ -918,7 +918,7 @@
                             <p>จังหวัด {{ $customers->province }} อำเภอ {{ $customers->city }} ตำบล
                                 {{ $customers->subdistrict }}
                             </p>
-                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} สถานะ ผู้รับ</p>
+                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} สถานะ ผู้ส่ง</p>
                         </div>
                     </div>
                     <div class="mt-4">
@@ -945,8 +945,8 @@
                                             <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->type }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customers->province }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
-                                            <td class="px-4 py-3 text-sm">ผู้รับ</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->province->province }}</td>
+                                            <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->created_at }}</td>
                                         </tr>
                                     @endforeach

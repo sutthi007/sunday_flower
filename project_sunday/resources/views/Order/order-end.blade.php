@@ -486,19 +486,8 @@
                                 <div class="p-2 w-200px  text-center dark:text-white">
                                     <h1 class="text-2xl">{{$customer->name}}</h1>
                                     <p>ทั้งหมด</p>
-                                        @php
-                                            $total = 0;
-                                            $cost =0;
-                                        @endphp
-                                        @foreach ( $customer->orders as $totals )
-                                            @php
-                                                $total = $totals->price * $totals->quantity
-                                            @endphp
-                                            @php
-                                                $cost = $total + $cost;
-                                            @endphp
-                                        @endforeach
-                                    <h1 class="text-2xl bg-pink text-white">{{$cost}}</h1>
+
+                                    <h1 class="text-2xl bg-pink text-white">{{$customer->total}}</h1>
                                 </div>
                             </div>
                             </div>
@@ -517,19 +506,8 @@
                                                     <th class="px-4 py-3">ราคา</th>
                                                 </tr>
                                             </thead>
-                                            @php
-                                                $cost = 0;
-                                                $i = 1;
-                                                $total = 0 ;
-                                             @endphp
                                             @foreach ( $customer->orders as $order)
-                                                @php 
-                                                    $total = $order->price * $order->quantity
-                                                @endphp
-                                                @php
-                                                    $cost = $total + $cost
-                                                @endphp
-                                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                                     <tr class="text-gray-700 dark:text-gray-400">
                                                         <td class="px-4 py-3">1</td>
                                                         <td class="px-4 py-3 text-sm">{{$order->list}}</td>
@@ -545,22 +523,36 @@
 
                                         </table>
                                     </div>
-                                </div>
+                                </div> 
+                                @php
+                                    $np = 0;
+                                @endphp
                                 <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
-                                    บาท
+                                   บาท
                                     <input
                                         class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="150" disabled />
-                                    
-                                    <label class=""> ยอดค้างชำระ : </label>
+                                        type="text" placeholder="" value="{{$customer->total}}" disabled />
+                                    <label class=""> ทั้งหมด : </label>
                                 </div>
                                 <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
                                    บาท
                                     <input
                                         class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="{{$cost}}" disabled />
-                                    <label class=""> ทั้งหมด : </label>
+                                        type="text" placeholder="" value="{{$customer->getmoney}}" disabled />
+                                    <label class=""> รับชำระ : </label>
                                 </div>
+                                @php
+                                    $np = $customer->getmoney - $customer->total;
+                                @endphp
+                                <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
+                                    บาท
+                                    <input
+                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
+                                        type="text" placeholder="" value="{{$np}}" disabled />
+                                    
+                                    <label class=""> ยอดค้างชำระ : </label>
+                                </div>
+                               
                                 <div class="mr-auto flex flex-row-reverse m-auto p-3 dark:text-white">
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="text-white" href="{{route('projects.index')}}"> ปิด </a>

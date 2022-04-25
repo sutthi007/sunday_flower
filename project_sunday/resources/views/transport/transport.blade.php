@@ -544,11 +544,14 @@
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
+                                @php 
+                                    $i =1;
+                                @endphp
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                     @foreach ($provinces as $province)
                                         <tr class="text-gray-700 dark:text-gray-400">
 
-                                            <td class="px-4 py-3 text-sm">{{ $province->id }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $province->province }}</td>
                                             <td class="flex px-4 py-3 text-sm ">
                                                 <a class="w-6 h-6 mr-2" href="">
@@ -559,7 +562,7 @@
                                                             d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                     </svg>
                                                 </a>
-                                                <form action="" method="post">
+                                                <form action="{{ route('transport.destroy',$province->id ) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button id="" class="w-6 h-6"><svg

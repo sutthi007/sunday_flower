@@ -91,6 +91,11 @@ class OrderController extends Controller
     public function sum($id)
     {
         $customer = customer::find($id);
+        return view('Order.order-be-paid', compact('customer'));
+    }
+    public function bill($id)
+    {
+        $customer = customer::find($id);
         return view('Order.order-end', compact('customer'));
     }
     public function prnpriview($id)
@@ -100,9 +105,23 @@ class OrderController extends Controller
             return @$pdf->stream();
       }
     public function total(Request $request)
-    {
+    {  
+        $cus = customer::find($request->customer_id);
 
-        Order::where('total', $request->total)->get();
+        $cus->update([
+            'total' => $request->total,
+        ]);
+        $customer = $request->customer_id;
+
+        return redirect()->route('getmoney', $customer);
+    }
+    public function getmoney(Request $request)
+    {  
+        $cus = customer::find($request->customer_id);
+
+        $cus->update([
+            'getmoney' => $request->getmoney,
+        ]);
         $customer = $request->customer_id;
 
         return redirect()->route('bill', $customer);
