@@ -1127,7 +1127,7 @@
                                             @endif
 
                                             <td class="px-4 py-3 text-sm ">
-                                                5421545TH
+                                                {{$order->tracking}}
                                             </td>
                                             <td class="flex px-4 py-3 text-sm " >
                                                 @can('admin', 'owner')
