@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class SummaryController extends Controller
 {
@@ -15,5 +17,10 @@ class SummaryController extends Controller
     }
     public function account(){
         return view('summary.account');
+    }
+    public function viewSum(){
+        $orders = Order::all();
+
+        return view('sum',compact('orders'));
     }
 }

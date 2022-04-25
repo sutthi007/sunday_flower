@@ -69,6 +69,7 @@ Route::resource('transport',ProvinceController::class);
 Route::resource('subdistrict',subController::class);
 Route::resource('city',cityController::class);
 Route::get('province/fetch',[subController::class,'fetch'])->name('fetch');
+Route::get('list-sum',[SummaryController::class,'viewSum'])->name('sum');
 
 Route::resource('customer-systems',CustomerController::class);
 
