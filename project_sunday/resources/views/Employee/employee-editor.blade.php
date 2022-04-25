@@ -585,9 +585,9 @@
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
                                         <label class=" dark:text-white" for="">
-                                            เบอร์โทรญาติที่สามารถติดต่อ :
+                                            เบอร์โทรญาติที่ติดต่อได้ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px w-130px dark:bg-gray-900 dark:text-white" type="text"
+                                        <input class="bg-235 rounded-lg h-30px w-120px dark:bg-gray-900 dark:text-white" type="text"
                                             value="{{ $user->phone_relative }}" name="phone_relative">
                                 </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">

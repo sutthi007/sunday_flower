@@ -776,6 +776,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-160px {
   width: 160px;
 }
+.w-120px {
+  width: 120px;
+}
 .w-130px {
   width: 130px;
 }

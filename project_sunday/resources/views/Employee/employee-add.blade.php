@@ -611,9 +611,9 @@
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
-                                            เบอร์โทรญาติที่สามารถติดต่อ :
+                                            เบอร์โทรญาติที่ติดต่อได้ :
                                         </label>
-                                        <input class="bg-235 w-150px rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="tel"
+                                        <input class="bg-235 w-140px rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="tel"
                                             placeholder="0588888" name="phone_relative" size="10" maxlength="11" id="tells"
                                             onkeypress="addSpaceTElS()">
                                         @if ($errors->any('phone_relative'))

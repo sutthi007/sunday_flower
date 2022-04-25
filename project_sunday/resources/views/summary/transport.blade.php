@@ -427,6 +427,9 @@
                         <div class="mt-4 mb-6 text-xl dark:text-white">
                             <p class="">รายวัน</p>
                         </div>
+                        <div class=" mb-3">
+                            <button class="float-right bg-pink w-94px h-24px rounded-md text-white"  type="button" onclick="toggleModal('modal-id')">สร้างสรุป</button>
+                        </div>
                         <!-- New Table -->
                         <div class="w-full overflow-hidden rounded-lg shadow-xs">
                             <div class="w-full overflow-x-auto">
@@ -437,7 +440,7 @@
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
-                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                            <th class="px-4 py-3"></th>
 
                                         </tr>
                                     </thead>
@@ -447,16 +450,7 @@
                                             <td class="px-4 py-3 text-sm">26/01/2564</td>
                                             <td class="px-4 py-3 text-sm">50</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')"
-                                                    href="/pdf">
-                                                    PDF
-                                                </a>
-                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')"
-                                                    href="/export-excel">
-                                                    Excel
-                                                </a>
+                                              
                                                 <a href="/transport-details-day">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
@@ -478,7 +472,7 @@
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">เดือน</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
-                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+                                            <th class="px-4 py-3"></th>
 
                                         </tr>
                                     </thead>
@@ -488,17 +482,7 @@
                                             <td class="px-4 py-3 text-sm">1-31/01/2564</td>
                                             <td class="px-4 py-3 text-sm">500</td>
                                             <td class="px-4 py-3 text-sm ">
-                                                <a class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')"
-                                                    href="/pdf">
-                                                    PDF
-                                                </a>
-                                                <a class="bg-pink w-94px h-24px rounded-md text-white "
-                                                    type="button" onclick="toggleModal('modal-id')"
-                                                    href="/export-excel"
-                                                    >
-                                                    Excel
-                                                </a>
+                                              
                                                 <a href="/transport-details-month">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
@@ -508,6 +492,69 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="hidden   fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center w-full m-auto  "
+                        id="modal-id">
+                        <div class="relative w-auto my-6 mx-auto max-w-3xl">
+                            <!--content-->
+                            <div
+                                class="border-0 rounded-lg shadow-lg relative flex flex-col xl:w-full xl:h-full  bg-white outline-none focus:outline-none xl:w-700px xl:h-500px md:w-500px  md:h-500px sm:h-500px  ss:h-500px">
+                                <!--header-->
+                                <div
+                                    class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                                    <h3 class="text-3xl font-semibold">
+                                        เพิ่มรายการส่ง
+                                    </h3>
+                                    <button
+                                        class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                        onclick="toggleModal('modal-id')">
+                                        <span
+                                            class="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                            ×
+                                        </span>
+                                    </button>
+                                </div>
+                                <!--body-->
+                                <div class="relative p-6 flex-auto xd:overflow-auto sm:overflow-auto ss:overflow-auto">
+                                    <form action="{{ route('FormOrder.store') }}" method="post">
+                                        
+                                        <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
+                                            <div class="w-full px-3 mb-6 md:mb-0">
+                                                <label
+                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    for="grid-first-name">
+                                                    เลือก
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
+                                                    id="grid-first-name" type="date" placeholder="ชื่อ - นามสกุล"
+                                                    name="name" />
+                                               
+                                            </div>
+                                            
+                                        </div>
+                                       
+
+                                </div>
+                                <!--footer-->
+                                <div
+                                    class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                                    <button
+                                        class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                        type="reset" onclick="toggleModal('modal-id')">
+                                        ยกเลิก
+                                    </button>
+                                    <button
+                                        class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                                        ยืนยัน
+                                    </button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop">
+                    </div>
                 </div>
             </main>
         </div>
