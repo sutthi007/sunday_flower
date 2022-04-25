@@ -4,22 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link href="{{ public_path('css/index.css') }}" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: normal;
+            src: url("{{ public_path('fonts/THSarabunNew.ttf') }}") format('truetype');
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: normal;
+            font-weight: bold;
+            src: url("{{ public_path('fonts/THSarabunNew Bold.ttf') }}") format('truetype');
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: normal;
+            src: url("{{ public_path('fonts/THSarabunNew Italic.ttf') }}") format('truetype');
+        }
+        @font-face {
+            font-family: 'THSarabunNew';
+            font-style: italic;
+            font-weight: bold;
+            src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
+        }
+
+        body {
+            font-family: "THSarabunNew";
+        }
+        h2{
+            text-align: center;
+        }
+        #emp{
+            border-collapse:collapse ;
+           width: 100%;
+        }
+        #emp td{
+            text-align: center;
+        }
+        #emp td,#emp th{
+           border: 1px solid ;
+           padding: 8px;
+        }
+        #emp th{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+        }
+        .ddd{
+            width:150px;
+        }
+
+    </style>
     <title>สรุปบิล</title>
 </head>
 <body>
     <main class="h-full overflow-y-auto">
         <div class="container px-6 mx-auto grid">
-            <div class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-
-            </div>
             <div class="bg-white dark:bg-gray-800 rounded">
                 <div class="m-auto   mt-5 ">
                     <div class="mb-6">
                         <div class="text-3xl font-semibold text-center mb-6 dark:text-white">
                             <h1>สรุปบิล</h1>
                         </div>
-                    <img class="w-150px" src="/img/icon.svg" alt="">
+                        <img src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
                     <div class=" flex w-full justify-between ">
                         <div class="p-2 dark:text-white">
                             <p class="text-3xl" >บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
@@ -108,6 +158,7 @@
                     </form>
                 </div>
             </div>
+        </div>
     </main>
 </body>
 </html>
