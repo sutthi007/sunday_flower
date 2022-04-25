@@ -20,5 +20,11 @@ class CustomerController extends Controller
 
         return view('customer.customer-editor', compact('customers'));
     }
+    public function destroy($id){
+        $customers = customer::find($id);
+        $customers->delete();
+
+        return redirect()->route('customer-systems.index');
+    }
 
 }

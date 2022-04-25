@@ -68,6 +68,7 @@ class EmployeeController extends Controller
             'province' => 'required',
             'email' => 'required|email',
             'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
+            'phone_relative' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
             'zipcode' => 'required',
             'image_Profile' => 'required',
         ],
@@ -85,6 +86,9 @@ class EmployeeController extends Controller
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
             'phone.regex'=> 'กรุณากรอก 09 08 05',
             'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'phone_relative.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone_relative.regex'=> 'กรุณากรอก 09 08 05',
+            'phone_relative.size'=>'กรุณากรอให้ครบ 10 ตัว',
             'image_Profile.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
             'email.required'=>'กรุณากรอกอีเมล',
             'email.email'=> 'กรุณากรอบ @gmail'
@@ -123,8 +127,10 @@ class EmployeeController extends Controller
             'password' =>Hash::make($request->password),
             'IDuser' => $userid,
             'phone' =>$request->phone,
+            'phone_relative' =>$request->phone_relative,
             'zipcode' =>$request->zipcode,
-            'Path_Profile' => $ImageProfile,
+            'Path_imageProfile' => $ImageProfile,
+            
         ]);
 
         return redirect()->route('Employee.index');

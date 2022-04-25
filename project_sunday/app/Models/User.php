@@ -29,6 +29,7 @@ class User extends Authenticatable
         'province',
         'address',
         'phone',
+        'phone_relative',
         'IDcard',
         'zipcode',
         'Idcard',

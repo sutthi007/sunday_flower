@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('province');
             $table->string('address');
             $table->string('phone');
+            $table->string('phone_relative')->nullable();
             $table->string('Idcard');
             $table->integer('zipcode');
             $table->rememberToken();

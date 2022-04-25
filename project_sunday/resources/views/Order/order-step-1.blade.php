@@ -12,8 +12,11 @@
 
     <script src="/js/init-alpine.js"></script>
     <script src="/js/popup-ouput.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
@@ -167,14 +170,49 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index') }}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -280,14 +318,49 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index') }}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -306,7 +379,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -336,7 +409,7 @@
                                 <ul x-transition:leave="transition ease-in duration-150"
                                     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                     @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu"
-                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                                    class="absolute right-0 w-40 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -359,13 +432,20 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    viewBox="0 0 24 24" stroke="currennColor">
-                                                    <path
-                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                                    </path>
-                                                </svg>
+                                              <svg
+                                              class="w-4 h-4 mr-3"
+                                              aria-hidden="true"
+                                              fill="none"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                              stroke-width="2"
+                                              viewBox="0 0 24 24"
+                                              stroke="currentColor"
+                                            >
+                                              <path
+                                                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                                              ></path>
+                                            </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -384,7 +464,8 @@
                     </h2>
                     <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-4 p-3">
                         <div class=" w-200px px-3  m-auto">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                            <label
+                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                 for="grid-first-name">
                                 ชื่อ
                             </label>
@@ -392,7 +473,8 @@
                                 id="grid-first-name">{{ $customer->name }}</div>
                         </div>
                         <div class="w-200px px-3   m-auto">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                            <label
+                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                 for="grid-first-name">
                                 จังหวัด
                             </label>
@@ -400,7 +482,8 @@
                                 id="grid-first-name">{{ $customer->province }}</div>
                         </div>
                         <div class="w-200px px-3  m-auto">
-                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                            <label
+                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                 for="grid-first-name">
                                 เบอร์โทร
                             </label>
@@ -439,80 +522,87 @@
                                 <div class="relative p-6 flex-auto xd:overflow-auto sm:overflow-auto ss:overflow-auto">
                                     <form action="{{ route('FormOrder.store') }}" method="post">
                                         @csrf
-                                        
-                                            <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
-                                                <div class="w-full px-3 mb-6 md:mb-0">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        ชื่อ
-                                                    </label>
-                                                    <input
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
-                                                        id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
-                                                        name="name" />
-                                                        @if ($errors->any('name'))
-                                                        <p class="text-red-500 text-xs italic text-center">{{$errors->first('name')}}</p>
-                                                        @endif
-                                                </div>
-                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        จังหวัด
-                                                    </label>
-                                                    <select
-                                                        class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="province" id="provinces">
-                                                        <option value="">---เลือก----</option>
-                                                        @foreach($province as $row)
-                                                        <option value="{{$row->id}}">{{$row->province}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        อำเภอ
-                                                    </label>
-                                                    <select
-                                                        class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="city">
-                                                        <option value="">---เลือก----</option>
-                                                    </select>
-                                                </div>
-                                                <div class="flex w-full px-3 mb-6 md:mb-0 ">
-                                                   
-                                                    <input  type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+
+                                        <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
+                                            <div class="w-full px-3 mb-6 md:mb-0">
+                                                <label
+                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    for="grid-first-name">
+                                                    ชื่อ
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
+                                                    id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
+                                                    name="name" />
+                                                @if ($errors->any('name'))
+                                                    <p class="text-red-500 text-xs italic text-center">
+                                                        {{ $errors->first('name') }}</p>
+                                                @endif
+                                            </div>
+                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                                <label
+                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    for="grid-first-name">
+                                                    จังหวัด
+                                                </label>
+                                                <select
+                                                    class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    id="grid-first-name" type="text" placeholder="" name="province"
+                                                    id="provinces">
+                                                    <option value="">---เลือก----</option>
+                                                    @foreach ($province as $row)
+                                                        <option value="{{ $row->id }}">{{ $row->province }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                                <label
+                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    for="grid-first-name">
+                                                    อำเภอ
+                                                </label>
+                                                <select
+                                                    class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    id="grid-first-name" type="text" placeholder="" name="city">
+                                                    <option value="">---เลือก----</option>
+                                                </select>
+                                            </div> 
+                                            <div class="w-full px-3 mb-6 md:mb-0 ">
+                                                <label
+                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    for="grid-first-name">
+                                                    เบอร์โทร
+                                                </label>
+                                                <input
+                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
+                                                    name="phone" maxlength="11" />
+                                            </div>
+                                            <div class=" w-full px-3 mb-6 md:mb-0 ">
+                                                <div class="flex">
+                                                    <input class="mr-4" type="checkbox" id="myCheck" onclick="myFunction()">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                                         for="grid-first-name" name="sendto" value="ส่งต่อ">
-                                                         ส่งต่อ
+                                                        ส่งต่อ
                                                     </label>
                                                 </div>
-                                                <div class="w-full px-3 mb-6 md:mb-0 ">
+                                                <div class=" w-full px-3 mb-6 md:mb-0 " id="text" style="display:none">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name"
-                                                        name="price_sendto">
+                                                        id="showthis" name="showthis" size="50" type="text"
+                                                        value="text here">
                                                         ราคาส่งต่อ
                                                     </label>
                                                     <input
                                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="phone" maxlength="11" />
+                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
+                                                        name="phone" maxlength="11" />
                                                 </div>
-                                                <div class="w-full px-3 mb-6 md:mb-0 ">
-                                                    <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
-                                                        เบอร์โทร
-                                                    </label>
-                                                    <input
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="telInput" onkeypress="addSpace()" type="tel" placeholder="" name="phone" maxlength="11" />
-                                                </div>
+                                               
                                             </div>
+                                        </div>
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <label
@@ -541,23 +631,28 @@
                                                     id="grid-first-name" type="text" placeholder="" name="list" />
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
-                                                    จำนวน
-                                                </label>
                                                 <div class="flex">
-                                                <input
-                                                    class="appearance-none block w-65 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="quantity" />
-                                                <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
-                                                    หน่วย
-                                                </label>
-                                                <input
-                                                    class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="" />
+                                                    <div class="mr-2">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                            for="grid-first-name">
+                                                            จำนวน
+                                                        </label>
+                                                        <input
+                                                            class="appearance-none block w-200px text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                            id="grid-first-name" type="text" placeholder=""
+                                                            name="quantity" />
+                                                    </div>
+                                                    <div>
+                                                        <label
+                                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                            for="grid-first-name">
+                                                            หน่วย
+                                                        </label>
+                                                        <input
+                                                            class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                            id="grid-first-name" type="text" placeholder="" name="" />
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
@@ -620,7 +715,7 @@
                                 @endphp
                                 @foreach ($customer->orders as $order)
                                     @php
-                                        $total = $order->price * $order->quantity
+                                        $total = $order->price * $order->quantity;
                                     @endphp
                                     @php
                                         $cost = $total + $cost;
@@ -628,12 +723,12 @@
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-xs">
-                                               
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div class="text-center">
-                                                        <p class="font-semibold">{{ $i++ }}</p>
-                                                    </div>
-                                               
+
+                                                <!-- Avatar with inset shadow -->
+                                                <div class="text-center">
+                                                    <p class="font-semibold">{{ $i++ }}</p>
+                                                </div>
+
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->list }}</td>
                                             <td class="px-4 py-3 text-xs">
@@ -648,8 +743,8 @@
                                                 {{ $order->city }}
                                             </td>
                                             <td class="px-4 py-3 text-xs">{{ $order->phone }}</td>
-                                           
-                                            <td class="px-4 py-3 text-xs">{{$total }}</td>
+
+                                            <td class="px-4 py-3 text-xs">{{ $total }}</td>
                                             <td class="flex px-4 py-3 text-xs ">
                                                 <a class="w-6 h-6 mr-2"
                                                     href="{{ route('FormOrder.edit', $order->id) }}">
@@ -661,7 +756,8 @@
                                                     </svg>
                                                 </a>
 
-                                                <form action="{{ route('FormOrder.destroy', $order->id, $customer) }}"
+                                                <form
+                                                    action="{{ route('FormOrder.destroy', $order->id, $customer) }}"
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
@@ -689,7 +785,7 @@
                             <input
                                 class="h-30px  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center w-150px "
                                 type="text" placeholder="{{ $cost }}" disabled />
-                            <label > ทั้งหมด : </label>
+                            <label> ทั้งหมด : </label>
                             <input type="hidden" name="customer_id" value="{{ $customer->id }}">
                             <input type="hidden" name="total" value="{{ $cost }}">
                         </div>
@@ -754,31 +850,45 @@
         switchTheme()
     </script>
     <script>
-    function addSpace(){
-        var inputValue = document.getElementById("telInput").value;
-        var inputValueLength = inputValue.length;
-        
-        if(inputValueLength == 3 ){
-            document.getElementById("telInput").value = inputValue+"-"; 
+        function addSpace() {
+            var inputValue = document.getElementById("telInput").value;
+            var inputValueLength = inputValue.length;
+
+            if (inputValueLength == 3) {
+                document.getElementById("telInput").value = inputValue + "-";
+            }
         }
-    }
     </script>
     <script type="text/javascript">
-  $('.provinces').change(function() {
-      if($(this).val()!=''){
-          var select=$(this).val();
-          var _token=$('input[name="_token"]').val();
-          $.ajax({
-              url:"{{route('fetch')}}",
-              method:'GET',
-              data:{select:select,_token:_token},
-              success:function(result){
-                    $('.city').html(result);
-              }
-          });
-      }
-  });
-</script>
+        $('.provinces').change(function() {
+            if ($(this).val() != '') {
+                var select = $(this).val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url: "{{ route('fetch') }}",
+                    method: 'GET',
+                    data: {
+                        select: select,
+                        _token: _token
+                    },
+                    success: function(result) {
+                        $('.city').html(result);
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        function myFunction() {
+            var checkBox = document.getElementById("myCheck");
+            var text = document.getElementById("text");
+            if (checkBox.checked == true) {
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

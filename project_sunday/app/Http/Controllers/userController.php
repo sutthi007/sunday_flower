@@ -20,7 +20,7 @@ class userController extends Controller
             'name' =>'bail',
             'province' =>'required',
             'subdistrict' =>'required',
-            'phone' =>'required|regex:/(0)[0-9]{9}/|size:10',
+            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
         ],
         [
             'name.bail'=> 'กรุณากรอกชื่อ',
@@ -28,7 +28,7 @@ class userController extends Controller
             'subdistrict.required'=>'กรุณาเลือกอำเภอ',
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
             'phone.regex'=> 'กรุณากรอก 09 08 05',
-            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว', 
+            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
         ]
     );
 

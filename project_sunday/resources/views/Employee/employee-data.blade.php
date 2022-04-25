@@ -429,7 +429,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -482,20 +482,13 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                 <svg
-                                                 class="w-4 h-4 mr-3"
-                                                 aria-hidden="true"
-                                                 fill="none"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round"
-                                                 stroke-width="2"
-                                                 viewBox="0 0 24 24"
-                                                 stroke="currentColor"
-                                               >
-                                                 <path
-                                                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                                 ></path>
-                                               </svg>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -513,82 +506,89 @@
                         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
                             ข้อมูลพนักงาน
                         </h2>
-                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
+                        <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
                             <div class="m-auto rounded-md p-3">
                                 <div class="grid text-center m-auto">
                                     <div class="m-auto w-40 h-40">
-                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}"
+                                        <img src="{{ asset('img/Profile/' . $user->Path_imageProfile) }}"
                                             class="object-cover rounded-full h-full w-full ">
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                ชื่อ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->name }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            ชื่อ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->name }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        
-                                            <label class=" dark:text-white" for="">
-                                                ตำแหน่ง :
-                                            </label>
-                                            <input class="bg-235 w-150px dark:bg-gray-900" type="text"
-                                                placeholder="{{ $user->role }}" disabled>
-                                       
+
+                                        <label class=" dark:text-white" for="">
+                                            ตำแหน่ง :
+                                        </label>
+                                        <input class="bg-235 w-150px dark:bg-gray-900" type="text"
+                                            placeholder="{{ $user->role }}" disabled>
+
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        
-                                            <label class=" dark:text-white" for="">
-                                                เลขผู้ใช้ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->IDuser }}" disabled>
-                                        
+
+                                        <label class=" dark:text-white" for="">
+                                            เลขผู้ใช้ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->IDuser }}" disabled>
+
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                วันเกิด :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->birthday }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            วันเกิด :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->birthday }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                อีเมล์ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->email }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            อีเมล์ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->email }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                เบอร์โทร :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->phone }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            เบอร์โทร :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->phone }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                ที่อยู่ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->address }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            เบอร์โทรญาติที่สามารถติดต่อ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  w-150px dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->phone_relative }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                อำเภอ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->city }}" disabled>
+                                        <label class=" dark:text-white" for="">
+                                            ที่อยู่ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->address }}" disabled>
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                            <label class=" dark:text-white" for="">
-                                                จังหวัด :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                placeholder="{{ $user->province }}" disabled>
-                                        </div>
+                                        <label class=" dark:text-white" for="">
+                                            อำเภอ :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->city }}" disabled>
+                                    </div>
+                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
+                                        <label class=" dark:text-white" for="">
+                                            จังหวัด :
+                                        </label>
+                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="{{ $user->province }}" disabled>
+                                    </div>
                                 </div>
                             </div>
                             <div class="mt-10 mb-9">
@@ -628,7 +628,7 @@
             })
         })
     </script>
-     <script>
+    <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');
         let isDarkmode = false

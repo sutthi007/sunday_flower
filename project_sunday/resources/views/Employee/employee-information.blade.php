@@ -178,14 +178,49 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('summary.index')}}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -354,14 +389,49 @@
                         </a>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{route('summary.index')}}">
-                            <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
-                                <path d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenus" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-align-center">
+                                    <path
+                                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9H13V4.069A8.008 8.008 0 0 1 19.931 11zM4 12c0-4.072 3.061-7.436 7-7.931V12a.996.996 0 0 0 .111.438c.015.03.022.063.041.093l4.202 6.723A7.949 7.949 0 0 1 12 20c-4.411 0-8-3.589-8-8zm13.052 6.196L13.805 13h6.126a7.992 7.992 0 0 1-2.879 5.196z">
+                                    </path>
+                                </svg>
+                                <span class="ml-4">สรุป</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
                             </svg>
-                            <span class="ml-4">สรุป</span>
-                        </a>
+                        </button>
+                        <template x-if="isPagesMenuOpens">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumAccount') }}">สรุปรายงานบัญชี</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('sumTransport') }}">
+                                        สรุปรายงานขนส่ง
+                                    </a>
+                                </li>
+                            </ul>
+                        </template>
                     </li>
                 </ul>
             </div>
@@ -417,7 +487,10 @@
                                 <img class="object-cover w-8 h-8 rounded-full"
                                     src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
                                     alt="" aria-hidden="true" />
+                                    
+                                    
                             </button>
+                           
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
                                     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
@@ -484,7 +557,7 @@
                             <table class="w-full whitespace-no-wrap ">
                                 <thead>
                                     <tr
-                                        class="text-center text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        class="text-center text-xs font-semibold tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">ลำดับ</th>
                                         <th class="px-4 py-3">ชื่อ</th>
                                         <th class="px-4 py-3">ตำแหน่ง</th>
@@ -499,25 +572,16 @@
                                     @if($user != Auth::user())
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 ">
                                         <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 w-25px ">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div>
-                                                        <p class="font-semibold">{{ $i++ }}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td class="px-4 py-3 w-25px ">{{ $i++ }}</td>
                                             <td class="px-4 py-3 text-sm w-100px">{{$user->name }}</td>
-                                            <td class="px-4 py-3 text-xs w-100px">
-                                                <div class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                                    {{ $user->role }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm w-100px ">
-                                                {{ $user->IDuser }}
-                                            </td>
+                                            @if ($user->role == 'admin')
+                                            <td class="px-4 py-3 text-xs w-100px ">แอดมิน</td>
+                                            @elseif($user->role == 'employee')
+                                            <td class="px-4 py-3 text-xs w-100px ">พนักงานขนส่ง</td>
+                                            @endif
+                                            <td class="px-4 py-3 text-sm w-100px "> {{ $user->IDuser }}</td>
                                             <td class="px-4 py-3 text-sm w-50px ">
-                                                <div class="bg-pink w-50px h-30px text-center rounded-md ">
+                                                <div class="bg-pink w-50px h-30px text-center rounded-md m-auto">
                                                 <a class="text-white m-auto text-base" href="{{ route('Employee.show',$user->id)}}">ดู</a>
                                             </div>
                                             </td>
