@@ -119,7 +119,7 @@ class OrderController extends Controller
     //     return (new TransportsDaysExport)->download('active.pdf');
     // }
     public function downloadPDF(){
-        $orders = Order::all()->where('province_id','2');
+        $orders = Order::all()->where('province_id','1');
 
         $province = 'เชียงใหม่';
 
@@ -128,7 +128,7 @@ class OrderController extends Controller
     }
 
     public function viewReport(){
-        $orders = Order::all()->where('province_id','2');
+        $orders = Order::all()->where('province_id','1');
 
         $province = 'เชียงใหม่';
 
