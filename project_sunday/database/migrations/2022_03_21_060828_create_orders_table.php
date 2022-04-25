@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('customer_id');
-            $table->string('city');
-            $table->integer('province');
+            $table->integer('city_id');
+            $table->integer('province_id');
             $table->string('type');
             $table->string('list');
             $table->string('sendto')->nullable();
@@ -28,8 +28,9 @@ return new class extends Migration
             $table->integer('price');
             $table->string('phone');
             $table->string('tracking');
+            $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('customer_id')->references('id')->on('customers');
-            $table->foreign('province')->references('id')->on('provinces');
+            $table->foreign('province_id')->references('id')->on('provinces');
             $table->enum('status',['order','send','success'])->default('order');
             $table->timestamps();
         });

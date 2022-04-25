@@ -11,8 +11,8 @@ class Order extends Model
 
     protected $fillable = [
         'name',
-        'city',
-        'province',
+        'city_id',
+        'province_id',
         'phone',
         'type',
         'list',
@@ -23,7 +23,7 @@ class Order extends Model
         'status',
         'tracking',
         'sendto',
-        'price_sendto',
+        'price_to',
         'amount',
     ];
 
@@ -36,5 +36,8 @@ class Order extends Model
     }
     public function province(){
         return $this->belongsTo(province::class);
+    }
+    public function city(){
+        return $this->belongsTo(city::class);
     }
 }

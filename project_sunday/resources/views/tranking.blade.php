@@ -22,7 +22,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
- 
+
 </head>
 
 <body class="font-prompt">
@@ -39,7 +39,7 @@
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
-                       
+
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
@@ -54,9 +54,9 @@
                                             <input
                                             class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
                                             id="grid-first-name" type="text" placeholder="">
-                                         
+
                                         </div>
-                                      
+
                                     </div>
                                     <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
                                         <button class="w-200px h-30px bg-pink rounded mb-6 text-white">ค้นหา</button>
@@ -68,22 +68,22 @@
                         <div class="w-full m-auto  mt-4 mb-5">
                                 <form  " action="" method="post">
                                     <div class="w-300px m-auto">
-                                        <div class="flex w-auto m-auot"> 
+                                        <div class="flex w-auto m-auot">
                                             <h3 class="mr-5">สถานะ :</h3><p>กำลังจัดส่ง</p>
                                         </div>
-                                        <div class="flex w-auto m-auot"> 
+                                        <div class="flex w-auto m-auot">
                                             <h3 class="mr-5">ชื่อ :</h3><p>กำลังจัดส่ง</p>
                                         </div>
-                                        <div class="flex w-auto m-auot"> 
+                                        <div class="flex w-auto m-auot">
                                             <h3 class="mr-5">ประเภท :</h3><p>กำลังจัดส่ง</p>
                                         </div>
-                                        <div class="flex w-auto m-auot"> 
+                                        <div class="flex w-auto m-auot">
                                             <h3 class="mr-5">เวลารับรายการ :</h3><p>กำลังจัดส่ง</p>
                                         </div>
-                                        <div class="flex w-auto m-auot mt-6"> 
+                                        <div class="flex w-auto m-auot mt-6">
                                             <h3 class="mr-5">ชื่อพนักงานจัดส่ง :</h3><p>กำลังจัดส่ง</p>
                                         </div>
-                                        <div class="flex w-auto m-auot"> 
+                                        <div class="flex w-auto m-auot">
                                             <h3 class="mr-5">เบอร์โทรติดต่อผู้จัดส่ง :</h3><p>กำลังจัดส่ง</p>
                                         </div>
                                     </div>
@@ -105,7 +105,7 @@
         const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
 </svg>`
-        // Jika ada isDarkmode di localstorage 
+        // Jika ada isDarkmode di localstorage
         if (localDarkmode) {
             isDarkmode = localDarkmode
             html.classList.add('dark')

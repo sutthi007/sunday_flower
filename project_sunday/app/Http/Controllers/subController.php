@@ -23,14 +23,14 @@ class subController extends Controller
         $result =array();
         $query=DB::table('provinces')
         ->join('cities','provinces.id','=','cities.province_id')
-        ->select('cities.city')
+        ->select('cities.city','cities.id')
         ->where('provinces.id',$id)
-        ->groupBy('cities.city')
+        ->groupBy('cities.city','cities.id')
         ->get();
-        
+
         $output = '<option value="">---เลือกอำเภอ----</option>';
         foreach($query as $row){
-            $output.='<option value="'.$row->city.'">'.$row->city.'</option>';
+            $output.='<option value="'.$row->id.'">'.$row->city.'</option>';
         }
         echo $output;
     }

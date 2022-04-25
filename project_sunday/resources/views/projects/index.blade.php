@@ -1027,7 +1027,8 @@
                                         <th class="px-4 py-3">เลขที่</th>
                                         <th class="px-4 py-3">รายการ</th>
                                         <th class="px-4 py-3">ชื่อ</th>
-                                        <th class="px-4 py-3">ที่อยู่</th>
+                                        <th class="px-4 py-3">จังหวัด</th>
+                                        <th class="px-4 py-3">จุดลง</th>
                                         <th class="px-4 py-3">วันที่</th>
                                         <th class="px-4 py-3">สถานะ</th>
                                         <th class="px-4 py-3"></th>
@@ -1055,7 +1056,10 @@
                                                 </div>
                                             </td>
                                             <td class="px-4 py-3 text-sm ">
-                                                {{ $order->province }},{{ $order->city }}
+                                                {{ $order->province->province }}
+                                            </td>
+                                            <td class="px-4 py-3 text-sm ">
+                                                {{ $order->city->city }}
                                             </td>
                                             <td class="px-4 py-3 text-sm ">
                                                 {{ $order->created_at }}
@@ -1125,7 +1129,7 @@
                                             <td class="px-4 py-3 text-sm ">
                                                 5421545TH
                                             </td>
-                                            <td class="flex px-4 py-3 text-sm ">
+                                            <td class="flex px-4 py-3 text-sm " >
                                                 @can('admin', 'owner')
                                                     <a class="w-6 h-6 mr-2"
                                                         href="{{ route('FormOrder.edit', $order->id) }}">
@@ -1150,6 +1154,7 @@
                                                     </form>
                                                 @endcan
                                             </td>
+
                                         </tr>
                                     </tbody>
                                 @endforeach
@@ -1172,7 +1177,7 @@
         const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
 </svg>`
-        // Jika ada isDarkmode di localstorage 
+        // Jika ada isDarkmode di localstorage
         if (localDarkmode) {
             isDarkmode = localDarkmode
             html.classList.add('dark')

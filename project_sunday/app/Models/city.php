@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class city extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'province_id',
         'city'
@@ -16,5 +16,10 @@ class city extends Model
 
     public function province(){
         return $this->belongsTo(province::class);
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

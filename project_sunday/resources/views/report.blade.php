@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ข้อมูลขนส่ง</title>
     <style>
         @font-face {
@@ -31,7 +32,7 @@
             font-weight: bold;
             src: url("{{ public_path('fonts/THSarabunNew BoldItalic.ttf') }}") format('truetype');
         }
- 
+
         body {
             font-family: "THSarabunNew";
         }
@@ -46,7 +47,7 @@
             text-align: center;
         }
         #emp td,#emp th{
-           border: 1px solid ; 
+           border: 1px solid ;
            padding: 8px;
         }
         #emp th{
@@ -54,21 +55,26 @@
             padding-bottom: 12px;
             text-align: left;
         }
-        
+        .ddd{
+            width:150px;
+        }
+
     </style>
 
 </head>
 <body>
     <div>
-        <div>
+        <div class="ddd">
+            <img src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
+        </div>
+        <div class="text-3xl">
             <h2>รายงานขนส่ง {{$province}}</h2>
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
             <div class="w-full overflow-x-auto">
                 <table id="emp" class="w-full whitespace-no-wrap">
                     <thead>
-                        <tr 
-                            class="text-xs font-semibold tracking-wide  text-center text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">                            
+                        <tr>
                             <th class="px-4 py-3">ประเภท</th>
                             <th class="px-4 py-3">รายการ</th>
                             <th class="px-4 py-3">จุดลง</th>
@@ -76,21 +82,21 @@
                             <th class="px-d py-3">จำนวน</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y ">
+                    <tbody >
                         @php
                             $sum = 0;
                         @endphp
-                        @foreach( $orders as $order)
-                        <tr>
-                            <td>{{$order->type}}</td>
-                            <td>{{$order->list}}</td>
-                            <td>{{$order->city}}</td>
-                            <td>{{$order->name}}({{$order->phone}})</td>
-                            <td>{{$order->quantity}}</td>
-                        </tr>
-                        @php
-                            $sum =$order->quantity + $sum ;
-                        @endphp
+                        @foreach( $orders->sortBy('type')->sortBy('list')->sortBy('city') as $order)
+                            <tr>
+                                <td>{{$order->type}}</td>
+                                <td>{{$order->list}}</td>
+                                <td>{{$order->city->city}}</td>
+                                <td>{{ $order->name }}{{$order->phone}}</td>
+                                <td>{{$order->quantity}}</td>
+                            </tr>
+                            @php
+                                $sum = $sum + $order->quantity
+                            @endphp
                        @endforeach
                        <tr>
                            <td colspan="4">รวม</td>

@@ -24,7 +24,6 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-        
         $request->validate([
             'name' =>'required',
             'city' =>'required',
@@ -36,14 +35,12 @@ class OrderController extends Controller
             'quantity' =>'required',
             'price' =>'required',
             'customer_id' =>'required',
-            'sendto' => 'required',
-            'price_sendto' => 'require',
-            'amount' => 'require'
+            'amount' => 'required',
         ]);
         $order = Order::create([
             'name' => $request->name,
-            'city' => $request->city,
-            'province' => $request->province,
+            'city_id' => $request->city,
+            'province_id' => $request->province,
             'phone' => $request->phone,
             'type' => $request->type,
             'list' => $request->list,
@@ -51,7 +48,7 @@ class OrderController extends Controller
             'price' => $request->price,
             'customer_id' => $request->customer_id,
             'sendto' => $request->sendto,
-            'price_sendto' => $request->price_sendto,
+            'price_to' => $request->price_sendto,
             'amount' => $request->amount,
             'tracking' => 'SD'.$request->province.time().random_int(00,99),
         ]);
@@ -64,7 +61,7 @@ class OrderController extends Controller
     {
         $customer = customer::find($id);
         $province  = province::all();
-       
+
         return view('Order.order-step-1', compact('customer','province',));
     }
 
@@ -122,21 +119,20 @@ class OrderController extends Controller
     //     return (new TransportsDaysExport)->download('active.pdf');
     // }
     public function downloadPDF(){
-        $orders = Order::all()->where('province','เชียงใหม่');
+        $orders = Order::all()->where('province_id','2');
+
         $province = 'เชียงใหม่';
-       
+
         $pdf = PDF::loadView('report',compact('orders','province'));
         return @$pdf->stream();
     }
 
     public function viewReport(){
-        $orders = Order::where('province','เชียงใหม่')
-                        
-                        ->groupBy('type','list','city')
-                        ->select('type','list','city')
-                        ->get();
+        $orders = Order::all()->where('province_id','2');
+
         $province = 'เชียงใหม่';
-       
+
+
         return view('report',compact('orders','province'));
     }
 }
