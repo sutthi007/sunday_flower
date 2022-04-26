@@ -1038,6 +1038,7 @@
                                 </thead>
                                 @php($i = 1)
                                 @php($s = 1)
+                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                 @foreach ($orders as $order)
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
                                         <tr class="text-gray-700 dark:text-gray-400">
@@ -1062,7 +1063,7 @@
                                                 {{ $order->city->city }}
                                             </td>
                                             <td class="px-4 py-3 text-sm ">
-                                                {{ $order->created_at }}
+                                                {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
                                             </td>
                                             @if ($order->status == 'order')
                                                 <td class="px-4 py-3 text-sm ">

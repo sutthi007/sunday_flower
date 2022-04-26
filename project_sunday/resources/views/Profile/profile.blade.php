@@ -144,12 +144,7 @@
                                             อำเภอ
                                         </a>
                                     </li>
-                                    <li
-                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                        <a class="w-full" href="{{ route('subdistrict.index') }}">
-                                            ตำบล
-                                        </a>
-                                    </li>
+
                                 </ul>
                             </template>
                         </li>
@@ -911,9 +906,19 @@
                                         <label class="ml-4 dark:text-white" for="">
                                             ตำแหน่ง:
                                         </label>
+                                        @if($user->role == 'admin')
                                         <input
                                             class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->role }}" disabled>
+                                            type="text" placeholder="แอดมิน" disabled>
+                                        @elseif($user->role == 'employee')
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="พนักงาน" disabled>
+                                        @elseif($user->role == 'owner')
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="เจ้าของกิจการ" disabled>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

@@ -25,12 +25,14 @@ class ProvinceController extends Controller
         return redirect()->route('transport.index');
     }
     public function edit($id){
-
-        return redirect()->route('.update');
+        $province = province::find($id);
+        return view('transport.transport-edit',compact('province'));
     }
     public function update($id,Request $requset){
         $province = province::find($id);
         $province->update($requset->all());
+
+        return redirect()->route('transport.index');
     }
     public function destroy($id){
         $province = province::find($id);

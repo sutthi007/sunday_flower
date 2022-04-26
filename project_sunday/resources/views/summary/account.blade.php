@@ -444,16 +444,29 @@
 
                                         </tr>
                                     </thead>
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @php
+                                        $i = 0;
+                                        $t = 1;
+                                    @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                        @foreach($account as $key => $value)
+                                            @foreach($value as $sum)
                                         <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">12,000</td>
+                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($key)}}</td>
+                                                @php
+                                                    $i = ($sum->quantity * $sum->price) +$i;
+                                                @endphp
+                                            <td class="px-4 py-3 text-sm">{{$i}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a href="/account-details-day">
+                                                <a href="/account-details-day/{{$key}}">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
                                             </td>
+                                        </tr>
+                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -541,9 +541,28 @@
                                         type="text" placeholder="" value="{{$customer->getmoney}}" disabled />
                                     <label class=""> รับชำระ : </label>
                                 </div>
+                                @if($customer->getmoney > $customer->total)
                                 @php
                                     $np = $customer->getmoney - $customer->total;
                                 @endphp
+                                @endif
+                                <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
+                                    บาท
+                                    <input
+                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
+                                        type="text" placeholder="" value="{{$np}}" disabled />
+                                    
+                                    <label class=""> ถอน : </label>
+                                </div>
+                                @if($np > 0)
+                                    @php
+                                        $np = ($np + $customer->total)- $customer->getmoney;
+                                    @endphp
+                                @else($np < 0)
+                                    @php
+                                        $np = $customer->total - $customer->getmoney;
+                                    @endphp
+                                @endif
                                 <div class="mb-4 flex flex-row-reverse m-auto p-3 dark:text-white">
                                     บาท
                                     <input

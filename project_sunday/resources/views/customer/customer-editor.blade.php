@@ -934,11 +934,11 @@
                                         <th class="px-4 py-3">ประเภท</th>
                                         <th class="px-4 py-3">ต้นทาง</th>
                                         <th class="px-8 py-3">ปลายทาง</th>
-                                        <th class="px-4 py-3">สถานะ</th>
                                         <th class="px-4 py-3">วันที่</th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                     @php($i = 1)
                                     @foreach ($customers->orders as $customer)
                                         <tr class="text-gray-700 dark:text-gray-400">
@@ -946,8 +946,7 @@
                                             <td class="px-4 py-3 text-sm">{{ $customer->type }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customers->province }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->province->province }}</td>
-                                            <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->created_at }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

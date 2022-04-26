@@ -884,6 +884,7 @@
                                                 <th class="px-8 py-3">จังหวัด</th>
                                                 <th class="px-4 py-3">สถานะ</th>
                                                 <th class="px-4 py-3">สถานะการชำระ</th>
+                                                <th class="px-4 py-3">วันที่</th>
                                                 <th class="px-4 py-3">Systems</th>
                                                 <th class="px-4 py-3"></th>
                                             </tr>
@@ -897,11 +898,13 @@
                                                     <td class="px-4 py-3 text-sm">{{ $customer->name }}</td>
                                                     <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
                                                     <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
-                                                    @if($customer->getmoney - $customer->total == 0)
+                                                    @if($customer->getmoney - $customer->total >= 0)
                                                     <td class="px-4 py-3 text-sm">ชำระเรียบร้อย</td>
                                                     @else
                                                     <td class="px-4 py-3 text-sm">ค้างชำระ</td>
                                                     @endif
+                                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                                    <td>{{$thaiDateHelper->simpleDateFormatcustomer($customer->created_at)}}</td>
                                                     <td class="px-4 py-3 text-sm ">
                                                         <div class=" w-full m-auto">
                                                             <a class="active:bg-fuchsia-700 bg-pink w-200px h-30px rounded-md text-white p-1"

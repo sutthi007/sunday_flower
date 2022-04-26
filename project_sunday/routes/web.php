@@ -11,8 +11,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
-
-
+use App\Models\Order;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,8 +85,13 @@ Route::get('/pdf',[OrderController::class,'downloadPDF']);
 Route::get('test',[OrderController::class,'viewReport'])->name('report');
 
 //summary 
-Route::get('/account-details-day', function () {
-    return view('summary/account-details-day');
+Route::get('/account-details-day/{date}', function ($date) {
+    $account = Order::whereDate('created_at',$date)
+                        ->select('province_id')
+                        ->groupBy('province_id')
+                        ->get();
+
+    return view('summary/account-details-day',compact('account','date'));
 });
 Route::get('/transport-details-day',function (){
     return view('summary/transport-details-day');

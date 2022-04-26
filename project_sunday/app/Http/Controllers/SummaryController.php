@@ -13,10 +13,22 @@ class SummaryController extends Controller
         return view('summary.summarize');
     }
     public function transport(){
-        return view('summary.transport');
+        $sum = Order::orderBy('created_at')
+
+                        ->get()
+                        ->groupBy(function($date) {
+                            return $date->created_at->format('Y-m-d');
+                        });
+        return view('summary.transport',compact('sum'));
     }
     public function account(){
-        return view('summary.account');
+        $account = Order::orderBy('created_at')
+
+                        ->get()
+                        ->groupBy(function($date) {
+                            return $date->created_at->format('Y-m-d');
+                        });
+        return view('summary.account',compact('account'));
     }
     public function viewSum(){
         $orders = Order::all();

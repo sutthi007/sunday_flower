@@ -421,20 +421,18 @@
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
                                             <th class="px-4 py-3">จังหวัด</th>
-                                            <th class="px-4 py-3">ตำบล</th>
-                                            <th class="px-4 py-3">อำเภอ</th>
                                             <th class="px-4 py-3">รายได้สุทธิ</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                         </tr>
                                     </thead>
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                        @foreach($account as $row )
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">เชียงใหม่</td>
-                                            <td class="px-4 py-3 text-sm">หนองหาร</td>
-                                            <td class="px-4 py-3 text-sm">สันทราย</td>
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
                                             <td class="px-4 py-3 text-sm">12,000</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
@@ -446,6 +444,7 @@
                                                     Excel
                                                 </button>
                                             </td>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

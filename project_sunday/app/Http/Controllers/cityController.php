@@ -28,4 +28,16 @@ class cityController extends Controller
 
             return redirect()->route('city.index');
     }
+    public function edit($id){
+
+        $city = city::find($id);
+
+        return view('transport.city-edit',compact('city'));
+    }
+    public function update($id,Request $request){
+        $city = city::find($id);
+        $city->update($request->all());
+
+        return redirect()->route('city.index');
+    }
 }

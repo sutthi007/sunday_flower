@@ -934,9 +934,19 @@
                                         <label class="ml-4 dark:text-white" for="">
                                             ตำแหน่ง:
                                         </label>
+                                        @if($user->role == 'admin')
                                         <input
                                             class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->role }}" disabled>
+                                            type="text" placeholder="แอดมิน" disabled>
+                                        @elseif($user->role == 'employee')
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="พนักงาน" disabled>
+                                        @elseif($user->role == 'owner')
+                                        <input
+                                            class="bg-neutral-300 rounded-lg w-50px h-30px mt-2 dark:bg-gray-900 dark:text-white"
+                                            type="text" placeholder="เจ้าของกิจการ" disabled>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
