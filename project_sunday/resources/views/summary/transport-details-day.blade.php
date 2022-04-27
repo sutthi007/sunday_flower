@@ -421,32 +421,45 @@
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
                                             <th class="px-4 py-3">จังหวัด</th>
-                                            <th class="px-4 py-3">ตำบล</th>
-                                            <th class="px-4 py-3">อำเภอ</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
+                                            <th class="px-8 py-3">รายการทั้งหมด</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                         </tr>
                                     </thead>
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @php
+                                        $i = 1;
+                                    @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                    @foreach($transport as $row )
+                                        @php
+                                            $order = 0;
+                                        @endphp
+                                        @foreach($transports->where('province_id',$row->province_id) as $key)
+                                            @php
+                                                $order = $key->quantity + $order;
+                                            @endphp   
+                                        
+                                        @endforeach
                                         <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">26/01/2564</td>
-                                            <td class="px-4 py-3 text-sm">เชียงใหม่</td>
-                                            <td class="px-4 py-3 text-sm">หนองหาร</td>
-                                            <td class="px-4 py-3 text-sm">สันทราย</td>
-                                            <td class="px-4 py-3 text-sm">50</td>
+                                            <td class="px-4 py-3 text-sm">{{$i++}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->count()}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$order}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
+                                                <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     PDF
-                                                </button>
+                                                </a>
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel
                                                 </button>
                                             </td>
-                                    </tbody>
+                                    @endforeach
+                                    </tbody>                                   
                                 </table>
                             </div>
                         </div>

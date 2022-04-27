@@ -57,6 +57,7 @@
         }
         .ddd{
             width:150px;
+            margin-left: 37%;
         }
 
     </style>
@@ -86,7 +87,7 @@
                         @php
                             $sum = 0;
                         @endphp
-                        @foreach( $orders->sortBy('type')->sortBy('list')->sortBy('city') as $order)
+                        @foreach( $orders->where('province_id',$province)->sortby('type')->sortby('city_id') as $order)
                             <tr>
                                 <td>{{$order->type}}</td>
                                 <td>{{$order->list}}</td>

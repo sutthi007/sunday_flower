@@ -427,18 +427,20 @@
                                         </tr>
                                     </thead>
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @php
+                                        $i = 1;
+                                    @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         @foreach($account as $row )
                                         <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">1</td>
+                                            <td class="px-4 py-3 text-sm">{{$i++}}</td>
                                             <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
                                             <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
                                             <td class="px-4 py-3 text-sm">12,000</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class= "bg-pink w-94px h-24px rounded-md text-white" >
                                                     PDF
-                                                </button>
+                                                </a>
                                                 <button class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel

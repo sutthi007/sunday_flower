@@ -70,7 +70,6 @@ Route::resource('transport',ProvinceController::class);
 Route::resource('subdistrict',subController::class);
 Route::resource('city',cityController::class);
 Route::get('province/fetch',[subController::class,'fetch'])->name('fetch');
-Route::get('list-sum',[SummaryController::class,'viewSum'])->name('sum');
 
 Route::resource('customer-systems',CustomerController::class);
 
@@ -79,9 +78,6 @@ Route::get('summary-transport',[SummaryController::class,'transport'])->name('su
 Route::get('summary-account',[SummaryController::class,'account'])->name('sumAccount');
 
 Route::get('/export-excel',[OrderController::class,'export'])->name('export');
-Route::get('/export-pdf',[OrderController::class,'pdf']);
-Route::get('/pdf',[OrderController::class,'downloadPDF']);
-
 Route::get('test',[OrderController::class,'viewReport'])->name('report');
 
 //summary 
@@ -94,18 +90,26 @@ Route::get('/account-details-day/{date}', function ($date) {
 
     return view('summary/account-details-day',compact('account','date'));
 });
-Route::get('/transport-details-day',function (){
-    return view('summary/transport-details-day');
+Route::get('/account-details-day-pdf/{date}',[SummaryController::class,'viewSum'])->name('sum');
+
+Route::get('/transport-details-day/{date}', function ($date){
+    $transport = Order::select('province_id')
+                        ->whereDate('created_at',$date)                       
+                        ->groupBy('province_id')->get();
+
+    $transports = Order::whereDate('created_at',$date)->get();                    
+
+    return view('summary/transport-details-day',compact('transport','date','transports'));
 });
+
+Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF']);
 Route::get('/account-details-month', function () {
     return view('summary/account-details-month');
 });
 Route::get('/transport-details-month',function (){
     return view('summary/transport-details-month');
 });
-Route::get('/order-be-paid',function (){
-    return view('Order/order-be-paid');
-});
+
 Route::get('/tranking',function (){
     return view('tranking');
 });

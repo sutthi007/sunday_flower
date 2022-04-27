@@ -132,22 +132,22 @@
                 </div>
             </div>
             <div  class="float-right">
-            <div class=" mb-4 mr-6 text-xl font-bold">
-                 <label class=""> ยอดค้างชำระ : </label>
-                <input
-                    class="  text-center "
-                    type="text" placeholder="" value="150" disabled />
-                
-               บาท
-           </div>
-           <div class=" mb-4 mr-4 text-xl font-bold">
-            <label class=""> ทั้งหมด : </label>
-           <input
-               class="  text-center "
-               type="text" placeholder="" value="{{$cost}}" disabled />
-           
-          บาท
-      </div>
-        </div>
+                <div class=" mb-4 mr-6 text-xl font-bold">
+                        <label class=""> ยอดค้างชำระ : </label>
+                        <input
+                            class="  text-center "
+                            type="text" placeholder="" value="150" disabled />
+                        
+                    บาท
+                </div>
+                <div class=" mb-4 mr-6 text-xl font-bold ">
+                    <label class=""> ทั้งหมด : </label>
+                        <input
+                            class="  text-center "
+                            type="text" placeholder="" value="{{$cost}}" disabled />
+                        
+                    บาท
+                </div>
+            </div>
 </body>
 </html>

@@ -66,41 +66,53 @@
             </tr>
         </thead>
         <tbody class="w-full p-4 text-center border-4 text-2xl">
-            @foreach($orders as $order)
             @php
                 $i = 0;
                 $a = 0;
                 $p = 0;
                 $pt = 0;
             @endphp
+        @foreach($account->sortBy('list')->sortBy('province_id') as $order)
+            @php 
+                $quantity = 0;
+                $price = 0;
+                $sendto = 0;
+            @endphp
+           @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
+                @php 
+                    $quantity = $key->quantity +$quantity;
+                    $price = ($key->price * $key->quantity)  + $price;
+                    $sendto = $key->price_to + $sendto;
+                    $to = $key->sendto;
+                @endphp
+           @endforeach
             <tr>
                 @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                @if($order->id == 1)
-                <td class="">{{$thaiDateHelper->simpleDateFormat($order->created_at)}}</td>
+                @if($i == 0 or $i == 18)
+                <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
                 @else
                 <td class=""></td>
                 @endif
                 <td class="">{{$order->list}}</td>
                 <td class="">{{$order->province->province}}</td>
-                <td class="">{{$order->quantity}}</td>
-                @php
-                    $i = $order->quantity * $order->price
-                @endphp
-                <td class="">{{$i}}</td>
-                <td class="">{{$order->sendto}}</td>
-                <td class="">{{$order->price_to}}</td>
+                <td class="">{{$quantity}}</td>
+                <td class="">{{$price}}</td>
+                <td class="">{{$to}}</td>
+                <td class="">{{$sendto}}</td>
             </tr>
             @php
-                $a = $order->quantity + $a ;
-                $p = $i + $p;
-                $pt = $order->price_to + $pt;
+                $a = $quantity + $a ;
+                $p = $price + $p;
+                $pt = $sendto + $pt;
+                $i = 1 + $i ;
             @endphp
+                
             @endforeach
             <tr>
                 <td class=""></td>
                 <td colspan="2"> รวมยอด</td>
-                <td class="">{{$a}}</td>
-                <td class="">{{$p}}</td>
+                <td class="">{{$a}} รายการ</td>
+                <td class="">{{$p}} บาท</td>
                 <td class="">ค่าฝากต่อ</td>
                 <td class="">{{$pt}}</td>
             </tr>

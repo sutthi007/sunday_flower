@@ -138,10 +138,10 @@ class OrderController extends Controller
     // public function pdf(){
     //     return (new TransportsDaysExport)->download('active.pdf');
     // }
-    public function downloadPDF(){
-        $orders = Order::all()->where('province_id','1');
+    public function downloadPDF($date,$province){
+        $orders = Order::whereDate('created_at',$date)->get();
 
-        $province = 'เชียงใหม่';
+        $province = $province;
 
         $pdf = PDF::loadView('report',compact('orders','province'));
         return @$pdf->stream();

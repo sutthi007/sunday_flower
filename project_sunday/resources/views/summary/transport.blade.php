@@ -440,32 +440,36 @@
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
+                                            <th class="px-4 py-3">รายการทั้งหมด</th>
                                             <th class="px-4 py-3"></th>
 
                                         </tr>
                                     </thead>
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                    @php
-                                        $i = 0;
-                                        $t = 1;
-                                    @endphp
+                                    
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                        @foreach( $sum as $test => $long)
+                                        @php
+                                            $t = 1;
+                                        @endphp
+                                    @foreach( $sum as $test => $long)
+                                        @php
+                                            $i = 0;
+                                        @endphp
                                             @foreach($long as $longs)
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($test)}}</td>
                                                 @php
                                                     $i = $longs->quantity +$i;
                                                 @endphp
+                                            @endforeach
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($test)}}</td>                                              
+                                            <td class="px-4 py-3 text-sm">{{ $long->count()}}</td>
                                             <td class="px-4 py-3 text-sm">{{ $i}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                              
-                                                <a href="/transport-details-day">
+                                                <a href="/transport-details-day/{{$test}}">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
-                                            </td>
-                                            @endforeach
+                                            </td>                                           
                                         @endforeach
                                     </tbody>
                                 </table>

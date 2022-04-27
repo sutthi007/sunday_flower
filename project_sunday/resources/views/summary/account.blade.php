@@ -445,27 +445,28 @@
                                         </tr>
                                     </thead>
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                    @php
-                                        $i = 0;
-                                        $t = 1;
-                                    @endphp
+                                   
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         @foreach($account as $key => $value)
+                                            @php
+                                                $i = 0;
+                                                $t = 1;
+                                            @endphp
                                             @foreach($value as $sum)
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($key)}}</td>
                                                 @php
                                                     $i = ($sum->quantity * $sum->price) +$i;
-                                                @endphp
+                                                @endphp 
+                                            @endforeach
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($key)}}</td>                       
                                             <td class="px-4 py-3 text-sm">{{$i}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a href="/account-details-day/{{$key}}">
+                                                <a href="/account-details-day-pdf/{{$key}}">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
                                                 </a>
                                             </td>
-                                        </tr>
-                                            @endforeach
+                                        </tr>                                          
                                         @endforeach
                                     </tbody>
                                 </table>
