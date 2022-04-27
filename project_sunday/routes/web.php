@@ -86,10 +86,11 @@ Route::get('test',[OrderController::class,'viewReport'])->name('report');
 
 //summary 
 Route::get('/account-details-day/{date}', function ($date) {
-    $account = Order::whereDate('created_at',$date)
-                        ->select('province_id')
-                        ->groupBy('province_id')
-                        ->get();
+    $account = Order::select('province_id')
+
+                        ->whereDate('created_at',$date)
+                        
+                        ->groupBy('province_id')->get();
 
     return view('summary/account-details-day',compact('account','date'));
 });

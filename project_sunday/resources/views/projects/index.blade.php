@@ -1050,7 +1050,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-3 text-sm">{{ $order->type }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $order->type }}{{$order->list}}</td>
                                             <td class="px-4 py-3 text-xs">
                                                 <div class="px-2 py-1 font-semibold leading-tight rounded-full">
                                                     {{ $order->name }}
