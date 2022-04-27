@@ -48,7 +48,11 @@
         }
         .mt--20px{
             margin-top: -150px;
-        }        
+        }
+        .test{
+            margin-left: 26;
+        } 
+      
 
 
     </style>
@@ -132,18 +136,18 @@
                 </div>
             </div>
             <div  class="float-right">
-                <div class=" mb-4 mr-6 text-xl font-bold">
+                <div class=" mb-4 mr-3 text-xl font-bold">
                         <label class=""> ยอดค้างชำระ : </label>
                         <input
-                            class="  text-center "
+                            class="text-center "
                             type="text" placeholder="" value="150" disabled />
                         
                     บาท
                 </div>
-                <div class=" mb-4 mr-6 text-xl font-bold ">
+                <div class="test mb-4 mr-6 text-xl font-bold ">
                     <label class=""> ทั้งหมด : </label>
                         <input
-                            class="  text-center "
+                            class="text-center "
                             type="text" placeholder="" value="{{$cost}}" disabled />
                         
                     บาท
