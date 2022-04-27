@@ -45,7 +45,7 @@ class userController extends Controller
         $order = Order::find($id);
         $order->delete();
 
-        return redirect()->route('projects.index');
+        return redirect()->back();
     }
     public function search(Request $request){
         $status = Order::whereDate('created_at',Carbon::today());

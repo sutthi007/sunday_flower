@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade\PDF;
 
 class SummaryController extends Controller
 {
@@ -33,6 +34,7 @@ class SummaryController extends Controller
     public function viewSum(){
         $orders = Order::all();
 
-        return view('sum',compact('orders'));
+        $pdf = PDF::loadView('sum',compact('orders'));
+        return @$pdf->stream();
     }
 }

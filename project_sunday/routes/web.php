@@ -108,3 +108,9 @@ Route::get('/order-be-paid',function (){
 Route::get('/tranking',function (){
     return view('tranking');
 });
+Route::get('/expenses', function (){
+    return view('summary/expenses');
+});
+Route::get('/expenses-editor', function (){
+    return view('summary/expenses-editor');
+});
