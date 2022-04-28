@@ -534,7 +534,7 @@
                         <div class="relative w-auto my-6 mx-auto max-w-3xl">
                             <!--content-->
                             <div
-                                class="border-0 rounded-lg shadow-lg relative flex flex-col xl:w-full xl:h-full  bg-white outline-none focus:outline-none xl:w-700px xl:h-500px md:w-500px  md:h-500px sm:h-500px  ss:h-500px">
+                                class="border-0 rounded-lg shadow-lg relative flex flex-col   bg-white outline-none focus:outline-none xl:w-700px xl:h-500px md:w-500px  md:h-500px sm:h-500px  ss:h-500px">
                                 <!--header-->
                                 <div
                                     class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">

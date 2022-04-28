@@ -1098,7 +1098,7 @@
                                                             <input type="hidden" name="status" value="send">
                                                             <button
                                                                 onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
                                                         </form>
                                                     @endcan
                                                     @can('owner')
@@ -1109,7 +1109,7 @@
                                                             <input type="hidden" name="status" value="send">
                                                             <button
                                                                 onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
                                                         </form>
                                                     @endcan
                                                 </td>
@@ -1130,7 +1130,7 @@
                                                             <input type="hidden" name="status" value="success">
                                                             <button
                                                                 onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class="w-6 h-6 mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
                                                         </form>
                                                     @endcan
                                                 </td>
