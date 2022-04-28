@@ -491,18 +491,20 @@
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                            <form >
+                            <form action="{{route('expenses.update',$expenses->id)}}" method="post">
+                                @csrf
+                                @method('PUT')
                                 <div class="flex w-600px m-auto ">
                                     <div class="p-2">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                             for="grid-first-name">
-                                            ค่าใช้จ่าย
+                                            รายการค่าใช้จ่าย
                                         </label>
                                             <input
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="เพิ่มรายชื่ออำเภอ"
-                                            name="city">
+                                            id="grid-first-name" type="text" value="{{$expenses->list}}"
+                                            name="list" >
                                     </div>
                                     <div class="p-2">
                                         <label
@@ -512,13 +514,13 @@
                                         </label>
                                         <input
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                            id="grid-first-name" type="text" placeholder="เพิ่มรายชื่ออำเภอ"
-                                            name="city">
+                                            id="grid-first-name" type="text" value="{{$expenses->price}}"
+                                            name="price">
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
                                
-                                    <button class="w-200px h-30px bg-pink rounded mb-6 text-white"> <a href="/expenses">บันทึก</a></button>
+                                    <button class="w-200px h-30px bg-pink rounded mb-6 text-white">บันทึก</button>
                                 
                                 </div>
                             </form>

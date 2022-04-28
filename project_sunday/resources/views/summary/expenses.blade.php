@@ -148,7 +148,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/expenses">
+                            href="{{ route('expenses.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -337,7 +337,7 @@
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                             aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors text-gray-800 duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                            href="/expenses">
+                            href="{{route('expenses.index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -487,22 +487,23 @@
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
-                       รายการค่าใช้จ่าย
+                                รายการค่าใช้จ่าย
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                            <form >
+                            <form action="{{route('expenses.store')}}" method="POST">
+                                @csrf
                                 <div class="flex w-600px m-auto ">
                                     <div class="p-2">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                             for="grid-first-name">
-                                            ค่าใช้จ่าย
+                                            รายการค่าใช้จ่าย
                                         </label>
                                             <input
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เพิ่มรายละเอียด"
-                                            name="city">
+                                            name="list">
                                     </div>
                                     <div class="p-2">
                                         <label
@@ -513,7 +514,7 @@
                                         <input
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เพิ่มราคา"
-                                            name="city">
+                                            name="price">
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
@@ -528,20 +529,32 @@
                                 <thead>
                                     <tr
                                         class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">ค่าใช้จ่าย</th>
+                                        <th class="px-4 py-3">วันที่</th>
+                                        <th class="px-4 py-3">รายการค่าใช้จ่าย</th>
                                         <th class="px-4 py-3">ราคา</th>
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                  
+                                    @php
+                                        $i=0
+                                    @endphp
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @foreach($expenses as $row)
                                             <tr class="text-gray-700 dark:text-gray-400">
-
-                                                <td class="px-4 py-3 text-sm">ค่าน้ำมันรถคันใหญ่</td>
-                                                <td class="px-4 py-3 text-sm">1500</td>
-                                                <td class="px-4 py-3 text-sm"</td>
+                                                @php
+                                                    $i = $i + 1;
+                                                @endphp
+                                                    @if($i == 1)
+                                                    <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($row->created_at)}}</td>
+                                                    @else
+                                                    <td></td>
+                                                    @endif
+                                                <td class="px-4 py-3 text-sm">{{$row->list}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$row->price}}</td>
+                                                <td class="px-4 py-3 text-sm"></td>
                                                 <td class="flex px-4 py-3 text-sm ">
-                                                    <a class="w-6 h-6 mr-2" href="/expenses-editor">
+                                                    <a class="w-6 h-6 mr-2" href="{{route('expenses.edit',$row->id)}}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                             stroke-width="2">
@@ -549,7 +562,9 @@
                                                                 d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                         </svg>
                                                     </a>
-                                                    <form action="" method="post">
+                                                    <form action="{{ route('expenses.destroy',$row->id)}}" method="post">
+                                                        @csrf
+                                                        @method('DELETE')
                                                         <button id="" class="w-6 h-6"><svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -560,6 +575,7 @@
                                                     </form>
                                                 </td>
                                             </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

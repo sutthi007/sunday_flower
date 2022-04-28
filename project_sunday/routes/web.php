@@ -13,6 +13,7 @@ use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
 use App\Models\Order;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,10 +114,15 @@ Route::get('/transport-details-month',function (){
     return view('summary/transport-details-month');
 });
 
-Route::get('/tranking',function (){
+Route::get('/tracking',function (){
     return view('tranking');
 });
-Route::resource('/expenses',expensesController::class);
+Route::get('/tracking-search',function (Request $request){
+    $tracking = Order::all()->where('tracking',$request->tracking);
+    return view('tracking-search',compact('tracking'));
+});
+
+Route::resource('expenses',expensesController::class);
 Route::get('/expenses-editor', function (){
     return view('summary/expenses-editor');
 });

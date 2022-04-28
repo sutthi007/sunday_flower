@@ -43,49 +43,22 @@
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                                <form  " action="" method="post">
+                                <form action="/tracking-search" method="get">
                                     <div class="w-300px m-auto ">
                                         <div class="p-2">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
-                                                tanking
+                                                tracking
                                             </label>
                                             <input
                                             class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
-                                            id="grid-first-name" type="text" placeholder="">
+                                            id="grid-first-name" type="text" placeholder="" name="tracking">
 
                                         </div>
-
                                     </div>
                                     <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
                                         <button class="w-200px h-30px bg-pink rounded mb-6 text-white">ค้นหา</button>
-                                    </div>
-                                </form>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 shadow rounded-md">
-                        <div class="w-full m-auto  mt-4 mb-5">
-                                <form  " action="" method="post">
-                                    <div class="w-300px m-auto">
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">สถานะ :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">ชื่อ :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">ประเภท :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">เวลารับรายการ :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot mt-6">
-                                            <h3 class="mr-5">ชื่อพนักงานจัดส่ง :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">เบอร์โทรติดต่อผู้จัดส่ง :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
                                     </div>
                                 </form>
                         </div>

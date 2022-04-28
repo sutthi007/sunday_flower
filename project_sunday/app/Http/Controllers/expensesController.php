@@ -10,7 +10,7 @@ class expensesController extends Controller
 {
     //
     public function index(){
-        $expenses = expenses::whereDate('created_at',Carbon::today());
+        $expenses = expenses::whereDate('created_at',Carbon::today())->get();
 
         return view('summary.expenses',compact('expenses'));
     }
@@ -29,12 +29,15 @@ class expensesController extends Controller
     public function store(Request $request){
         $expenses = expenses::create([
             'list' => $request->list,
-            'price' => $request->list,
+            'price' => $request->price,
         ]);
 
         return redirect()->route('expenses.index');
     }
     public function destroy($id){
+        $expenses = expenses::find($id);
+        $expenses->delete();
 
+        return redirect()->route('expenses.index');
     }
 }

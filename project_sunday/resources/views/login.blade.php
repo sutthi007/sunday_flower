@@ -65,7 +65,7 @@
                 <button
                   class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink border border-transparent rounded-lg active:bg-fuchsia-500 hover:bg-fuchsia-500 focus:outline-none focus:shadow-outline-purple"
                 >
-                  Log in
+                เข้าสู่ระบบ
                 </button>
                 <hr class="my-8" />
                 <p class="mt-4 mb-4">
@@ -73,7 +73,7 @@
                     class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
                     href="{{ route('password.request') }}"
                   >
-                    Forgot your password?
+                    ลืมรหัสผ่าน?
                   </a>
                 </p>
               </div>
