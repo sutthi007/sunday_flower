@@ -11,7 +11,7 @@ class subController extends Controller
 {
     //
     public function index(){
-        $provinces = province::all();
+        $provinces = province::all()->orderBy('province', 'ASC');
         return view('transport.sub',compact('provinces'));
     }
     public function store(Request $request){

@@ -573,6 +573,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $provinces->links()}}
                         </div>
                     </div>
                 </div>

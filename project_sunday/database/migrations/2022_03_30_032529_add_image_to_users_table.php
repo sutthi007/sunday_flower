@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('Path_imageFront')->nullable();
-            $table->string('Path_imageBack')->nullable();
             $table->string('Path_imageProfile')->nullable();
         });
     }
@@ -30,7 +28,7 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->dropColumn('Path_imageFront','Path_imageBack','Path_imageProfile');
+            $table->dropColumn('Path_imageProfile');
         });
     }
 };

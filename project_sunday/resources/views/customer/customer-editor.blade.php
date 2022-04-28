@@ -939,11 +939,12 @@
                     </h2>
                     <div class="whitespace-no-wrap bg-white rounded-md dark:bg-gray-800">
                         <div class="p-6 text-xl dark:text-white">
-                            <p>{{ $customers->name }}</p>
+                            <p>ชื่อ {{ $customers->name }}</p>
                             <p>จังหวัด {{ $customers->province }} อำเภอ {{ $customers->city }} ตำบล
                                 {{ $customers->subdistrict }}
                             </p>
-                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} สถานะ ผู้ส่ง</p>
+                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} </p>
+                            <p>สถานะ ผู้ส่ง</p>
                         </div>
                     </div>
                     <div class="mt-4">
@@ -1002,7 +1003,7 @@
             const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>`
-            // Jika ada isDarkmode di localstorage 
+            // Jika ada isDarkmode di localstorage
             if (localDarkmode) {
                 isDarkmode = localDarkmode
                 html.classList.add('dark')

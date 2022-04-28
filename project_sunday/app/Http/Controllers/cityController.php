@@ -10,8 +10,7 @@ class cityController extends Controller
 {
     //
     public function index(){
-        $provinces = province::all();
-
+        $provinces = province::orderBy('province','asc')->paginate(5);
         return view('transport.city',compact('provinces'));
     }
     public function store(Request $request){

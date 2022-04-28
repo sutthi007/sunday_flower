@@ -12,9 +12,8 @@ class ProvinceController extends Controller
     //
 
     public function index(){
-        $provinces = province::all();
-        
-        return view('transport.transport',compact('provinces'));
+        $provinces = province::orderBy('province','asc')->paginate(10);
+        return view('transport.transport',compact('provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
 
     public function store(Request $requset){

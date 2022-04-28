@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('city_id');
             $table->integer('province_id');
             $table->string('type');
-            $table->string('list');
+            $table->string('list')->nullable();
             $table->string('sendto')->nullable();
             $table->integer('price_to')->nullable();
             $table->string('amount');

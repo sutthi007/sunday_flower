@@ -37,19 +37,19 @@
                 <h1
                   class="mb-4 text-4xl font-semibold text-gray-700 dark:text-gray-200"
                 >
-                  Login
+                  เข้าสู่ระบบ
                 </h1>
                 <label class="block text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Email</span>
+                  <span class="text-gray-700 dark:text-gray-400">เลขผู้ใช้</span>
                   <input
                     class="block w-full mt-1 p-2 text-sm border-2 rounded-lg h-9 border-pink focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                     placeholder="Jane Doe"
-                    name="email"
+                    name="IDuser"
                     required autofocus
                   />
                 </label>
                 <label class="block mt-4 text-sm">
-                  <span class="text-gray-700 dark:text-gray-400">Password</span>
+                  <span class="text-gray-700 dark:text-gray-400">รหัสผ่าน</span>
                   <input
                     class="block w-full mt-1 p-2 text-sm border-2 rounded-lg border-pink h-9 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                     placeholder="***************"
