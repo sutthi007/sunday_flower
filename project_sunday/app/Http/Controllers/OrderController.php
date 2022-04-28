@@ -88,6 +88,20 @@ class OrderController extends Controller
         return redirect()->route('projects.index')
             ->with('success', 'อัปเดทสำเร็จ ');
     }
+    public function editOrder($id)
+    {
+        $order = Order::find($id);
+        return view('Order.order-editor', compact('order'));
+    }
+    public function updateOrder(Request $request, $id)
+    {
+        $order = Order::find($id);
+
+        $order->update($request->all());
+
+        return redirect()->route('FormOrder.show',$id)
+            ->with('success', 'อัปเดทสำเร็จ ');
+    }
     public function sum($id)
     {
         $customer = customer::find($id);

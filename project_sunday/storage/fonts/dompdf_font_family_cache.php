@@ -79,10 +79,10 @@ return array (
     'normal' => $rootDir . '/lib/fonts/DejaVuSerif',
   ),
   'thsarabunnew' => array(
-    'normal' => $fontDir . '/thsarabunnew_normal_6aa867b23a30ac005810556f8694f9a5',
-    'bold' => $fontDir . '/thsarabunnew_bold_4c3475e939219dd836dda13744493a99',
-    'italic' => $fontDir . '/thsarabunnew_italic_3e077f976cb761f3841f09edf79b17c7',
-    'bold_italic' => $fontDir . '/thsarabunnew_bold_italic_ef8792c972fe46edb9eb358ea29a0e66',
+    'normal' => $fontDir . '/thsarabunnew_normal_9320a95c3a4621370c97b225c90a637d',
+    'bold' => $fontDir . '/thsarabunnew_bold_475aa53c91860428f450c81e064b540d',
+    'italic' => $fontDir . '/thsarabunnew_italic_e2374a85023e52c9b2262d6f40df6bf9',
+    'bold_italic' => $fontDir . '/thsarabunnew_bold_italic_643d68557cf7b2c1bc9d94bd0885bfd9',
   ),
 );
 }; ?>

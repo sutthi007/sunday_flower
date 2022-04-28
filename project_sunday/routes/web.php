@@ -44,6 +44,8 @@ Route::get('projects-success',[userController::class,'success'])->name('projects
 
 // Route for order
 Route::resource('FormOrder',OrderController::class);
+Route::get('editor/{id}',[OrderController::class,'editOrder'])->name('editOrder');
+Route::put('update/{id}',[OrderController::class,'updateOrder'])->name('updateOrder');
 Route::post('save',[OrderController::class,'total'])->name('save');
 Route::get('getmoney/summary/{id}',[OrderController::class,'sum'])->name('getmoney');
 Route::post('save/money',[OrderController::class,'getmoney'])->name('savemoney');
