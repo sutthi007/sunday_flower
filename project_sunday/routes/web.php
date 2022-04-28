@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\expensesController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
@@ -82,12 +83,12 @@ Route::get('summary-account',[SummaryController::class,'account'])->name('sumAcc
 Route::get('/export-excel',[OrderController::class,'export'])->name('export');
 Route::get('test',[OrderController::class,'viewReport'])->name('report');
 
-//summary 
+//summary
 Route::get('/account-details-day/{date}', function ($date) {
     $account = Order::select('province_id')
 
                         ->whereDate('created_at',$date)
-                        
+
                         ->groupBy('province_id')->get();
 
     return view('summary/account-details-day',compact('account','date'));
@@ -96,10 +97,10 @@ Route::get('/account-details-day-pdf/{date}',[SummaryController::class,'viewSum'
 
 Route::get('/transport-details-day/{date}', function ($date){
     $transport = Order::select('province_id')
-                        ->whereDate('created_at',$date)                       
+                        ->whereDate('created_at',$date)
                         ->groupBy('province_id')->get();
 
-    $transports = Order::whereDate('created_at',$date)->get();                    
+    $transports = Order::whereDate('created_at',$date)->get();
 
     return view('summary/transport-details-day',compact('transport','date','transports'));
 });
@@ -115,9 +116,7 @@ Route::get('/transport-details-month',function (){
 Route::get('/tranking',function (){
     return view('tranking');
 });
-Route::get('/expenses', function (){
-    return view('summary/expenses');
-});
+Route::resource('/expenses',expensesController::class);
 Route::get('/expenses-editor', function (){
     return view('summary/expenses-editor');
 });
