@@ -34,4 +34,7 @@ class expensesController extends Controller
 
         return redirect()->route('expenses.index');
     }
+    public function destroy($id){
+
+    }
 }
