@@ -48,4 +48,18 @@ class ThaiDateHelperService
         $year = $date->year + 543;
         return $date->format("j $month $year H:i:s");
     }
+    public static function simpleDateFormatbill($arg)
+    {
+        
+        $date = Carbon::parse($arg);
+        $year = $date->year + 543;
+        return $date->format("j/m/$year ");
+    }
+    public static function simpleDateFormatPT($arg)
+    {
+        
+        $date = Carbon::parse($arg);
+        $year = $date->year + 543;
+        return $date->format(" $year ");
+    }
 }

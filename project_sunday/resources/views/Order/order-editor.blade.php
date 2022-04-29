@@ -497,7 +497,7 @@
                                             ชื่อ
                                         </label>
                                         <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
-                                            id="grid-first-name">{{ $order->customer->name }}</div>
+                                            id="grid-first-name">{{$order->customer->name}}</div>
                                     </div>
                                     <div class="w-full  px-3 mb-6 md:mb-0 ">
                                         <label

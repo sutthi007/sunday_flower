@@ -619,7 +619,7 @@
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
+                                                    id="telInputs" onkeypress="addSpaces()" type="tels" placeholder=""
                                                     name="phone_one" maxlength="11" />
                                             </div>
                                             <div class=" w-full px-3 mb-6 md:mb-0 ">
@@ -653,16 +653,18 @@
                                                     ประเภท
                                                 </label>
                                                 <select
+                                                    onchange="yesnoCheck(this);"
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="grid-first-name" type="text" placeholder="" name="type">
                                                     <option value="">---เลือก----</option>
                                                     <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
                                                     <option value="ดอกไม้">ดอกไม้</option>
+                                                    <option value="ผักและผลไม้">ผักและผลไม้</option>
                                                     <option value="มอเตอร์ไซต์">มอเตอร์ไซต์</option>
                                                     <option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
                                                 </select>
                                             </div>
-                                            <div class="w-full px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full px-3 mb-6 md:mb-0 " style="display:block;" id="ifYes">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                                     for="grid-first-name">
@@ -766,10 +768,15 @@
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-x">{{ $i++ }} </td>
-                                            <td class="px-4 py-3 text-x">{{ $order->list }}</td>
+                                            @if($order->list == null)
+                                            <td class="px-4 py-3 text-x">{{$order->type}}</td>
+                                            @else
+                                            <td class="px-4 py-3 text-x">{{$order->type}},{{ $order->list }}</td>
+                                            @endif
+                                            
                                             <td class="px-4 py-3 text-x">
                                                
-                                                    {{ $order->quantity }}{{$order->amount}} 
+                                                    {{ $order->quantity }} {{$order->amount}} 
                                             </td>
                                             <td class="px-4 py-3 text-x">{{ $order->name }}</td>
                                             <td class="px-4 py-3 text-x">
@@ -895,6 +902,14 @@
                 document.getElementById("telInput").value = inputValue + "-";
             }
         }
+        function addSpaces() {
+            var inputValue = document.getElementById("telInputs").value;
+            var inputValueLength = inputValue.length;
+
+            if (inputValueLength == 3) {
+                document.getElementById("telInputs").value = inputValue + "-";
+            }
+        }
     </script>
     <script type="text/javascript">
         $('.provinces').change(function() {
@@ -925,6 +940,15 @@
                 text.style.display = "none";
             }
         }
+    </script>
+    <script>
+        function yesnoCheck(that) {
+            if (that.value == "ดอกไม้") {
+                document.getElementById("ifYes").style.display = "none";
+            } else {
+                document.getElementById("ifYes").style.display = "block";
+            }
+        } 
     </script>
 </body>
 

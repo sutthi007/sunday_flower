@@ -9,15 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class subController extends Controller
 {
-    //
-    public function index(){
-        $provinces = province::all()->orderBy('province', 'ASC');
-        return view('transport.sub',compact('provinces'));
-    }
-    public function store(Request $request){
-        city::create($request->all());
-        return redirect()->route('transport/subdistrict.index');
-    }
+
     public function fetch(Request $request){
         $id = $request->get('select');
         $result =array();

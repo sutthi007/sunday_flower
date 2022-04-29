@@ -18,7 +18,6 @@ class OrderController extends Controller
 {
     public function index()
     {
-
         return view('Order.order');
     }
 
@@ -31,7 +30,6 @@ class OrderController extends Controller
             'province' =>'required',
             'phone' =>'required',
             'type' =>'required',
-            'list' =>'required',
             'quantity' =>'required',
             'price' =>'required',
             'customer_id' =>'required',

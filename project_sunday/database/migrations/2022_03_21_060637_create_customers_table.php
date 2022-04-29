@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('province');
             $table->string('subdistrict');
             $table->string('phone');
+            $table->integer('PT');
             $table->rememberToken();
             $table->timestamps();
         });

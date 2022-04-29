@@ -49,7 +49,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -238,7 +238,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -407,7 +407,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -430,8 +430,8 @@
                                 @click="toggleProfileMenu" @keydown.escape="closeProfileMenu" aria-label="Account"
                                 aria-haspopup="true">
                                 <img class="object-cover w-8 h-8 rounded-full"
-                                    src="{{ asset('img/Profile/'.Auth::user()->Path_imageProfile) }}"
-                                    alt="" aria-hidden="true" />
+                                    src="{{ asset('img/Profile/' . Auth::user()->Path_imageProfile) }}" alt=""
+                                    aria-hidden="true" />
                             </button>
                             <template x-if="isProfileMenuOpen">
                                 <ul x-transition:leave="transition ease-in duration-150"
@@ -441,7 +441,7 @@
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{route('Profile.show',Auth::user()->id)}}">
+                                            href="{{ route('Profile.show', Auth::user()->id) }}">
                                             @csrf
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -455,28 +455,21 @@
                                         </a>
                                     </li>
                                     <li class="flex">
-                                    <form method="POST" action="{{ route('logout') }}">
-                                         @csrf
-                                        <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
-                                            href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                                                href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                             <svg
-                                             class="w-4 h-4 mr-3"
-                                             aria-hidden="true"
-                                             fill="none"
-                                             stroke-linecap="round"
-                                             stroke-linejoin="round"
-                                             stroke-width="2"
-                                             viewBox="0 0 24 24"
-                                             stroke="currentColor"
-                                           >
-                                             <path
-                                               d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                             ></path>
-                                           </svg>
-                                            <span>ออกจากระบบ</span>
-                                        </a>
-                                    </form>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
+                                                <span>ออกจากระบบ</span>
+                                            </a>
+                                        </form>
                                     </li>
                                 </ul>
                             </template>
@@ -496,20 +489,20 @@
                                 <div class="text-3xl font-semibold text-center mb-6 dark:text-white">
                                     <h1>สรุปบิล</h1>
                                 </div>
-                            <img class="w-150px" src="/img/icon.svg" alt="">
-                            <div class=" flex w-full justify-between ">
-                                <div class="p-2 dark:text-white">
-                                    <p class="text-3xl" >บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
-                                    <p>เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
-                                    <p>จังหวัด เชียงใหม่ 50000</p>
-                                </div>
-                                <div class="p-2 w-200px  text-center dark:text-white">
-                                    <h1 class="text-2xl">{{$customer->name}}</h1>
-                                    <p>ทั้งหมด</p>
+                                <img class="w-150px" src="/img/icon.svg" alt="">
+                                <div class=" flex w-full justify-between ">
+                                    <div class="p-2 dark:text-white">
+                                        <p class="text-3xl">บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
+                                        <p>เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
+                                        <p>จังหวัด เชียงใหม่ 50000</p>
+                                    </div>
+                                    <div class="p-2 w-200px  text-center dark:text-white">
+                                        <h1 class="text-2xl">{{ $customer->name }}</h1>
+                                        <p>ทั้งหมด</p>
 
-                                    <h1 class="text-2xl bg-pink text-white">{{$customer->total}}</h1>
+                                        <h1 class="text-2xl bg-pink text-white">{{ $customer->total }}</h1>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <form>
                                 <div class="w-full overflow-hidden rounded-lg shadow-xs p-3">
@@ -526,78 +519,91 @@
                                                     <th class="px-4 py-3">ราคา</th>
                                                 </tr>
                                             </thead>
-                                            @foreach ( $customer->orders as $order)
-                                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                            @php
+                                                $i = 1;
+                                            @endphp
+                                            @foreach ($customer->orders as $order)
+                                                <tbody
+                                                    class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                                     <tr class="text-gray-700 dark:text-gray-400">
-                                                        <td class="px-4 py-3">1</td>
-                                                        <td class="px-4 py-3 text-sm">{{$order->list}}</td>
-                                                        <td class="px-4 py-3 text-xs">{{$order->quantity}}</td>
-                                                        <td class="px-4 py-3 text-sm">{{$order->name}}</td>
-                                                        <td class="px-4 py-3 text-sm">{{$order->phone}}</td>
+                                                        <td class="px-4 py-3">{{ $i++ }}</td>
+                                                        @if ($order->list == null)
+                                                            <td class="px-4 py-3 text-xm">{{ $order->type }}</td>
+                                                        @else
+                                                            <td class=" px-4 py-3 text-xm">{{ $order->list }}</td>
+                                                        @endif
+                                                        <td class="px-4 py-3 text-xs">{{ $order->quantity }}</td>
+                                                        <td class="px-4 py-3 text-sm">{{ $order->name }}</td>
+                                                        <td class="px-4 py-3 text-sm">{{ $order->phone }}</td>
                                                         <td class="px-4 py-3 text-sm">
-                                                            {{$order->price}}
+                                                            {{ $order->price }}
                                                         </td>
                                                     </tr>
                                                 </tbody>
                                             @endforeach
+                                            @php
+                                                $np = 0;
+                                            @endphp
+                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                                <td class="px-4 py-3 text-sm" colspan="4"></td>
+                                                <td class="px-4 py-3 text-xl ">
+                                                    จำนวนเงินทั้งสิน (บาท)
+                                                </td>
+                                                <td class="px-4 py-3 text-xl text-center">
+                                                    {{ $customer->total }}
+                                                </td>
+                                            </tr>
 
+                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                                <td class="px-4 py-3 text-sm" colspan="4"></td>
+                                                <td class="px-4 py-3 text-xl">
+                                                    รับชำระ (บาท) :
+                                                </td>
+                                                <td class="px-4 py-3 text-xl text-center">
+                                                    {{ $customer->getmoney }}
+                                                </td>
+                                            </tr>
+                                            @if ($customer->getmoney > $customer->total)
+                                                @php
+                                                    $np = $customer->getmoney - $customer->total;
+                                                @endphp
+                                            @endif
+                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                                <td class="px-4 py-3 text-sm" colspan="4"></td>
+                                                <td class="px-4 py-3 text-xl ">
+                                                    เงินทอน (บาท) :
+                                                </td>
+                                                <td class="px-4 py-3 text-xl text-center">
+                                                    {{ $np }}
+                                                </td>
+                                            </tr>
+                                            @if ($np > 0)
+                                                @php
+                                                    $np = $np + $customer->total - $customer->getmoney;
+                                                @endphp
+                                            @else($np < 0) @php
+                                                    $np = $customer->total - $customer->getmoney;
+                                                @endphp @endif
+                                                    <tr class="text-gray-700 dark:text-gray-400 ">
+                                                        <td class="px-4 py-3 text-sm" colspan="4"></td>
+                                                        <td class="px-4 py-3 text-xl">
+                                                            ยอดค้างชำระ (บาท) :
+                                                        </td>
+                                                        <td class="px-4 py-3 text-xl text-center">
+                                                            {{ $np }}
+                                                        </td>
+                                                    </tr>
                                         </table>
                                     </div>
-                                </div> 
-                                @php
-                                    $np = 0;
-                                @endphp
-                                <div class=" flex flex-row-reverse m-auto p-3 dark:text-white">
-                                   บาท
-                                    <input
-                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="{{$customer->total}}" disabled />
-                                    <label class=""> ทั้งหมด : </label>
                                 </div>
-                                <div class=" flex flex-row-reverse m-auto p-3 dark:text-white">
-                                   บาท
-                                    <input
-                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="{{$customer->getmoney}}" disabled />
-                                    <label class=""> รับชำระ : </label>
-                                </div>
-                                @if($customer->getmoney > $customer->total)
-                                @php
-                                    $np = $customer->getmoney - $customer->total;
-                                @endphp
-                                @endif
-                                <div class=" flex flex-row-reverse m-auto p-3 dark:text-white">
-                                    บาท
-                                    <input
-                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="{{$np}}" disabled />
-                                    
-                                    <label class=""> ถอน : </label>
-                                </div>
-                                @if($np > 0)
-                                    @php
-                                        $np = ($np + $customer->total)- $customer->getmoney;
-                                    @endphp
-                                @else($np < 0)
-                                    @php
-                                        $np = $customer->total - $customer->getmoney;
-                                    @endphp
-                                @endif
-                                <div class=" flex flex-row-reverse m-auto p-3 dark:text-white">
-                                    บาท
-                                    <input
-                                        class="w-200px h-30px appearance-none rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center dark:bg-gray-900"
-                                        type="text" placeholder="" value="{{$np}}" disabled />
-                                    
-                                    <label class=""> ยอดค้างชำระ : </label>
-                                </div>
-                               
                                 <div class="mr-auto flex flex-row-reverse m-auto p-3 dark:text-white">
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
-                                        <a class="text-white" href="{{route('projects.index')}}"> ปิด </a>
+                                        <a class="text-white" href="{{ route('projects.index') }}"> ปิด </a>
                                     </div>
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
-                                        <a class="btnprn text-white" href="{{ url('/prnpriview/'.$customer->id) }}"> พิมพ์ </a>
+                                        <a class="btnprn text-white"
+                                            href="{{ url('/prnpriview/' . $customer->id) }}">
+                                            พิมพ์ PDF </a>
                                     </div>
                                 </div>
                             </form>
@@ -651,8 +657,8 @@
         switchTheme()
     </script>
     <script type="text/javascript">
-        $(document).ready(function(){
-         $('.btnprn').printPage();
+        $(document).ready(function() {
+            $('.btnprn').printPage();
         });
     </script>
 </body>

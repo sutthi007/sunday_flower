@@ -1172,7 +1172,6 @@
                                                     </form>
                                                 @endcan
                                             </td>
-
                                         </tr>
                                     </tbody>
                                 @endforeach

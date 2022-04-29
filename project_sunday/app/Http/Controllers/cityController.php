@@ -14,6 +14,18 @@ class cityController extends Controller
         return view('transport.city',compact('provinces'));
     }
     public function store(Request $request){
+        $request->validate(
+            [
+                'province' => 'required',
+                'city' => 'required|unique:cities',
+                 
+            ],
+            [
+                'province.required'=> 'กรุณากรอกจังหวัด',
+                'city.required'=> 'กรุณากรอกอำเภอ',
+                'city.unique' => 'อำเภอนี้มีในฐานข้อมูลแล้ว'
+            ]
+            );
             city::create([
                 'province_id' => $request->province,
                 'city'=> $request->city ]);

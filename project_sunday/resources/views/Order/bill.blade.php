@@ -46,7 +46,9 @@
             margin: 0;
         }
 
-        .w-200px {
+        .w-100px {
+            width: 100px;
+        }.w-200px {
             width: 150px;
         }
 
@@ -57,14 +59,51 @@
         }
 
         .mt--20px {
-            margin-top: -150px;
+            margin-top: -100px;
         }
-
-        .test {
-            margin-left: 26;
+        .w-1000px {
+            width: 700px;
         }
         .test-r {
-            margin-left: 55px;
+            margin-left: 10px;
+        }
+
+        .-mt-5 {
+            margin-top: -50px;
+        }
+        table, th, td {
+            border: 1px solid rgb(0, 0, 0);
+        }
+        .-mt-4{
+            margin-top: -20px;
+        }
+        .mr-x{
+            margin-right: 50px;
+        }
+        .w-300px{
+            width: 350px;
+        }
+        .mt-tt{
+            margin-top: 50px ;
+        }
+        .mt-icon{
+            margin-top: 10px
+        }
+        .ml-15{
+            margin-left:85px;
+        }
+        .mr-15{
+            margin-right:50px;
+        }
+        .text-right{
+            text-align: right;
+        }
+        .ml-14{
+            margin-left:50px;
+        }
+        .pr-l{
+            padding-right:3px;
+            padding-left:3px;
         }
 
     </style>
@@ -72,23 +111,32 @@
 </head>
 
 <body>
+    <form name="frmMain" action="" method="post">
     <div class="w-full">
-        <div class="w-20 m-auto ">
-            <h1 class="text-4xl font-bold">
-                สรุปบิล
+        <div class="w-20 m-auto mt-tt">
+            <h1 class="text-4xl font-bold ">
+                ใบเสร็จรับเงิน
             </h1>
+            @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
         </div>
-        <img class="w-200px ml-10" src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
-
+        <img class="w-100px ml-10 mt-icon" src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
+    @php
+        
+        $date = ($thaiDateHelper->simpleDateFormatPT($customer->created_at)+25647435)+$customer->id
+    @endphp
+        <div class="float-right mr-x">
+            <h1>เลขที่ : PT-{{$date}}</h1>
+            <h1>วันที่ : {{ $thaiDateHelper->simpleDateFormatbill($customer->created_at) }}</h1>
+        </div>
         <div class="flex-container">
             <div class="p-2 ml-10 font-bold">
                 <p class="text-3xl">บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
-                <p>เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
-                <p>จังหวัด เชียงใหม่ 50000</p>
+                <p class="-mt-4">เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
+                <p class="-mt-4">จังหวัด เชียงใหม่ 50000</p>
             </div>
             <div class="float-right mr-4 p-2 w-200px  text-center mt--20px">
                 <h1 class="text-2xl font-bold">{{ $customer->name }}</h1>
-                <p class="font-bold">ทั้งหมด</p>
+                <h1 class="text-2xl font-bold -mt-4">({{ $customer->phone }})</h1>
                 @php
                     $total = 0;
                     $cost = 0;
@@ -101,21 +149,20 @@
                         $cost = $total + $cost;
                     @endphp
                 @endforeach
-                <h1 class="text-2xl bg-pink text-white ">{{ $cost }} บาท</h1>
+
             </div>
         </div>
-        <div class=" w-full  p-3">
-            <div class="w-full">
-                <table class="w-full p-4">
+        <div class=" w-full   -mt-3">
+            <div class="w-full ">
+                <table  class="w-1000px  m-auto" >
                     <thead>
-                        <tr class="text-xl ">
-                            <th class="px-4 py-3">ลำดับ</th>
-
-                            <th class="px-4 py-3">รายการ</th>
-                            <th class="px-4 py-3">จำนวน</th>
-                            <th class="px-4 py-3">ชื่อผู้รับ</th>
-                            <th class="px-4 py-3">เบอร์โทร</th>
-                            <th class="px-4 py-3">ราคา</th>
+                        <tr class="text-xl " tableframe="below"  >
+                            <th class="w-2" width="50px">ลำดับ</th>
+                            <th class="" width="300px">รายการ</th>
+                            <th class="">ปลายทาง</th>
+                            <th class="">หน่วย</th>
+                            <th class="" width="100px">ราคาต่อหน่วย</th>
+                            <th class="">จำนวนเงิน</th>
                         </tr>
                     </thead>
                     @php
@@ -129,67 +176,118 @@
                         @endphp
                         @php
                             $cost = $total + $cost;
+                            
+                            $costs = number_format($cost,2);
+                            $price = number_format($order->price,2) ;
+                            $prices = number_format($total,2) ;
                         @endphp
                         <tbody class="">
-                            <tr class="text-center">
-                                <td class="px-4 py-3">1</td>
-                                <td class="px-4 py-3 text-xl">{{ $order->list }}</td>
-                                <td class="px-4 py-3 text-xl">{{ $order->quantity }}</td>
-                                <td class="px-4 py-3 text-xl">{{ $order->name }}</td>
-                                <td class="px-4 py-3 text-xl">{{ $order->phone }}</td>
-                                <td class="px-4 py-3 text-xl">
-                                    {{ $order->price }}
+                            <tr class="">
+                                <td class="text-center text-xl" >{{$i++}}</td>
+                                @if ($order->list == null)
+                                    <td class=" text-xl pr-l">{{ $order->type }}</td>
+                                @else
+                                    <td class=" text-xl pr-l">{{ $order->list }}</td>
+                                @endif
+                                <td class=" text-xl pr-l">{{$order->province->province}} {{$order->city->city}}</td>
+                                <td class=" text-xl text-center">{{ $order->quantity }}</td>
+                                
+                                <td class=" text-xl text-right pr-l">{{$price}}</td>
+                                <td class=" text-xl text-right pr-l">
+                                    {{ $prices }}
                                 </td>
                             </tr>
                         </tbody>
                     @endforeach
+                            <tr class="text-center">
+                                <td class=" text-xl" colspan="3"></td>
+                          
+                                <td class=" text-xl font-bold " colspan="2"> 
+                                จำนวนเงินทั้งสิน (บาท) 
+                                </td>
 
+                                <td class=" text-xl text-right pr-l">
+                                   {{$costs}}
+                                </td>
+                            </tr>
+                            @php
+                            $np = 0;
+                            
+                        @endphp
+                            <tr class="text-center" >
+                                <td class=" text-xl" colspan="3" ></td>
+                               
+                                <td class=" text-xl font-bold" colspan="2">
+                                ยอดค้างชำระ (บาท)
+                                </td>
+                                @if ($customer->getmoney > $customer->total)
+                                @php
+                                    $np = $customer->getmoney - $customer->total;
+                                @endphp
+                            @endif
+                            @if ($np > 0)
+                                @php
+                                    $np = $np + $customer->total - $customer->getmoney;
+                                    $nps = number_format($np,2)
+                                @endphp
+                            @else 
+                            @php
+                                    $np = $customer->total - $customer->getmoney;
+                                    $nps = number_format($np,2)
+                                @endphp @endif
+
+                                <td class=" text-xl text-right pr-l">
+                                    {{ $nps }}
+                                </td>
+                            </tr>
                 </table>
             </div>
         </div>
-        @php
-            $np = 0;
-        @endphp
-        <div class="float-right">
-            <div class="test mb-4 mr-6 text-xl font-bold ">
-                <label class=""> ทั้งหมด : </label>
-                <input class="text-center " type="text" placeholder="" value="{{ $cost }}" disabled />
-
-                บาท
+        <div class= "w-full mt-10">   
+            <div class=" ">
+            <p class="text-xl ml-14">ผู้รับเงิน</p>
+            <p class="text-xl ml-15">(..............................................................)</p>
             </div>
-            <div class="test mb-4 mr-3 text-xl font-bold">
-                <label class=""> รับชำระ : </label>
-                <input class="text-center" type="text" placeholder="" value="{{ $customer->getmoney }}"
-                    disabled />
-                บาท
+            <div class="text-center mr-15 mt--20px">
+            <p class="text-xl float-right">วันที่.............../.............................../...................</p>
             </div>
-            @if ($customer->getmoney > $customer->total)
-                @php
-                    $np = $customer->getmoney - $customer->total;
-                @endphp
-            @endif
-            <div class="mb-4 test-r text-xl font-bold">
-                <label class=""> ถอน : </label>
-                <input class="text-center " type="text" placeholder="" value="{{ $np }}" disabled />
-                บาท
-            </div>
-            @if ($np > 0)
-                @php
-                    $np = $np + $customer->total - $customer->getmoney;
-                @endphp
-            @else($np < 0) @php
-                    $np = $customer->total - $customer->getmoney;
-                @endphp @endif
-                    <div class=" mb-4 mr-3 text-xl font-bold">
-                        <label class=""> ยอดค้างชำระ : </label>
-                        <input class="text-center " type="text" placeholder="" value="{{ $np }}"
-                            disabled />
-
-                        บาท
-                    </div>
-
-
         </div>
+    </form>
+        <script language="JavaScript">
+
+            function addCommas(nStr)
+            {
+                nStr += '';
+                x = nStr.split('.');
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+        
+            function fncSum()
+            {
+                 if(isNaN(document.frmMain.txtNumberA.value) || document.frmMain.txtNumberA.value == "")
+                 {
+                    alert('(Number A)Please input Number only.');
+                    document.frmMain.txtNumberA.focus();
+                    return;
+                 }
+        
+                 if(isNaN(document.frmMain.txtNumberB.value) || document.frmMain.txtNumberB.value == "")
+                 {
+                    alert('(Number B)Please input Number only.');
+                    document.frmMain.txtNumberB.focus();
+                    return;
+                 }
+        
+                 var TotSum = (parseFloat(document.frmMain.txtNumberA.value) + parseFloat(document.frmMain.txtNumberB.value)).toFixed(2);
+                 document.frmMain.txtNumberC.value  = addCommas(TotSum);
+            }
+        </script>
 </body>
 
 </html>

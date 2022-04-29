@@ -512,6 +512,10 @@
                                                 </option>
                                             @endforeach
                                         </select>
+                                        @if ($errors->any('province'))
+                                        <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('province') }}</p>
+                                    @endif
                                     </div>
                                     <div class="p-2">
                                         <label
@@ -523,6 +527,10 @@
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เพิ่มรายชื่ออำเภอ"
                                             name="city">
+                                            @if ($errors->any('city'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('city') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">

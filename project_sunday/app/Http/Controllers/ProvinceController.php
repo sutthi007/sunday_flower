@@ -17,6 +17,16 @@ class ProvinceController extends Controller
     }
 
     public function store(Request $requset){
+
+        $requset->validate(
+            [
+                'province' => 'required',
+                 
+            ],
+            [
+                'province.required'=> 'กรุณาเลือกจังหวัด',
+            ]
+            );
         $province = province::create([
             'province' => $requset->province,
         ]);
