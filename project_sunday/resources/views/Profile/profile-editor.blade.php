@@ -958,6 +958,7 @@
                             <h2 class="text-2xl font-semibold text-gray-700 dark:text-gray-200 pt-7 text-center">
                                 โปรไฟล์
                             </h2>
+                            @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                             <div class=" mx-auto mt-10  ">
                                 <div class="w-full  m-auto items-center mx-auto p-3">
                                     <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
@@ -966,7 +967,7 @@
                                         </label>
                                         <input
                                             class="bg-neutral-300 rounded-lg h-30px  mt-2 dark:bg-gray-900 dark:text-white"
-                                            placeholder="{{ $user->birthday }}" name="birthday"
+                                            name="birthday"
                                             value="{{ $user->birthday }}" type="date">
                                     </div>
                                     <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
@@ -1091,7 +1092,7 @@
         const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
 </svg>`
-        // Jika ada isDarkmode di localstorage 
+        // Jika ada isDarkmode di localstorage
         if (localDarkmode) {
             isDarkmode = localDarkmode
             html.classList.add('dark')

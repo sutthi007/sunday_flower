@@ -20,15 +20,14 @@ class userController extends Controller
             'name' =>'bail',
             'province' =>'required',
             'subdistrict' =>'required',
-            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
+            'phone' => 'required',
         ],
         [
             'name.bail'=> 'กรุณากรอกชื่อ',
             'province.required'=>'กรุณาเลือกจังหวัด',
             'subdistrict.required'=>'กรุณาเลือกอำเภอ',
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
-            'phone.regex'=> 'กรุณากรอก 09 08 05',
-            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
+
         ]
     );
 
@@ -55,9 +54,9 @@ class userController extends Controller
         return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function dateScan(Request $request){
-        
+
         $date = $request->get('date');
-        $status = Order::whereDate('created_at',$date);      
+        $status = Order::whereDate('created_at',$date);
         $orders = Order::whereDate('created_at',$date)->paginate(10);
 
        return view('projects.index',compact('status','orders'))->with('i',(request()->input('page',1 ) - 1 ) * 10);

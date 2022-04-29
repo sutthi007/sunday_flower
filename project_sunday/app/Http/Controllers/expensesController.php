@@ -35,9 +35,6 @@ class expensesController extends Controller
         return redirect()->route('expenses.index');
     }
     public function destroy($id){
-        $expenses = expenses::find($id);
-        $expenses->delete();
 
-        return redirect()->route('expenses.index');
     }
 }

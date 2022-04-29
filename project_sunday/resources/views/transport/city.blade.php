@@ -484,6 +484,11 @@
             <!-- Form Order -->
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid ">
+                    @if (session()->has('success'))
+                        <div class="bg-red px-4 py-3 block w-300px">
+                            {{ session()->get('success') }}
+                        </div>
+                    @endif
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200 ">
                         เพิ่มอำเภอ
                     </h2>
@@ -573,7 +578,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            {{ $provinces->links()}}
                         </div>
                     </div>
                 </div>

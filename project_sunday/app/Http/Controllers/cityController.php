@@ -10,14 +10,14 @@ class cityController extends Controller
 {
     //
     public function index(){
-        $provinces = province::orderBy('province','asc')->paginate(5);
+        $provinces = province::orderBy('province','asc')->get();
         return view('transport.city',compact('provinces'));
     }
     public function store(Request $request){
             city::create([
                 'province_id' => $request->province,
                 'city'=> $request->city ]);
-            return redirect()->route('city.index');
+            return redirect()->route('city.index')->with('success','เพิ่มอำเภอสำเร็จ');
         }
 
     public function destroy($id){
