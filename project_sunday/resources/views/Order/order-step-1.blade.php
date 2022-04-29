@@ -599,7 +599,7 @@
                                                     id="grid-first-name" type="text" placeholder="" name="city">
                                                     <option value="">---เลือกอำเภอ----</option>
                                                 </select>
-                                            </div> 
+                                            </div>
                                             <div class="w-full px-3 mb-6 md:mb-0 ">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -610,12 +610,12 @@
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
                                                     name="phone" maxlength="11" />
-                                            </div> 
+                                            </div>
                                             <div class="w-full px-3 mb-6 md:mb-0 ">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                                     for="grid-first-name">
-                                                    เบอร์โทรที่2
+                                                    เบอร์โทรสำรอง(ถ้ามี)
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
@@ -642,7 +642,7 @@
                                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                         name="price_sendto" >
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
@@ -775,8 +775,13 @@
                                             @endif
                                             
                                             <td class="px-4 py-3 text-x">
+<<<<<<< Updated upstream
                                                
                                                     {{ $order->quantity }} {{$order->amount}} 
+=======
+
+                                                    {{ $order->quantity }}{{$order->amount}}
+>>>>>>> Stashed changes
                                             </td>
                                             <td class="px-4 py-3 text-x">{{ $order->name }}</td>
                                             <td class="px-4 py-3 text-x">

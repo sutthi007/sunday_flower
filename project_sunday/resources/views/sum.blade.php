@@ -42,85 +42,188 @@
         table,thead,tbody,tr, th, td {
      border: 1px solid rgb(0, 0, 0);
         }
+        .mt-10{
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
-    
+
     <div class="w-full">
         <div class="text-center">
             <h2 class="text-4xl font-bold">ใบรายการฝากของบริษัท</h2>
     </div>
     <div class=" w-full  p-3">
         <div class="w-full">
-    <div class="mr-4  " >
-    <table class="w-full p-4  ">
-        <thead>
-            <tr class="text-xl border-4">
-                <th class="px-4 py-3">วันเดือนปี</th>
-                <th class="px-4 py-3">รายการ</th>
-                <th class="px-4 py-3">จังหวัด</th>
-                <th class="px-4 py-3">จำนวน</th>
-                <th class="px-4 py-3">ราคา</th>
-                <th class="px-4 py-3">ส่งต่อ</th>
-                <th class="px-4 py-3">ราคา</th>
-            </tr>
-        </thead>
-        <tbody class="w-full p-4 text-center border-4 text-2xl">
-            @php
-                $i = 0;
-                $a = 0;
-                $p = 0;
-                $pt = 0;
-            @endphp
-        @foreach($account->sortBy('list')->sortBy('province_id') as $order)
-            @php 
-                $quantity = 0;
-                $price = 0;
-                $sendto = 0;
-            @endphp
-           @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
-                @php 
-                    $quantity = $key->quantity +$quantity;
-                    $price = ($key->price * $key->quantity)  + $price;
-                    $sendto = $key->price_to + $sendto;
-                    $to = $key->sendto;
-                @endphp
-           @endforeach
-            <tr>
-                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                @if($i == 0 or $i == 18)
-                <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
-                @else
-                <td class=""></td>
-                @endif
-                <td class="">{{$order->list}}</td>
-                <td class="">{{$order->province->province}}</td>
-                <td class="">{{$quantity}}</td>
-                <td class="">{{$price}}</td>
-                <td class="">{{$to}}</td>
-                <td class="">{{$sendto}}</td>
-            </tr>
-            @php
-                $a = $quantity + $a ;
-                $p = $price + $p;
-                $pt = $sendto + $pt;
-                $i = 1 + $i ;
-            @endphp
-                
-            @endforeach
-            <tr>
-                <td class=""></td>
-                <td colspan="2"> รวมยอด</td>
-                <td class="">{{$a}} รายการ</td>
-                <td class="">{{$p}} บาท</td>
-                <td class="">ค่าฝากต่อ</td>
-                <td class="">{{$pt}}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+            <div class="mr-4  " >
+                <table class="w-full p-4 ">
+                    <thead class="mt-10">
+                        <tr class="text-xl border-4 ">
+                            <th class="px-4 py-3">วันเดือนปี</th>
+                            <th class="px-4 py-3">รายการ</th>
+                            <th class="px-4 py-3">จังหวัด</th>
+                            <th class="px-4 py-3">จำนวน</th>
+                            <th class="px-4 py-3">ราคา</th>
+                            <th class="px-4 py-3">ส่งต่อ</th>
+                            <th class="px-4 py-3">ราคา</th>
+                        </tr>
+                    </thead>
+                    <tbody class="w-full p-4 text-center border-4 text-2xl">
+                        @php
+                            $i = 0;
+                            $a = 0;
+                            $p = 0;
+                            $pt = 0;
+                        @endphp
+                        @foreach($account->sortBy('list')->sortBy('province_id') as $order)
+                            @php
+                                $quantity = 0;
+                                $price = 0;
+                                $sendto = 0;
+                            @endphp
+                            @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
+                                    @php
+                                        $quantity = $key->quantity +$quantity;
+                                        $price = ($key->price * $key->quantity)  + $price;
+                                        $sendto = $key->price_to + $sendto;
+                                        $to = $key->sendto;
+                                    @endphp
+                            @endforeach
+                            <tr class="text-xl border-4">
+                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                @if($i == 0 or $i == 18)
+                                <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
+                                @else
+                                <td class=""></td>
+                                @endif
+                                <td class="">{{$order->list}}</td>
+                                <td class="">{{$order->province->province}}</td>
+                                <td class="">{{$quantity}}</td>
+                                <td class="">{{$price}}</td>
+                                <td class="">{{$to}}</td>
+                                <td class="">{{$sendto}}</td>
+                            </tr>
+                            @php
+                                $a = $quantity + $a ;
+                                $p = $price + $p;
+                                $pt = $sendto + $pt;
+                                $i = 1 + $i ;
+                            @endphp
+                        @endforeach
+                        <tr class="text-xl border-4 font-bold">
+                            <td class="px-4 py-3"></td>
+                            <td class="px-4 py-3" colspan="2"> รวมยอด</td>
+                            <td class="px-4 py-3">{{$a}} รายการ</td>
+                            <td class="px-4 py-3">{{$p}} บาท</td>
+                            <td class="px-4 py-3">ค่าฝากต่อ</td>
+                            <td class="px-4 py-3">{{$pt}}</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr class="text-xl border-4">
+                            <th class="px-4 py-3">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</th>
+                            <th class="px-4 py-3" colspan="2">รายการใช้จ่าย</th>
+                            <th class="px-4 py-3"></th>
+                            <th class="px-4 py-3"></th>
+                            <th class="px-4 py-3"></th>
+                            <th class="px-4 py-3"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @php
+                            $i = 0;
+                            $a = 0;
+                        @endphp
+                        @foreach ( $expenses as $row)
+                            <tr class="text-xl" >
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"colspan="2">{{$row->list}}</td>
+                                <td class="px-4 py-3">{{$row->price}}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            @php
+                                $a = $row->price + $a ;
+                                $i = 1 + $i ;
+                            @endphp
+                         @endforeach
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
+                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">ค่าฝากของ</td>
+                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">ค่าส่งต่อ</td>
+                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">รวม</td>
+                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">รายรับทั้งหมด</td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                            <tr class="text-xl border-4 font-bold">
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3" colspan="2">ยอดคงเหลือ </td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3"></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
 </body>
 </html>

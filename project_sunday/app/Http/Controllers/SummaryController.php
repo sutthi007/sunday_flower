@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\expenses;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -13,7 +14,7 @@ class SummaryController extends Controller
     public function index(){
         return view('summary.summarize');
     }
-   
+
     public function account(){
         $account = Order::orderBy('created_at')
 
@@ -22,7 +23,7 @@ class SummaryController extends Controller
                             return $date->created_at->format('Y-m-d');
                         });
         return view('summary.account',compact('account'));
-    } 
+    }
     public function transport(){
         $sum = Order::orderBy('created_at')
                         ->get()
@@ -38,8 +39,8 @@ class SummaryController extends Controller
                              ->groupBy('list','province_id')->get()
                              ;
         $accounts = Order::whereDate('created_at',$date)->get();
-                        
-        $pdf = PDF::loadView('sum',compact('account','accounts'));
+        $expenses = expenses::whereDate('created_at',$date)->get();
+        $pdf = PDF::loadView('sum',compact('account','accounts','expenses'));
         return @$pdf->stream();
     }
 }

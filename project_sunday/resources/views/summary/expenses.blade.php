@@ -106,7 +106,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('customer-systems.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -295,7 +295,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150  hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('customer-systems.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -530,14 +530,15 @@
                                     <tr
                                         class="text-xs font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">รายการค่าใช้จ่าย</th>
+                                        <th class="px-4 py-3 text-left">รายการค่าใช้จ่าย</th>
                                         <th class="px-4 py-3">ราคา</th>
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                     @php
-                                        $i=0
+                                        $i=0;
+                                        $total = 0;
                                     @endphp
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                     @foreach($expenses as $row)
@@ -550,7 +551,7 @@
                                                     @else
                                                     <td></td>
                                                     @endif
-                                                <td class="px-4 py-3 text-sm">{{$row->list}}</td>
+                                                <td class="px-4 py-3 text-sm text-left">{{$row->list}}</td>
                                                 <td class="px-4 py-3 text-sm">{{$row->price}}</td>
                                                 <td class="px-4 py-3 text-sm"></td>
                                                 <td class="flex px-4 py-3 text-sm ">
@@ -575,7 +576,17 @@
                                                     </form>
                                                 </td>
                                             </tr>
+                                            @php
+                                                $total = $row->price + $total;
+                                            @endphp
                                     @endforeach
+                                            <tr>
+                                                <td class="px-4 py-3 text-sm"></td>
+                                                <td class="px-4 py-3 text-sm" >ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
+                                                <td class="px-4 py-3 text-sm">{{$total}}</td>
+                                                <td class="px-4 py-3 text-sm"></td>
+                                                <td class="px-4 py-3 text-sm"></td>
+                                            </tr>
                                 </tbody>
                             </table>
                         </div>
