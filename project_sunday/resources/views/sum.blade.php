@@ -45,12 +45,19 @@
         .mt-10{
             margin-top: 50px;
         }
+        .pr-l{
+            padding-right:3px;
+            padding-left:3px;
+        }
+        .text-right{
+            text-align: right;
+        }
     </style>
 </head>
 <body>
 
     <div class="w-full">
-        <div class="text-center">
+        <div class="text-center mt-10">
             <h2 class="text-4xl font-bold">ใบรายการฝากของบริษัท</h2>
     </div>
     <div class=" w-full  p-3">
@@ -59,13 +66,13 @@
                 <table class="w-full p-4 ">
                     <thead class="mt-10">
                         <tr class="text-xl border-4 ">
-                            <th class="px-4 py-3">วันเดือนปี</th>
-                            <th class="px-4 py-3">รายการ</th>
-                            <th class="px-4 py-3">จังหวัด</th>
-                            <th class="px-4 py-3">จำนวน</th>
-                            <th class="px-4 py-3">ราคา</th>
-                            <th class="px-4 py-3">ส่งต่อ</th>
-                            <th class="px-4 py-3">ราคา</th>
+                            <th class="">วันเดือนปี</th>
+                            <th class="">รายการ</th>
+                            <th class="">จังหวัด</th>
+                            <th class="">จำนวน</th>
+                            <th class="">ราคา</th>
+                            <th class="">ส่งต่อ</th>
+                            <th class="">ราคา</th>
                         </tr>
                     </thead>
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
@@ -80,6 +87,7 @@
                                 $quantity = 0;
                                 $price = 0;
                                 $sendto = 0;
+                                
                             @endphp
                             @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
                                     @php
@@ -88,6 +96,8 @@
                                         $sendto = $key->price_to + $sendto;
                                         $to = $key->sendto;
                                         $city = $key->city;
+                                        $prices = number_format($price,2);
+                                        $sendtos = number_format($sendto,2);
                                     @endphp
                             @endforeach
                             <tr class="text-xl border-4">
@@ -105,28 +115,30 @@
                                 
                                 <td class="">{{$order->province->province}}</td>
                                 <td class="">{{$quantity}}</td>
-                                <td class="">{{$price}}</td>
+                                <td class="text-right pr-l">{{$prices}}</td>
                                 @if($to != null)
                                 <td class="">{{$city->city}}</td>
                                 @else
                                 <td></td>
                                 @endif
-                                <td class="">{{$sendto}}</td>
+                                <td class="text-right pr-l">{{$sendtos}}</td>
                             </tr>
                             @php
                                 $a = $quantity + $a ;
                                 $p = $price + $p;
                                 $pt = $sendto + $pt;
                                 $i = 1 + $i ;
+                                $ps = number_format($p,2);
+                                $pts = number_format($pt,2);
                             @endphp
                         @endforeach
                         <tr class="text-xl border-4 font-bold">
-                            <td class="px-4 py-3"></td>
-                            <td class="px-4 py-3" colspan="2"> รวมยอด</td>
-                            <td class="px-4 py-3">{{$a}} รายการ</td>
-                            <td class="px-4 py-3">{{$p}} บาท</td>
-                            <td class="px-4 py-3">ค่าฝากต่อ</td>
-                            <td class="px-4 py-3">{{$pt}}</td>
+                            <td class=""></td>
+                            <td class="" colspan="2"> รวมยอด</td>
+                            <td class="">{{$a}} รายการ</td>
+                            <td class="text-right pr-l">{{$ps}} บาท</td>
+                            <td class="">ค่าฝากต่อ</td>
+                            <td class="text-right pr-l">{{$pts}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -139,9 +151,9 @@
                 <table class="w-full p-4 ">
                     <thead>
                         <tr class="text-xl border-4">
-                            <th class="px-4 py-3">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</th>
-                            <th class="px-4 py-3" colspan="2">รายการใช้จ่าย</th>
-                            <th class="px-4 py-3"></th>
+                            <th class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</th>
+                            <th class="" colspan="2">รายการใช้จ่าย</th>
+                            <th class="">จำนวนเงิน</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -151,59 +163,63 @@
                         @endphp
                         @foreach ( $expenses as $row)
                             <tr class="text-xl" >
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"colspan="2">{{$row->list}}</td>
-                                <td class="px-4 py-3">{{$row->price}}</td>
+                                <td class=""></td>
+                                <td class=""colspan="2">{{$row->list}}</td>
+                                <td class="">{{$row->price}}</td>
                             </tr>
                             @php
                                 $a = $row->price + $a ;
                                 $i = 1 + $i ;
+                                $as = number_format($a,2);
+                                $ps = number_format($p,2);
+                                $pts = number_format($pt,2);
+                                $ps = number_format($p,2);
                             @endphp
                          @endforeach
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
-                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
+                                <td class="text-right pr-l">{{number_format($a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
+                                <td class=""></td>
                                 <td class="px-4 py-3" colspan="2"></td>
-                                <td class="px-4 py-3"></td>
+                                <td class=""></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">ค่าฝากของ</td>
-                                <td class="px-4 py-3">{{$p}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">ค่าฝากของ</td>
+                                <td class="text-right pr-l">{{$ps}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">ค่าส่งต่อ</td>
-                                <td class="px-4 py-3">{{$pt}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">ค่าส่งต่อ</td>
+                                <td class="text-right pr-l">{{$pts}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">รวม</td>
-                                <td class="px-4 py-3">{{$p + $pt}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">รวม</td>
+                                <td class="text-right pr-l">{{$ps + $pts}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
+                                <td class=""></td>
                                 <td class="px-4 py-3" colspan="2"></td>
-                                <td class="px-4 py-3"></td>
+                                <td class=""></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">รายรับทั้งหมด</td>
-                                <td class="px-4 py-3">{{$p + $pt}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">รายรับทั้งหมด</td>
+                                <td class="text-right pr-l">{{number_format($ps + $pts,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
-                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
+                                <td class="text-right pr-l">{{number_format($a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3" colspan="2">ยอดคงเหลือ </td>
-                                <td class="px-4 py-3">{{($p + $pt)-$a}}</td>
+                                <td class=""></td>
+                                <td class="pr-l" colspan="2">ยอดคงเหลือ </td>
+                                <td class="text-right pr-l">{{number_format(($ps + $pts)-$a,2)}}</td>
                             </tr>
                     </tbody>
                 </table>

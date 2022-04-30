@@ -1007,7 +1007,8 @@
                                 <div class="p-3">
                                     <form class="flex" action="{{ route('date') }}" method="get">
                                         @csrf
-                                        <input class="dark:text-white dark:bg-gray-800" type="date" name="date">
+                                        <input class="dark:text-white dark:bg-gray-800" type="date" name="date" value="YYYY-MM-DD" >
+                                        
                                         <button
                                             class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
                                     </form>

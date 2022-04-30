@@ -492,8 +492,8 @@
                                 <img class="w-150px" src="/img/icon.svg" alt="">
                                 <div class=" flex w-full justify-between ">
                                     <div class="p-2 dark:text-white">
-                                        <p class="text-3xl">บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
-                                        <p>เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
+                                        <p class="text-3xl">หจก เชียงใหม่ ซันเดย์ ฟลาวเวอร์</p>
+                                        <p>เลขที่ 268/25 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
                                         <p>จังหวัด เชียงใหม่ 50000</p>
                                     </div>
                                     <div class="p-2 w-200px  text-center dark:text-white">
