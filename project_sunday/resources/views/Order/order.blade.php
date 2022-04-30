@@ -545,10 +545,7 @@
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
                                                 id="tell" onkeypress="addSpaceTEl()">
-                                            @php
-                                                $i = 
-                                            @endphp
-                                            <input type="hidden" name="PT" value="{{$i}}">
+''
                                             @if ($errors->any('phone'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('phone') }}</p>

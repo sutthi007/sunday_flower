@@ -939,12 +939,35 @@
                     </h2>
                     <div class="whitespace-no-wrap bg-white rounded-md dark:bg-gray-800">
                         <div class="p-6 text-xl dark:text-white">
-                            <p>ชื่อ {{ $customers->name }}</p>
-                            <p>จังหวัด {{ $customers->province }} อำเภอ {{ $customers->city }} ตำบล
+                            <p>ชื่อ : {{ $customers->name }}</p>
+                            <p>จังหวัด : {{ $customers->province }} อำเภอ : {{ $customers->city }}
                                 {{ $customers->subdistrict }}
                             </p>
-                            <p>เบอร์โทรติดต่อ {{ $customers->phone }} </p>
-                            <p>สถานะ ผู้ส่ง</p>
+                            <p>เบอร์โทรติดต่อ : {{ $customers->phone }} </p>
+                            <p>สถานะ : ผู้ส่ง</p>
+                            <p>สถานะการชำระ : @if ($customers->getmoney - $customers->total >= 0)
+                                            ชำระเรียบร้อย
+                                            @else
+                                                ค้างชำระ  
+                                                @php
+                                                    $np = 0;
+                                                @endphp
+                                            @if ($customers->getmoney > $customers->total)
+                                                @php
+                                                    $np = $customers->getmoney - $customers->total;
+                                                @endphp
+                                            @endif
+                                            @if ($np > 0)
+                                                @php
+                                                    $np = $np + $customers->total - $customesr->getmoney;
+                                                @endphp
+                                            @else($np < 0) 
+                                                @php
+                                                    $np = $customers->total - $customers->getmoney;
+                                                @endphp 
+                                            @endif                                                   
+                                                            {{ $np }}
+                                            @endif</p>
                         </div>
                     </div>
                     <div class="mt-4">
@@ -988,6 +1011,16 @@
                             href="{{ route('customer-systems.index') }}">
                             ปิด
                         </a>
+                        @if ($customers->getmoney < $customers->total) 
+                            <form action="{{ route('save') }}" method="post"> 
+                            @csrf 
+                            <input type="hidden" name="customer_id" value="{{ $customers->id }}">  
+                            <input type="hidden" name="total" value="{{ $customers->total }}">                           
+                                <button class="w-150px  bg-pink text-white active:bg-fuchsia-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                                    ชำระยอดค้าง 
+                                </button>
+                            </form>  
+                        @endif
                     </div>
                 </div>
             </main>

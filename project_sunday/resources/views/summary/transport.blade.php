@@ -547,6 +547,7 @@
                                         <th class="px-4 py-3">ลำดับ</th>
                                         <th class="px-4 py-3">เดือน</th>
                                         <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
+                                        <th class="px-8 py-3">รายการทั้งหมด</th>
                                         <th class="px-4 py-3"></th>
 
                                     </tr>
@@ -554,8 +555,9 @@
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                     <tr class="text-gray-700 dark:text-gray-400">
                                         <td class="px-4 py-3 text-sm">1</td>
-                                        <td class="px-4 py-3 text-sm">1-31/01/2564</td>
+                                        <td class="px-4 py-3 text-sm">เมษา 2565</td>
                                         <td class="px-4 py-3 text-sm">500</td>
+                                        <td class="px-4 py-3 text-sm">1000</td>
                                         <td class="px-4 py-3 text-sm ">
 
                                             <a href="/transport-details-month">

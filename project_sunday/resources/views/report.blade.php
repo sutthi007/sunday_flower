@@ -69,7 +69,17 @@
             <img src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
         </div>
         <div class="text-3xl">
-            <h2>รายงานขนส่ง {{$province}}</h2>
+        @php
+         $p= 0; 
+        @endphp
+        @foreach( $orders->where('province_id',$province) as $row)
+            @if($p == 0)
+                <h2>รายงานขนส่ง {{$row->province->province}}</h2>
+            @endif
+            @php
+                $p = $p+1;
+            @endphp
+        @endforeach
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
             <div class="w-full overflow-x-auto">
@@ -90,9 +100,13 @@
                         @foreach( $orders->where('province_id',$province)->sortby('type')->sortby('city_id') as $order)
                             <tr>
                                 <td>{{$order->type}}</td>
-                                <td>{{$order->list}}</td>
+                                @if($order->list == null)
+                                 <td> - </td>
+                                @else
+                                 <td>{{$order->list}}</td>
+                                @endif
                                 <td>{{$order->city->city}}</td>
-                                <td>{{ $order->name }}{{$order->phone}}</td>
+                                <td>{{ $order->name }} ({{$order->phone}})</td>
                                 <td>{{$order->quantity}}</td>
                             </tr>
                             @php

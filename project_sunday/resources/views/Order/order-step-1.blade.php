@@ -763,7 +763,7 @@
                                         $total = $order->price * $order->quantity;
                                     @endphp
                                     @php
-                                        $cost = $total + $cost;
+                                        $cost = ($total + $cost) + $order->price_to;
                                     @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
@@ -775,13 +775,8 @@
                                             @endif
                                             
                                             <td class="px-4 py-3 text-x">
-<<<<<<< Updated upstream
                                                
                                                     {{ $order->quantity }} {{$order->amount}} 
-=======
-
-                                                    {{ $order->quantity }}{{$order->amount}}
->>>>>>> Stashed changes
                                             </td>
                                             <td class="px-4 py-3 text-x">{{ $order->name }}</td>
                                             <td class="px-4 py-3 text-x">

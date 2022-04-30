@@ -498,6 +498,7 @@
                                     </div>
                                     <div class="p-2 w-200px  text-center dark:text-white">
                                         <h1 class="text-2xl">{{ $customer->name }}</h1>
+                                        <h1 class="text-s">({{ $customer->phone }})</h1>
                                         <p>ทั้งหมด</p>
 
                                         <h1 class="text-2xl bg-pink text-white">{{ $customer->total }}</h1>
@@ -544,22 +545,22 @@
                                             @php
                                                 $np = 0;
                                             @endphp
-                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                            <tr class="text-gray-700 dark:text-gray-400 font-semibold">
                                                 <td class="px-4 py-3 text-sm" colspan="4"></td>
-                                                <td class="px-4 py-3 text-xl ">
-                                                    จำนวนเงินทั้งสิน (บาท)
+                                                <td class="px-4 py-3 text-sm text-right">
+                                                    จำนวนเงินทั้งสิน (บาท) :
                                                 </td>
-                                                <td class="px-4 py-3 text-xl text-center">
+                                                <td class="px-4 py-3 text-sm text-center">
                                                     {{ $customer->total }}
                                                 </td>
                                             </tr>
 
-                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                            <tr class="text-gray-700 dark:text-gray-400 font-semibold">
                                                 <td class="px-4 py-3 text-sm" colspan="4"></td>
-                                                <td class="px-4 py-3 text-xl">
+                                                <td class="px-4 py-3 text-sm text-right">
                                                     รับชำระ (บาท) :
                                                 </td>
-                                                <td class="px-4 py-3 text-xl text-center">
+                                                <td class="px-4 py-3 text-sm text-center">
                                                     {{ $customer->getmoney }}
                                                 </td>
                                             </tr>
@@ -568,12 +569,12 @@
                                                     $np = $customer->getmoney - $customer->total;
                                                 @endphp
                                             @endif
-                                            <tr class="text-gray-700 dark:text-gray-400 ">
+                                            <tr class="text-gray-700 dark:text-gray-400 font-semibold">
                                                 <td class="px-4 py-3 text-sm" colspan="4"></td>
-                                                <td class="px-4 py-3 text-xl ">
+                                                <td class="px-4 py-3 text-sm text-right ">
                                                     เงินทอน (บาท) :
                                                 </td>
-                                                <td class="px-4 py-3 text-xl text-center">
+                                                <td class="px-4 py-3 text-sm text-center">
                                                     {{ $np }}
                                                 </td>
                                             </tr>
@@ -584,12 +585,12 @@
                                             @else($np < 0) @php
                                                     $np = $customer->total - $customer->getmoney;
                                                 @endphp @endif
-                                                    <tr class="text-gray-700 dark:text-gray-400 ">
+                                                    <tr class="text-gray-700 dark:text-gray-400 font-semibold">
                                                         <td class="px-4 py-3 text-sm" colspan="4"></td>
-                                                        <td class="px-4 py-3 text-xl">
+                                                        <td class="px-4 py-3 text-sm text-right">
                                                             ยอดค้างชำระ (บาท) :
                                                         </td>
-                                                        <td class="px-4 py-3 text-xl text-center">
+                                                        <td class="px-4 py-3 text-sm text-center">
                                                             {{ $np }}
                                                         </td>
                                                     </tr>
@@ -600,11 +601,13 @@
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="text-white" href="{{ route('projects.index') }}"> ปิด </a>
                                     </div>
+                                    @if ($customer->getmoney >= $customer->total)
                                     <div class="h-30px bg-pink rounded mb-6 ml-3 w-100px text-center p-1">
                                         <a class="btnprn text-white"
                                             href="{{ url('/prnpriview/' . $customer->id) }}">
                                             พิมพ์ PDF </a>
                                     </div>
+                                    @endif
                                 </div>
                             </form>
                         </div>

@@ -87,11 +87,12 @@
                                         $price = ($key->price * $key->quantity)  + $price;
                                         $sendto = $key->price_to + $sendto;
                                         $to = $key->sendto;
+                                        $city = $key->city;
                                     @endphp
                             @endforeach
                             <tr class="text-xl border-4">
                                 @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                @if($i == 0 or $i == 18)
+                                @if($i == 0)
                                 <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
                                 @else
                                 <td class=""></td>
@@ -100,7 +101,11 @@
                                 <td class="">{{$order->province->province}}</td>
                                 <td class="">{{$quantity}}</td>
                                 <td class="">{{$price}}</td>
-                                <td class="">{{$to}}</td>
+                                @if($to != null)
+                                <td class="">{{$city->city}}</td>
+                                @else
+                                <td></td>
+                                @endif
                                 <td class="">{{$sendto}}</td>
                             </tr>
                             @php
@@ -167,7 +172,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ค่าฝากของ</td>
-                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3">{{$p}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
@@ -175,7 +180,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ค่าส่งต่อ</td>
-                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3">{{$pt}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
@@ -183,7 +188,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">รวม</td>
-                                <td class="px-4 py-3">{{$a}}</td>
+                                <td class="px-4 py-3">{{$p + $pt}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
@@ -199,7 +204,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">รายรับทั้งหมด</td>
-                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3">{{$p + $pt}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
@@ -207,7 +212,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
-                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3">{{$a}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
@@ -215,7 +220,7 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ยอดคงเหลือ </td>
-                                <td class="px-4 py-3"></td>
+                                <td class="px-4 py-3">{{($p + $pt)-$a}}</td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>

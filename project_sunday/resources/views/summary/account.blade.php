@@ -557,7 +557,7 @@
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">1-30/01/2564</td>
+                                            <td class="px-4 py-3 text-sm">เมษา 2565</td>
                                             <td class="px-4 py-3 text-sm">500,000</td>
                                             <td class="px-4 py-3 text-sm">
                                                

@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('province');
-            $table->string('subdistrict');
-            $table->string('phone');
-            $table->rememberToken();
-            $table->timestamps();
+        Schema::table('provinces', function (Blueprint $table) {
+            $table->integer('Employee_id')->nullable();
+            $table->foreign('Employee_id')->references('id')->on('users');
         });
     }
 
@@ -31,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::table('provinces', function (Blueprint $table) {
+            $table->dropColumn('Employee_id');
+        });
     }
 };

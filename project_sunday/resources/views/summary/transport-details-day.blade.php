@@ -490,6 +490,7 @@
                                             <th class="px-4 py-3">จังหวัด</th>
                                             <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
                                             <th class="px-8 py-3">รายการทั้งหมด</th>
+                                            <th class="px-8 py-3">พนักงานรับผิดชอบ</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                         </tr>
@@ -515,6 +516,7 @@
                                             <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
                                             <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->count()}}</td>
                                             <td class="px-4 py-3 text-sm">{{$order}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$row->province->Employee_id}}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">

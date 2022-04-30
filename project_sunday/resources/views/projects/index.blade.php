@@ -1013,18 +1013,7 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="xl:mr-3 lg:mr-3 ss:mt-3">
-                                <div
-                                    class="bg-white rounded-lg h-50px xl:w-150px lg:w-150px md:w-full  ss:w-full  dark:bg-gray-800">
-                                    <div class="w-100px m-auto pt-3">
-                                        <select class="w-100px dark:text-white dark:bg-gray-800" type="date">
-                                            <option value="">ออเดอร์</option>
-                                            <option value="">กำลังส่ง</option>
-                                            <option value="">สำเร็จ</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+                        
                         </div>
                     </div>
                     <!-- New Table -->
