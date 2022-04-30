@@ -763,7 +763,7 @@
                                         $total = $order->price * $order->quantity;
                                     @endphp
                                     @php
-                                        $cost = ($total + $cost) + $order->price_to;
+                                        $cost = ($total + $cost) + ($order->price_to*$order->quantity);
                                     @endphp
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         <tr class="text-gray-700 dark:text-gray-400">

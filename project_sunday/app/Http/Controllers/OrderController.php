@@ -152,6 +152,10 @@ class OrderController extends Controller
     // }
     public function downloadPDF($date,$province,Request $request){
         $orders = Order::whereDate('created_at',$date)->get();
+        $row = Order::all()->select('name')
+                        ->whereDate('created_at',$date)
+                        ->groupBy('name')
+                        ->get();
         $province = $province;
 
         $employee = province::find($province);
@@ -159,7 +163,7 @@ class OrderController extends Controller
            'Employee_id' =>  $request->employee,
         ]);
 
-        $pdf = PDF::loadView('report',compact('orders','province'));
+        $pdf = PDF::loadView('report',compact('orders','province','row'));
         return @$pdf->stream();
     }
 

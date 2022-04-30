@@ -498,7 +498,6 @@
                                         <th class="px-4 py-3">วันที่</th>
                                         <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
                                         <th class="px-4 py-3">รายการทั้งหมด</th>
-                                        <th class="psx-4 py-3">เลือกคนขับรถ</th>
                                         <th class="px-4 py-3"></th>
 
                                     </tr>
@@ -524,14 +523,6 @@
                                                 {{ $thaiDateHelper->simpleDateFormat($test) }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $long->count() }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $i }}</td>
-                                            <td class="px-4 py-3 text-sm">
-                                                <select class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
-                                                    <option value="นาย นี">นาย นี 1</option>
-                                                    <option value="นาย นี">นาย นี 2</option>
-                                                    <option value="นาย นี">นาย นี 3</option>
-                                                    <option value="นาย นี">นาย นี 4</option>
-                                                </select>
-                                            </td>
                                             <td class="px-4 py-3 text-sm">
                                                 <a href="/transport-details-day/{{ $test }}">
                                                     <button

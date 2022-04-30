@@ -93,11 +93,16 @@
                             <tr class="text-xl border-4">
                                 @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                 @if($i == 0)
-                                <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
+                                    <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
                                 @else
-                                <td class=""></td>
+                                    <td class=""></td>
                                 @endif
-                                <td class="">{{$order->list}}</td>
+                                @if($order->list != null)
+                                    <td class="">{{$order->list}}</td>
+                                @else
+                                    <td class="">{{$order->type}}</td>
+                                @endif
+                                
                                 <td class="">{{$order->province->province}}</td>
                                 <td class="">{{$quantity}}</td>
                                 <td class="">{{$price}}</td>
@@ -124,13 +129,18 @@
                             <td class="px-4 py-3">{{$pt}}</td>
                         </tr>
                     </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="w-full  p-3">
+        <div class="w-full">
+            <div class="mr-4 ">
+                <table class="w-full p-4 ">
                     <thead>
                         <tr class="text-xl border-4">
                             <th class="px-4 py-3">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</th>
                             <th class="px-4 py-3" colspan="2">รายการใช้จ่าย</th>
-                            <th class="px-4 py-3"></th>
-                            <th class="px-4 py-3"></th>
-                            <th class="px-4 py-3"></th>
                             <th class="px-4 py-3"></th>
                         </tr>
                     </thead>
@@ -144,9 +154,6 @@
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"colspan="2">{{$row->list}}</td>
                                 <td class="px-4 py-3">{{$row->price}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             @php
                                 $a = $row->price + $a ;
@@ -157,78 +164,51 @@
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
                                 <td class="px-4 py-3">{{$a}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ค่าฝากของ</td>
                                 <td class="px-4 py-3">{{$p}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ค่าส่งต่อ</td>
                                 <td class="px-4 py-3">{{$pt}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">รวม</td>
                                 <td class="px-4 py-3">{{$p + $pt}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">รายรับทั้งหมด</td>
                                 <td class="px-4 py-3">{{$p + $pt}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
                                 <td class="px-4 py-3">{{$a}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="px-4 py-3"></td>
                                 <td class="px-4 py-3" colspan="2">ยอดคงเหลือ </td>
                                 <td class="px-4 py-3">{{($p + $pt)-$a}}</td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
-                                <td class="px-4 py-3"></td>
                             </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </div> 
+        </div> 
     </div>
 </body>
 </html>

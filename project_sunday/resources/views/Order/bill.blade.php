@@ -130,8 +130,8 @@
         </div>
         <div class="flex-container">
             <div class="p-2 ml-10 font-bold">
-                <p class="text-3xl">บริษัท หจก ซันเดย์ ฟลาวเวอร์</p>
-                <p class="-mt-4">เลขที่ 268/27 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
+                <p class="text-3xl">หจก เชียงใหม่ ซันเดย์ ฟลาวเวอร์</p>
+                <p class="-mt-4">เลขที่ 268/25 ถนนทุ่งโฮเต็ล อำเภอเมืองเชียงใหม่</p>
                 <p class="-mt-4">จังหวัด เชียงใหม่ 50000</p>
             </div>
             <div class="float-right mr-4 p-2 w-200px  text-center mt--20px">
@@ -189,7 +189,7 @@
                                 @else
                                     <td class=" text-xl pr-l">{{ $order->list }}</td>
                                 @endif
-                                <td class=" text-xl pr-l">{{$order->province->province}} {{$order->city->city}}</td>
+                                <td class=" text-xl pr-l"> {{$order->city->city}}</td>
                                 <td class=" text-xl text-center">{{ $order->quantity }}</td>
                                 
                                 <td class=" text-xl text-right pr-l">{{$price}}</td>

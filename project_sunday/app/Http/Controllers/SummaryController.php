@@ -35,8 +35,8 @@ class SummaryController extends Controller
     }
     public function viewSum($date){
         $account = Order::whereDate('created_at',$date)
-                            ->select('list','province_id')
-                             ->groupBy('list','province_id')->get()
+                            ->select('list','province_id','type')
+                             ->groupBy('list','province_id','type')->get()
                              ;
         $accounts = Order::whereDate('created_at',$date)->get();
         $expenses = expenses::whereDate('created_at',$date)->get();

@@ -982,6 +982,7 @@
                                         <th class="px-4 py-3">ลำดับ</th>
                                         <th class="px-4 py-3">ประเภท</th>
                                         <th class="px-4 py-3">ต้นทาง</th>
+                                        <th class="px-4 py-3">ชื่อปลายทาง</th>
                                         <th class="px-8 py-3">ปลายทาง</th>
                                         <th class="px-4 py-3">วันที่</th>
                                     </tr>
@@ -994,6 +995,7 @@
                                             <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->type }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customers->province }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->name }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->province->province }}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 {{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
