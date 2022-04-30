@@ -1,4 +1,7 @@
 <table class="table">
+    <tr>
+        <td rowspan="4">รายงานขนส่ง</td>
+    </tr>
     <thead>
         <tr>
             <th>ประเภท</th>

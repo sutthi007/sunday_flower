@@ -522,7 +522,7 @@
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     PDF
                                                 </a>
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white"
+                                                <button href="/transport-details-day/{{$date}}/{{$row->province_id}} class="bg-pink w-94px h-24px rounded-md text-white"
                                                     type="button" onclick="toggleModal('modal-id')">
                                                     Excel
                                                 </button>
