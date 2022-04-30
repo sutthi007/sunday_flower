@@ -13,6 +13,7 @@ use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
 use App\Models\Order;
+use App\Models\user;
 use Illuminate\Http\Request;
 
 /*
@@ -100,13 +101,13 @@ Route::get('/transport-details-day/{date}', function ($date){
     $transport = Order::select('province_id')
                         ->whereDate('created_at',$date)
                         ->groupBy('province_id')->get();
-
+    $employee = user::all()->where('role','employee');
     $transports = Order::whereDate('created_at',$date)->get();
 
-    return view('summary/transport-details-day',compact('transport','date','transports'));
+    return view('summary/transport-details-day',compact('transport','date','transports','employee'));
 });
 
-Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF']);
+Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF'])->name('transport-details-day');
 Route::get('/account-details-month', function () {
     return view('summary/account-details-month');
 });

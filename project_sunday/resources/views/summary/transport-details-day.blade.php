@@ -510,29 +510,30 @@
                                             @endphp   
                                         
                                         @endforeach
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{$i++}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->count()}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$order}}</td>
-                                            <td class="px-4 py-3 text-sm">
-                                                <select class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
-                                                    <option value="{{$row->province->Employee_id}}">{{$row->province->Employee_id}}</option>
-                                                    <option value="นาย นี">นาย นี 2</option>
-                                                    <option value="นาย นี">นาย นี 3</option>
-                                                    <option value="นาย นี">นาย นี 4</option>
-                                                </select></td>
-                                            <td class="px-4 py-3 text-sm">
-                                                <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
-                                                    PDF
-                                                </a>
-                                                <button href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
-                                                    Excel
-                                                </button>
-                                            </td>
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">{{$i++}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$row->province->province}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->count()}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$order}}</td>
+                                        <form action="{{route('transport-details-day',[$date,$row->province_id])}}" method="get">
+                                                    @csrf
+                                                <td class="px-4 py-3 text-sm">
+                                                    <select class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="employee">
+                                                        <option value="{{$row->province->Employee_id}}">{{$row->province->Employee_id}}</option>
+                                                        @foreach($employee as $row)
+                                                            <option value="{{$row->id}}">{{$row->name}}</option>
+                                                        @endforeach                                                   
+                                                    </select>
+                                                </td>
+                                                <td class="px-4 py-3 text-sm">
+                                                    <button  class="bg-pink w-94px h-24px rounded-md text-white"
+                                                         >
+                                                        PDF
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </form>
                                     @endforeach
                                     </tbody>                                   
                                 </table>

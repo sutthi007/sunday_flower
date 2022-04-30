@@ -113,15 +113,14 @@
                                 $sum = $sum + $order->quantity
                             @endphp
                        @endforeach
-                       
+                       <tr>
+                           <td colspan="4">รวม</td>
+                           <td>ทั้งหมด {{$sum}} รายการ</td>
+                       </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    @foreach($row as $key)
-        {{$key->name}} 
-    @endforeach
-    
 </body>
 </html>
