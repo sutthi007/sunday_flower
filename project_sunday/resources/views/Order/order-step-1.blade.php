@@ -642,7 +642,24 @@
                                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                         name="price_sendto" >
                                                 </div>
-
+                                                <div class=" w-full px-3 mb-6 md:mb-0 " id="texts" style="display:none">
+                                                        <label
+                                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                            id="showthis" name="showthis" size="50" type="text"
+                                                            value="text here">
+                                                            จังหวัดส่งต่อ
+                                                        </label>
+                                                        <select
+                                                        class=" appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        id="grid-first-name" type="text" placeholder="" name="province_"
+                                                        id="provinces">
+                                                        <option value="">---เลือกจังหวัด----</option>
+                                                        @foreach ($province as $row)
+                                                            <option value="{{ $row->id }}">{{ $row->province }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
@@ -934,10 +951,13 @@
         function myFunction() {
             var checkBox = document.getElementById("myCheck");
             var text = document.getElementById("text");
+            var texts = document.getElementById("texts");
             if (checkBox.checked == true) {
                 text.style.display = "block";
+                texts.style.display = "block";
             } else {
                 text.style.display = "none";
+                texts.style.display = "none";
             }
         }
     </script>
