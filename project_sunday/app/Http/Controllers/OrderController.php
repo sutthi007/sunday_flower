@@ -152,11 +152,6 @@ class OrderController extends Controller
     // }
     public function downloadPDF($date,$province,Request $request){
         $orders = Order::whereDate('created_at',$date)->get();
-        $employee = province::find($province);
-
-        $employee->update([
-            'Employee_id' => $request->employee
-        ]);
 
         $pdf = PDF::loadView('report',compact('orders','province'));
         return @$pdf->stream();
@@ -169,5 +164,16 @@ class OrderController extends Controller
 
 
         return view('report',compact('orders','province'));
+    }
+    public function editTransportEmployee($id,$date) {
+        $employee = province::find($id);
+        return view('summary.transport-order',compact('employee'));
+    }
+    public function updateTransportEmployee($id,$date,Request $request){
+        $employee = province::find($id);
+        $employee->update([
+            'Employee_id' => $request->employee, 
+        ]);
+        return redirect()->route('/transport-details-day/{{$date}}');
     }
 }

@@ -107,7 +107,10 @@ Route::get('/transport-details-day/{date}', function ($date){
     return view('summary/transport-details-day',compact('transport','date','transports','employee'));
 });
 
-Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF'])->name('transport-details-day');
+Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF']);
+Route::get('/transpot/add-emplpyee/{provonce}/{date}',[OrderController::class,'editTransportEmployee']);
+Route::put('/transpot/add-update-emplpyee/{id}/{date}',[OrderController::class,'updateTransportEmployee']);
+
 Route::get('/account-details-month', function () {
     return view('summary/account-details-month');
 });

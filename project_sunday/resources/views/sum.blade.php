@@ -174,6 +174,7 @@
                                 $ps = number_format($p,2);
                                 $pts = number_format($pt,2);
                                 $ps = number_format($p,2);
+                                $edit = 0;
                             @endphp
                          @endforeach
                             <tr class="text-xl border-4 font-bold">
@@ -199,7 +200,10 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class=""></td>
                                 <td class="pr-l" colspan="2">รวม</td>
-                                <td class="text-right pr-l">{{$ps + $pts}}</td>
+                                @php
+                                    $edit = $p + $pt;
+                                @endphp
+                                <td class="text-right pr-l">{{number_format($edit,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class=""></td>
@@ -209,17 +213,17 @@
                             <tr class="text-xl border-4 font-bold">
                                 <td class=""></td>
                                 <td class="pr-l" colspan="2">รายรับทั้งหมด</td>
-                                <td class="text-right pr-l">{{number_format($ps + $pts,2)}}</td>
+                                <td class="text-right pr-l">{{number_format($edit,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class=""></td>
                                 <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
-                                <td class="text-right pr-l">{{number_format($a,2)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class=""></td>
                                 <td class="pr-l" colspan="2">ยอดคงเหลือ </td>
-                                <td class="text-right pr-l">{{number_format(($ps + $pts)-$a,2)}}</td>
+                                <td class="text-right pr-l">{{number_format(((float)$edit)-$a,2)}}</td>
                             </tr>
                     </tbody>
                 </table>
