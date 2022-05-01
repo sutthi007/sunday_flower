@@ -542,10 +542,18 @@
                                                 ชื่อพนักงานรับผิดชอบ
                                             </label>
                                             <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="user_id">
-                                                <option value="{{$employee->user->id}}">{{$employee->user->name}}</option>
+                                               @if($employee->user_id == null)
+                                                    <option value="{{$employee->user_id}}">{{$employee->user_id}}</option>
+                                               @else
+                                                    <option value="{{$employee->user->id}}">{{$employee->user->name}}</option>
+                                               @endif 
                                                 @foreach ($employees as $row)
-                                                    @if($employee->user->id != $row->id)
-                                                    <option value="{{$row->id}}">{{$row->name}}</option> 
+                                                    @if($employee->user_id == null)
+                                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                                    @else
+                                                        @if($employee->user->id != $row->id)
+                                                            <option value="{{$row->id}}">{{$row->name}}</option>
+                                                        @endif
                                                     @endif
                                                 @endforeach
                                             </select>
