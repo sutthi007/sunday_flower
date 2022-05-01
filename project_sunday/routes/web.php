@@ -105,11 +105,11 @@ Route::get('/transport-details-day/{date}', function ($date){
     $transports = Order::whereDate('created_at',$date)->get();
 
     return view('summary/transport-details-day',compact('transport','date','transports','employee'));
-});
+})->name('transport-em-up');
 
 Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF']);
-Route::get('/transpot/add-emplpyee/{provonce}/{date}',[OrderController::class,'editTransportEmployee']);
-Route::put('/transpot/add-update-emplpyee/{id}/{date}',[OrderController::class,'updateTransportEmployee']);
+Route::get('/transpot/add-emplpyee/{provonce}/{date}',[ProvinceController::class,'editTransportEmployee']);
+Route::post('/transpot/add-update-emplpyee/{id}/{date}',[ProvinceController::class,'updateTransportEmployee'])->name('emp-update');
 
 Route::get('/account-details-month', function () {
     return view('summary/account-details-month');

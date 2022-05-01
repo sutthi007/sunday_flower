@@ -165,15 +165,5 @@ class OrderController extends Controller
 
         return view('report',compact('orders','province'));
     }
-    public function editTransportEmployee($id,$date) {
-        $employee = province::find($id);
-        return view('summary.transport-order',compact('employee'));
-    }
-    public function updateTransportEmployee($id,$date,Request $request){
-        $employee = province::find($id);
-        $employee->update([
-            'Employee_id' => $request->employee, 
-        ]);
-        return redirect()->route('/transport-details-day/{{$date}}');
-    }
+   
 }

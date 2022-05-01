@@ -548,19 +548,6 @@
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
-                                            ประชาชน :
-                                        </label>
-                                        <input
-                                            class="bg-235 rounded-lg h-30px  ss:w-160px dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="9-9999-99999-99-9" name="Idcard" id="telInput"
-                                            onkeypress="addSpace()" maxlength="17">
-                                        @if ($errors->any('Idcard'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('Idcard') }}</p>
-                                        @endif
-                                    </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
                                             วันเกิด :
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
@@ -658,18 +645,6 @@
                                                 {{ $errors->first('phone_relative') }}</p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
-                                            อีเมล์ :
-                                        </label>
-                                        <input
-                                            class="bg-235 w-160px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="example@gmail.com" name="email">
-                                        @if ($errors->any('email'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('email') }}</p>
-                                        @endif
-                                    </div>
                                 </div>
                             </div>
                             <div class="mt-5 mb-9 w-250px m-auto">
@@ -760,15 +735,6 @@
         switchTheme()
     </script>
     <script>
-        function addSpace() {
-            var inputValue = document.getElementById("telInput").value;
-            var inputValueLength = inputValue.length;
-
-            if (inputValueLength == 1 || inputValueLength == 6 || inputValueLength == 12 || inputValueLength == 15) {
-                document.getElementById("telInput").value = inputValue + "-";
-            }
-        }
-
         function addSpaceTEl() {
             var inputValue = document.getElementById("tell").value;
             var inputValueLength = inputValue.length;

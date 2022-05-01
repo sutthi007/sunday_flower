@@ -527,13 +527,7 @@
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="{{ $user->birthday }}" disabled>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
-                                            อีเมล์ :
-                                        </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->email }}" disabled>
-                                    </div>
+                                  
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
                                             เบอร์โทร :

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\province;
 use App\Models\city;
 use App\Models\sub;
+use App\Models\user;
 
 class ProvinceController extends Controller
 {
@@ -37,9 +38,9 @@ class ProvinceController extends Controller
         $province = province::find($id);
         return view('transport.transport-edit',compact('province'));
     }
-    public function update($id,Request $requset){
+    public function update(Request $requset, $id){
         $province = province::find($id);
-        $province->update($requset->all());
+        $province->create($requset->all());
 
         return redirect()->route('transport.index');
     }
@@ -63,4 +64,18 @@ class ProvinceController extends Controller
     //     city::create($request->all());
     //     return redirect()->route('city');
     // }
+    public function editTransportEmployee($id,$date) {
+        $employee = province::find($id);
+        $employees = user::all()->where('role','employee');
+        return view('summary.transport-order',compact('employee','employees','date'));
+    }
+    public function updateTransportEmployee($id,$date,Request $request){
+        $employee = province::find($id);
+      
+        $employee->update([
+            'Employee_id' => $request->Employee_id,
+        ]);
+
+        return redirect()->route('transport-em-up',$date);
+    }
 }
