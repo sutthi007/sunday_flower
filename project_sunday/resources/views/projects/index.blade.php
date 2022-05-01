@@ -108,6 +108,12 @@
                                             อำเภอ
                                         </a>
                                     </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            จังหวัดส่งต่อ
+                                        </a>
+                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -286,6 +292,12 @@
                                         class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                                         <a class="w-full" href="{{ route('city.index') }}">
                                             อำเภอ
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                            จังหวัดส่งต่อ
                                         </a>
                                     </li>
                                 </ul>
@@ -1066,9 +1078,15 @@
                                             <td class="px-4 py-3 text-sm ">
                                                 {{ $order->province->province }}
                                             </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $order->city->city }}
-                                            </td>
+                                            @if($order->provinces_tos_id == null)
+                                                <td class="px-4 py-3 text-x">
+                                                    {{ $order->city->city}}
+                                                </td>
+                                            @else
+                                                <td class="px-4 py-3 text-x">
+                                                    {{ $order->provinces_tos->provinces_to}}
+                                                </td>
+                                            @endif
                                             <td class="px-4 py-3 text-sm ">
                                                 {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
                                             </td>

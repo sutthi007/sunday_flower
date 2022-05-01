@@ -74,7 +74,7 @@
         @endphp
         @foreach( $orders->where('province_id',$province) as $row)
             @if($p == 0)
-                <h2>รายงานขนส่ง {{$row->province->province}}</h2>
+                <h2>รายงานขนส่ง {{$row->province->province}}({{$row->province->user->name}})</h2>
             @endif
             @php
                 $p = $p+1;

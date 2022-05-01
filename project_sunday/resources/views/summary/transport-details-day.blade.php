@@ -517,13 +517,13 @@
                                             <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->count()}}</td>
                                             <td class="px-4 py-3 text-sm">{{$order}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                @if($row->province->Employee_id == null)
+                                                @if($row->province->user_id == null)
                                                     <a href="/transpot/add-emplpyee/{{$row->province_id}}/{{$date}}">
                                                         ยังไม่มีพนักงานขนส่ง
                                                     </a>
                                                 @else
                                                     <a href="/transpot/add-emplpyee/{{$row->province_id}}/{{$date}}">
-                                                        {{$row->province->Employee_id}}
+                                                        {{$row->province->user->name}}
                                                     </a>
                                                 @endif   
                                             </td>

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\models\provinceTo;
+use App\Models\provinceTo;
 
-class ProvincesTocotroller extends Controller
+class ProvincesToController extends Controller
 {
     //
     public function index(){
-        $provinces = provinceTo::orderBy('province','asc')->paginate(10);
+        $provinces = provinceTo::orderBy('provinces_to','asc')->paginate(10);
         return view('transport.provinceTo',compact('provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function store(Request $requset){
@@ -27,19 +27,19 @@ class ProvincesTocotroller extends Controller
             'provinces_to' => $requset->province,
         ]);
 
-        return redirect()->route('transport.index');
+        return redirect()->route('provinceTo.index');
     }
     public function update(Request $requset, $id){
         $province = provinceTo::find($id);
-        $province->create($requset->all());
+        $province->update($requset->all());
 
-        return redirect()->route('transport.index');
+        return redirect()->route('provinceTo.index');
     }
     public function destroy($id){
         $province = provinceTo::find($id);
         $province->delete();
 
-        return redirect()->route('transport.index');
+        return redirect()->route('provinceTo.index');
     }
     public function edit($id){
         $province = provinceTo::find($id);

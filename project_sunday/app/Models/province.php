@@ -11,6 +11,7 @@ class province extends Model
 
     protected $fillable = [
         'province',
+        'user_id',
     ];
 
     public function city(){
@@ -18,5 +19,8 @@ class province extends Model
     }
     public function orderForm(){
         return $this->hasMany(Order::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

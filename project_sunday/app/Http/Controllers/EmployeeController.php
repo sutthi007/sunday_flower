@@ -61,7 +61,6 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required',
             'role' => 'required',
-            'Idcard' => 'required|min:13',
             'birthday' => 'required',
             'city' => 'required', //อำเภอ
             'sub' => 'required',
@@ -74,8 +73,7 @@ class EmployeeController extends Controller
         [
             'name.required'=> 'กรุณากรอกชื่อ',
             'role.required'=> 'กรุณาเลือกตำแหน่ง',
-            'Idcard.required'=> 'กรุณากรอกเลขประชาชน',
-            'Idcard.min'=> 'กรุณากรอกเลขบัตรประชาชนให้ครบ 13 ตัว',
+            
 
             'birthday.required'=> 'กรุณากรอกวัน/เดือน/ปี เกิด',
             'city.required'=> 'กรุณากรอกอำเภอ',
@@ -116,7 +114,6 @@ class EmployeeController extends Controller
         User::create([
             'name' => $request->name,
             'role' => $request->role,
-            'Idcard' => $request->Idcard,
             'birthday' => $request->birthday,
             'address' => $request->address,
             'city' => $request->city,

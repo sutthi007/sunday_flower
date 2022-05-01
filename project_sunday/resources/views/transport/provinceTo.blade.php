@@ -483,11 +483,11 @@
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid ">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        เพิ่มจังหวัด
+                        เพิ่มจังหวัดส่งต่อ
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                            <form action="{{ route('transport.store') }}" method="POST">
+                            <form action="{{ route('provinceTo.store') }}" method="POST">
                                 @csrf
                                 <div class="w-300px m-auto ">
                                     <div class="p-2">
@@ -527,9 +527,9 @@
                                         <tr class="text-gray-700 dark:text-gray-400">
 
                                             <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $province->province }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $province->provinces_to }}</td>
                                             <td class="flex px-4 py-3 text-sm ">
-                                                <a class="w-6 h-6 mr-2" href="{{ route('transport.edit',$province->id )}}">
+                                                <a class="w-6 h-6 mr-2" href="{{ route('provinceTo.edit',$province->id )}}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                         fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                         stroke-width="2">
@@ -537,7 +537,7 @@
                                                             d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                                     </svg>
                                                 </a>
-                                                <form action="{{ route('transport.destroy',$province->id ) }}" method="post">
+                                                <form action="{{ route('provinceTo.destroy',$province->id ) }}" method="post">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button id="" class="w-6 h-6"><svg

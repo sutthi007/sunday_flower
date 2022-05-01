@@ -28,9 +28,9 @@ return new class extends Migration
             $table->integer('price');
             $table->string('phone');
             $table->string('tracking');
-            $table->string('phoneOne');
-            $table->integer('provinces_to');
-            $table->foreign('provinces_to')->references('id')->on('province_to');
+            $table->string('phoneOne')->nullable();
+            $table->integer('provinces_tos_id')->nullable();
+            $table->foreign('provinces_tos_id')->references('id')->on('province_tos');
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->foreign('province_id')->references('id')->on('provinces');

@@ -10,6 +10,7 @@ use Maatwebsite\Excel\Excel as ExcelExcel;
 use Maatwebsite\Excel\Facades\Excel;
 use Symfony\Component\Mailer\Transport;
 use App\Models\province;
+use App\Models\provinceTo;
 use App\Models\service;
 use Barryvdh\DomPDF\Facade\PDF;
 use Dompdf\Adapter\PDFLib;
@@ -49,7 +50,7 @@ class OrderController extends Controller
             'price_to' => $request->price_sendto,
             'amount' => $request->amount,
             'phoneOne' => $request->phone_one,
-            'provinces_to' => $request->provinces,
+            'provinces_tos_id' => $request->provinces_to,
             'tracking' => 'SD'.$request->province.time().random_int(00,99),
         ]);
         $customer = $request->customer_id;
@@ -61,8 +62,9 @@ class OrderController extends Controller
     {
         $customer = customer::find($id);
         $province  = province::all();
+        $provinces_to = provinceTo::all();
 
-        return view('Order.order-step-1', compact('customer','province',));
+        return view('Order.order-step-1', compact('customer','province','provinces_to'));
     }
 
     public function destroy($idorder)

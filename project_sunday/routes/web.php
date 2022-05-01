@@ -10,6 +10,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\expensesController;
 use App\Http\Controllers\ProvinceController;
+use App\Http\Controllers\ProvincesToController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\SummaryController;
 use App\Models\Order;

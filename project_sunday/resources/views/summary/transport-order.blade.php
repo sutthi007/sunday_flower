@@ -529,10 +529,12 @@
                                                 for="grid-first-name">
                                                 ชื่อพนักงานรับผิดชอบ
                                             </label>
-                                            <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="Employee_id">
-                                                <option value="{{$employee->Employee_id}}">{{$employee->Employee_id}}</option>
+                                            <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="user_id">
+                                                <option value="{{$employee->user->id}}">{{$employee->user->name}}</option>
                                                 @foreach ($employees as $row)
-                                                <option value="{{$row->id}}">{{$row->name}}</option>  
+                                                    @if($employee->user->id != $row->id)
+                                                    <option value="{{$row->id}}">{{$row->name}}</option> 
+                                                    @endif
                                                 @endforeach
                                             </select>
 

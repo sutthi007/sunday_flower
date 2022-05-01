@@ -169,13 +169,15 @@
                         $cost = 0;
                         $i = 1;
                         $total = 0;
+                        $price_to = 0;
                     @endphp
                     @foreach ($customer->orders as $order)
                         @php
                             $total = $order->price * $order->quantity;
+                            $price_to = $order->price_to * $order->quantity
                         @endphp
                         @php
-                            $cost = $total + $cost;
+                            $cost = ($price_to + $total) + $cost;
                             
                             $costs = number_format($cost,2);
                             $price = number_format($order->price,2) ;
@@ -189,10 +191,10 @@
                                 @else
                                     <td class=" text-xl pr-l">{{ $order->list }}</td>
                                 @endif
-                                @if($order->provinces_to == null)
+                                @if($order->provinces_tos_id == null)
                                 <td class=" text-xl pr-l"> {{$order->city->city}}</td>
                                 @else
-                                <td class=" text-xl pr-l"> {{$order->province->name}}</td>
+                                <td class=" text-xl pr-l"> {{$order->provinces_tos->provinces_to}}</td>
                                 @endif
                                 <td class=" text-xl text-center">{{ $order->quantity }}</td>
                                 

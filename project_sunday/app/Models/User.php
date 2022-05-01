@@ -31,7 +31,6 @@ class User extends Authenticatable
         'phone_relative',
         'IDcard',
         'zipcode',
-        'Idcard',
         'Path_imageProfile',
     ];
 
@@ -53,4 +52,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function province(){
+        return $this->hasMany(province::class);
+    }
 }

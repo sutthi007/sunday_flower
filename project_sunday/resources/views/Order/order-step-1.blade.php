@@ -651,11 +651,11 @@
                                                         </label>
                                                         <select
                                                         class=" appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                        id="grid-first-name" type="text" placeholder="" name="province_"
+                                                        id="grid-first-name" type="text" placeholder="" name="provinces_to"
                                                         id="provinces">
                                                         <option value="">---เลือกจังหวัด----</option>
-                                                        @foreach ($province as $row)
-                                                            <option value="{{ $row->id }}">{{ $row->province }}
+                                                        @foreach ($provinces_to as $row)
+                                                            <option value="{{ $row->id }}">{{ $row->provinces_to }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -800,13 +800,13 @@
                                                 {{ $order->province->province}}
                                             </td>
                                             <td class="px-4 py-3 text-x">{{ $order->sendto}} </td>
-                                            @if($order->provinces_to == null)
+                                            @if($order->provinces_tos_id == null)
                                                 <td class="px-4 py-3 text-x">
                                                     {{ $order->city->city}}
                                                 </td>
                                             @else
                                                 <td class="px-4 py-3 text-x">
-                                                    {{ $order->provinces_to}}
+                                                    {{ $order->provinces_tos->provinces_to}}
                                                 </td>
                                             @endif
                                             <td class="px-4 py-3 text-x">{{ $order->phone }}</td>

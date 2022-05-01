@@ -512,7 +512,7 @@
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                            <form action="{{ route('transport.update',$province->id) }}" method="post">
+                            <form action="{{ route('provinceTo.update',$province->id) }}" method="post">
                                 @csrf
                                 @method('PUT')
                                 <div class="w-300px m-auto ">
@@ -525,7 +525,7 @@
                                         <input
                                             class="  w-300px  text-gray-700   rounded py-3 px-4 mb-3 leading-tight  dark:bg-gray-900 dark:text-white"
                                             id="grid-first-name" type="text"
-                                            value="{{$province->province}}" name="province">
+                                            value="{{$province->provinces_to}}" name="provinces_to">
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
