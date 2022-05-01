@@ -302,12 +302,6 @@
                                             จังหวัดส่งต่อ
                                         </a>
                                     </li>
-                                    <li
-                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                        <a class="w-full" href="{{ route('city.index') }}">
-                                            จังหวัดส่งต่อ
-                                        </a>
-                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -939,20 +933,23 @@
                     </button>
                     <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                        <div class="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
-                            <div class="absolute inset-y-0 flex items-center pl-2">
-                                <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <input
-                                class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input h-9"
-                                type="text" placeholder="Search for projects" aria-label="Search" />
-                        </div>
+                       
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
+                        <li class="flex mr-10">
+                            <button
+                                class="absolute top-6  w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow"
+                                onclick="toggleTheme()">
+                                <div id="switch-toggle"
+                                    class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </li>
                         <!-- Profile menu -->
                         <li class="relative">
                             <button class="align-middle rounded-full focus:shadow-outline-purple focus:outline-none"
@@ -966,7 +963,7 @@
                                 <ul x-transition:leave="transition ease-in duration-150"
                                     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
                                     @click.away="closeProfileMenu" @keydown.escape="closeProfileMenu"
-                                    class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
+                                    class="absolute right-0 w-40 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:border-gray-700 dark:text-gray-300 dark:bg-gray-700"
                                     aria-label="submenu">
                                     <li class="flex">
                                         <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
@@ -992,9 +989,14 @@
                                             <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
                                                 stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 viewBox="0 0 24 24" stroke="currennColor">
-                                                <path
-                                                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                                                </path>
+                                                this.closest('form').submit();">
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                             </svg>
                                             <span>ออกจากระบบ</span>
                                         </a>
@@ -1012,18 +1014,18 @@
                     <h2 class="text-center my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         เปลี่ยนรหัสผ่าน
                     </h2>
-                    <div class="bg-white rounded-md shadow-lg mb-6">
-                        <div class=" m-auto  mt-16    ">
+                    <div class="bg-white rounded-md shadow-lg mb-6 dark:bg-gray-800" >
+                        <div class=" m-auto  mt-16   ">
                             <!-- New Table -->
-                            <div class=" rounded-lg shadow-xs mb-6   overflow-auto">
+                            <div class=" rounded-lg shadow-xs mb-6   overflow-auto ">
                                 <div class="m-auto w-300px p-3 ">
                                     <form action="{{route('update_password')}}" method="POST">
                                         @csrf
-                                        <div class="bg-neutral-300 rounded-lg  justify-center p-2">
-                                            <label class="p-1"  for="">
+                                        <div class="bg-neutral-300 rounded-lg  justify-center p-2 dark:bg-gray-900">
+                                            <label class="dark:text-white" class="p-1"  for="">
                                                 รหัสผ่านเดิม 
                                             </label>
-                                             <input class="bg-white p-4 ml-2  rounded-lg  h-30px" type="text" name="old_password" id="old_password">
+                                             <input class="bg-white p-4 ml-2  rounded-lg  h-30px dark:bg-gray-800" type="text" name="old_password" id="old_password">
                                             
                                         </div>
                                             <div class="text-center text-xs mt-2" >
@@ -1031,24 +1033,24 @@
                                                     <span class="text-rose-600">{{$errors->first('old_password')}}</span>
                                                 @endif
                                             </div>
-                                        <div class="bg-neutral-300  rounded-lg justify-center p-2">
-                                            <label class="p-1" for="">
+                                        <div class="bg-neutral-300  rounded-lg justify-center p-2 dark:bg-gray-900">
+                                            <label class="p-1 dark:text-white" for="">
                                                 รหัสผ่านใหม่ 
                                             </label>
-                                            <input class="bg-white p-4 ml-2 rounded-lg  h-30px" type="text" name="new_password" id="new_password">
+                                            <input class="bg-white p-4 ml-2 rounded-lg  h-30px dark:bg-gray-800" type="text" name="new_password" id="new_password">
 
                                         </div>
-                                        <div class=" text-center text-xs mt-2" >
+                                        <div class=" text-center text-xs mt-2 " >
                                             @if ($errors->any('new_password'))
                                                 <span class="text-rose-600">{{$errors->first('new_password')}}</span>
                                             @endif
                                             </div>
-                                        <div class="bg-neutral-300 rounded-lg  justify-center p-2" >
-                                            <label class="p-1" for="">
+                                        <div class="bg-neutral-300 rounded-lg  justify-center p-2 dark:bg-gray-900" >
+                                            <label class="p-1 dark:text-white" for="">
                                                 ยืนยันรหัสผ่าน 
                                             </label>
                                            
-                                            <input class="bg-white p-4 ml-2 rounded-lg h-30px" type="password" name="confirm_password" id="confirm_password">
+                                            <input class="bg-white p-4 ml-2 rounded-lg h-30px dark:bg-gray-800" type="password" name="confirm_password" id="confirm_password">
                                             <input type="hidden" value="{{Auth::user()->id}}" name="id">
 
                                         </div>
@@ -1073,6 +1075,50 @@
                 </div>
             </main>
         </div>
+        <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>`
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>`
+        // Jika ada isDarkmode di localstorage
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
+                html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
+            } else {
+                html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
+            }
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>
