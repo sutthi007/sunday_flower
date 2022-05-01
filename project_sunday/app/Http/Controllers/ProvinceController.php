@@ -71,10 +71,8 @@ class ProvinceController extends Controller
     }
     public function updateTransportEmployee($id,$date,Request $request){
         $employee = province::find($id);
-      
-        $employee->update([
-            'Employee_id' => $request->Employee_id,
-        ]);
+
+        $employee->update($request->all());
 
         return redirect()->route('transport-em-up',$date);
     }
