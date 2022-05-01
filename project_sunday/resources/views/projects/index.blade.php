@@ -300,6 +300,7 @@
                                             จังหวัดส่งต่อ
                                         </a>
                                     </li>
+                                    
                                 </ul>
                             </template>
                         </li>
@@ -542,6 +543,12 @@
                                             อำเภอ
                                         </a>
                                     </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            จังหวัดส่งต่อ
+                                        </a>
+                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -712,6 +719,12 @@
                                         class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
                                         <a class="w-full" href="{{ route('city.index') }}">
                                             อำเภอ
+                                        </a>
+                                    </li>
+                                    <li
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            จังหวัดส่งต่อ
                                         </a>
                                     </li>
                                 </ul>
@@ -1156,7 +1169,30 @@
                                                 {{ $order->tracking }}
                                             </td>
                                             <td class="flex px-4 py-3 text-sm ">
-                                                @can('admin', 'owner')
+                                                @can('admin')
+                                                    <a class="w-6 h-6 mr-2"
+                                                        href="{{ route('FormOrder.edit', $order->id) }}">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                            stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                        </svg>
+                                                    </a>
+                                                    <form action="{{ route('projects.destroy', $order->id) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button id="" class="w-6 h-6"><svg
+                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                                stroke-width="2">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                            </svg></button>
+                                                    </form>
+                                                @endcan
+                                                @can('owner')
                                                     <a class="w-6 h-6 mr-2"
                                                         href="{{ route('FormOrder.edit', $order->id) }}">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
