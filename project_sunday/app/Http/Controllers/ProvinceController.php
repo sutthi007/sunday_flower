@@ -40,7 +40,7 @@ class ProvinceController extends Controller
     }
     public function update(Request $requset, $id){
         $province = province::find($id);
-        $province->create($requset->all());
+        $province->update($requset->all());
 
         return redirect()->route('transport.index');
     }
@@ -71,9 +71,7 @@ class ProvinceController extends Controller
     }
     public function updateTransportEmployee($id,$date,Request $request){
         $employee = province::find($id);
-
         $employee->update($request->all());
-
         return redirect()->route('transport-em-up',$date);
     }
 }

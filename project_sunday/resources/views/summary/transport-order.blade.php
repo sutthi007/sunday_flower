@@ -503,7 +503,7 @@
                                             id="grid-first-name" type="text" placeholder="{{$employee->province}}" disabled>
                                          
                                         </div>
-                                <form action="{{route('emp-update',[$employee->id,$date])}}" method="post">
+                                <!-- <form action="{{route('emp-update',[$employee->id,$date])}}" method="post">
                                         @csrf     
                                         <div class="p-2">
                                             <label
@@ -511,7 +511,7 @@
                                                 for="grid-first-name">
                                                 ชื่อพนักงานรับผิดชอบ
                                             </label>
-                                            <select class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="Employee_id">
+                                            <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="Employee_id">
                                                 <option value="{{$employee->Employee_id}}">{{$employee->Employee_id}}</option>
                                                 @foreach ($employees as $row)
                                                 <option value="{{$row->id}}">{{$row->name}}</option>  
@@ -520,10 +520,28 @@
 
                                         </div>
                                     </div>
-                                    <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
+                                </form> -->
+                                <form action="{{route('emp-update',[$employee->id,$date])}}" method="post">
+                                @csrf
+                                <div class="p-2">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                for="grid-first-name">
+                                                ชื่อพนักงานรับผิดชอบ
+                                            </label>
+                                            <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="Employee_id">
+                                                <option value="{{$employee->Employee_id}}">{{$employee->Employee_id}}</option>
+                                                @foreach ($employees as $row)
+                                                <option value="{{$row->id}}">{{$row->name}}</option>  
+                                                @endforeach
+                                            </select>
+
+                                        </div>
+                               
+                                <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
                                         <button class="w-200px h-30px bg-pink rounded mb-6 text-white">ต่อไป</button>
                                     </div>
-                                </form>
+                                 </form>
                         </div>
                     </div>
                 </div>
