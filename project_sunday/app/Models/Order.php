@@ -25,6 +25,8 @@ class Order extends Model
         'sendto',
         'price_to',
         'amount',
+        'phoneOne',
+        'provinces_to',
     ];
 
     protected $casts = [
@@ -39,5 +41,8 @@ class Order extends Model
     }
     public function city(){
         return $this->belongsTo(city::class);
+    }
+    public function provinces_to(){
+        return $this->belongsTo(province::class);
     }
 }

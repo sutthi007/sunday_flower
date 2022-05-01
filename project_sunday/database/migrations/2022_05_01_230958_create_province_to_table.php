@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('provinces', function (Blueprint $table) {
-            $table->integer('Employee_id')->nullable();
-            $table->foreign('Employee_id')->references('id')->on('users');
+        Schema::create('province_to', function (Blueprint $table) {
+            $table->id();
+            $table->string('provinces_to');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('provinces', function (Blueprint $table) {
-            $table->dropColumn('Employee_id');
-        });
+        Schema::dropIfExists('province_tos');
     }
 };

@@ -72,6 +72,7 @@ Route::get('/service/add/motorcycle',[ServiceController::class,'addlistmotorcle'
 
 //Route for transport
 Route::resource('transport',ProvinceController::class);
+Route::resource('provinceTo',ProvincesToController::class);
 Route::resource('subdistrict',subController::class);
 Route::resource('city',cityController::class);
 Route::get('province/fetch',[subController::class,'fetch'])->name('fetch');

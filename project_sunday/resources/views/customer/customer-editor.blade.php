@@ -995,7 +995,7 @@
                                             <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->type }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $customers->province }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->name }}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $customer->name }}({{ $customer->phone }})</td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->province->province }}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 {{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}

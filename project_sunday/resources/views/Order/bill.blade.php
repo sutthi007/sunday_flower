@@ -189,7 +189,11 @@
                                 @else
                                     <td class=" text-xl pr-l">{{ $order->list }}</td>
                                 @endif
+                                @if($order->provinces_to == null)
                                 <td class=" text-xl pr-l"> {{$order->city->city}}</td>
+                                @else
+                                <td class=" text-xl pr-l"> {{$order->province->name}}</td>
+                                @endif
                                 <td class=" text-xl text-center">{{ $order->quantity }}</td>
                                 
                                 <td class=" text-xl text-right pr-l">{{$price}}</td>

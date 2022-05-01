@@ -48,6 +48,8 @@ class OrderController extends Controller
             'sendto' => $request->sendto,
             'price_to' => $request->price_sendto,
             'amount' => $request->amount,
+            'phoneOne' => $request->phone_one,
+            'provinces_to' => $request->provinces,
             'tracking' => 'SD'.$request->province.time().random_int(00,99),
         ]);
         $customer = $request->customer_id;

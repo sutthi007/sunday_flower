@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
             $table->string('province');
+            $table->integer('Employee_id')->nullable();
+            $table->foreign('Employee_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
