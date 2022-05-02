@@ -90,7 +90,7 @@
                         @endforeach
                         @foreach($expenses as $expense)
                             @php
-                                $e = $expense +$e;
+                                $e = $expense->price +$e;
                             @endphp
                         @endforeach
                             @php
