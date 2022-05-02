@@ -72,23 +72,48 @@
                             <th class="">จำนวนเงิน</th>
                         </tr>
                     </thead>
-                    <tbody class="w-full p-4 border-4 text-2xl">   
+                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                    <tbody class="w-full p-4 border-4 text-2xl">
+                    @php
+                        $p = 0;
+                        $pt = 0;
+                        $total_price = 0;
+                        $e = 0;
+                        $total_expenses = 0;
+                        $sum = 0;
+                    @endphp
+                        @foreach($accounts as $row) 
+                          @php
+                            $p = ($row->price * $row->quantity) + $p ;
+                            $pt = ($row->price_to * $row->quantity) + $pt;
+                          @endphp
+                        @endforeach
+                        @foreach($expenses as $expense)
+                            @php
+                                $e = $expense +$e;
+                            @endphp
+                        @endforeach
+                            @php
+                                $total_price = $p +$pt;
+                                $sum = $total_price - $e;
+                            @endphp
                             <tr class="text-xl border-4"> 
-                                <td class=" text-center">มกราคม/2565</td>
-                                <td class="text-right pr-l">{{number_format((float)40000,2)}}</td>
-                                <td class="text-right pr-l">{{number_format((float)40000,2)}}</td>
-                                <td class="text-right pr-l">{{number_format((float)40000+40000,2)}}</td>
+                                <td class=" text-center">{{$thaiDateHelper->simpleDateFormatMonth($row->created_at)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$p,2)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$pt,2)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$total_price,2)}}</td>
                             </tr>
+                        
                             <tr class="text-xl border-4"> 
                                 <th></th>
                                 <td class=" font-bold pr-l" colspan="2">ค่าใช้จ่ายรวมทั้งหมด (บาท)</td>
-                                <td class="text-right pr-l">{{number_format((float)60000,2)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$e,2)}}</td>
                                 
                             </tr>
                             <tr class="text-xl border-4"> 
                                 <th></th>
                                 <td class=" font-bold pr-l" colspan="2">ยอดคงเหลือ (บาท)</td>
-                                <td class="text-right pr-l">{{number_format((float)40000+40000-60000,2)}}</td>
+                                <td class="text-right pr-l">{{number_format((float)$sum,2)}}</td>
                                 
                             </tr>
                     </tbody>

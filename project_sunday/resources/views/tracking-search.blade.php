@@ -114,9 +114,9 @@
                                                 @endif 
                                             </div>
                                         @endforeach
-                                    @elseif($tracking == empty)
-                                        <div class="w-auto m-auto">
-                                            <h3 class="mr-5">ไม่พบข้อมูล</h3>
+                                    @elseif(empty($tracking))
+                                        <div class="flex w-auto m-auto">
+                                            <h3 class="mr-5"> ไม่พบข้อมูล </h3>
                                         </div>
                                     @endif
                                     </div>

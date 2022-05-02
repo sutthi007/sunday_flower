@@ -515,7 +515,7 @@
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">วันที่</th>
-                                            <th class="px-8 py-3">รายได้สุทธิ</th>
+                                            <th class="px-8 py-3">รายรับวันนี้</th>
                                             <th class="px-4 py-3"></th>
 
                                         </tr>
@@ -561,23 +561,36 @@
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                             <th class="px-4 py-3">ลำดับ</th>
                                             <th class="px-4 py-3">เดือน</th>
-                                            <th class="px-8 py-3">รายได้สุทธิ</th>
+                                            <th class="px-8 py-3">รายรับเดือนนี้</th>
                                             <th class="px-4 py-3"></th>
 
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">1</td>
-                                            <td class="px-4 py-3 text-sm">เมษา 2565</td>
-                                            <td class="px-4 py-3 text-sm">500,000</td>
-                                            <td class="px-4 py-3 text-sm">
-                                               
-                                                <a href="{{route('sumMonth',$key)}}">
-                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        @foreach($accountYear as $year => $details)
+                                            @foreach($accountMonth as $row => $items)
+                                                    @php
+                                                        $i = 0;
+                                                        $t = 1;
+                                                    @endphp
+                                                    @foreach($items as $item)
+                                                        @php
+                                                            $i = ($item->quantity * $item->price) +$i;
+                                                        @endphp 
+                                                    @endforeach
+                                                    <tr class="text-gray-700 dark:text-gray-400">
+                                                        <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                                        <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormatMonth($year.'-'.$row)}}</td>
+                                                        <td class="px-4 py-3 text-sm">{{$i}}</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                        
+                                                            <a href="/account-details-month-pdf/{{$row}}/{{$year}}">
+                                                                <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                            @endforeach
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

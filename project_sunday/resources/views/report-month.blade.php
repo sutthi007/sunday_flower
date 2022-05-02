@@ -72,19 +72,43 @@
                            
                         </tr>
                     </thead>
+                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
-                            <tr class="text-xl border-4">
-                                
-                                <td class="">มกราคม</td>
-                                <td class="">เชียงใหม่</td>
-                                <td class="">300</td>
-                                <td class="">475</td>
+                        @php
+                            $total_order = 0;
+                            $total_list = 0;
+                            $all_order = 0;
+                            $all_list = 0;
+                            $i = 0;
+                        @endphp
+                            @foreach($report as $province)
+                                @foreach($reports->where('province_id',$province->province_id) as $data)
+                                    @php
+                                        $total_order = $data->count();
+                                        $total_list = $data->quantity +$total_list ;
+                                    @endphp
+                                @endforeach
+                            <tr class="text-xl border-4"> 
+                                @if($i == 0)
+                                <td class="">{{$thaiDateHelper->simpleDateFormatMonth($data->created_at)}}</td>
+                                @else
+                                <td class=""></td>
+                                @endif
+                                <td class="">{{$province->province->province}}</td>
+                                <td class="">{{$total_order}}</td>
+                                <td class="">{{$total_list}}</td>
                             </tr>
+                            @php
+                                $all_order = $total_order + $all_order;
+                                $all_list = $total_list + $all_list;
+                                $i = $i+1;
+                            @endphp
+                            @endforeach
                             <tr class="text-xl border-4">
                                 
                                 <td class="font-bold " colspan="2">ยอดรวมทั้งหมด</td>
-                                <td class="">300</td>
-                                <td class="">475</td>
+                                <td class="">ทั้งหมด {{$all_order}} ออเดอร์</td>
+                                <td class="">ทั้งหมด {{$all_list}} รายการ</td>
                             </tr>
                            
                     </tbody>

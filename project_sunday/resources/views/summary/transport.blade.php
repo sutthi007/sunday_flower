@@ -565,18 +565,31 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                    <tr class="text-gray-700 dark:text-gray-400">
-                                        <td class="px-4 py-3 text-sm">1</td>
-                                        <td class="px-4 py-3 text-sm">เมษา 2565</td>
-                                        <td class="px-4 py-3 text-sm">500</td>
-                                        <td class="px-4 py-3 text-sm">1000</td>
-                                        <td class="px-4 py-3 text-sm ">
+                                    @foreach($sumYear as $year => $details)
+                                        @foreach($sumMonth as $row => $items)
+                                            @php
+                                                $i = 0;
+                                                $t = 1;
+                                            @endphp
+                                            @foreach($items as $item)
+                                                @php
+                                                    $i = $item->quantity+$i;
+                                                @endphp 
+                                            @endforeach
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormatMonth($year.'-'.$row)}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$item->count()}}</td>
+                                                <td class="px-4 py-3 text-sm">{{$i}}</td>
+                                                <td class="px-4 py-3 text-sm ">
 
-                                            <a href="{{route('reportMonth',$test)}}">
-                                                <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                                    <a href="/report-month/{{$row}}/{{$year}}">
+                                                        <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
