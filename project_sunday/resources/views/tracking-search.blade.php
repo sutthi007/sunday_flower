@@ -70,43 +70,52 @@
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                     @if($tracking != null)
                                         @foreach($tracking as $row)
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">รหัส :</h3><p>{{$row->tracking}}</p>
-                                        </div>
-                                        @if($row->status == 'order')
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">สถานะ :</h3><p>รับเข้าระบบเรียบร้อยแล้ว</p>
-                                        </div>
-                                        @elseif($row->status == 'send')
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">สถานะ :</h3><p>ออเดอร์กำลังถูกจัดส่ง</p>
-                                        </div>
-                                        @else
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">สถานะ :</h3><p>การจัดส่งเรียบร้อยแล้ว</p>
-                                        </div>
-                                        @endif
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">ชื่อผู้ส่ง:</h3><p>{{$row->customer->name}}</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">ชื่อผู้รับ :</h3><p>{{$row->name}}</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">ประเภทจัดส่ง :</h3><p>{{$row->type}} {{$row->list}}</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">เวลารับรายการ :</h3><p>{{$thaiDateHelper->simpleDateFormatcustomer($row->created_at)}}</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot mt-6">
-                                            <h3 class="mr-5">ชื่อพนักงานจัดส่ง :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
-                                        <div class="flex w-auto m-auot">
-                                            <h3 class="mr-5">เบอร์โทรติดต่อผู้จัดส่ง :</h3><p>กำลังจัดส่ง</p>
-                                        </div>
+                                            <div class="flex w-auto m-auto">
+                                                <h3 class="mr-5">รหัส :</h3><p>{{$row->tracking}}</p>
+                                            </div>
+                                                @if($row->status == 'order')
+                                                    <div class="flex w-auto m-auto">
+                                                        <h3 class="mr-5">สถานะ :</h3><p>รับเข้าระบบเรียบร้อยแล้ว</p>
+                                                    </div>
+                                                @elseif($row->status == 'send')
+                                                    <div class="flex w-auto m-auto">
+                                                        <h3 class="mr-5">สถานะ :</h3><p>ออเดอร์กำลังถูกจัดส่ง</p>
+                                                    </div>
+                                                @else
+                                                    <div class="flex w-auto m-auto">
+                                                        <h3 class="mr-5">สถานะ :</h3><p>การจัดส่งเรียบร้อยแล้ว</p>
+                                                    </div>
+                                                @endif
+                                            <div class="flex w-auto m-auto">
+                                                <h3 class="mr-5">ชื่อผู้ส่ง:</h3><p>{{$row->customer->name}}</p>
+                                            </div>
+                                            <div class="flex w-auto m-auto">
+                                                <h3 class="mr-5">ชื่อผู้รับ :</h3><p>{{$row->name}}</p>
+                                            </div>
+                                            <div class="flex w-auto m-auto">
+                                                <h3 class="mr-5">ประเภทจัดส่ง :</h3><p>{{$row->type}} {{$row->list}}</p>
+                                            </div>
+                                            <div class="flex w-auto m-auto">
+                                                <h3 class="mr-5">เวลารับรายการ :</h3><p>{{$thaiDateHelper->simpleDateFormatcustomer($row->created_at)}}</p>
+                                            </div>
+                                            <div class="flex w-auto m-auto mt-6">
+                                                @if($row->province->user_id == null)
+                                                    <h3 class="mr-5">ชื่อพนักงานจัดส่ง :</h3><p>กำลังส่งไปยังพนักงานจัดส่ง</p>
+                                                @else
+                                                    <h3 class="mr-5">ชื่อพนักงานจัดส่ง :</h3><p>{{$row->province->user->name}}</p>
+                                                @endif
+                                                
+                                            </div>
+                                            <div class="flex w-auto m-auto">
+                                                @if($row->province->user_id == null)
+                                                    <h3 class="mr-5">เบอร์โทรติดต่อผู้จัดส่ง :</h3><p>กำลังส่งไปยังพนักงานจัดส่ง</p>
+                                                @else
+                                                    <h3 class="mr-5">เบอร์โทรติดต่อผู้จัดส่ง :</h3><p>{{$row->province->user->phone}}</p>
+                                                @endif 
+                                            </div>
                                         @endforeach
-                                    @else
-                                        <div class="flex w-auto m-auto">
+                                    @elseif($tracking == empty)
+                                        <div class="w-auto m-auto">
                                             <h3 class="mr-5">ไม่พบข้อมูล</h3>
                                         </div>
                                     @endif

@@ -100,23 +100,29 @@
                     </thead>
                     <tbody >
                         @php
+                            $quantitys = 0;
                             $sum = 0;
                         @endphp
-                        @foreach( $orders->where('province_id',$province)->sortby('type')->sortby('city_id') as $order)
-                            <tr>
-                                <td>{{$order->type}}</td>
-                                @if($order->list == null)
-                                 <td> - </td>
-                                @else
-                                 <td>{{$order->list}}</td>
-                                @endif
-                                <td>{{$order->city->city}}</td>
-                                <td>{{ $order->name }} ({{$order->phone}})</td>
-                                <td>{{$order->quantity}}</td>
-                            </tr>
-                            @php
-                                $sum = $sum + $order->quantity
-                            @endphp
+                        @foreach( $GroupOrder->where('province_id',$province)->sortby('type')->sortby('city_id') as $order)
+                            @foreach( $orders->where('province_id',$province) as $row)
+                                @php
+                                    $quantitys = $row->quantity + $quantitys;
+                                @endphp
+                            @endforeach
+                                <tr>
+                                    <td>{{$order->type}}</td>
+                                    @if($order->list == null)
+                                    <td> - </td>
+                                    @else
+                                    <td>{{$order->list}}</td>
+                                    @endif
+                                    <td>{{$order->city->city}}</td>
+                                    <td>{{ $order->name }} ({{$order->phone}})</td>
+                                    <td>{{$quantitys}}</td>
+                                </tr>
+                                @php
+                                    $sum = $sum + $quantitys
+                                @endphp
                        @endforeach
                        <tr>
                            <td colspan="4">รวม</td>

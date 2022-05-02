@@ -142,32 +142,19 @@ class OrderController extends Controller
 
         return redirect()->route('bill', $customer);
     }
-    public function exporttoexcel($id)
-    {
-        $order = Order::find($id);
-
-        return Excel::download(new TransportsDaysExport, $order->created_at . 'รายงานขนส่ง.xlsx');
-    }
-    public function export(){
-        return Excel::download(new TransportsDaysExport(),'test.xlsx');
-    }
     // public function pdf(){
     //     return (new TransportsDaysExport)->download('active.pdf');
     // }
     public function downloadPDF($date,$province,Request $request){
         $orders = Order::whereDate('created_at',$date)->get();
+        $GroupOrder = Order::whereDate('created_at',$date)
+                        ->select('list','type','name','city_id','province_id','phone')
+                        ->groupBy('list','type','name','city_id','province_id','phone')
+                        ->get();
 
-        $pdf = PDF::loadView('report',compact('orders','province'));
+        $pdf = PDF::loadView('report',compact('orders','province','GroupOrder'));
         return @$pdf->stream();
     }
 
-    public function viewReport(){
-        $orders = Order::all()->where('province_id','1');
-
-        $province = 'เชียงใหม่';
-
-
-        return view('report',compact('orders','province'));
-    }
    
 }
