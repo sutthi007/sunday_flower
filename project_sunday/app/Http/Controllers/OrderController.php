@@ -165,7 +165,7 @@ class OrderController extends Controller
                         ->select('list','type','name','city_id','province_id','phone')
                         ->groupBy('list','type','name','city_id','province_id','phone')
                         ->get();
-
+        
         $pdf = PDF::loadView('report',compact('orders','province','GroupOrder'));
         return @$pdf->stream();
     }

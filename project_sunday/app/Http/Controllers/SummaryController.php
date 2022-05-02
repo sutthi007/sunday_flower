@@ -61,7 +61,8 @@ class SummaryController extends Controller
                              ;
         $accounts = Order::whereDate('created_at',$date)->get();
         $expenses = expenses::whereDate('created_at',$date)->get();
-        $pdf = PDF::loadView('sum',compact('account','accounts','expenses'));
+        $customPaper = array(0,0,567.00,283.80);
+        $pdf = PDF::loadView('sum',compact('account','accounts','expenses'))->setPaper($customPaper, 'landscape');
         return @$pdf->stream();
     }
     public function viewSumMonth($date,$year){
