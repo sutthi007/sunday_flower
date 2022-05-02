@@ -493,9 +493,7 @@
                     </h2>
 
                     <div class="relative p-6 flex-auto dark:bg-gray-800 rounded-lg ">
-                        <form action="{{ route('updateOrder', $order->id) }}" method="POST">
-                            @csrf
-                            @method('PUT')
+                        
                             <div class="">
                                 <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
                                     <h1>ผู้ส่ง</h1>
@@ -547,6 +545,9 @@
                             <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
                                 <h1>ผู้รับ</h1>
                             </div>
+                        <form action="{{ route('updateOrder', $order->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
 
                                 <div class="  w-full  px-3 mb-6 md:mb-0">
@@ -609,17 +610,18 @@
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" placeholder="" value="{{ $order->phone }}">
+                                        id="grid-first-name" type="text" placeholder="" value="{{ $order->phone }}" name="phone">
                                 </div>
                                 <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                        for="grid-first-name">
+                                        for="grid-first-name" >
                                         เบอร์โทรที่2
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" placeholder="" value="">
+                                        id="telInput" onkeypress="addSpace()" type="tels" value="{{ $order->phoneOne }}"
+                                        name="phoneOne" maxlength="11" />
                                 </div>
                                 <div class=" w-full px-3 mb-6 md:mb-0 ">
                                     <label
@@ -694,6 +696,16 @@
             }
         }
         switchTheme()
+    </script>
+    <script>
+         function addSpace() {
+            var inputValue = document.getElementById("telInput").value;
+            var inputValueLength = inputValue.length;
+
+            if (inputValueLength == 3) {
+                document.getElementById("telInput").value = inputValue + "-";
+            }
+        }
     </script>
 </body>
 

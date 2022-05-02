@@ -29,13 +29,28 @@ class OrderController extends Controller
             'name' =>'required',
             'city' =>'required',
             'province' =>'required',
-            'phone' =>'required',
-            'type' =>'required',
+            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
             'quantity' =>'required',
             'price' =>'required',
-            'customer_id' =>'required',
             'amount' => 'required',
-        ]);
+            'type' => 'required'
+        ],
+        [
+            'name.required' =>'กรุณากรอบชื่อ-ผู้รับ',
+            'province.required' => 'กรุณาเลือกจังหวัด',
+            'city.required' => 'กรุณาเลือกอำเภอ',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'phone_relative.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone_relative.regex'=> 'กรุณากรอก 09 08 05',
+            'phone_relative.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'type.required'=> 'กรุณาเลือกประเภท',
+            'quantity.required' => 'กรุณากรอกจำนวน',
+            'price.required' => 'กรุณากรอกราคา',
+            'amount.required' => 'กรุณากรอกหน่วย'
+        ]
+    );
         $order = Order::create([
             'name' => $request->name,
             'city_id' => $request->city,
@@ -98,10 +113,9 @@ class OrderController extends Controller
     public function updateOrder(Request $request, $id)
     {
         $order = Order::find($id);
-
         $order->update($request->all());
 
-        return redirect()->route('FormOrder.show',$id)
+        return redirect()->route('FormOrder.show',$order->customer_id)
             ->with('success', 'อัปเดทสำเร็จ ');
     }
     public function sum($id)

@@ -599,6 +599,10 @@
                                                         </option>
                                                     @endforeach
                                                 </select>
+                                                @if ($errors->any('province'))
+                                                <p class="text-red-500 text-xs italic text-center">
+                                                    {{ $errors->first('province') }}</p>
+                                            @endif
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <label
@@ -611,6 +615,10 @@
                                                     id="grid-first-name" type="text" placeholder="" name="city">
                                                     <option value="">---เลือกอำเภอ----</option>
                                                 </select>
+                                                @if ($errors->any('city'))
+                                                <p class="text-red-500 text-xs italic text-center">
+                                                    {{ $errors->first('city') }}</p>
+                                            @endif
                                             </div>
                                             <div class="w-full px-3 mb-6 md:mb-0 ">
                                                 <label
@@ -622,6 +630,10 @@
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
                                                     name="phone" maxlength="11" />
+                                                    @if ($errors->any('phone'))
+                                                    <p class="text-red-500 text-xs italic text-center">
+                                                        {{ $errors->first('phone') }}</p>
+                                                @endif
                                             </div>
                                             <div class="w-full px-3 mb-6 md:mb-0 ">
                                                 <label
@@ -631,7 +643,7 @@
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="telInputs" onkeypress="addSpaces()" type="tels" placeholder=""
+                                                    id="telInput" onkeypress="addSpaces()" type="tels" placeholder=""
                                                     name="phone_one" maxlength="11" />
                                             </div>
                                             <div class=" w-full px-3 mb-6 md:mb-0 ">
@@ -692,8 +704,12 @@
                                                     <option value="มอเตอร์ไซต์">มอเตอร์ไซต์</option>
                                                     <option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
                                                 </select>
+                                                @if ($errors->any('type'))
+                                                <p class="text-red-500 text-xs italic text-center">
+                                                    {{ $errors->first('type') }}</p>
+                                            @endif
                                             </div>
-                                            <div class="w-full px-3 mb-6 md:mb-0 " style="display:block;" id="ifYes">
+                                            <div class=" w-full px-3 mb-6 md:mb-0 " style="display:block;" id="ifYes">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                                     for="grid-first-name">
@@ -715,6 +731,10 @@
                                                             class="appearance-none block w-200px text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                             id="grid-first-name" type="text" placeholder=""
                                                             name="quantity" />
+                                                            @if ($errors->any('quantity'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('quantity') }}</p>
+                                        @endif
                                                     </div>
                                                     <div>
                                                         <label
@@ -725,6 +745,10 @@
                                                         <input
                                                             class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                             id="grid-first-name" type="text" placeholder="" name="amount" />
+                                                            @if ($errors->any('amount'))
+                                                            <p class="text-red-500 text-xs italic text-center">
+                                                                {{ $errors->first('amount') }}</p>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -738,7 +762,13 @@
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="grid-first-name" type="text" placeholder="" name="price" />
                                                 <input type="hidden" name="customer_id" value="{{ $customer->id }}">
+                                                @if ($errors->any('price'))
+                                                <p class="text-red-500 text-xs italic text-center">
+                                                    {{ $errors->first('price') }}</p>
+                                            @endif
+                                                
                                             </div>
+                                            
                                         </div>
 
                                 </div>
@@ -983,10 +1013,14 @@
         function yesnoCheck(that) {
             if (that.value == "ดอกไม้") {
                 document.getElementById("ifYes").style.display = "none";
-            } else {
+            } else if (that.value == "มอเตอร์ไซต์"){
+                document.getElementById("ifYes").style.display = "none";
+            } else{
                 document.getElementById("ifYes").style.display = "block";
             }
+           
         } 
+       
     </script>
 </body>
 
