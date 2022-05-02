@@ -98,6 +98,8 @@ Route::get('/account-details-day/{date}', function ($date) {
     return view('summary/account-details-day',compact('account','date'));
 });
 Route::get('/account-details-day-pdf/{date}',[SummaryController::class,'viewSum'])->name('sum');
+Route::get('/account-details-month-pdf/{date}',[SummaryController::class,'viewSumMonth'])->name('sumMonth');
+Route::get('/report-month/{month}',[SummaryController::class,'viewreportMonth'])->name('reportMonth');
 
 Route::get('/transport-details-day/{date}', function ($date){
     $transport = Order::select('province_id')

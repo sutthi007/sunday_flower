@@ -43,4 +43,24 @@ class SummaryController extends Controller
         $pdf = PDF::loadView('sum',compact('account','accounts','expenses'));
         return @$pdf->stream();
     }
+    public function viewSumMonth($date){
+        $account = Order::whereDate('created_at',$date)
+                            ->select('list','province_id','type')
+                             ->groupBy('list','province_id','type')->get()
+                             ;
+        $accounts = Order::whereDate('created_at',$date)->get();
+        $expenses = expenses::whereDate('created_at',$date)->get();
+        $pdf = PDF::loadView('sum-month',compact('account','accounts','expenses'));
+        return @$pdf->stream();
+    }
+    public function viewreportMonth($month){
+        $account = Order::whereDate('created_at',$month)
+                            ->select('list','province_id','type')
+                             ->groupBy('list','province_id','type')->get()
+                             ;
+        $accounts = Order::whereDate('created_at',$month)->get();
+        $expenses = expenses::whereDate('created_at',$month)->get();
+        $pdf = PDF::loadView('report-month',compact('account','accounts','expenses'));
+        return @$pdf->stream();
+    }
 }

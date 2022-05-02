@@ -573,7 +573,7 @@
                                             <td class="px-4 py-3 text-sm">500,000</td>
                                             <td class="px-4 py-3 text-sm">
                                                
-                                                <a href="/account-details-month">
+                                                <a href="{{route('sumMonth',$key)}}">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                                 </a>
                                             </td>

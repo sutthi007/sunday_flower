@@ -560,7 +560,7 @@
                                         <th class="px-4 py-3">เดือน</th>
                                         <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
                                         <th class="px-8 py-3">รายการทั้งหมด</th>
-                                        <th class="px-4 py-3"></th>
+                                        <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
                                     </tr>
                                 </thead>
@@ -572,9 +572,8 @@
                                         <td class="px-4 py-3 text-sm">1000</td>
                                         <td class="px-4 py-3 text-sm ">
 
-                                            <a href="/transport-details-month">
-                                                <button
-                                                    class="bg-pink w-94px h-24px rounded-md text-white">รายละเอียด</button>
+                                            <a href="{{route('reportMonth',$test)}}">
+                                                <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                             </a>
                                         </td>
                                     </tr>
