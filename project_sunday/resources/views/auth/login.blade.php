@@ -62,6 +62,11 @@
 
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                 <!-- You should use a button here, as the anchor is only used for the example  -->
+                @if(session()->has('success'))
+                    <div class="bg-green-100 border border-red-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
                 <button
                   class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink border border-transparent rounded-lg active:bg-fuchsia-500 hover:bg-fuchsia-500 focus:outline-none focus:shadow-outline-purple"
                 >

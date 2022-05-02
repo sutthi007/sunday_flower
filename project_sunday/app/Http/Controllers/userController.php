@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\customer;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Hash;
 class userController extends Controller
 {
     //
@@ -84,6 +86,32 @@ class userController extends Controller
         ]);
 
         return redirect()->back();
+    }
+    public function forgot_password(Request $request){
+        $user = User::where('IDuser',$request->IDuser)->first();
+        $request->validate([
+            'IDuser' => 'required',
+            'phone' => 'required',
+            ],
+            [
+                'IDuser.required' => 'กรุณากรอกเลขที่ผู้ใช้',
+                'phone.required' => 'กรุณากรอกเลขเบอร์โทร',
+            ]);
+            if($request->IDuser == $user->IDuser){
+                if($request->phone == $user->phone){
+
+                    $user->update([
+                        'password' => bcrypt('123456789'),
+                    ]);
+        
+                    return redirect()->route('login')->with('success',('รีเซ็ตรหัสผ่านเรียบร้อย'));
+                }else{
+                    return redirect()->back()->with('error',('เบอร์โทรไม่ถูกต้อง'));
+                }
+            }else{
+                return redirect()->back()->with('error',('เลขผู้ใช้ไม่ถูกต้อง'));
+            }
+            
     }
 
 }

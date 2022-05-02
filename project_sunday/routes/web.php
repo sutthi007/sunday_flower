@@ -122,6 +122,10 @@ Route::get('/transport-details-month',function (){
     return view('summary/transport-details-month');
 })->middleware(['auth']);
 
+Route::resource('expenses',expensesController::class)->middleware(['auth']);
+Route::get('/expenses-editor', function (){
+    return view('summary/expenses-editor');
+})->middleware(['auth']);
 Route::get('/tracking',function (){
     return view('tranking');
 });
@@ -129,8 +133,4 @@ Route::get('/tracking-search',function (Request $request){
     $tracking = Order::all()->where('tracking',$request->tracking);
     return view('tracking-search',compact('tracking'));
 });
-
-Route::resource('expenses',expensesController::class)->middleware(['auth']);
-Route::get('/expenses-editor', function (){
-    return view('summary/expenses-editor');
-})->middleware(['auth']);
+Route::post('forgot-password',[userController::class,'forgot_password'])->name('forgot');

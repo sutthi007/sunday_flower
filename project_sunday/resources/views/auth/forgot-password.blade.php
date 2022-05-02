@@ -31,7 +31,7 @@
             </div>
           </div>
           <div class="flex items-center justify-center p-1 sm:p-12 md:w-1/2">
-            <form action="{{ route('login') }}" method="POST">
+            <form action="{{ route('forgot') }}" method="POST">
               @csrf
 
               <div class="w-300px">
@@ -55,7 +55,8 @@
                     class="block w-full mt-1 p-2 text-sm border-2 rounded-lg border-pink h-9 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input"
                     placeholder="080-xxxxxxx"
                     type="text"
-                    name=""
+                    name="phone"
+                    maxlength="10"
                     required autocomplete="current-password"
                   />
                 </label>
@@ -63,6 +64,16 @@
 
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
                 <!-- You should use a button here, as the anchor is only used for the example  -->
+                @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+                @if(session()->has('error'))
+                    <div class="alert alert-success">
+                        {{ session()->get('error') }}
+                    </div>
+                @endif
                 <button
                   class="block w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-pink border border-transparent rounded-lg active:bg-fuchsia-500 hover:bg-fuchsia-500 focus:outline-none focus:shadow-outline-purple"
                 >
