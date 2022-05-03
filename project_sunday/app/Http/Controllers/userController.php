@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\customer;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\province;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -15,7 +16,8 @@ class userController extends Controller
 
         $orders = Order::whereDate('created_at',Carbon::today())->orderBy('id', 'DESC')->paginate(10);
         $status = Order::whereDate('created_at',Carbon::today());
-        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        $provinces = province::all();
+        return view('projects.index',compact('orders','status','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function store(Request $request){
        $request->validate([
@@ -52,31 +54,39 @@ class userController extends Controller
         $status = Order::whereDate('created_at',Carbon::today());
         $search = $request->get('search');
         $orders = Order::whereDate('created_at',Carbon::today())->where('name', 'LIKE', '%'.$search. '%')->orWhere('type', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+        $provinces = province::all();
 
-        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        return view('projects.index',compact('orders','status','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function dateScan(Request $request){
 
         $date = $request->get('date');
         $status = Order::whereDate('created_at',$date);
         $orders = Order::whereDate('created_at',$date)->paginate(10);
+        $provinces = province::all();
 
-       return view('projects.index',compact('status','orders'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+       return view('projects.index',compact('status','orders','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function order(){
         $orders = Order::whereDate('created_at',Carbon::today())->Where('status','order')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::whereDate('created_at',Carbon::today());
-        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        $provinces = province::all();
+
+        return view('projects.index',compact('orders','status','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function transit(){
         $orders = Order::whereDate('created_at',Carbon::today())->where('status','send')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::whereDate('created_at',Carbon::today());
-        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        $provinces = province::all();
+
+        return view('projects.index',compact('orders','status','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function success(){
         $orders = Order::whereDate('created_at',Carbon::today())->where('status','success')->orderBy('id', 'DESC')->paginate(10);
         $status = Order::whereDate('created_at',Carbon::today());
-        return view('projects.index',compact('orders','status'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
+        $provinces = province::all();
+
+        return view('projects.index',compact('orders','status','provinces'))->with('i',(request()->input('page',1 ) - 1 ) * 10);
     }
     public function update($id,Request $request){
         $order = Order::find($id);

@@ -967,264 +967,664 @@
                     </ul>
                 </div>
             </header>
-            <main class="h-full overflow-y-auto">
-                <div class="container px-6 mx-auto grid ">
-                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        หน้าหลัก
-                    </h2>
-                    <!-- Cards -->
-                    <div class="grid  gap-6 mb-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
-                        <!-- Card -->
-                        <a href="{{ route('projects-order') }}">
-                            <div
-                                class="flex justify-between p-4   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
-                                <div class="place-content-center">
-                                    <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
-                                    <path>
-                                        <img src="/img/order.svg" alt="" />
-                                    </path>
+            @can('owner')
+                <main class="h-full overflow-y-auto">
+                    <div class="container px-6 mx-auto grid ">
+                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                            หน้าหลัก
+                        </h2>
+                        <!-- Cards -->
+                        <div class="grid  gap-6 mb-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+                            <!-- Card -->
+                            <a href="{{ route('projects-order') }}">
+                                <div
+                                    class="flex justify-between p-4   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
+                                        <path>
+                                            <img src="/img/order.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full   ">
+                                        <p class="text-50px text-white">{{ $status->where('status', 'order')->count() }}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full   ">
-                                    <p class="text-50px text-white">{{ $status->where('status', 'order')->count() }}
-                                    </p>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-transit') }}">
+                                <div
+                                    class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
+                                    <div class="place-content-center">
+                                        <p class=" text-2xl text-white">กำลังส่ง</p>
+                                        <path>
+                                            <img src="/img/delivery-truck.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">{{ $orders->where('status', 'send')->count() }}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="{{ route('projects-transit') }}">
-                            <div
-                                class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
-                                <div class="place-content-center">
-                                    <p class=" text-2xl text-white">กำลังส่ง</p>
-                                    <path>
-                                        <img src="/img/delivery-truck.svg" alt="" />
-                                    </path>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-success') }}">
+                                <div
+                                    class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">สำเร็จ</p>
+                                        <path>
+                                            <img src="/img/clipboard.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">
+                                            {{ $orders->where('status', 'success')->count() }}</p>
+                                    </div>
                                 </div>
-                                <div class="p-3 mr-4 rounded-full">
-                                    <p class="text-50px text-white">{{ $orders->where('status', 'send')->count() }}
-                                    </p>
-                                </div>
-                            </div>
-                        </a>
-                        <!-- Card -->
-                        <a href="{{ route('projects-success') }}">
-                            <div
-                                class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
-                                <div class="place-content-center">
-                                    <p class="mb-2 text-2xl text-white">สำเร็จ</p>
-                                    <path>
-                                        <img src="/img/clipboard.svg" alt="" />
-                                    </path>
-                                </div>
-                                <div class="p-3 mr-4 rounded-full">
-                                    <p class="text-50px text-white">
-                                        {{ $orders->where('status', 'success')->count() }}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    {{-- show date --}}
-                    <div clas="w-full ">
-                        <div
-                            class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
-                            <div
-                                class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
-                                <div class="p-3">
-                                    <form class="flex" action="{{ route('date') }}" method="get">
-                                        @csrf
-                                        <input class="dark:text-white dark:bg-gray-800" type="date" name="date" value="YYYY-MM-DD" >
-                                        
-                                        <button
-                                            class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
-                                    </form>
-                                </div>
-                            </div>
-                        
+                            </a>
                         </div>
-                    </div>
-                    <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                        <div class="w-full overflow-x-auto">
-                            <table class="w-full whitespace-no-wrap">
-                                <thead>
-                                    <tr
-                                        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                        <th class="px-4 py-3">เลขที่</th>
-                                        <th class="px-4 py-3">รายการ</th>
-                                        <th class="px-4 py-3">ชื่อ-ผู้ส่ง</th>
-                                        <th class="px-4 py-3">ชื่อ-ผู้รับ</th>
-                                        <th class="px-4 py-3">จังหวัด-ที่ส่ง</th>
-                                        <th class="px-4 py-3">จุดลง</th>
-                                        <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3"></th>
-                                        <th class="px-4 py-3">รหัสติดตาม</th>
-                                        <th class="px-4 py-3"></th>
-                                    </tr>
-                                </thead>
-                                @php($i = 1)
-                                @php($s = 1)
-                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                @foreach ($orders as $order)
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3">
-                                                <div class="flex items-center text-sm">
-                                                    <!-- Avatar with inset shadow -->
-                                                    <div>
-                                                        <p class="font-semibold">{{ $i++ }}</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">{{ $order->type }}{{ $order->list }}
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <div class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                                    {{ $order->customer->name }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-xs">
-                                                <div class="px-2 py-1 font-semibold leading-tight rounded-full">
-                                                    {{ $order->name }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $order->province->province }}
-                                            </td>
-                                            @if($order->provinces_tos_id == null)
-                                                <td class="px-4 py-3 text-x">
-                                                    {{ $order->city->city}}
-                                                </td>
-                                            @else
-                                                <td class="px-4 py-3 text-x">
-                                                    {{ $order->provinces_tos->provinces_to}}
-                                                </td>
-                                            @endif
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
-                                            </td>
-                                            @if ($order->status == 'order')
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        ออเดอร์
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    @can('admin')
-                                                        <form action="{{ route('projects.update', $order->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <input type="hidden" name="status" value="send">
-                                                            <button
-                                                                onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
-                                                        </form>
-                                                    @endcan
-                                                    @can('owner')
-                                                        <form action="{{ route('projects.update', $order->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <input type="hidden" name="status" value="send">
-                                                            <button
-                                                                onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
-                                                        </form>
-                                                    @endcan
-                                                </td>
-                                            @elseif($order->status == 'send')
-                                                @php($s++)
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        กำลังจัดส่ง
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    @can('employee')
-                                                        <form action="{{ route('projects.update', $order->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            @method('PUT')
-                                                            <input type="hidden" name="status" value="success">
-                                                            <button
-                                                                onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
-                                                                class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
-                                                        </form>
-                                                    @endcan
-                                                </td>
-                                            @elseif($order->status == 'success')
-                                                <td class="px-4 py-3 text-sm ">
-                                                    <div
-                                                        class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
-                                                        จัดสังสำเร็จ
-                                                    </div>
-                                                </td>
-                                                <td></td>
-                                            @endif
-
-                                            <td class="px-4 py-3 text-sm ">
-                                                {{ $order->tracking }}
-                                            </td>
-                                            <td class="flex px-4 py-3 text-sm ">
-                                                @can('admin')
-                                                    <a class="w-6 h-6 mr-2"
-                                                        href="{{ route('FormOrder.edit', $order->id) }}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                        </svg>
-                                                    </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
-                                                @endcan
-                                                @can('owner')
-                                                    <a class="w-6 h-6 mr-2"
-                                                        href="{{ route('FormOrder.edit', $order->id) }}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                                                        </svg>
-                                                    </a>
-                                                    <form action="{{ route('projects.destroy', $order->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
-                                                @endcan
-                                            </td>
+                        {{-- show date --}}
+                        <div clas="w-full ">
+                            <div
+                                class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
+                                <div
+                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    <div class="p-3">
+                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                            @csrf
+                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date" value="YYYY-MM-DD" >
+                                            
+                                            <button
+                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">เลขที่</th>
+                                            <th class="px-4 py-3">รายการ</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้ส่ง</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้รับ</th>
+                                            <th class="px-4 py-3">จังหวัด-ที่ส่ง</th>
+                                            <th class="px-4 py-3">จุดลง</th>
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-4 py-3">สถานะ</th>
+                                            <th class="px-4 py-3"></th>
+                                            <th class="px-4 py-3">รหัสติดตาม</th>
+                                            <th class="px-4 py-3"></th>
                                         </tr>
-                                    </tbody>
-                                @endforeach
-                            </table>
+                                    </thead>
+                                    @php($i = 1)
+                                    @php($s = 1)
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @foreach ($orders as $order)
+                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3">
+                                                    <div class="flex items-center text-sm">
+                                                        <!-- Avatar with inset shadow -->
+                                                        <div>
+                                                            <p class="font-semibold">{{ $i++ }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-sm">{{ $order->type }}{{ $order->list }}
+                                                </td>
+                                                <td class="px-4 py-3 text-xs">
+                                                    <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                        {{ $order->customer->name }}
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-xs">
+                                                    <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                        {{ $order->name }}
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $order->province->province }}
+                                                </td>
+                                                @if($order->provinces_tos_id == null)
+                                                    <td class="px-4 py-3 text-x">
+                                                        {{ $order->city->city}}
+                                                    </td>
+                                                @else
+                                                    <td class="px-4 py-3 text-x">
+                                                        {{ $order->provinces_tos->provinces_to}}
+                                                    </td>
+                                                @endif
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
+                                                </td>
+                                                @if ($order->status == 'order')
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            ออเดอร์
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                            <form action="{{ route('projects.update', $order->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="send">
+                                                                <button
+                                                                    onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
+                                                                    class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                            </form>
+                                                    </td>
+                                                @elseif($order->status == 'send')
+                                                    @php($s++)
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            กำลังจัดส่ง
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                    
+                                                            <form action="{{ route('projects.update', $order->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="success">
+                                                                <button
+                                                                    onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
+                                                                    class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                            </form>
+                                                    
+                                                    </td>
+                                                @elseif($order->status == 'success')
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            จัดสังสำเร็จ
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                @endif
+
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $order->tracking }}
+                                                </td>
+                                                <td class="flex px-4 py-3 text-sm ">
+                                                        <a class="w-6 h-6 mr-2"
+                                                            href="{{ route('FormOrder.edit', $order->id) }}">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                                stroke-width="2">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                            </svg>
+                                                        </a>
+                                                        <form action="{{ route('projects.destroy', $order->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button id="" class="w-6 h-6"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                                    stroke-width="2">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                </svg></button>
+                                                        </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    @endforeach
+                                </table>
+                            </div>
+                            {{ $orders->links() }}
                         </div>
-                        {{ $orders->links() }}
                     </div>
-                </div>
-            </main>
+                </main>
+            @endcan
+            @can('admin')
+                <main class="h-full overflow-y-auto">
+                    <div class="container px-6 mx-auto grid ">
+                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                            หน้าหลัก
+                        </h2>
+                        <!-- Cards -->
+                        <div class="grid  gap-6 mb-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+                            <!-- Card -->
+                            <a href="{{ route('projects-order') }}">
+                                <div
+                                    class="flex justify-between p-4   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
+                                        <path>
+                                            <img src="/img/order.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full   ">
+                                        <p class="text-50px text-white">{{ $status->where('status', 'order')->count() }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-transit') }}">
+                                <div
+                                    class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
+                                    <div class="place-content-center">
+                                        <p class=" text-2xl text-white">กำลังส่ง</p>
+                                        <path>
+                                            <img src="/img/delivery-truck.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">{{ $orders->where('status', 'send')->count() }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-success') }}">
+                                <div
+                                    class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">สำเร็จ</p>
+                                        <path>
+                                            <img src="/img/clipboard.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">
+                                            {{ $orders->where('status', 'success')->count() }}</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {{-- show date --}}
+                        <div clas="w-full ">
+                            <div
+                                class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
+                                <div
+                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    <div class="p-3">
+                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                            @csrf
+                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date" value="YYYY-MM-DD" >
+                                            
+                                            <button
+                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">เลขที่</th>
+                                            <th class="px-4 py-3">รายการ</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้ส่ง</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้รับ</th>
+                                            <th class="px-4 py-3">จังหวัด-ที่ส่ง</th>
+                                            <th class="px-4 py-3">จุดลง</th>
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-4 py-3">สถานะ</th>
+                                            <th class="px-4 py-3"></th>
+                                            <th class="px-4 py-3">รหัสติดตาม</th>
+                                            <th class="px-4 py-3"></th>
+                                        </tr>
+                                    </thead>
+                                    @php($i = 1)
+                                    @php($s = 1)
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @foreach ($orders as $order)
+                                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3">
+                                                    <div class="flex items-center text-sm">
+                                                        <!-- Avatar with inset shadow -->
+                                                        <div>
+                                                            <p class="font-semibold">{{ $i++ }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-sm">{{ $order->type }}{{ $order->list }}
+                                                </td>
+                                                <td class="px-4 py-3 text-xs">
+                                                    <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                        {{ $order->customer->name }}
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-xs">
+                                                    <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                        {{ $order->name }}
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $order->province->province }}
+                                                </td>
+                                                @if($order->provinces_tos_id == null)
+                                                    <td class="px-4 py-3 text-x">
+                                                        {{ $order->city->city}}
+                                                    </td>
+                                                @else
+                                                    <td class="px-4 py-3 text-x">
+                                                        {{ $order->provinces_tos->provinces_to}}
+                                                    </td>
+                                                @endif
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
+                                                </td>
+                                                @if ($order->status == 'order')
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            ออเดอร์
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                            <form action="{{ route('projects.update', $order->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="send">
+                                                                <button
+                                                                    onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
+                                                                    class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                            </form>
+                                                    </td>
+                                                @elseif($order->status == 'send')
+                                                    @php($s++)
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            กำลังจัดส่ง
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                    
+                                                            <form action="{{ route('projects.update', $order->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="success">
+                                                                <button
+                                                                    onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
+                                                                    class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                            </form>
+                                                    
+                                                    </td>
+                                                @elseif($order->status == 'success')
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        <div
+                                                            class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                            จัดสังสำเร็จ
+                                                        </div>
+                                                    </td>
+                                                    <td></td>
+                                                @endif
+
+                                                <td class="px-4 py-3 text-sm ">
+                                                    {{ $order->tracking }}
+                                                </td>
+                                                <td class="flex px-4 py-3 text-sm ">
+                                                        <a class="w-6 h-6 mr-2"
+                                                            href="{{ route('FormOrder.edit', $order->id) }}">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                                stroke-width="2">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                                                            </svg>
+                                                        </a>
+                                                        <form action="{{ route('projects.destroy', $order->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button id="" class="w-6 h-6"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
+                                                                    fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                                                    stroke-width="2">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                </svg></button>
+                                                        </form>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    @endforeach
+                                </table>
+                            </div>
+                            {{ $orders->links() }}
+                        </div>
+                    </div>
+                </main>
+            @endcan
+            @can('employee')
+                <main class="h-full overflow-y-auto">
+                    <div class="container px-6 mx-auto grid ">
+                        <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                            หน้าหลัก
+                        </h2>
+                        <!-- Cards -->
+                        <div class="grid  gap-6 mb-8 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+                            <!-- Card -->
+                            <a href="{{ route('projects-order') }}">
+                                <div
+                                    class="flex justify-between p-4   rounded-lg shadow-xs bg-fuchsia-400  place-content-center ">
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">ออเดอร​์</p>
+                                        <path>
+                                            <img src="/img/order.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    @php($i = 0)
+                                    @foreach($provinces->where('user_id',Auth::user()->id) as $province)
+                                        @foreach ($orders->where('province_id',$province->id)->where('status', 'order') as $order)
+                                            @php($i = $i +1)   
+                                        @endforeach
+                                    @endforeach
+                                    <div class="p-3 mr-4 rounded-full   ">
+                                        <p class="text-50px text-white">{{$i}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-transit') }}">
+                                <div
+                                    class="flex justify-between p-4 rounded-lg shadow-xs  4 bg-amber-400 place-content-center max-w-7xl">
+                                    <div class="place-content-center">
+                                        <p class=" text-2xl text-white">กำลังส่ง</p>
+                                        <path>
+                                            <img src="/img/delivery-truck.svg" alt="" />
+                                        </path>
+                                    </div>
+                                    @php($i = 0)
+                                    @foreach($provinces->where('user_id',Auth::user()->id) as $province)
+                                        @foreach ($orders->where('province_id',$province->id)->where('status', 'send') as $order)
+                                            @php($i = $i +1)   
+                                        @endforeach
+                                    @endforeach
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">{{$i}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- Card -->
+                            <a href="{{ route('projects-success') }}">
+                                <div
+                                    class="flex justify-between p-4  rounded-lg shadow-xs   bg-green-300 place-content-center ">
+                                      
+                                    <div class="place-content-center">
+                                        <p class="mb-2 text-2xl text-white">สำเร็จ</p>
+                                        <path>
+                                            <img src="/img/clipboard.svg" alt="" />
+                                        </path>
+                                    </div>  
+                                    @php($i = 0)
+                                    @foreach($provinces->where('user_id',Auth::user()->id) as $province)
+                                        @foreach ($orders->where('province_id',$province->id)->where('status', 'success') as $order)
+                                            @php($i = $i +1)   
+                                        @endforeach
+                                    @endforeach            
+                                    <div class="p-3 mr-4 rounded-full">
+                                        <p class="text-50px text-white">
+                                            {{$i}}  </p>
+                                    </div>
+                                        
+                                </div>
+                            </a>
+                        </div>
+                        {{-- show date --}}
+                        <div clas="w-full ">
+                            <div
+                                class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
+                                <div
+                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    <div class="p-3">
+                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                            @csrf
+                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date" value="YYYY-MM-DD" >
+                                            
+                                            <button
+                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">เลขที่</th>
+                                            <th class="px-4 py-3">รายการ</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้ส่ง</th>
+                                            <th class="px-4 py-3">ชื่อ-ผู้รับ</th>
+                                            <th class="px-4 py-3">จังหวัด-ที่ส่ง</th>
+                                            <th class="px-4 py-3">จุดลง</th>
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-4 py-3">สถานะ</th>
+                                            <th class="px-4 py-3"></th>
+                                            <th class="px-4 py-3">รหัสติดตาม</th>
+                                            <th class="px-4 py-3"></th>
+                                        </tr>
+                                    </thead>
+                                    @php($i = 1)
+                                    @php($s = 1)
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    @foreach($provinces->where('user_id',Auth::user()->id) as $province)
+                                        @foreach ($orders->where('province_id',$province->id) as $order)
+                                            <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                                                <tr class="text-gray-700 dark:text-gray-400">
+                                                    <td class="px-4 py-3">
+                                                        <div class="flex items-center text-sm">
+                                                            <!-- Avatar with inset shadow -->
+                                                            <div>
+                                                                <p class="font-semibold">{{ $i++ }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">{{ $order->type }}{{ $order->list }}
+                                                    </td>
+                                                    <td class="px-4 py-3 text-xs">
+                                                        <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                            {{ $order->customer->name }}
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-xs">
+                                                        <div class="px-2 py-1 font-semibold leading-tight rounded-full">
+                                                            {{ $order->name }}
+                                                        </div>
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        {{ $order->province->province }}
+                                                    </td>
+                                                    @if($order->provinces_tos_id == null)
+                                                        <td class="px-4 py-3 text-x">
+                                                            {{ $order->city->city}}
+                                                        </td>
+                                                    @else
+                                                        <td class="px-4 py-3 text-x">
+                                                            {{ $order->provinces_tos->provinces_to}}
+                                                        </td>
+                                                    @endif
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        {{ $thaiDateHelper->simpleDateFormatcustomer($order->created_at) }}
+                                                    </td>
+                                                    @if ($order->status == 'order')
+                                                        <td class="px-4 py-3 text-sm ">
+                                                            <div
+                                                                class="bg-fuchsia-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                                ออเดอร์
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                               
+                                                        </td>
+                                                    @elseif($order->status == 'send')
+                                                        @php($s++)
+                                                        <td class="px-4 py-3 text-sm ">
+                                                            <div
+                                                                class="bg-amber-400 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                                กำลังจัดส่ง
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <form action="{{ route('projects.update', $order->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <input type="hidden" name="status" value="success">
+                                                                <button
+                                                                    onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')"
+                                                                    class=" mr-2 w-100px h-26px bg-141 rounded-lg text-white">อัปเดทสถานะ</button>
+                                                            </form>
+                                                        </td>
+                                                    @elseif($order->status == 'success')
+                                                        <td class="px-4 py-3 text-sm ">
+                                                            <div
+                                                                class="bg-green-300 w-100px h-26px text-center p-1 rounded-lg  text-white  m-auto">
+                                                                จัดสังสำเร็จ
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    @endif
+
+                                                    <td class="px-4 py-3 text-sm ">
+                                                        {{ $order->tracking }}
+                                                    </td>
+                                                    <td class="flex px-4 py-3 text-sm ">
+                                                        
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        @endforeach
+                                    @endforeach
+                                </table>
+                            </div>
+                            {{ $orders->links() }}
+                        </div>
+                    </div>
+                </main>
+            @endcan
         </div>
     </div>
     <script>
