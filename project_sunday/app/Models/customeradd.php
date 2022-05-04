@@ -5,22 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class customer extends Model
+class customeradd extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'province',
-        'subdistrict',
         'phone',
-        'user_id',
-        'total',
-        'getmoney'
+        'province',
+        'city',
+        'subdistrict'
 
     ];
-
-    public function orders(){
-        return $this->hasMany(Order::class);
-    }
 }

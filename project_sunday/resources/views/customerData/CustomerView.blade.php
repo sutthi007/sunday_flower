@@ -1040,7 +1040,7 @@
             <main class="h-full overflow-y-auto">
                 <div class="container px-6 mx-auto grid">
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                        ประวัติการบริการ
+                        ข้อมูลลูกค้า
                     </h2>
                     <!-- New Table -->
                     <div class="w-full overflow-hidden rounded-lg shadow-xs ">
@@ -1051,61 +1051,23 @@
                                         class="text-xs  font-semibold text-center tracking-wide text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">ลำดับ</th>
                                         <th class="px-4 py-3">ชื่อ</th>
-                                        <th class="px-8 py-3">จังหวัด</th>
-                                        <th class="px-4 py-3">สถานะ</th>
-                                        <th class="px-4 py-3">สถานะการชำระ</th>
-                                        <th class="px-4 py-3">ผู้ให้บริการ</th>
-                                        <th class="px-4 py-3">วันที่</th>
-                                        <th class="px-4 py-3">Systems</th>
+                                        <th class="px-8 py-3">เบอร์โทร</th>
+                                        <th class="px-4 py-3">จังหวัด</th>
+                                        <th class="px-4 py-3">อำเภอ</th>
+                                        <th class="px-4 py-3">ตำบล</th>
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                    @php($i = 1)
-                                    @foreach ($customers as $customer)
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->name }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
-                                            <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
-                                            @if ($customer->getmoney - $customer->total >= 0)
-                                                <td class="px-4 py-3 text-sm">ชำระเรียบร้อย</td>
-                                            @else
-                                                <td class="px-4 py-3 text-sm">ค้างชำระ</td>
-                                            @endif
-                                            <td class="px-4 py-3 text-sm"></td>
-                                            @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                            <td>{{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
-                                            </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                <div class=" w-full m-auto">
-                                                    <a class="active:bg-fuchsia-700 bg-pink w-200px h-30px rounded-md text-white p-1"
-                                                        href="{{ route('customer-systems.show', $customer->id) }}">
-                                                        รายละเอียด
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            @if(auth::user()->role == 'employee')
-                                                <td></td>
-                                            @else
-                                                <td class="px-4 py-3 text-sm w-100px ">
-                                                    <form class="w-full m-auto"
-                                                        action="{{ route('customer-systems.destroy', $customer->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                                fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                                stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
-                                                </td>
-                                            @endif
-                                        </tr>
-                                    @endforeach
+                                    <tr>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                        <td class="px-4 py-3"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

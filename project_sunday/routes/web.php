@@ -12,6 +12,7 @@ use App\Http\Controllers\expensesController;
 use App\Http\Controllers\ProvinceController;
 use App\Http\Controllers\ProvincesToController;
 use App\Http\Controllers\subController;
+use App\Http\Controllers\CustomerAddController;
 use App\Http\Controllers\SummaryController;
 use App\Models\Order;
 use App\Models\user;
@@ -78,6 +79,8 @@ Route::resource('subdistrict',subController::class)->middleware(['auth']);
 Route::resource('city',cityController::class)->middleware(['auth']);
 Route::get('province/fetch',[subController::class,'fetch'])->middleware(['auth'])->name('fetch');
 
+//customer
+Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
 Route::resource('customer-systems',CustomerController::class)->middleware(['auth']);
 
 Route::resource('summary',SummaryController::class)->middleware(['auth']);
