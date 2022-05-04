@@ -766,9 +766,9 @@
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('price') }}</p>
                                             @endif
-                                                
+
                                             </div>
-                                            
+
                                         </div>
 
                                 </div>
@@ -832,10 +832,10 @@
                                             @else
                                             <td class="px-4 py-3 text-x">{{$order->type}},{{ $order->list }}</td>
                                             @endif
-                                            
+
                                             <td class="px-4 py-3 text-x">
-                                               
-                                                    {{ $order->quantity }} {{$order->amount}} 
+
+                                                    {{ $order->quantity }} {{$order->amount}}
                                             </td>
                                             <td class="px-4 py-3 text-x">{{ $order->name }}</td>
                                             <td class="px-4 py-3 text-x">
@@ -1018,9 +1018,9 @@
             } else{
                 document.getElementById("ifYes").style.display = "block";
             }
-           
-        } 
-       
+
+        }
+
     </script>
 </body>
 
