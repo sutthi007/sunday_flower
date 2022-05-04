@@ -216,36 +216,7 @@
                                    {{$costs}}
                                 </td>
                             </tr>
-                            @php
-                            $np = 0;
-                            
-                        @endphp
-                            <tr class="text-center" >
-                                <td class=" text-xl" colspan="3" ></td>
-                               
-                                <td class=" text-xl font-bold" colspan="2">
-                                ยอดค้างชำระ (บาท)
-                                </td>
-                                @if ($customer->getmoney > $customer->total)
-                                @php
-                                    $np = $customer->getmoney - $customer->total;
-                                @endphp
-                            @endif
-                            @if ($np > 0)
-                                @php
-                                    $np = $np + $customer->total - $customer->getmoney;
-                                    $nps = number_format($np,2)
-                                @endphp
-                            @else 
-                            @php
-                                    $np = $customer->total - $customer->getmoney;
-                                    $nps = number_format($np,2)
-                                @endphp @endif
-
-                                <td class=" text-xl text-right pr-l">
-                                    {{ $nps }}
-                                </td>
-                            </tr>
+                          
                 </table>
             </div>
         </div>

@@ -221,9 +221,8 @@
                     </a>
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                                aria-hidden="true"></span>
-                            <a class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
+                           
+                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                                     stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -304,7 +303,9 @@
                             </template>
                         </li>
                         <li class="relative px-6 py-3">
-                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
+                            aria-hidden="true"></span>
+                            <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100 text-gray-800 "
                                 href="{{ route('customer-systems.index') }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1043,8 +1044,8 @@
                         ประวัติการบริการ
                     </h2>
                     <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs ">
-                        <div class="w-full overflow-x-auto">
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs sm:overflow-auto ss:overflow-auto ">
+                        <div class="w-full lg:overflow-x-auto">
                             <table class="w-full whitespace-no-wrap">
                                 <thead>
                                     <tr
@@ -1065,21 +1066,36 @@
                                     @foreach ($customers as $customer)
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->name }}</td>
+                                            <td class="px-4 py-3 text-sm">
+                                                <div class="w-150px">
+                                                    {{ $customer->name }}
+                                                </div>
+                                                </td>
                                             <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
                                             <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
                                             @if ($customer->getmoney - $customer->total >= 0)
-                                                <td class="px-4 py-3 text-sm">ชำระเรียบร้อย</td>
+                                                <td class="px-4 py-3 text-sm">
+                                                    <div class="w-100px">
+                                                    ชำระเรียบร้อย
+                                                </div>
+                                                </td>
                                             @else
-                                                <td class="px-4 py-3 text-sm">ค้างชำระ</td>
+                                                <td class="px-4 py-3 text-sm">
+                                                    <div class="w-100px">
+                                                    ค้างชำระ
+                                                </div>
+                                                </td>
                                             @endif
                                             <td class="px-4 py-3 text-sm"></td>
                                             @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                            <td>{{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
+                                            <td class="px-4 py-3 text-sm">
+                                                <div class="w-150px">
+                                                {{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
+                                            </div>
                                             </td>
                                             <td class="px-4 py-3 text-sm ">
-                                                <div class=" w-full m-auto">
-                                                    <a class="active:bg-fuchsia-700 bg-pink w-200px h-30px rounded-md text-white p-1"
+                                                <div class="  m-auto active:bg-fuchsia-700 bg-pink rounded-md w-150px h-30px  text-white p-1 text-center">
+                                                    <a class=""
                                                         href="{{ route('customer-systems.show', $customer->id) }}">
                                                         รายละเอียด
                                                     </a>

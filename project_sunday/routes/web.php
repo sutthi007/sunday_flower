@@ -82,6 +82,9 @@ Route::get('province/fetch',[subController::class,'fetch'])->middleware(['auth']
 //customer
 Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
 Route::resource('customer-systems',CustomerController::class)->middleware(['auth']);
+Route::get('CustomerView-overdue', function(){
+    return view('customerData/CustomerView-overdue');
+});
 
 Route::resource('summary',SummaryController::class)->middleware(['auth']);
 Route::get('summary-transport',[SummaryController::class,'transport'])->name('sumTransport')->middleware(['auth']);
@@ -89,6 +92,8 @@ Route::get('summary-account',[SummaryController::class,'account'])->name('sumAcc
 
 Route::get('/export-excel',[OrderController::class,'export'])->name('export')->middleware(['auth']);
 Route::get('test',[OrderController::class,'viewReport'])->name('report')->middleware(['auth']);
+
+
 
 //summary
 Route::get('/account-details-day/{date}', function ($date) {

@@ -820,7 +820,7 @@
                                             </td>
                                             <td class="px-4 py-3 text-sm">
                                                 <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
-                                                    type="button" onclick="toggleModal('modal-id')">
+                                                    target="_blank"  type="button" onclick="toggleModal('modal-id')">
                                                     PDF
                                                 </a>
                                             </td>

@@ -122,15 +122,51 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenuss" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
-                            <span class="ml-4">ข้อมูลลูกค้า</span>
-                        </a>
+                                <span class="ml-4">ข้อมูลลูกค้า</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpenss">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('customer-systems.index') }}">
+                                        ประวัติลูกค้า
+                                    </a>
+                                </li>
+                                <li
+                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                <a class="w-full" href="/CustomerView-overdue">
+                                    ลูกค้าค้างชำระ
+                                </a>
+                            </li>
+                            </ul>
+                        </template>
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -317,15 +353,51 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                            href="{{ route('customer-systems.index') }}">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                        <button
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                            @click="togglePagesMenuss" aria-haspopup="true">
+                            <span class="inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                             </svg>
-                            <span class="ml-4">ข้อมูลลูกค้า</span>
-                        </a>
+                                <span class="ml-4">ข้อมูลลูกค้า</span>
+                            </span>
+
+                            <svg class="w-4 h-4" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <template x-if="isPagesMenuOpenss">
+                            <ul x-transition:enter="transition-all ease-in-out duration-300"
+                                x-transition:enter-start="opacity-25 max-h-0"
+                                x-transition:enter-end="opacity-100 max-h-xl"
+                                x-transition:leave="transition-all ease-in-out duration-300"
+                                x-transition:leave-start="opacity-100 max-h-xl"
+                                x-transition:leave-end="opacity-0 max-h-0"
+                                class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
+                                aria-label="submenu">
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                </li>
+                                <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('customer-systems.index') }}">
+                                        ประวัติลูกค้า
+                                    </a>
+                                </li>
+                                <li
+                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                <a class="w-full" href="/CustomerView-overdue">
+                                    ลูกค้าค้างชำระ
+                                </a>
+                            </li>
+                            </ul>
+                        </template>
                     </li>
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
@@ -563,7 +635,7 @@
                                     </button>
                                 </div>
                                 <!--body-->
-                                <div class="relative p-6 flex-auto xd:overflow-auto sm:overflow-auto ss:overflow-auto">
+                                <div class="relative p-6 flex-auto  sm:overflow-auto ss:overflow-auto">
                                     <form action="{{ route('FormOrder.store') }}" method="post">
                                         @csrf
 
@@ -577,7 +649,7 @@
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
                                                     id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
-                                                    name="name" />
+                                                    name="name" required autofocus/>
                                                 @if ($errors->any('name'))
                                                     <p class="text-red-500 text-xs italic text-center">
                                                         {{ $errors->first('name') }}</p>
@@ -592,7 +664,7 @@
                                                 <select
                                                     class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="grid-first-name" type="text" placeholder="" name="province"
-                                                    id="provinces">
+                                                    id="provinces" required autofocus>
                                                     <option value="">---เลือกจังหวัด----</option>
                                                     @foreach ($province as $row)
                                                         <option value="{{ $row->id }}">{{ $row->province }}
@@ -612,7 +684,7 @@
                                                 </label>
                                                 <select
                                                     class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="city">
+                                                    id="grid-first-name" type="text" placeholder="" name="city" required autofocus>
                                                     <option value="">---เลือกอำเภอ----</option>
                                                 </select>
                                                 @if ($errors->any('city'))
@@ -629,7 +701,7 @@
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
-                                                    name="phone" maxlength="11" />
+                                                    name="phone" maxlength="11" required autofocus />
                                                     @if ($errors->any('phone'))
                                                     <p class="text-red-500 text-xs italic text-center">
                                                         {{ $errors->first('phone') }}</p>
@@ -686,7 +758,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
+                                        <div class="grid  gap-6 mb-8 md:grid-cols-1 xl:grid-cols-2 ">
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -696,7 +768,7 @@
                                                 <select
                                                     onchange="yesnoCheck(this);"
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="type">
+                                                    id="grid-first-name" type="text" placeholder="" name="type" required autofocus>
                                                     <option value="">---เลือก----</option>
                                                     <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
                                                     <option value="ดอกไม้">ดอกไม้</option>
@@ -717,7 +789,7 @@
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="list" />
+                                                    id="grid-first-name" type="text" placeholder="" name="list" required autofocus />
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <div class="flex">
@@ -744,7 +816,7 @@
                                                         </label>
                                                         <input
                                                             class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                            id="grid-first-name" type="text" placeholder="" name="amount" />
+                                                            id="grid-first-name" type="text" placeholder="" name="amount"required autofocus />
                                                             @if ($errors->any('amount'))
                                                             <p class="text-red-500 text-xs italic text-center">
                                                                 {{ $errors->first('amount') }}</p>
@@ -755,7 +827,7 @@
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <label
                                                     class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    for="grid-first-name" required autofocus>
                                                     ราคา
                                                 </label>
                                                 <input
@@ -853,7 +925,7 @@
                                             @endif
                                             <td class="px-4 py-3 text-x">{{ $order->phone }}</td>
 
-                                            <td class="px-4 py-3 text-x">{{ $total }}</td>
+                                            <td class="px-4 py-3 text-x">{{number_format((float)$total,2)}}</td>
                                             <td class="flex px-4 py-3 text-x ">
                                                 <a class="w-6 h-6 mr-2"
                                                     href="{{ route('editOrder', $order->id) }}">
@@ -893,7 +965,7 @@
                             บาท
                             <input
                                 class="h-30px  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white text-center w-150px "
-                                type="text" placeholder="{{ $cost }}" disabled />
+                                type="text" placeholder="{{number_format((float)$cost,2)}}" disabled />
                             <label> ทั้งหมด : </label>
                             <input type="hidden" name="customer_id" value="{{ $customer->id }}">
                             <input type="hidden" name="total" value="{{ $cost }}">

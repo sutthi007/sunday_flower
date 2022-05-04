@@ -520,12 +520,12 @@
                     <button class="absolute bg-pink w-150px h-30px rounded-md mr-15  text-white inset-y-0 right-0 "><a href="{{ route('customer/add')}}">เพิ่มรายชื่อ พนักงาน</a></button>
                 </div>
                     <!-- New Table -->
-                    <div class="w-full overflow-hidden rounded-lg shadow-xs text-center ">
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs  ">
                         <div class="w-full overflow-x-auto">
                             <table class="w-full whitespace-no-wrap ">
                                 <thead>
                                     <tr
-                                        class="text-center text-xs font-semibold tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        class="text-center text-xs font-semibold  tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">ลำดับ</th>
                                         <th class="px-4 py-3">ชื่อ</th>
                                         <th class="px-4 py-3">ตำแหน่ง</th>
@@ -539,21 +539,33 @@
                                 @foreach ( $users as  $user)
                                     @if($user != Auth::user())
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 ">
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 w-25px ">{{ $i++ }}</td>
-                                            <td class="px-4 py-3 text-sm w-100px">{{$user->name }}</td>
+                                        <tr class="text-gray-700 dark:text-gray-400 text-center ">
+                                            <td class="px-4 py-3 w-25px text-xs">{{ $i++ }}</td>
+                                            <td class="px-4 py-3 text-xs ">
+                                                <div class="w-100px m-auto">
+                                                 {{$user->name }}
+                                                </div>
+                                            </td>
                                             @if ($user->role == 'admin')
-                                            <td class="px-4 py-3 text-xs w-100px ">แอดมิน</td>
+                                            <td class="px-4 py-3 text-xs  ">
+                                                <div class="w-100px m-auto">
+                                                แอดมิน
+                                            </div>
+                                            </td>
                                             @elseif($user->role == 'employee')
-                                            <td class="px-4 py-3 text-xs w-100px ">พนักงานขนส่ง</td>
+                                            <td class="px-4 py-3 text-xs ">
+                                                <div class="w-100px m-auto">
+                                                    พนักงานขนส่ง
+                                                </div>
+                                                </td>
                                             @endif
-                                            <td class="px-4 py-3 text-sm w-100px "> {{ $user->IDuser }}</td>
-                                            <td class="px-4 py-3 text-sm w-50px ">
+                                            <td class="px-4 py-3 text-xs "> {{ $user->IDuser }}</td>
+                                            <td class="px-4 py-3 text-xsw-50px ">
                                                 <div class="bg-pink w-50px h-30px text-center rounded-md m-auto">
                                                 <a class="text-white m-auto text-base" href="{{ route('Employee.show',$user->id)}}">ดู</a>
                                             </div>
                                             </td>
-                                            <td class="px-4 py-3 text-sm w-100px ">
+                                            <td class="px-4 py-3 text-xs ">
                                                 <form action="{{ route('Employee.destroy', $user->id) }}"
                                                     method="post">
                                                     @csrf

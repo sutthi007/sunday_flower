@@ -527,6 +527,7 @@
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เพิ่มราคา"
                                             name="price">
+                                            
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
@@ -595,7 +596,7 @@
                                             <tr>
                                                 <td class="px-4 py-3 text-sm"></td>
                                                 <td class="px-4 py-3 text-sm" >ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
-                                                <td class="px-4 py-3 text-sm">{{$total}}</td>
+                                                <td class="px-4 py-3 text-sm">{{number_format((float)$total,2)}}</td>
                                                 <td class="px-4 py-3 text-sm"></td>
                                                 <td class="px-4 py-3 text-sm"></td>
                                             </tr>

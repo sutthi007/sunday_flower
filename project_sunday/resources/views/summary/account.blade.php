@@ -535,8 +535,12 @@
                                             @endforeach
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">{{$t++}}</td>
-                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($key)}}</td>                       
-                                            <td class="px-4 py-3 text-sm">{{$i}}</td>
+                                            <td class="px-4 py-3 text-sm">
+                                                <div class="w-100px m-auto">
+                                                {{$thaiDateHelper->simpleDateFormat($key)}}
+                                            </div>
+                                            </td>                       
+                                            <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <a href="/account-details-day-pdf/{{$key}}">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
@@ -548,11 +552,11 @@
                                 </table>
                             </div>
                         </div>
+                        @can('owner')
                         <div class="mt-4 mb-6 text-xl dark:text-white">
                             <p class="">รายเดือน</p>
                         </div>
                         <!-- New Table -->
-                        
                         <div class="w-full overflow-hidden rounded-lg shadow-xs">
                             <div class="w-full overflow-x-auto">
                                 <table class="w-full whitespace-no-wrap">
@@ -580,11 +584,15 @@
                                                     @endforeach
                                                     <tr class="text-gray-700 dark:text-gray-400">
                                                         <td class="px-4 py-3 text-sm">{{$t++}}</td>
-                                                        <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormatMonth($year.'-'.$row)}}</td>
-                                                        <td class="px-4 py-3 text-sm">{{$i}}</td>
+                                                        <td class="px-4 py-3 text-sm">
+                                                            <div >
+                                                            {{$thaiDateHelper->simpleDateFormatMonth($year.'-'.$row)}}
+                                                        </div>
+                                                        </td>
+                                                        <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
                                                         <td class="px-4 py-3 text-sm">
                                                         
-                                                            <a href="/account-details-month-pdf/{{$row}}/{{$year}}">
+                                                            <a href="/account-details-month-pdf/{{$row}}/{{$year}}" target="_blank">
                                                                 <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                                             </a>
                                                         </td>
@@ -595,6 +603,7 @@
                                 </table>
                             </div>
                         </div>
+                        @endcan
                 </div>
             </main>
         </div>

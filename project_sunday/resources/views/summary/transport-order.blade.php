@@ -2,7 +2,7 @@
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 
 <head>
-<meta charset="UTF-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>หนัาหลัก</title>
     <link rel="icon" type="/img/svg" href="/img/icon.svg">
@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
- 
+
 </head>
 
 <body class="font-prompt">
@@ -105,11 +105,11 @@
                                         </a>
                                     </li>
                                     <li
-                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
-                                        จังหวัดส่งต่อ
-                                    </a>
-                                </li>
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            จังหวัดส่งต่อ
+                                        </a>
+                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -207,7 +207,7 @@
                             </template>
                         </li>
                     </ul>
-                </div> 
+                </div>
             </aside>
         @endcan
         @can('owner')
@@ -290,11 +290,11 @@
                                         </a>
                                     </li>
                                     <li
-                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
-                                        จังหวัดส่งต่อ
-                                    </a>
-                                </li>
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('city.index') }}">
+                                            จังหวัดส่งต่อ
+                                        </a>
+                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -392,7 +392,7 @@
                             </template>
                         </li>
                     </ul>
-                </div> 
+                </div>
             </aside>
         @endcan
         @can('employee')
@@ -403,7 +403,7 @@
                     </a>
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            
+
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -480,7 +480,7 @@
                     </ul>
                 </div>
             </aside>
-         @endcan
+        @endcan
         <!-- Mobile sidebar -->
         <!-- Backdrop -->
         <div x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
@@ -488,7 +488,8 @@
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
-        <aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
+        <aside
+            class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
             x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
             x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
@@ -515,7 +516,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -575,11 +576,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('city.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -743,20 +744,13 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                              <svg
-                                              class="w-4 h-4 mr-3"
-                                              aria-hidden="true"
-                                              fill="none"
-                                              stroke-linecap="round"
-                                              stroke-linejoin="round"
-                                              stroke-width="2"
-                                              viewBox="0 0 24 24"
-                                              stroke="currentColor"
-                                            >
-                                              <path
-                                                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                              ></path>
-                                            </svg>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -775,57 +769,63 @@
                     </h2>
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
-                                
-                                    <div class="w-300px m-auto ">
-                                        <div class="p-2">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                                for="grid-first-name">
-                                                จังหวัด
-                                            </label>
-                                            <input
-                                            class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
-                                            id="grid-first-name" type="text" placeholder="{{$employee->province}}" disabled>
-                                         
-                                        </div>
-                                <form action="{{route('emp-update',[$employee->id,$date])}}" method="post">
-                                @csrf
-                                <div class="p-2">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                                for="grid-first-name">
-                                                ชื่อพนักงานรับผิดชอบ
-                                            </label>
-                                            <select type="text" class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="user_id">
-                                               @if($employee->user_id == null)
-                                                    <option value="{{$employee->user_id}}">{{$employee->user_id}}</option>
-                                               @else
-                                                    <option value="{{$employee->user->id}}">{{$employee->user->name}}</option>
-                                               @endif 
-                                                @foreach ($employees as $row)
-                                                    @if($employee->user_id == null)
-                                                    <option value="{{$row->id}}">{{$row->name}}</option>
-                                                    @else
-                                                        @if($employee->user->id != $row->id)
-                                                            <option value="{{$row->id}}">{{$row->name}}</option>
-                                                        @endif
-                                                    @endif
-                                                @endforeach
-                                            </select>
 
-                                        </div>
-                               
-                                <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
+                            <div class="w-300px m-auto ">
+                                <div class="p-2">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        จังหวัด
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
+                                        id="grid-first-name" type="text" placeholder="{{ $employee->province }}"
+                                        disabled>
+
+                                </div>
+                                <form action="{{ route('emp-update', [$employee->id, $date]) }}" method="post">
+                                    @csrf
+                                    <div class="p-2">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                            for="grid-first-name">
+                                            ชื่อพนักงานรับผิดชอบ
+                                        </label>
+                                        <select type="text"
+                                            class=" w-full  text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                            name="user_id">
+                                            @if ($employee->user_id == null)
+                                                <option value="{{ $employee->user_id }}">{{ $employee->user_id }}
+                                                </option>
+                                            @else
+                                                <option value="{{ $employee->user->id }}">{{ $employee->user->name }}
+                                                </option>
+                                            @endif
+                                            @foreach ($employees as $row)
+                                                @if ($employee->user_id == null)
+                                                    <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                                @else
+                                                    @if ($employee->user->id != $row->id)
+                                                        <option value="{{ $row->id }}">{{ $row->name }}
+                                                        </option>
+                                                    @endif
+                                                @endif
+                                            @endforeach
+                                        </select>
+
+                                    </div>
+
+                                    <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
                                         <button class="w-200px h-30px bg-pink rounded mb-6 text-white">ต่อไป</button>
                                     </div>
-                                 </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
             </main>
         </div>
     </div>
-    
+
     <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');
@@ -871,4 +871,5 @@
         switchTheme()
     </script>
 </body>
+
 </html>
