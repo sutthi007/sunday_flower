@@ -23,7 +23,7 @@ class CustomerAddController extends Controller
         $customer = customeradd::find($id);
         return view('customerData.CustomerView-editor', compact('customer'));
     }
-    public function udpate($id,Request $request){
+    public function update($id,Request $request){
         $customer = customeradd::find($id);
 
         $customer->update($request->all());

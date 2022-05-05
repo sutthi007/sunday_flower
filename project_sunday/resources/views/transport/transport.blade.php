@@ -584,6 +584,10 @@
                                             class="  w-300px  text-gray-700   rounded py-3 px-4 mb-3 leading-tight  dark:bg-gray-900 dark:text-white"
                                             id="grid-first-name" type="text"
                                             placeholder="ใส่รายชื่อจังหวัดที่ต้องการเพิ่ม" name="province">
+                                            @if ($errors->any('province'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('province') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">

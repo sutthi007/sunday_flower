@@ -21,11 +21,12 @@ class ProvinceController extends Controller
 
         $requset->validate(
             [
-                'province' => 'required',
+                'province' => 'required|unique:provinces',
                  
             ],
             [
                 'province.required'=> 'กรุณาเลือกจังหวัด',
+                'province.unique' => 'จังหวัดนี้มีในฐานข้อมูลแล้ว'
             ]
             );
         $province = province::create([
