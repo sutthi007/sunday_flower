@@ -221,11 +221,14 @@
         </div>
         <div class= "w-full mt-10">
             <div class=" ">
-            <p class="text-xl ml-14">ผู้รับเงิน</p>
+            <p class="text-xl ml-14">ผู้รับเงิน</p> {{Auth::user()->name}}
             <p class="text-xl ml-15">(..............................................................)</p>
             </div>
             <div class="text-center mr-15 mt--20px">
-            <p class="text-xl float-right">วันที่.............../.............................../...................</p>
+                @php
+                    $mytime = Carbon\Carbon::now();
+                @endphp
+            <p class="text-xl float-right">วันที่  {{$mytime->format('Y/m/d')}}</p>
             </div>
         </div>
     </form>
