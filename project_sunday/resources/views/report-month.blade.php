@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ public_path('css/index.css') }}" rel="stylesheet">
-    <title>Document</title>
+    <title>รายงานขนส่ง รายเดือน</title>
     <style>
         @font-face {
             font-family: 'THSarabunNew';
@@ -55,24 +55,28 @@
     </style>
 </head>
 <body>
+    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
     <div class="w-full">
         <div class="text-center mt-10">
             <h2 class="text-4xl font-bold">ใบรายการฝากของบริษัท</h2>
-    </div>
+            @foreach($report as $province)
+                @foreach($reports->where('province_id',$province->province_id) as $data)
+                @endforeach
+            @endforeach
+            <h2 class="text-2xl font-bold">ประจำเดือน {{$thaiDateHelper->simpleDateFormatMonth($data->created_at)}}</h2>
+        </div>
     <div class=" w-full  p-3">
         <div class="w-full">
             <div class="mr-4  " >
                 <table class="w-full p-4 ">
                     <thead class="mt-10">
                         <tr class="text-xl border-4 ">
-                            <th class="">วันเดือนปี</th>
                             <th class="">จังหวัด</th>
                             <th class="">ออเดอร์ทั้งหมด</th>
                             <th class="">รายการทั้งหมด</th>
-                           
+
                         </tr>
                     </thead>
-                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
                         @php
                             $total_order = 0;
@@ -88,12 +92,7 @@
                                         $total_list = $data->quantity +$total_list ;
                                     @endphp
                                 @endforeach
-                            <tr class="text-xl border-4"> 
-                                @if($i == 0)
-                                <td class="">{{$thaiDateHelper->simpleDateFormatMonth($data->created_at)}}</td>
-                                @else
-                                <td class=""></td>
-                                @endif
+                            <tr class="text-xl border-4">
                                 <td class="">{{$province->province->province}}</td>
                                 <td class="">{{$total_order}}</td>
                                 <td class="">{{$total_list}}</td>
@@ -105,12 +104,12 @@
                             @endphp
                             @endforeach
                             <tr class="text-xl border-4">
-                                
-                                <td class="font-bold " colspan="2">ยอดรวมทั้งหมด</td>
+
+                                <td class="font-bold">ยอดรวมทั้งหมด</td>
                                 <td class="">ทั้งหมด {{$all_order}} ออเดอร์</td>
                                 <td class="">ทั้งหมด {{$all_list}} รายการ</td>
                             </tr>
-                           
+
                     </tbody>
                 </table>
             </div>

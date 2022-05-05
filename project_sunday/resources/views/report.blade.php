@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ข้อมูลขนส่ง</title>
+    <title>รายงานขนส่งรายวัน</title>
     <style>
         @font-face {
             font-family: 'THSarabunNew';
@@ -64,27 +64,31 @@
 
 </head>
 <body>
+    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
     <div>
         <div class="ddd">
             <img src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
         </div>
         <div class="text-3xl">
-        @php
-         $p= 0; 
-        @endphp
-        @foreach( $orders->where('province_id',$province) as $row)
-            @if($p == 0)
-                @if($row->province->user_id == null)
-                    <h2>รายงานขนส่ง {{$row->province->province}}</h2>
-                @else
-                    <h2>รายงานขนส่ง {{$row->province->province}}({{$row->province->user->name}})</h2>
-                @endif
-                
-            @endif
+            @foreach( $orders->where('province_id',$province) as $row)
+            @endforeach
             @php
-                $p = $p+1;
+            $p= 0;
             @endphp
-        @endforeach
+            @foreach( $orders->where('province_id',$province) as $row)
+                @if($p == 0)
+                    @if($row->province->user_id == null)
+                        <h2>รายงานขนส่ง {{$row->province->province}}</h2>
+                        <h2>ประจำวันที่ {{$thaiDateHelper->simpleDateFormat($row->created_at)}}</h2>
+                    @else
+                        <h2>รายงานขนส่ง {{$row->province->province}}({{$row->province->user->name}})</h2>
+                    @endif
+
+                @endif
+                @php
+                    $p = $p+1;
+                @endphp
+            @endforeach
         </div>
         <div class="w-full overflow-hidden rounded-lg shadow-xs p-3 ">
             <div class="w-full overflow-x-auto">
@@ -100,12 +104,12 @@
                     </thead>
                     <tbody >
                         @php
-                            $quantitys = 0;
                             $sum = 0;
                         @endphp
                         @foreach( $GroupOrder->where('province_id',$province)->sortby('type')->sortby('city_id') as $order)
                             @foreach( $orders->where('province_id',$province) as $row)
                                 @php
+                                    $quantitys = 0;
                                     $quantitys = $row->quantity + $quantitys;
                                 @endphp
                             @endforeach

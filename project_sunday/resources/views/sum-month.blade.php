@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ public_path('css/index.css') }}" rel="stylesheet">
-    <title>รายการฝากของบริษัท</title>
+    <title>รายการฝากของบริษัท รายเดือน</title>
     <style>
         @font-face {
             font-family: 'THSarabunNew';
@@ -55,10 +55,13 @@
     </style>
 </head>
 <body>
-
+    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
     <div class="w-full">
         <div class="text-center mt-10">
             <h2 class="text-4xl font-bold">ใบรายการฝากของบริษัท</h2>
+            @foreach($accounts as $row)
+            @endforeach
+            <h2 class="text-2xl font-bold">ประจำเดือน {{$thaiDateHelper->simpleDateFormatMonth($row->created_at)}}</h2>
     </div>
     <div class=" w-full  p-3">
         <div class="w-full">
@@ -66,13 +69,12 @@
                 <table class="w-full p-4 ">
                     <thead class="mt-10">
                         <tr class="text-xl border-4 ">
-                            <th class="">เดือน/ปี</th>
+                            <th rowspan="2" class="text-left"> รายรับทั้งหมด (บาท)</th>
                             <th class="">ค่าฝากของ/บาท</th>
                             <th class="">ส่งต่อ/บาท</th>
                             <th class="">จำนวนเงิน</th>
                         </tr>
                     </thead>
-                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                     <tbody class="w-full p-4 border-4 text-2xl">
                     @php
                         $p = 0;
@@ -82,7 +84,7 @@
                         $total_expenses = 0;
                         $sum = 0;
                     @endphp
-                        @foreach($accounts as $row) 
+                        @foreach($accounts as $row)
                           @php
                             $p = ($row->price * $row->quantity) + $p ;
                             $pt = ($row->price_to * $row->quantity) + $pt;
@@ -97,24 +99,21 @@
                                 $total_price = $p +$pt;
                                 $sum = $total_price - $e;
                             @endphp
-                            <tr class="text-xl border-4"> 
-                                <td class=" text-center">{{$thaiDateHelper->simpleDateFormatMonth($row->created_at)}}</td>
+                            <tr class="text-xl border-4">
                                 <td class="text-right pr-l">{{number_format((float)$p,2)}}</td>
                                 <td class="text-right pr-l">{{number_format((float)$pt,2)}}</td>
                                 <td class="text-right pr-l">{{number_format((float)$total_price,2)}}</td>
                             </tr>
-                        
-                            <tr class="text-xl border-4"> 
-                                <th></th>
-                                <td class=" font-bold pr-l" colspan="2">ค่าใช้จ่ายรวมทั้งหมด (บาท)</td>
+
+                            <tr class="text-xl border-4">
+                                <td class=" font-bold pr-l" colspan="3">ค่าใช้จ่ายรวมทั้งหมด (บาท)</td>
                                 <td class="text-right pr-l">{{number_format((float)$e,2)}}</td>
-                                
+
                             </tr>
-                            <tr class="text-xl border-4"> 
-                                <th></th>
-                                <td class=" font-bold pr-l" colspan="2">ยอดคงเหลือ (บาท)</td>
+                            <tr class="text-xl border-4">
+                                <td class=" font-bold pr-l" colspan="3">ยอดคงเหลือสุทธิ (บาท)</td>
                                 <td class="text-right pr-l">{{number_format((float)$sum,2)}}</td>
-                                
+
                             </tr>
                     </tbody>
                 </table>

@@ -963,7 +963,7 @@
             @can('employee')
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
-                        
+
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             href="{{ route('projects.index') }}">
                             <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -1144,9 +1144,9 @@
                             <p>เบอร์โทรติดต่อ : {{ $customers->phone }} </p>
                             <p>สถานะ : ผู้ส่ง</p>
                             <p>สถานะการชำระ : @if ($customers->getmoney - $customers->total >= 0)
-                                            ชำระเรียบร้อย
+                                                ชำระเรียบร้อย
                                             @else
-                                                ค้างชำระ  
+                                                ค้างชำระ
                                                 @php
                                                     $np = 0;
                                                 @endphp
@@ -1159,13 +1159,18 @@
                                                 @php
                                                     $np = $np + $customers->total - $customesr->getmoney;
                                                 @endphp
-                                            @else($np < 0) 
+                                            @else($np < 0)
                                                 @php
                                                     $np = $customers->total - $customers->getmoney;
-                                                @endphp 
-                                            @endif                                                   
-                                                            {{ $np }}
+                                                @endphp
+                                            @endif
+                                                            {{ number_format($np,2) }} บาท
                                             @endif</p>
+                            <p>ยอดชำระ : @if ($customers->getmoney == 0)
+                                            วางบิล
+                                         @else
+                                            {{number_format($customers->getmoney,2)}}
+                                         @endif</p>
                         </div>
                     </div>
                     <div class="mt-4">
@@ -1211,15 +1216,15 @@
                             href="{{ route('customer-systems.index') }}">
                             ปิด
                         </a>
-                        @if ($customers->getmoney < $customers->total) 
-                            <form action="{{ route('save') }}" method="post"> 
-                            @csrf 
-                            <input type="hidden" name="customer_id" value="{{ $customers->id }}">  
-                            <input type="hidden" name="total" value="{{ $customers->total }}">                           
+                        @if ($customers->getmoney < $customers->total)
+                            <form action="{{ route('save') }}" method="post">
+                            @csrf
+                            <input type="hidden" name="customer_id" value="{{ $customers->id }}">
+                            <input type="hidden" name="total" value="{{ $customers->total }}">
                                 <button class="w-150px  bg-pink text-white active:bg-fuchsia-700 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
-                                    ชำระยอดค้าง 
+                                    ชำระยอดค้าง
                                 </button>
-                            </form>  
+                            </form>
                         @endif
                     </div>
                 </div>

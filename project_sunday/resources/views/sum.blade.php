@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ public_path('css/index.css') }}" rel="stylesheet">
-    <title>รายการฝากของบริษัท</title>
+    <title>รายการฝากของบริษัท รายวัน</title>
     <style>
         @font-face {
             font-family: 'THSarabunNew';
@@ -55,10 +55,17 @@
     </style>
 </head>
 <body>
-
+    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
     <div class="w-full">
         <div class="text-center mt-10">
             <h2 class="text-4xl font-bold">ใบรายการฝากของบริษัท</h2>
+            @foreach($account->sortBy('list')->sortBy('province_id') as $order)
+                @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
+                @endforeach
+                <h3 class="text-2xl font-bold">ประจำวันที่ {{$thaiDateHelper->simpleDateFormat($key->created_at)}}</h3>
+            @endforeach
+
+
     </div>
     <div class=" w-full  p-3">
         <div class="w-full">
@@ -66,7 +73,6 @@
                 <table class="w-full p-4 ">
                     <thead class="mt-10">
                         <tr class="text-xl border-4 ">
-                            <th class="">วันเดือนปี</th>
                             <th class="">รายการ</th>
                             <th class="">จังหวัด</th>
                             <th class="">จำนวน</th>
@@ -87,7 +93,7 @@
                                 $quantity = 0;
                                 $price = 0;
                                 $sendto = 0;
-                                
+
                             @endphp
                             @foreach($accounts->where('list',$order->list)->where('province_id',$order->province_id) as $key)
                                     @php
@@ -101,18 +107,13 @@
                                     @endphp
                             @endforeach
                             <tr class="text-xl border-4">
-                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                @if($i == 0)
-                                    <td class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</td>
-                                @else
-                                    <td class=""></td>
-                                @endif
+
                                 @if($order->list != null)
                                     <td class="">{{$order->list}}</td>
                                 @else
                                     <td class="">{{$order->type}}</td>
                                 @endif
-                                
+
                                 <td class="">{{$order->province->province}}</td>
                                 <td class="">{{$quantity}}</td>
                                 <td class="text-right pr-l">{{$prices}}</td>
@@ -133,7 +134,6 @@
                             @endphp
                         @endforeach
                         <tr class="text-xl border-4 font-bold">
-                            <td class=""></td>
                             <td class="" colspan="2"> รวมยอด</td>
                             <td class="">{{$a}} รายการ</td>
                             <td class="text-right pr-l">{{$ps}} บาท</td>
@@ -151,7 +151,6 @@
                 <table class="w-full p-4 ">
                     <thead>
                         <tr class="text-xl border-4">
-                            <th class="">{{$thaiDateHelper->simpleDateFormat($key->created_at)}}</th>
                             <th class="" colspan="2">รายการใช้จ่าย</th>
                             <th class="">จำนวนเงิน</th>
                         </tr>
@@ -163,7 +162,7 @@
                         @endphp
                         @foreach ( $expenses as $row)
                             <tr class="text-xl" >
-                                <td class=""></td>
+
                                 <td class=""colspan="2">{{$row->list}}</td>
                                 <td class="">{{$row->price}}</td>
                             </tr>
@@ -178,57 +177,39 @@
                             @endphp
                          @endforeach
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
                                 <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
                                 <td class="text-right pr-l">{{number_format($a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
-                                <td class="px-4 py-3" colspan="2"></td>
-                                <td class=""></td>
+                                <td class="px-4 py-3" colspan="3"></td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
                                 <td class="pr-l" colspan="2">ค่าฝากของ</td>
                                 <td class="text-right pr-l">{{$ps}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
                                 <td class="pr-l" colspan="2">ค่าส่งต่อ</td>
                                 <td class="text-right pr-l">{{$pts}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
-                                <td class="pr-l" colspan="2">รวม</td>
                                 @php
                                     $edit = $p + $pt;
                                 @endphp
-                                <td class="text-right pr-l">{{number_format($edit,2)}}</td>
-                            </tr>
-                            <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
-                                <td class="px-4 py-3" colspan="2"></td>
-                                <td class=""></td>
-                            </tr>
-                            <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
                                 <td class="pr-l" colspan="2">รายรับทั้งหมด</td>
                                 <td class="text-right pr-l">{{number_format($edit,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
                                 <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
                                 <td class="text-right pr-l">{{number_format((float)$a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class=""></td>
-                                <td class="pr-l" colspan="2">ยอดคงเหลือ </td>
+                                <td class="pr-l" colspan="2">ยอดคงเหลือสุทธิ </td>
                                 <td class="text-right pr-l">{{number_format(((float)$edit)-$a,2)}}</td>
                             </tr>
                     </tbody>
                 </table>
-            </div> 
-        </div> 
+            </div>
+        </div>
     </div>
 </body>
 </html>

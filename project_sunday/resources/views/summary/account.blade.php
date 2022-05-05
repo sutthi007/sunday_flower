@@ -115,7 +115,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -346,7 +346,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -491,7 +491,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center flex-1 lg:mr-32">
-                        
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -574,7 +574,7 @@
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         สรุปรายงาน บัญชี
                     </h2>
-                   
+
                         <div class="mt-4 mb-6 text-xl dark:text-white">
                             <p class="">รายวัน</p>
                         </div>
@@ -593,7 +593,7 @@
                                         </tr>
                                     </thead>
                                     @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                   
+
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                         @foreach($account as $key => $value)
                                             @php
@@ -603,7 +603,7 @@
                                             @foreach($value as $sum)
                                                 @php
                                                     $i = ($sum->quantity * $sum->price) +$i;
-                                                @endphp 
+                                                @endphp
                                             @endforeach
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">{{$t++}}</td>
@@ -611,14 +611,14 @@
                                                 <div class="w-100px m-auto">
                                                 {{$thaiDateHelper->simpleDateFormat($key)}}
                                             </div>
-                                            </td>                       
+                                            </td>
                                             <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a href="/account-details-day-pdf/{{$key}}">
+                                                <a href="/account-details-day-pdf/{{$key}}" target="_blank">
                                                     <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                                 </a>
                                             </td>
-                                        </tr>                                          
+                                        </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -652,7 +652,7 @@
                                                     @foreach($items as $item)
                                                         @php
                                                             $i = ($item->quantity * $item->price) +$i;
-                                                        @endphp 
+                                                        @endphp
                                                     @endforeach
                                                     <tr class="text-gray-700 dark:text-gray-400">
                                                         <td class="px-4 py-3 text-sm">{{$t++}}</td>
@@ -663,7 +663,7 @@
                                                         </td>
                                                         <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
                                                         <td class="px-4 py-3 text-sm">
-                                                        
+
                                                             <a href="/account-details-month-pdf/{{$row}}/{{$year}}" target="_blank">
                                                                 <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                                             </a>
@@ -690,20 +690,20 @@
             const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>`
-            // Jika ada isDarkmode di localstorage 
+            // Jika ada isDarkmode di localstorage
             if (localDarkmode) {
                 isDarkmode = localDarkmode
                 html.classList.add('dark')
             } else {
                 html.classList.remove('dark')
             }
-    
+
             function toggleTheme() {
                 isDarkmode = !isDarkmode
                 localStorage.setItem('isDarkmode', isDarkmode)
                 switchTheme()
             }
-    
+
             function switchTheme() {
                 if (isDarkmode) {
                     html.classList.add('dark')

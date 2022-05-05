@@ -24,7 +24,7 @@ class OrderController extends Controller
 
     public function store(Request $request)
     {
-       
+
         $request->validate([
             'name' =>'required',
             'city' =>'required',
@@ -135,7 +135,7 @@ class OrderController extends Controller
             return @$pdf->stream();
       }
     public function total(Request $request)
-    {  
+    {
         $cus = customer::find($request->customer_id);
 
         $cus->update([
@@ -146,11 +146,13 @@ class OrderController extends Controller
         return redirect()->route('getmoney', $customer);
     }
     public function getmoney(Request $request)
-    {  
+    {
         $cus = customer::find($request->customer_id);
 
+        $getmoney = $cus->getmoney + $request->getmoney;
+
         $cus->update([
-            'getmoney' => $request->getmoney,
+            'getmoney' => $getmoney,
         ]);
         $customer = $request->customer_id;
 
@@ -165,10 +167,10 @@ class OrderController extends Controller
                         ->select('list','type','name','city_id','province_id','phone')
                         ->groupBy('list','type','name','city_id','province_id','phone')
                         ->get();
-        
+
         $pdf = PDF::loadView('report',compact('orders','province','GroupOrder'));
         return @$pdf->stream();
     }
 
-   
+
 }

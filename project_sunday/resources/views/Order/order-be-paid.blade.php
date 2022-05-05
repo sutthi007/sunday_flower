@@ -11,17 +11,17 @@
     {{-- Js --}}
     <!-- <script src="./js/charts-lines.js" defer></script>
   <script src="/js/charts-pie.js" defer></script> -->
-    <script src="/js/init-alpine.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="icon" type="/img/svg" href="/img/icon.svg">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="/js/init-alpine.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="icon" type="/img/svg" href="/img/icon.svg">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 </head>
 
@@ -569,28 +569,27 @@
                     <div class="bg-white dark:bg-gray-800 shadow rounded-md">
                         <div class="w-full m-auto  mt-4">
 
-                            <div class="w-300px m-auto ">
-                                <div class="p-2">
-                                    <label
-                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                        for="grid-first-name">
-                                        ราคาสุทธิ
-                                    </label>
-                                    <input
-                                        class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" placeholder="{{ $customer->total }}"
-                                        disabled>
+                                    <div class="w-300px m-auto ">
+                                        <div class="p-2">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                for="grid-first-name">
+                                                ราคาสุทธิ
+                                            </label>
+                                            <input
+                                            class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
+                                            id="grid-first-name" type="text" placeholder="{{$customer->total - $customer->getmoney}}" disabled>
 
-                                </div>
-                                <form action="{{ route('savemoney') }}" method="post">
-                                    @csrf
-                                    <div class="p-2">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                            for="grid-first-name">
-                                            รับเงิน
-                                        </label>
-                                        <input
+                                        </div>
+                                <form action="{{ route('savemoney')}}" method="post">
+                                        @csrf
+                                        <div class="p-2">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                for="grid-first-name">
+                                                รับเงิน
+                                            </label>
+                                            <input
                                             class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900"
                                             id="grid-first-name" type="text" placeholder="" name="getmoney">
                                         <input type="hidden" name="customer_id" value="{{ $customer->id }}">

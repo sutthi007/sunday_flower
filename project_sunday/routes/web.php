@@ -82,9 +82,7 @@ Route::get('province/fetch',[subController::class,'fetch'])->middleware(['auth']
 //customer
 Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
 Route::resource('customer-systems',CustomerController::class)->middleware(['auth']);
-Route::get('CustomerView-overdue', function(){
-    return view('customerData/CustomerView-overdue');
-});
+Route::get('CustomerView-overdue',[CustomerAddController::class,'overdue']);
 Route::get('Customeradd', function(){
     return view('customerData/Customeradd');
 });

@@ -121,7 +121,7 @@
         </div>
         <img class="w-100px ml-10 mt-icon" src="{{ storage_path('app/public/img/1.jpg') }}" alt="">
     @php
-        
+
         $date = ($thaiDateHelper->simpleDateFormatPT($customer->created_at)+25647435)+$customer->id
     @endphp
         <div class="float-right mr-x">
@@ -178,8 +178,7 @@
                         @endphp
                         @php
                             $cost = ($price_to + $total) + $cost;
-                            
-                            $costs = number_format($cost,2);
+
                             $price = number_format($order->price,2) ;
                             $prices = number_format($total,2) ;
                         @endphp
@@ -197,7 +196,7 @@
                                 <td class=" text-xl pr-l"> {{$order->provinces_tos->provinces_to}}</td>
                                 @endif
                                 <td class=" text-xl text-center">{{ $order->quantity }}</td>
-                                
+
                                 <td class=" text-xl text-right pr-l">{{$price}}</td>
                                 <td class=" text-xl text-right pr-l">
                                     {{ $prices }}
@@ -207,20 +206,20 @@
                     @endforeach
                             <tr class="text-center">
                                 <td class=" text-xl" colspan="3"></td>
-                          
-                                <td class=" text-xl font-bold " colspan="2"> 
-                                จำนวนเงินทั้งสิน (บาท) 
+
+                                <td class=" text-xl font-bold " colspan="2">
+                                จำนวนเงินทั้งสิน (บาท)
                                 </td>
 
                                 <td class=" text-xl text-right pr-l">
-                                   {{$cost}}
+                                   {{number_format($cost,2)}}
                                 </td>
                             </tr>
-                          
+
                 </table>
             </div>
         </div>
-        <div class= "w-full mt-10">   
+        <div class= "w-full mt-10">
             <div class=" ">
             <p class="text-xl ml-14">ผู้รับเงิน</p>
             <p class="text-xl ml-15">(..............................................................)</p>
@@ -244,7 +243,7 @@
                 }
                 return x1 + x2;
             }
-        
+
             function fncSum()
             {
                  if(isNaN(document.frmMain.txtNumberA.value) || document.frmMain.txtNumberA.value == "")
@@ -253,14 +252,14 @@
                     document.frmMain.txtNumberA.focus();
                     return;
                  }
-        
+
                  if(isNaN(document.frmMain.txtNumberB.value) || document.frmMain.txtNumberB.value == "")
                  {
                     alert('(Number B)Please input Number only.');
                     document.frmMain.txtNumberB.focus();
                     return;
                  }
-        
+
                  var TotSum = (parseFloat(document.frmMain.txtNumberA.value) + parseFloat(document.frmMain.txtNumberB.value)).toFixed(2);
                  document.frmMain.txtNumberC.value  = addCommas(TotSum);
             }

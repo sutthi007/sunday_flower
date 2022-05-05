@@ -57,8 +57,11 @@ class ProfileController extends Controller
             'confirm_password' => 'required|same:new_password',
             ],
             [
-                'old_password.required','new_password.required','confirm_password.required' => 'กรุณากรอกรหัสเก่า',
-                'old_password.min','new_password.min' => 'กรอกรหัสมากกว่า 6 ตัว และน้อยกว่า 20 ตัว',
+                'old_password.required' => 'กรุณากรอกรหัสเดิม',
+                'new_password.required' => 'กรุณากรอกรหัสใหม่',
+                'confirm_password.required' => 'กรุณากรอกรหัสยืนยันรหัสผ่าน',
+                'old_password.min' => 'กรอกรหัสมากกว่า 6 ตัว และน้อยกว่า 20 ตัว',
+                'new_password.min' => 'กรอกรหัสมากกว่า 6 ตัว และน้อยกว่า 20 ตัว',
                 'old_password.same' => 'รหัสผ่านเก่าและใหม่ไม่ตรงกัน',
             ]
         );
@@ -70,7 +73,7 @@ class ProfileController extends Controller
                 'password' => bcrypt($request->new_password),
             ]);
 
-            return redirect()->back()->with('success',('เปลี่ยนรหัสผ่านเรียบร้อย'));
+            return redirect()->route('projects.index')->with('success',('เปลี่ยนรหัสผ่านเรียบร้อย'));
         }else{
             return redirect()->back()->with('error',('รหัสผ่านเก่าไม่ถูกต้อง'));
         }
