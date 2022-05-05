@@ -34,12 +34,13 @@ class userController extends Controller
 
         ]
     );
-
+   
         $customer = customer::create([
             'name' => $request->name,
             'province' => $request->province,
             'subdistrict' => $request->subdistrict,
             'phone' => $request->phone,
+            'employee' => $request->employee,
         ]);
 
         return redirect()->route('FormOrder.show',$customer);

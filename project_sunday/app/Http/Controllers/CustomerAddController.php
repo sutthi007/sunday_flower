@@ -12,11 +12,11 @@ class CustomerAddController extends Controller
         $customer = customeradd::all();
         return view('customerData.CustomerView',compact('customer'));
     }
-    public function store($id,Request $request){
-        $customer = customeradd::find($id);
+    public function store(Request $request){
+      
 
-        $customer->create($request->all());
-        return view('customerData.CustomerView',compact('customer'));
+        customeradd::create($request->all());
+        return redirect()->route('customer.index');
     }
     public function edit($id,Request $request){
         $customer = customeradd::find($id);
@@ -32,7 +32,7 @@ class CustomerAddController extends Controller
         $customer = customeradd::find($id);
 
         $customer->delete();
-        return view('customerData.CustomerView',compact('customer'));
+        return redirect()->route('customer.index');
     }
 
 }

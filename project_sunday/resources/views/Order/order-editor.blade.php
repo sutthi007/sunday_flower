@@ -46,11 +46,11 @@
             <ul>
                 <li class="relative px-6 py-3">
                     <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                    aria-hidden="true"></span>
+                        aria-hidden="true"></span>
                     <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                         href="{{ route('FormOrder.index') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                         </svg>
                         <span class="ml-4">เพิ่มออเดอร์</span>
@@ -88,11 +88,9 @@
                     </button>
                     <template x-if="isPagesMenuOpen">
                         <ul x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
+                            x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
                             x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
+                            x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                             class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                             aria-label="submenu">
                             <li
@@ -106,11 +104,11 @@
                                 </a>
                             </li>
                             <li
-                            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                            <a class="w-full" href="{{ route('city.index') }}">
-                                จังหวัดส่งต่อ
-                            </a>
-                        </li>
+                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                    จังหวัดส่งต่อ
+                                </a>
+                            </li>
                         </ul>
                     </template>
                 </li>
@@ -120,10 +118,10 @@
                         @click="togglePagesMenuss" aria-haspopup="true">
                         <span class="inline-flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
+                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
                             <span class="ml-4">ข้อมูลลูกค้า</span>
                         </span>
 
@@ -135,11 +133,9 @@
                     </button>
                     <template x-if="isPagesMenuOpenss">
                         <ul x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
+                            x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
                             x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
+                            x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                             class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                             aria-label="submenu">
                             <li
@@ -153,19 +149,19 @@
                                 </a>
                             </li>
                             <li
-                            class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                            <a class="w-full" href="/CustomerView-overdue">
-                                ลูกค้าค้างชำระ
-                            </a>
-                        </li>
+                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                <a class="w-full" href="/CustomerView-overdue">
+                                    ลูกค้าค้างชำระ
+                                </a>
+                            </li>
                         </ul>
                     </template>
                 </li>
                 <li class="relative px-6 py-3">
                     <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                         href="{{ route('Employee.index') }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
@@ -177,9 +173,9 @@
                         href="{{ route('service.index') }}">
                         <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
                             stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"
-                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" class="feather feather-align-center">
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-align-center">
                             <line x1="18" y1="10" x2="6" y2="10"></line>
                             <line x1="21" y1="6" x2="3" y2="6"></line>
                             <line x1="21" y1="14" x2="3" y2="14"></line>
@@ -191,8 +187,8 @@
                 <li class="relative px-6 py-3">
                     <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                         href="/expenses">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -220,11 +216,9 @@
                     </button>
                     <template x-if="isPagesMenuOpens">
                         <ul x-transition:enter="transition-all ease-in-out duration-300"
-                            x-transition:enter-start="opacity-25 max-h-0"
-                            x-transition:enter-end="opacity-100 max-h-xl"
+                            x-transition:enter-start="opacity-25 max-h-0" x-transition:enter-end="opacity-100 max-h-xl"
                             x-transition:leave="transition-all ease-in-out duration-300"
-                            x-transition:leave-start="opacity-100 max-h-xl"
-                            x-transition:leave-end="opacity-0 max-h-0"
+                            x-transition:leave-start="opacity-100 max-h-xl" x-transition:leave-end="opacity-0 max-h-0"
                             class="p-2 mt-2 space-y-2 overflow-hidden text-sm font-medium text-gray-500 rounded-md shadow-inner text-center bg-gray-50 dark:text-gray-400 dark:bg-gray-900"
                             aria-label="submenu">
                             <li
@@ -249,8 +243,7 @@
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             class="fixed inset-0 z-10 flex items-end bg-black bg-opacity-50 sm:items-center sm:justify-center"></div>
-        <aside
-            class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
+        <aside class="fixed inset-y-0 z-20 flex-shrink-0 w-64 mt-16 overflow-y-auto bg-white dark:bg-gray-800 md:hidden"
             x-show="isSideMenuOpen" x-transition:enter="transition ease-in-out duration-150"
             x-transition:enter-start="opacity-0 transform -translate-x-20" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in-out duration-150" x-transition:leave-start="opacity-100"
@@ -277,7 +270,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -337,11 +330,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -351,10 +344,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -375,7 +368,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
@@ -384,11 +378,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -565,58 +559,58 @@
                     </h2>
 
                     <div class="relative p-6 flex-auto dark:bg-gray-800 rounded-lg ">
-                        
-                            <div class="">
-                                <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
-                                    <h1>ผู้ส่ง</h1>
-                                </div>
-                                <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
 
-                                    <div class="w-full px-3 mb-6 md:mb-0 ">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                            for="grid-first-name">
-                                            ชื่อ
-                                        </label>
-                                        <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
-                                            id="grid-first-name">{{$order->customer->name}}</div>
-                                    </div>
-                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                            for="grid-first-name">
-                                            อำเภอ
-                                        </label>
-                                        <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
-                                            id="grid-first-name">
-                                            {{ $order->customer->subdistrict }}
-                                        </div>
-                                    </div>
-                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                            for="grid-first-name">
-                                            จังหวัด
-                                        </label>
-                                        <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
-                                            id="grid-first-name">
-                                            {{ $order->customer->province }}
-                                        </div>
-                                    </div>
-                                    <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                        <label
-                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                            for="grid-first-name">
-                                            เบอร์โทร
-                                        </label>
-                                        <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
-                                            id="grid-first-name">{{ $order->customer->phone }}</div>
+                        <div class="">
+                            <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
+                                <h1>ผู้ส่ง</h1>
+                            </div>
+                            <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
+
+                                <div class="w-full px-3 mb-6 md:mb-0 ">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        ชื่อ
+                                    </label>
+                                    <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
+                                        id="grid-first-name">{{ $order->customer->name }}</div>
+                                </div>
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        อำเภอ
+                                    </label>
+                                    <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
+                                        id="grid-first-name">
+                                        {{ $order->customer->subdistrict }}
                                     </div>
                                 </div>
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        จังหวัด
+                                    </label>
+                                    <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
+                                        id="grid-first-name">
+                                        {{ $order->customer->province }}
+                                    </div>
+                                </div>
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        เบอร์โทร
+                                    </label>
+                                    <div class="appearance-none block w-full text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white"
+                                        id="grid-first-name">{{ $order->customer->phone }}</div>
+                                </div>
                             </div>
-                            <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
-                                <h1>ผู้รับ</h1>
-                            </div>
+                        </div>
+                        <div class="w-200px m-auto text-center mb-6 text-xl dark:text-white">
+                            <h1>ผู้รับ</h1>
+                        </div>
                         <form action="{{ route('updateOrder', $order->id) }}" method="POST">
                             @csrf
                             @method('PUT')
@@ -658,7 +652,7 @@
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                         id="grid-first-name" type="text" name="city">
                                         <option value="{{ $order->city->city }}">{{ $order->city->city }}</option>
-                                       
+
                                     </select>
                                 </div>
                                 <div class="w-full  px-3 mb-6 md:mb-0">
@@ -670,8 +664,9 @@
                                     <select
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                         id="grid-first-name" type="text" name="province">
-                                        <option value="{{ $order->province->province }}">{{ $order->province->province }}</option>
-                                        
+                                        <option value="{{ $order->province->province }}">
+                                            {{ $order->province->province }}</option>
+
                                     </select>
                                 </div>
                                 <div class="w-full  px-3 mb-6 md:mb-0 ">
@@ -682,29 +677,28 @@
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" placeholder="" value="{{ $order->phone }}" name="phone">
+                                        id="grid-first-name" type="text" placeholder="" value="{{ $order->phone }}"
+                                        name="phone">
                                 </div>
                                 <div class="w-full  px-3 mb-6 md:mb-0 ">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                        for="grid-first-name" >
+                                        for="grid-first-name">
                                         เบอร์โทรที่2
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="telInput" onkeypress="addSpace()" type="tels" value="{{ $order->phoneOne }}"
-                                        name="phoneOne" maxlength="11" />
+                                        id="telInput" onkeypress="addSpace()" type="tels"
+                                        value="{{ $order->phoneOne }}" name="phoneOne" maxlength="11" />
                                 </div>
                                 <div class=" w-full px-3 mb-6 md:mb-0 ">
-                                    <label
-                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                        id="showthis" name="showthis" size="50" type="text"
-                                        value="text here">
+                                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        id="showthis" name="showthis" size="50" type="text" value="text here">
                                         ราคาส่งต่อ
                                     </label>
                                     <input
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                        name="price_sendto" value="{{ $order->price_to }}" >
+                                        name="price_sendto" value="{{ $order->price_to }}">
                                 </div>
                             </div>
                     </div>
@@ -770,7 +764,7 @@
         switchTheme()
     </script>
     <script>
-         function addSpace() {
+        function addSpace() {
             var inputValue = document.getElementById("telInput").value;
             var inputValueLength = inputValue.length;
 

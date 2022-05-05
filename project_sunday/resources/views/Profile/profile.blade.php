@@ -111,11 +111,11 @@
                                         </a>
                                     </li>
                                     <li
-                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
-                                        จังหวัดส่งต่อ
-                                    </a>
-                                </li>
+                                        class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                        <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                            จังหวัดส่งต่อ
+                                        </a>
+                                    </li>
                                 </ul>
                             </template>
                         </li>
@@ -336,7 +336,7 @@
                                     </li>
                                     <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
                                         จังหวัดส่งต่อ
                                     </a>
                                 </li>
@@ -657,7 +657,7 @@
                                     </li>
                                     <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
                                         จังหวัดส่งต่อ
                                     </a>
                                 </li>
@@ -873,7 +873,7 @@
                                     </li>
                                     <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('city.index') }}">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
                                         จังหวัดส่งต่อ
                                     </a>
                                 </li>

@@ -45,7 +45,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -105,11 +105,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -119,10 +119,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -143,7 +143,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
@@ -152,11 +153,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -237,10 +238,10 @@
                                     </a>
                                 </li>
 
-                            </li>
-                            </ul>
-                        </template>
                     </li>
+                </ul>
+                </template>
+                </li>
                 </ul>
             </div>
         </aside>
@@ -278,7 +279,7 @@
                 <ul>
                     <li class="relative px-6 py-3">
                         <span class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
-                        aria-hidden="true"></span>
+                            aria-hidden="true"></span>
                         <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 text-gray-800 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
                             href="{{ route('FormOrder.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -339,7 +340,7 @@
                                 </li>
                                 <li
                                 class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
+                                <a class="w-full" href="{{ route('provinceTo.index') }}">
                                     จังหวัดส่งต่อ
                                 </a>
                             </li>
@@ -352,10 +353,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -376,7 +377,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
@@ -385,11 +387,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -583,14 +585,15 @@
                                             </label>
                                             <input
                                                 class="appearance-none block w-full text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                                type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" autofocus list="ice-cream-flavors">
-                                                <datalist id="ice-cream-flavors">
-                                                    <option value="Chocolate">
-                                                    <option value="Coconut">
-                                                    <option value="Mint">
-                                                    <option value="Strawberry">
-                                                    <option value="Vanilla">
-                                                </datalist>
+                                                type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" autofocus
+                                                list="ice-cream-flavors">
+                                            <datalist id="ice-cream-flavors">
+                                                <option value="Chocolate">
+                                                <option value="Coconut">
+                                                <option value="Mint">
+                                                <option value="Strawberry">
+                                                <option value="Vanilla">
+                                            </datalist>
                                             @if ($errors->any('name'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('name') }}</p>
@@ -638,8 +641,8 @@
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
                                                 id="tell" onkeypress="addSpaceTEl()">
-                                            <input class="appearance-none block w-full" type="hidden" placeholder="" name="user_id"
-                                                value="{{Auth::user()->id}}">
+                                            <input class="appearance-none block w-full" type="hidden" placeholder=""
+                                                name="employee" value="{{ Auth::user()->name }}">
                                             @if ($errors->any('phone'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('phone') }}</p>

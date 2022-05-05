@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('province');
             $table->string('subdistrict');
             $table->string('phone');
-            $table->integer('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('employee')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

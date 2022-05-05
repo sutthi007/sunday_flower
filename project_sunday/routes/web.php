@@ -85,6 +85,9 @@ Route::resource('customer-systems',CustomerController::class)->middleware(['auth
 Route::get('CustomerView-overdue', function(){
     return view('customerData/CustomerView-overdue');
 });
+Route::get('Customeradd', function(){
+    return view('customerData/Customeradd');
+});
 
 Route::resource('summary',SummaryController::class)->middleware(['auth']);
 Route::get('summary-transport',[SummaryController::class,'transport'])->name('sumTransport')->middleware(['auth']);

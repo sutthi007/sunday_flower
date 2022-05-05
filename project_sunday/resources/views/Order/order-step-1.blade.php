@@ -114,7 +114,7 @@
                                 </li>
                                 <li
                                 class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
+                                <a class="w-full" href="{{ route('provinceTo.index') }}">
                                     จังหวัดส่งต่อ
                                 </a>
                             </li>
@@ -345,7 +345,7 @@
                                 </li>
                                 <li
                                 class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="{{ route('city.index') }}">
+                                <a class="w-full" href="{{ route('provinceTo.index') }}">
                                     จังหวัดส่งต่อ
                                 </a>
                             </li>
@@ -789,7 +789,7 @@
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="grid-first-name" type="text" placeholder="" name="list" required autofocus />
+                                                    id="grid-first-name" type="text" placeholder="" name="list" />
                                             </div>
                                             <div class="w-full  px-3 mb-6 md:mb-0 ">
                                                 <div class="flex">

@@ -14,7 +14,7 @@ class customer extends Model
         'province',
         'subdistrict',
         'phone',
-        'user_id',
+        'employee',
         'total',
         'getmoney'
 

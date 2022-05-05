@@ -213,7 +213,7 @@
                                 </td>
 
                                 <td class=" text-xl text-right pr-l">
-                                   {{$costs}}
+                                   {{$cost}}
                                 </td>
                             </tr>
                           
