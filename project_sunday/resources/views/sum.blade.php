@@ -70,15 +70,16 @@
     <div class=" w-full  p-3">
         <div class="w-full">
             <div class="mr-4  " >
+                <p class="text-center text-2xl font-bold" >รายรับ</p>
                 <table class="w-full p-4 ">
                     <thead class="mt-10">
-                        <tr class="text-xl border-4 ">
+                        <tr class="text-2xl border-4 ">
                             <th class="">รายการ</th>
                             <th class="">จังหวัด</th>
-                            <th class="">จำนวน</th>
-                            <th class="">ราคา</th>
+                            <th class="">จำนวน(หน่วย)</th>
+                            <th class="">จำนวนเงิน(บาท)</th>
                             <th class="">ส่งต่อ</th>
-                            <th class="">ราคา</th>
+                            <th class="">จำนวนเงิน(บาท)</th>
                         </tr>
                     </thead>
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
@@ -134,11 +135,15 @@
                             @endphp
                         @endforeach
                         <tr class="text-xl border-4 font-bold">
-                            <td class="" colspan="2"> รวมยอด</td>
-                            <td class="">{{$a}} รายการ</td>
-                            <td class="text-right pr-l">{{$ps}} บาท</td>
+                            <td class="" colspan="2"> รวม</td>
+                            <td class="">{{$a}}</td>
+                            <td class="text-right pr-l">{{$ps}}</td>
                             <td class="">ค่าฝากต่อ</td>
                             <td class="text-right pr-l">{{$pts}}</td>
+                        </tr>
+                        <tr class="text-xl border-4 font-bold">
+                            <td class="" colspan="5">รวมรายได้ทั้งสิ้น</td>
+                            <td class="">{{number_format($ps+$pts)}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -148,11 +153,12 @@
     <div class="w-full  p-3">
         <div class="w-full">
             <div class="mr-4 ">
+                <p class="text-center text-2xl font-bold" >รายจ่าย</p>
                 <table class="w-full p-4 ">
                     <thead>
                         <tr class="text-xl border-4">
                             <th class="" colspan="2">รายการใช้จ่าย</th>
-                            <th class="">จำนวนเงิน</th>
+                            <th class="">จำนวนเงิน(บาท)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -162,9 +168,8 @@
                         @endphp
                         @foreach ( $expenses as $row)
                             <tr class="text-xl" >
-
                                 <td class=""colspan="2">{{$row->list}}</td>
-                                <td class="">{{$row->price}}</td>
+                                <td class="text-right">{{number_format($row->price,2)}}</td>
                             </tr>
                             @php
                                 $a = $row->price + $a ;
@@ -176,21 +181,22 @@
                                 $edit = 0;
                             @endphp
                          @endforeach
+
                             <tr class="text-xl border-4 font-bold">
-                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท)</td>
+                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น</td>
                                 <td class="text-right pr-l">{{number_format($a,2)}}</td>
                             </tr>
-                            <tr class="text-xl border-4 font-bold">
-                                <td class="px-4 py-3" colspan="3"></td>
+                        </tbody>
+                    </table>
+                    <p class="text-center text-2xl font-bold" >ยอดคงเหลือ</p>
+                    <table class="w-full p-4 ">
+                        <thead>
+                            <tr class="text-xl border-4">
+                                <th class="" colspan="2">รายการ</th>
+                                <th class="">จำนวนเงิน(บาท)</th>
                             </tr>
-                            <tr class="text-xl border-4 font-bold">
-                                <td class="pr-l" colspan="2">ค่าฝากของ</td>
-                                <td class="text-right pr-l">{{$ps}}</td>
-                            </tr>
-                            <tr class="text-xl border-4 font-bold">
-                                <td class="pr-l" colspan="2">ค่าส่งต่อ</td>
-                                <td class="text-right pr-l">{{$pts}}</td>
-                            </tr>
+                        </thead>
+                        <tbody>
                             <tr class="text-xl border-4 font-bold">
                                 @php
                                     $edit = $p + $pt;
@@ -199,15 +205,15 @@
                                 <td class="text-right pr-l">{{number_format($edit,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
-                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น(บาท) </td>
+                                <td class="pr-l" colspan="2">ยอดรวมรายจ่ายทั้งสิ้น </td>
                                 <td class="text-right pr-l">{{number_format((float)$a,2)}}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="pr-l" colspan="2">ยอดคงเหลือสุทธิ </td>
                                 <td class="text-right pr-l">{{number_format(((float)$edit)-$a,2)}}</td>
                             </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
             </div>
         </div>
     </div>

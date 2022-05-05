@@ -1020,9 +1020,7 @@
             } else{
                 document.getElementById("ifYes").style.display = "block";
             }
-
         }
-
     </script>
 </body>
 

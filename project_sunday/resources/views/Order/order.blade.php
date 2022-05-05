@@ -17,6 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
 </head>
 
@@ -584,9 +585,10 @@
                                                 ชื่อ-ผู้ส่ง
                                             </label>
                                             <input
-                                                class="appearance-none block w-full text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
+                                                class="name appearance-none block w-full text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" autofocus
-                                                list="ice-cream-flavors">
+                                                list="ice-cream-flavors"
+                                                id="name">
                                             <datalist id="ice-cream-flavors">
                                                 @foreach($customer as $row)
                                                     <option value="{{$row->name}}">
@@ -605,8 +607,13 @@
                                             </label>
                                             <input
                                                 class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
+<<<<<<< Updated upstream
                                                 id="grid-first-name" type="text" name="province" >
                                                 @if ($errors->any('province'))
+=======
+                                                id="grid-first-name" type="text" name="province"  value="เชียงใหม่">
+                                            @if ($errors->any('province'))
+>>>>>>> Stashed changes
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
                                             @endif
@@ -628,12 +635,12 @@
                                         </div>
                                         <div class="w-full  px-3  m-auto">
                                             <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
                                                 เบอร์โทร
                                             </label>
                                             <input
-                                                class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
+                                                class="phone appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
                                                 id="tell" onkeypress="addSpaceTEl()">
                                             <input class="appearance-none block w-full" type="hidden" placeholder=""
@@ -719,6 +726,7 @@
             }
         }
     </script>
+
 </body>
 
 </html>

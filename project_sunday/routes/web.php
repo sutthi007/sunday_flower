@@ -30,7 +30,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -78,6 +78,7 @@ Route::resource('provinceTo',ProvincesToController::class)->middleware(['auth'])
 Route::resource('subdistrict',subController::class)->middleware(['auth']);
 Route::resource('city',cityController::class)->middleware(['auth']);
 Route::get('province/fetch',[subController::class,'fetch'])->middleware(['auth'])->name('fetch');
+Route::get('province',[subController::class,'getcustomer'])->middleware(['auth'])->name('getcustomer');
 
 //customer
 Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
