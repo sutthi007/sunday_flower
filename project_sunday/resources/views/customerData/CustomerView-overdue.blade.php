@@ -257,7 +257,7 @@
                     </a>
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            
+
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -1187,7 +1187,7 @@
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         ข้อมูลลูกค้าค้างชำระ
                     </h2>
-                   
+
                     <!-- New Table -->
                     <div class="w-full overflow-hidden rounded-lg shadow-xs ">
                         <div class="w-full overflow-x-auto">
@@ -1196,7 +1196,7 @@
                                     <tr
                                         class="text-xs  font-semibold text-center tracking-wide text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
                                         <th class="px-4 py-3">ลำดับ</th>
-                                        <th class="px-4 py-3">ชื่อลูกค่า-ผู้ส่ง</th>
+                                        <th class="px-4 py-3">ชื่อลูกค้า-ผู้ส่ง</th>
                                         <th class="px-8 py-3">เบอร์โทร</th>
                                         <th class="px-4 py-3">สถานะ</th>
                                         <th class="px-4 py-3">SYSTEMS</th>
@@ -1204,37 +1204,42 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                   
-                                    <tr>
-                                        <td class="px-4 py-3 text-xs"></td>
-                                        <td class="px-4 py-3 text-xs"></td>
-                                        <td class="px-4 py-3 text-xs"></td>
-                                        <td class="px-4 py-3 text-xs"></td>
-                                        <td class="px-4 py-3 text-xs"> 
-                                            <div
-                                            class="text-sm m-auto active:bg-fuchsia-700 bg-pink rounded-md w-150px h-30px  text-white p-1 text-center">
-                                            <a class=""
-                                                href="">
-                                                รายละเอียด
-                                            </a>
-                                        </div></td>
-                                        <td class="px-4 py-3 text-sm w-100px ">
-                                            <form class="w-full m-auto"
-                                                action=""
-                                                method="post">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button id="" class="w-6 h-6"><svg
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                        stroke="currentColor" stroke-width="2">
-                                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                    </svg></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    
+                                    @php
+                                        $i = 1;
+                                    @endphp
+                                   @foreach($customers as $customer)
+                                    @if ($customer->getmoney - $customer->total < 0)
+                                        <tr>
+                                            <td class="px-4 py-3 text-xs">{{$i++}}</td>
+                                            <td class="px-4 py-3 text-xs">{{$customer->name}}</td>
+                                            <td class="px-4 py-3 text-xs">{{$customer->phone}}</td>
+                                            <td class="px-4 py-3 text-xs">ค้างชำระ</td>
+                                            <td class="px-4 py-3 text-xs">
+                                                <div
+                                                class="text-sm m-auto active:bg-fuchsia-700 bg-pink rounded-md w-150px h-30px  text-white p-1 text-center">
+                                                <a class=""
+                                                    href="{{ route('customer.show', $customer->id)}}">
+                                                    รายละเอียด
+                                                </a>
+                                            </div></td>
+                                            <td class="px-4 py-3 text-sm w-100px ">
+                                                <form class="w-full m-auto"
+                                                    action="{{ route('overduedestroy', $customer->id)}}"
+                                                    method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button id="" class="w-6 h-6"><svg
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                            stroke="currentColor" stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                        </svg></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endif
+                                   @endforeach
                                 </tbody>
                             </table>
                         </div>

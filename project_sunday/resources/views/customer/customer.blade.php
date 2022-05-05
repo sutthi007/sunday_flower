@@ -1208,64 +1208,67 @@
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                     @php($i = 1)
                                     @foreach ($customers as $customer)
-                                        <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
-                                            <td class="px-4 py-3 text-sm">
-                                                <div class="w-150px">
-                                                    {{ $customer->name }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
-                                            <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
-                                            @if ($customer->getmoney - $customer->total >= 0)
+                                        @if ($customer->orders != null)
+                                            <tr class="text-gray-700 dark:text-gray-400">
+                                                <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                                 <td class="px-4 py-3 text-sm">
-                                                    <div class="w-100px">
-                                                        ชำระเรียบร้อย
+                                                    <div class="w-150px">
+                                                        {{ $customer->name }}
                                                     </div>
                                                 </td>
-                                            @else
+                                                <td class="px-4 py-3 text-sm">{{ $customer->province }}</td>
+                                                <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
+                                                @if ($customer->getmoney - $customer->total >= 0)
+                                                    <td class="px-4 py-3 text-sm">
+                                                        <div class="w-100px">
+                                                            ชำระเรียบร้อย
+                                                        </div>
+                                                    </td>
+                                                @else
+                                                    <td class="px-4 py-3 text-sm">
+                                                        <div class="w-100px">
+                                                            ค้างชำระ
+                                                        </div>
+                                                    </td>
+                                                @endif
+                                                <td class="px-4 py-3 text-sm">{{$customer->employee}}</td>
+                                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                                                 <td class="px-4 py-3 text-sm">
-                                                    <div class="w-100px">
-                                                        ค้างชำระ
+                                                    <div class="w-150px">
+                                                        {{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
                                                     </div>
                                                 </td>
-                                            @endif
-                                            <td class="px-4 py-3 text-sm">{{$customer->employee}}</td>
-                                            @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
-                                            <td class="px-4 py-3 text-sm">
-                                                <div class="w-150px">
-                                                    {{ $thaiDateHelper->simpleDateFormatcustomer($customer->created_at) }}
-                                                </div>
-                                            </td>
-                                            <td class="px-4 py-3 text-sm ">
-                                                <div
-                                                    class="  m-auto active:bg-fuchsia-700 bg-pink rounded-md w-150px h-30px  text-white p-1 text-center">
-                                                    <a class=""
-                                                        href="{{ route('customer-systems.show', $customer->id) }}">
-                                                        รายละเอียด
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            @if (auth::user()->role == 'employee')
-                                                <td></td>
-                                            @else
-                                                <td class="px-4 py-3 text-sm w-100px ">
-                                                    <form class="w-full m-auto"
-                                                        action="{{ route('customer-systems.destroy', $customer->id) }}"
-                                                        method="post">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
-                                                                xmlns="http://www.w3.org/2000/svg"
-                                                                class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                                                stroke="currentColor" stroke-width="2">
-                                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg></button>
-                                                    </form>
+                                                <td class="px-4 py-3 text-sm ">
+                                                    <div
+                                                        class="  m-auto active:bg-fuchsia-700 bg-pink rounded-md w-150px h-30px  text-white p-1 text-center">
+                                                        <a class=""
+                                                            href="{{ route('customer-systems.show', $customer->id) }}">
+                                                            รายละเอียด
+                                                        </a>
+                                                    </div>
                                                 </td>
-                                            @endif
-                                        </tr>
+                                                @if (auth::user()->role == 'employee')
+                                                    <td></td>
+                                                @else
+                                                    <td class="px-4 py-3 text-sm w-100px ">
+                                                        <form class="w-full m-auto"
+                                                            action="{{ route('customer-systems.destroy', $customer->id) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button id="" class="w-6 h-6"><svg
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                                                    stroke="currentColor" stroke-width="2">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                                        d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                </svg></button>
+                                                        </form>
+                                                    </td>
+                                                @endif
+                                            </tr>
+                                        @endif
+
                                     @endforeach
                                 </tbody>
                             </table>
