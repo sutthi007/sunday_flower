@@ -1212,16 +1212,32 @@
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center dark:text-gray-400 text-gray-500">
                                     @php($i = 1)
                                     @foreach($customer as $row)
                                     <tr>
-                                        <td class="px-4 py-3 text-xs">{{$i++}}</td>
-                                        <td class="px-4 py-3 text-xs">{{$row->name}}</td>
-                                        <td class="px-4 py-3 text-xs">{{$row->phone}}</td>
-                                        <td class="px-4 py-3 text-xs">{{$row->province}}</td>
-                                        <td class="px-4 py-3 text-xs">{{$row->city}}</td>
-                                        <td class="px-4 py-3 text-xs">{{$row->subdistrict}}</td>
+                                        <td class="px-4 py-3 text-sm">{{$i++}}</td>
+                                        <td class="px-4 py-3 text-sm">
+                                            <div class="w-100px m-auto">
+                                                {{$row->name}}
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm">
+                                            <div class="w-100px m-auto">{{$row->phone}}</div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm">
+                                            <div class="w-100px m-auto">{{$row->province}}</div>
+                                            </td>
+                                        <td class="px-4 py-3 text-sm">
+                                            <div class="w-100px m-auto">
+                                            {{$row->city}}
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3 text-sm">
+                                            <div class="w-100px m-auto">
+                                            {{$row->subdistrict}}
+                                            </div>
+                                        </td>
                                         <td class="px-4 py-3 text-sm w-100px flex">
                                             <a class="w-6 h-6 mr-2"
                                             href="{{ route('customer.edit', $row->id) }}">
