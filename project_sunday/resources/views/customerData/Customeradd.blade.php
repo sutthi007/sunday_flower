@@ -1187,7 +1187,7 @@
                     @csrf
                     <div class="container px-6 mx-auto grid">
                         <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
-                            เพิ่มข้อมูลพนักงาน
+                            เพิ่มข้อมูลลูกค้า
                         </h2>
                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
                             <div class="m-auto rounded-md p-3">                             
@@ -1255,7 +1255,7 @@
                             </div>
                             <div class="mt-5 mb-9 w-250px m-auto">
                                 <div class="flex text-center  ">
-                                    <a href="/Employee">
+                                    <a href="/customer">
                                         <div class="bg-rose-600 w-100px h-30px rounded-md text-white  mb-6 mt-6 p-1">
                                             ยกเลิก
                                         </div>

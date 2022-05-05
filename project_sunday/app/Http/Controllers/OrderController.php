@@ -12,6 +12,7 @@ use Symfony\Component\Mailer\Transport;
 use App\Models\province;
 use App\Models\provinceTo;
 use App\Models\service;
+use App\Models\customeradd;
 use Barryvdh\DomPDF\Facade\PDF;
 use Dompdf\Adapter\PDFLib;
 
@@ -19,7 +20,8 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return view('Order.order');
+        $customer = customeradd::all();
+        return view('Order.order',compact('customer'));
     }
 
     public function store(Request $request)

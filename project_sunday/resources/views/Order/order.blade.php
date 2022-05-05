@@ -588,11 +588,9 @@
                                                 type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name" autofocus
                                                 list="ice-cream-flavors">
                                             <datalist id="ice-cream-flavors">
-                                                <option value="Chocolate">
-                                                <option value="Coconut">
-                                                <option value="Mint">
-                                                <option value="Strawberry">
-                                                <option value="Vanilla">
+                                                @foreach($customer as $row)
+                                                    <option value="{{$row->name}}">
+                                                @endforeach
                                             </datalist>
                                             @if ($errors->any('name'))
                                                 <p class="text-red-500 text-xs italic text-center">
@@ -605,11 +603,11 @@
                                                 for="grid-first-name">
                                                 จังหวัด
                                             </label>
-                                            <select
+                                            <input
                                                 class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" placeholder="value" name="province">
-                                                <option value="เชียงใหม่">เชียงใหม่</option>
-                                            </select>
+                                                id="grid-first-name" type="text" ame="province"  value="เชียงใหม่">
+                                                
+                                            
                                             @if ($errors->any('province'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
@@ -621,11 +619,9 @@
                                                 for="grid-first-name">
                                                 อำเภอ
                                             </label>
-                                            <select
+                                            <input
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                                id="grid-first-name" type="text" placeholder="" name="subdistrict">
-                                                <option value="เมือง">เมือง</option>
-                                            </select>
+                                                id="grid-first-name" type="text"  name="subdistrict" value="เมือง">
                                             @if ($errors->any('subdistrict'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('subdistrict') }}</p>

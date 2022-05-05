@@ -21,6 +21,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
+
+
 
 </head>
 
@@ -1097,7 +1102,7 @@
                                             <label class="dark:text-white" class="p-1"  for="">
                                                 รหัสผ่านเดิม 
                                             </label>
-                                             <input class="bg-white p-4 ml-2  rounded-lg  h-30px dark:bg-gray-800" type="text" name="old_password" id="old_password">
+                                             <input  class="bg-white p-4 ml-2  rounded-lg  h-30px dark:bg-gray-800" type="text" name="old_password" id="old_password">
                                             
                                         </div>
                                             <div class="text-center text-xs mt-2" >
@@ -1137,7 +1142,7 @@
                                             @endif
                                             </div>
                                         <div class="flex justify-center p-2">
-                                            <button type="submit"class="bg-pink w-150px h-30px rounded-md text-white">ยืนยันเปลี่ยนรหัสผ่าน</button>
+                                            <button  type="submit"class="bg-pink w-150px h-30px rounded-md text-white">ยืนยันเปลี่ยนรหัสผ่าน</button>
                                         </div>
                                     </form>
                                 </div>
@@ -1145,8 +1150,9 @@
                         </div>
                     </div>
                 </div>
+                
             </main>
-        </div>
+        </div>     
         <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');

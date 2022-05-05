@@ -1184,6 +1184,11 @@
                     </ul>
                 </div>
             </header>
+            @if(session()->has('success'))
+                    <div class="bg-green-100 border border-red-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
             @can('owner')
                 <main class="h-full overflow-y-auto">
                     <div class="container px-6 mx-auto grid ">
