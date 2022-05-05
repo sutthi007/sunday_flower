@@ -616,22 +616,6 @@
                             @method('PUT')
                             <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 -mx-3 ">
 
-                                <div class="  w-full  px-3 mb-6 md:mb-0">
-                                    <label
-                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                        for="grid-first-name">
-                                        ประเภท
-                                    </label>
-                                    <select
-                                        class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" name="type">
-                                        <option value="{{ $order->type }}">{{ $order->type }}</option>
-                                        <option value="แมว">แมว</option>
-                                        <option value="ผลไม้และผัก">ผลไม้และผัก</option>
-                                        <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
-                                        <option value="พัสดุมอไซต์">พัสดุมอไซต์</option>
-                                    </select>
-                                </div>
                                 <div class="w-full  px-3 mb-6 md:mb-0">
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
@@ -646,19 +630,6 @@
                                     <label
                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                         for="grid-first-name">
-                                        อำเภอ
-                                    </label>
-                                    <select
-                                        class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                        id="grid-first-name" type="text" name="city">
-                                        <option value="{{ $order->city->city }}">{{ $order->city->city }}</option>
-
-                                    </select>
-                                </div>
-                                <div class="w-full  px-3 mb-6 md:mb-0">
-                                    <label
-                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                        for="grid-first-name">
                                         จังหวัด
                                     </label>
                                     <select
@@ -666,6 +637,19 @@
                                         id="grid-first-name" type="text" name="province">
                                         <option value="{{ $order->province->province }}">
                                             {{ $order->province->province }}</option>
+
+                                    </select>
+                                </div>
+                                <div class="w-full  px-3 mb-6 md:mb-0">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        อำเภอ
+                                    </label>
+                                    <select
+                                        class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
+                                        id="grid-first-name" type="text" name="city">
+                                        <option value="{{ $order->city->city }}">{{ $order->city->city }}</option>
 
                                     </select>
                                 </div>
@@ -700,14 +684,92 @@
                                         class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                         name="price_sendto" value="{{ $order->price_to }}">
                                 </div>
+                                <div class=" w-full px-3 mb-6 md:mb-0 ">
+                                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        id="showthis" name="showthis" size="50" type="text" value="text here">
+                                        จังหวัดส่งต่อ
+                                    </label>
+                                    <select
+                                    class=" appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                    id="grid-first-name" type="text" placeholder="" name="provinces_to"
+                                    id="provinces">
+                                    <option value="">{{$order->provinces_to }}</option>
+                                    {{-- @foreach ($provinces_to as $row)
+                                        <option value="{{ $row->id }}">{{ $row->provinces_to }}
+                                        </option>
+                                    @endforeach --}}
+                                </select>
+                                </div>
+                                <div class="  w-full  px-3 mb-6 md:mb-0">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                        for="grid-first-name">
+                                        ประเภท
+                                    </label>
+                                    <select
+                                        class="appearance-none block w-full text-gray-700 border dark:border-0 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
+                                        id="grid-first-name" type="text" name="type">
+                                        <option value="{{ $order->type }}">{{ $order->type }}</option>
+                                        <option value="ผลไม้และผัก">ผลไม้และผัก</option>
+                                        <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
+                                        <option value="พัสดุมอไซต์">พัสดุมอไซต์</option>
+                                        <option value="สัตว์เลี้ยง">สัตว์เลี้ยง</option>
+                                    </select>
+                                </div>
+                                <div class=" w-full px-3 mb-6 md:mb-0 " style="display:block;" id="ifYes">
+                                    <label
+                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        for="grid-first-name">
+                                        รายการ
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        id="grid-first-name" type="text" value="{{$order->list}}" name="list" />
+                                </div>
+                                <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                    <div class="flex">
+                                        <div class="mr-2">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                จำนวน
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-200px text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" value="{{$order->quantity}}"
+                                                name="quantity" />
+                              
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                for="grid-first-name">
+                                                หน่วย
+                                            </label>
+                                            <input
+                                                class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" value="{{$order->amount}}" name="amount" />
+                                               
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" w-full px-3 mb-6 md:mb-0 ">
+                                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                        id="showthis" name="showthis" size="50" type="text" value="text here">
+                                        ราคา
+                                    </label>
+                                    <input
+                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                        name="price_sendto" value="{{ $order->price_to }}">
+                                </div>   
                             </div>
                     </div>
                     <div class="flex items-center justify-end p-6  border-solid border-blueGray-200 rounded-b">
-                        <button
+                        <a href="/FormOrder/{{$order->customer->id}}"
                             class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="reset">
                             ยกเลิก
-                        </button>
+                        </a>
                         <button
                             class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                             ยืนยัน

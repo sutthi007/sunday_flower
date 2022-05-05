@@ -605,13 +605,12 @@
                                             </label>
                                             <input
                                                 class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" ame="province"  value="เชียงใหม่">
-                                                
-                                            
-                                            @if ($errors->any('province'))
+                                                id="grid-first-name" type="text" name="province" >
+                                                @if ($errors->any('province'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
                                             @endif
+                                         
                                         </div>
                                         <div class="w-full px-3   m-auto">
                                             <label
@@ -621,8 +620,8 @@
                                             </label>
                                             <input
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                                id="grid-first-name" type="text"  name="subdistrict" value="เมือง">
-                                            @if ($errors->any('subdistrict'))
+                                                id="grid-first-name" type="text"  name="subdistrict" >
+                                                @if ($errors->any('subdistrict'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('subdistrict') }}</p>
                                             @endif
