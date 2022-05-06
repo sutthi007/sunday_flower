@@ -429,10 +429,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: auto;
   margin-left: auto;
 }
-@media (min-width: 375px) {
+@media (min-width: 367px) {
 
   .container {
-    max-width: 375px;
+    max-width: 367px;
   }
 }
 @media (min-width: 414px) {
@@ -596,11 +596,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-1 {
   margin-top: 0.25rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
-}
 .mt-5 {
   margin-top: 1.25rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
 }
 .mb-9 {
   margin-bottom: 2.25rem;
@@ -701,6 +701,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-6 {
   height: 1.5rem;
 }
+.h-200px {
+  height: 200px;
+}
 .h-40 {
   height: 10rem;
 }
@@ -727,9 +730,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-24px {
   height: 24px;
-}
-.h-150px {
-  height: 150px;
 }
 .max-h-0 {
   max-height: 0px;
@@ -1752,7 +1752,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-placeholder-opacity: 1;
   color: rgb(75 85 99 / var(--tw-placeholder-opacity));
 }
-@media (min-width: 375px) {
+@media (min-width: 367px) {
 
   .ss\:h-500px {
     height: 500px;
@@ -1904,10 +1904,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: 1.75rem;
   }
 
-  .md\:w-500px {
-    width: 500px;
-  }
-
   .md\:w-full {
     width: 100%;
   }
@@ -1950,6 +1946,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: 8rem;
   }
 
+  .lg\:h-500px {
+    height: 500px;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
   .lg\:w-300px {
     width: 300px;
   }
@@ -1989,8 +1993,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 500px;
   }
 
-  .xl\:w-700px {
-    width: 700px;
+  .xl\:w-full {
+    width: 100%;
   }
 
   .xl\:w-600px {

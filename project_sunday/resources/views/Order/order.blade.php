@@ -602,31 +602,15 @@
                                             @endif
                                             </div>
                                         </div>
-                                        <div class="w-full px-3 m-auto relative h-50px ">
+                                        <div class="w-full px-3  m-auto relative h-50px ">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
-                                                จังหวัด
-                                            </label>
-                                            <input
-                                                class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
-                                                id="grid-first-name" type="text" name="province"  value="">
-                                            <div class="adsolute bottom-0 left-0">
-                                            @if ($errors->any('province'))
-                                                <p class="text-red-500 text-xs italic text-center">
-                                                    {{ $errors->first('province') }}</p>
-                                            @endif
-                                            </div>
-                                        </div>
-                                        <div class="w-full px-3  m-auto relative h-50px mt-5">
-                                            <label
-                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
-                                                for="grid-first-name">
-                                                อำเภอ
+                                                อำเภอ-ผู้ส่ง
                                             </label>
                                             <input
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                                id="grid-first-name" type="text"  name="subdistrict" >
+                                                id="grid-first-name" type="text"  name="subdistrict" value="เมือง">
                                                 <div class="adsolute bottom-0 left-0">
                                                 @if ($errors->any('subdistrict'))
                                                 <p class="text-red-500 text-xs italic text-center">
@@ -634,11 +618,27 @@
                                             @endif
                                                 </div>
                                         </div>
+                                        <div class="w-full px-3 m-auto relative h-50px mt-5">
+                                            <label
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                for="grid-first-name">
+                                                จังหวัด-ผู้ส่ง
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
+                                                id="grid-first-name" type="text" name="province"  value="เชียงใหม่">
+                                            <div class="adsolute bottom-0 left-0">
+                                            @if ($errors->any('province'))
+                                                <p class="text-red-500 text-xs italic text-center">
+                                                    {{ $errors->first('province') }}</p>
+                                            @endif
+                                            </div>
+                                        </div>
                                         <div class="w-full  px-3  m-auto relative h-50px mt-5">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
-                                                เบอร์โทร
+                                                เบอร์โทร-ผู้ส่ง
                                             </label>
                                             <input
                                                 class="phone appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"

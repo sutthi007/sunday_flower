@@ -15,12 +15,14 @@ class CustomerController extends Controller
     }
 
     public function show($id){
-
+        
         $customers = customer::find($id);
 
         return view('customer.customer-editor', compact('customers'));
     }
     public function destroy($id){
+
+        
         $customers = customer::find($id);
         $customers->delete();
 

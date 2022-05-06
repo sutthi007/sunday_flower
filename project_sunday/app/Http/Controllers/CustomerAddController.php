@@ -14,7 +14,21 @@ class CustomerAddController extends Controller
         return view('customerData.CustomerView',compact('customer'));
     }
     public function store(Request $request){
-
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required',
+            'city'=>'required',
+            'province'=>'required',
+            'subdistrict' => 'required'
+        ],
+        [
+            'name.required'=> 'กรุณากรอกชื่อ',
+            'city.required'=> 'กรุณากรอกอำเภอ',
+            'subdistrict.required'=> 'กรุณากรอกตำบล',
+            'province.required'=> 'กรุณากรอกจังหวัด',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+        ]
+    );
 
         customeradd::create($request->all());
         return redirect()->route('customer.index');

@@ -65,8 +65,8 @@ class EmployeeController extends Controller
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
-            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
-            'phone_relative' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
+            'phone' => 'required|regex:/(0)[0-9]{9}|size:11',
+            'phone_relative' => 'required|regex:/(0)[0-9]{9}|size:11',
             'zipcode' => 'required',
             'image_Profile' => 'required',
         ],

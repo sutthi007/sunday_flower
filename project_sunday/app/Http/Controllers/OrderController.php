@@ -31,7 +31,7 @@ class OrderController extends Controller
             'name' =>'required',
             'city' =>'required',
             'province' =>'required',
-            'phone' => 'required|regex:/(0)[0-9]{2}[-]{1}[0-9]{7}/|size:11',
+            'phone' => 'required|regex:/(0)[0-9]{9}/|size:11',
             'quantity' =>'required',
             'price' =>'required',
             'amount' => 'required',
