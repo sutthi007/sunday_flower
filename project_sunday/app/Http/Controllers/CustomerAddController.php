@@ -53,6 +53,12 @@ class CustomerAddController extends Controller
         $customers = customer::all();
         return view('customerData.CustomerView-overdue',compact('customers'));
     }
+    public function searchSystems(Request $request){
+        $search = $request->get('search');
+        $customers = customer::where('name', 'LIKE', '%'.$search. '%')->orWhere('province', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+
+        return view('customerData.CustomerView-overdue',compact('customers'));
+    }
     public function show($id){
 
         $customers = customer::find($id);
@@ -64,6 +70,14 @@ class CustomerAddController extends Controller
         $customers->delete();
 
         return redirect()->route('overdue');
+    }
+    public function search(Request $request){
+
+        $search = $request->get('search');
+        $customer = customeradd::where('name', 'LIKE', '%'.$search. '%')->orWhere('province', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+
+
+        return view('customerData.CustomerView',compact('customer'));
     }
 
 }

@@ -15,18 +15,26 @@ class CustomerController extends Controller
     }
 
     public function show($id){
-        
+
         $customers = customer::find($id);
 
         return view('customer.customer-editor', compact('customers'));
     }
     public function destroy($id){
 
-        
+
         $customers = customer::find($id);
         $customers->delete();
 
         return redirect()->route('customer-systems.index');
+    }
+    public function search(Request $request){
+
+        $search = $request->get('search');
+        $customer = customer::where('name', 'LIKE', '%'.$search. '%')->orWhere('province', 'LIKE', '%'.$search. '%')->orWhere('subdistrict', 'LIKE', '%'.$search. '%')->orWhere('phone', 'LIKE', '%'.$search. '%')->paginate(10)->setPath( '' );
+
+
+        return view('customer.customer',compact('customer'));
     }
 
 }

@@ -83,12 +83,15 @@ Route::get('province',[subController::class,'getcustomer'])->middleware(['auth']
 //customer
 Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
 Route::resource('customer-systems',CustomerController::class)->middleware(['auth']);
+Route::get('customer-systems-search',[CustomerController::class,'searchSystems'])->name('customer-systems-search')->middleware(['auth']);
 Route::delete('CustomerView-overdue/{id}',[CustomerAddController::class,'overduedestroy'])->name('overduedestroy')->middleware(['auth']);
 Route::get('CustomerView-overdue',[CustomerAddController::class,'overdue'])->name('overdue')->middleware(['auth']);
 Route::get('Customeradd', function(){
     return view('customerData/Customeradd');
 });
+Route::get('customer-search',[CustomerAddController::class,'search'])->name('customer-search')->middleware(['auth']);
 
+//summary
 Route::resource('summary',SummaryController::class)->middleware(['auth']);
 Route::get('summary-transport',[SummaryController::class,'transport'])->name('sumTransport')->middleware(['auth']);
 Route::get('summary-account',[SummaryController::class,'account'])->name('sumAccount')->middleware(['auth']);
