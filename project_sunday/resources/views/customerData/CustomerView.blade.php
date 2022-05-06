@@ -257,7 +257,7 @@
                     </a>
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            
+
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -1187,7 +1187,7 @@
                     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         ข้อมูลลูกค้า
                     </h2>
-                   
+
                     <div class="w-full  mt-6  ">
                         <a href="/Customeradd">
                         <button class="bg-pink rounded mb-6 m-auto w-150px text-center p-1 text-white float-right  "
@@ -1250,7 +1250,7 @@
                                         </a>
                                             <form class="w-full m-auto"
                                                 action="{{ route('customer.destroy', $row->id) }}"
-                                                method="post">
+                                                method="post" onclick="javascript:return confirm('ต้องการลบข้อมูลลูกค้า')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button id="" class="w-6 h-6"><svg

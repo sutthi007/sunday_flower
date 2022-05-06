@@ -115,7 +115,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -346,7 +346,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -491,7 +491,7 @@
                         </svg>
                     </button>
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -613,7 +613,7 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <input type="hidden" value="4" name="type">
-                                                            <button id="" class="w-6 h-6"><svg
+                                                            <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบอัตราค่าบริการส่งพัสดุภัณท์')"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                     stroke-width="2">
@@ -675,7 +675,7 @@
                                                         @csrf
                                                         @method('DELETE')
                                                         <input type="hidden" value="1" name="type">
-                                                        <button id="" class="w-6 h-6"><svg
+                                                        <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบอัตราค่าบริการส่งดอกไม้)"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                 stroke-width="2">
@@ -732,7 +732,7 @@
                                                         <input type="hidden" value="2" name="type">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
+                                                        <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบอัตราค่าบริการส่งมอเตอร์ไซต์)"><svg
                                                                 xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                 stroke-width="2">
@@ -788,7 +788,7 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <input type="hidden" value="3" name="type">
-                                                            <button id="" class="w-6 h-6"><svg
+                                                            <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบอัตราค่าบริการส่งสัตว์เลี้ยง')"><svg
                                                                     xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                                     fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                                     stroke-width="2">
@@ -822,20 +822,20 @@
             const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
     </svg>`
-            // Jika ada isDarkmode di localstorage 
+            // Jika ada isDarkmode di localstorage
             if (localDarkmode) {
                 isDarkmode = localDarkmode
                 html.classList.add('dark')
             } else {
                 html.classList.remove('dark')
             }
-    
+
             function toggleTheme() {
                 isDarkmode = !isDarkmode
                 localStorage.setItem('isDarkmode', isDarkmode)
                 switchTheme()
             }
-    
+
             function switchTheme() {
                 if (isDarkmode) {
                     html.classList.add('dark')

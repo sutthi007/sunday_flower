@@ -775,13 +775,13 @@
                                 <!--footer-->
                                 <div
                                     class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                   
+
                                     <button
                                         class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                         type="reset" onclick="toggleModal('modal-id')">
                                         ยกเลิก
                                     </button>
-                                   
+
                                     <button
                                         class="bg-pink text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                                         ยืนยัน
@@ -872,7 +872,7 @@
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button id="" class="w-6 h-6"><svg
+                                                    <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบรายการ')"><svg
                                                             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                             stroke-width="2">

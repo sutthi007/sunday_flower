@@ -112,7 +112,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -343,7 +343,7 @@
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
                             @click="togglePagesMenuss" aria-haspopup="true">
@@ -599,7 +599,7 @@
                                             class="appearance-none  block w-300px  text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                             id="grid-first-name" type="text" placeholder="เพิ่มราคา"
                                             name="price">
-                                            
+
                                     </div>
                                 </div>
                                 <div class="w-full h-30px  rounded mb-6  text-center p-1 ">
@@ -651,7 +651,7 @@
                                                     <form action="{{ route('expenses.destroy',$row->id)}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button id="" class="w-6 h-6"><svg
+                                                        <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบอัตราค่าใช้จ่าย')"><svg
                                                                 xmlns="http://www.w3.org/2000/svg"
                                                                 class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                                                 stroke="currentColor" stroke-width="2">
