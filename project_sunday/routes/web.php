@@ -84,7 +84,7 @@ Route::get('province',[subController::class,'getcustomer'])->middleware(['auth']
 Route::resource('customer',CustomerAddController::class)->middleware(['auth']);
 Route::resource('customer-systems',CustomerController::class)->middleware(['auth']);
 Route::delete('CustomerView-overdue/{id}',[CustomerAddController::class,'overduedestroy'])->name('overduedestroy')->middleware(['auth']);
-Route::get('CustomerView-overdue',[CustomerAddController::class,'overdue']);
+Route::get('CustomerView-overdue',[CustomerAddController::class,'overdue'])->name('overdue')->middleware(['auth']);
 Route::get('Customeradd', function(){
     return view('customerData/Customeradd');
 });
