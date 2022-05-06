@@ -632,9 +632,9 @@
                                                 </td>
                                             @endif
                                             <td class="px-4 py-3 text-xs "> {{ $user->IDuser }}</td>
-                                            <td class="px-4 py-3 text-xs w-50px ">
-                                                <div class="bg-pink w-50px h-30px text-center rounded-md m-auto">
-                                                <a class="text-white m-auto text-base" href="{{ route('Employee.show',$user->id)}}">ดู</a>
+                                            <td class="px-4 py-3 w-100px ">
+                                                <div class="bg-pink w-150px h-30px text-center rounded-md m-auto p-1">
+                                                <a class="text-white m-auto text-xs " href="{{ route('Employee.show',$user->id)}}">เปิดข้อมูลพนักงาน</a>
                                             </div>
                                             </td>
                                             <td class="px-4 py-3 text-xs w-100px" >
@@ -642,7 +642,7 @@
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button id="" class="w-100px h-30px bg-red-500 text-white rounded-md " onclick="javascript:return confirm('ต้องการลบพนักงาน')">
+                                                    <button id="" class=" text-xs w-150px h-30px bg-red-500 text-white rounded-md " onclick="javascript:return confirm('ต้องการลบพนักงาน')">
                                                         ลบข้อมูลพนักงาน
                                                     </button>
                                                 </form>
