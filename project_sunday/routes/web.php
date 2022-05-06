@@ -112,6 +112,7 @@ Route::get('/account-details-day-pdf/{date}',[SummaryController::class,'viewSum'
 Route::get('/account-details-month-pdf/{date}/{year}',[SummaryController::class,'viewSumMonth'])->name('sumMonth')->middleware(['auth']);
 Route::get('/report-month/{month}/{year}',[SummaryController::class,'viewreportMonth'])->name('reportMonth')->middleware(['auth']);
 
+
 Route::get('/transport-details-day/{date}', function ($date){
     $transport = Order::select('province_id')
                         ->whereDate('created_at',$date)
@@ -122,7 +123,9 @@ Route::get('/transport-details-day/{date}', function ($date){
     return view('summary/transport-details-day',compact('transport','date','transports','employee'));
 })->name('transport-em-up')->middleware(['auth']);
 
+//PDF
 Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF'])->middleware(['auth']);
+Route::get('/transport-details-sento-day/{date}/{province}',[OrderController::class,'downloadPDFsendto'])->middleware(['auth']);
 Route::get('/transpot/add-emplpyee/{provonce}/{date}',[ProvinceController::class,'editTransportEmployee'])->middleware(['auth']);
 Route::post('/transpot/add-update-emplpyee/{id}/{date}',[ProvinceController::class,'updateTransportEmployee'])->middleware(['auth'])->name('emp-update');
 

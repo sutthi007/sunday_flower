@@ -31,7 +31,7 @@ class OrderController extends Controller
             'name' =>'required',
             'city' =>'required',
             'province' =>'required',
-            'phone' => 'required|regex:/(0)[0-9]{9}/|size:11',
+            'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
             'quantity' =>'required',
             'price' =>'required',
             'amount' => 'required',
@@ -171,6 +171,16 @@ class OrderController extends Controller
                         ->get();
 
         $pdf = PDF::loadView('report',compact('orders','province','GroupOrder'));
+        return @$pdf->stream();
+    }
+    public function downloadPDFsendto($date,$province,Request $request){
+        $orders = Order::whereDate('created_at',$date)->get();
+        $GroupOrder = Order::whereDate('created_at',$date)
+                        ->select('list','type','name','city_id','province_id','phone')
+                        ->groupBy('list','type','name','city_id','province_id','phone')
+                        ->get();
+
+        $pdf = PDF::loadView('sendto',compact('orders','province','GroupOrder'));
         return @$pdf->stream();
     }
 

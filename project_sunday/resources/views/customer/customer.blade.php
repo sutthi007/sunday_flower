@@ -1220,13 +1220,13 @@
                                                 <td class="px-4 py-3 text-sm">ผู้ส่ง</td>
                                                 @if ($customer->getmoney - $customer->total >= 0)
                                                     <td class="px-4 py-3 text-sm">
-                                                        <div class="w-100px">
+                                                        <div class="w-100px text-green-400">
                                                             ชำระเรียบร้อย
                                                         </div>
                                                     </td>
                                                 @else
                                                     <td class="px-4 py-3 text-sm">
-                                                        <div class="w-100px">
+                                                        <div class="w-100px text-red-400">
                                                             ค้างชำระ
                                                         </div>
                                                     </td>

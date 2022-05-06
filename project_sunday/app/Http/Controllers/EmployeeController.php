@@ -65,10 +65,10 @@ class EmployeeController extends Controller
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
-            'phone' => 'required|regex:/(0)[0-9]{9}|size:11',
-            'phone_relative' => 'required|regex:/(0)[0-9]{9}|size:11',
+            'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
+            'phone_relative' => 'required|regex:/(0)[0-9]{9}/|size:10',
             'zipcode' => 'required',
-            'image_Profile' => 'required',
+           
         ],
         [
             'name.required'=> 'กรุณากรอกชื่อ',
@@ -86,7 +86,6 @@ class EmployeeController extends Controller
             'phone_relative.required'=> 'กรุณากรอกเบอร์โทร',
             'phone_relative.regex'=> 'กรุณากรอก 09 08 05',
             'phone_relative.size'=>'กรุณากรอให้ครบ 10 ตัว',
-            'image_Profile.required'=>'กรุณาอัปโหลดภาพด้านหลังบัตรประชาชน',
             'email.required'=>'กรุณากรอกอีเมล',
             'email.email'=> 'กรุณากรอบ @gmail'
 
@@ -105,11 +104,18 @@ class EmployeeController extends Controller
 
         $userid = 'sunday'.$type_role.$num_role.random_int(00,99);
         // make type file photo
+
+        if($request->image_Profile != null ){
+            
         $ImageProfile = time() . '-' . $request->name  . 'Profile'. '.' .
         $request->image_Profile->extension();
 
         // path file from public
         $request->image_Profile->move(public_path('img/Profile'),$ImageProfile);
+        }else{
+            $ImageProfile = 'name.png';
+        }
+        
 
         User::create([
             'name' => $request->name,

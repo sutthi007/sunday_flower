@@ -1220,17 +1220,22 @@
                                             <td class="px-4 py-3 text-sm">{{$order}}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 @if($row->province->user_id == null)
+
                                                     <a href="/transpot/add-emplpyee/{{$row->province_id}}/{{$date}}">
+                                                    <button class="w-150px h-30px  bg-red-400 text-white rounded-md"> 
                                                         ยังไม่มีพนักงานขนส่ง
+                                                    </button>
                                                     </a>
                                                 @else
                                                     <a href="/transpot/add-emplpyee/{{$row->province_id}}/{{$date}}">
+                                                        <button class="w-150px h-30px  bg-green-400 text-white rounded-md"> 
                                                         {{$row->province->user->name}}
+                                                        </button>
                                                     </a>
                                                 @endif   
                                             </td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md text-white"
+                                                <a href="/transport-details-day/{{$date}}/{{$row->province_id}}" class="bg-pink w-94px h-24px rounded-md p-1  text-white"
                                                     target="_blank"  type="button" onclick="toggleModal('modal-id')">
                                                     PDF
                                                 </a>

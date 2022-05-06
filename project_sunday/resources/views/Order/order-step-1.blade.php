@@ -629,7 +629,7 @@
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
-                                                    name="phone" maxlength="11" />
+                                                    name="phone" maxlength="10" />
                                                     @if ($errors->any('phone'))
                                                     <p class="text-red-500 text-xs italic text-center">
                                                         {{ $errors->first('phone') }}</p>
@@ -644,7 +644,7 @@
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                                     id="telInput" onkeypress="addSpaces()" type="tels" placeholder=""
-                                                    name="phone_one" maxlength="11" />
+                                                    name="phone_one" maxlength="10" />
                                             </div>
                                             <div class=" w-full px-3 mb-6 md:mb-0 ">
                                                 <div class="flex">
@@ -872,7 +872,7 @@
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบรายการ')"><svg
+                                                    <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบรายการไหม?')"><svg
                                                             xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
                                                             fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                                             stroke-width="2">

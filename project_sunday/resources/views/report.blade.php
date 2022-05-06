@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link href="{{ public_path('css/index.css') }}" rel="stylesheet">
     <title>รายงานขนส่งรายวัน</title>
     <style>
         @font-face {
@@ -59,6 +59,17 @@
             width:150px;
             margin-left: 37%;
         }
+        .text-sm{
+            font-size:20px;
+        }
+        table,
+        thead,
+        tbody,
+        tr,
+        th,
+        td {
+            border: 1px solid rgb(0, 0, 0);
+        }
 
     </style>
 
@@ -78,10 +89,10 @@
             @foreach( $orders->where('province_id',$province) as $row)
                 @if($p == 0)
                     @if($row->province->user_id == null)
-                        <h2>รายงานขนส่ง {{$row->province->province}}</h2>
-                        <h2>ประจำวันที่ {{$thaiDateHelper->simpleDateFormat($row->created_at)}}</h2>
+                        <h2 class="font-bold">รายงานขนส่ง {{$row->province->province}}</h2>
+                        <h2 class="font-bold">ประจำวันที่ {{$thaiDateHelper->simpleDateFormat($row->created_at)}}</h2>
                     @else
-                        <h2>รายงานขนส่ง {{$row->province->province}}({{$row->province->user->name}})</h2>
+                        <h2 class="font-bold">รายงานขนส่ง {{$row->province->province}}({{$row->province->user->name}})</h2>
                     @endif
 
                 @endif
@@ -94,12 +105,12 @@
             <div class="w-full overflow-x-auto">
                 <table id="emp" class="w-full whitespace-no-wrap">
                     <thead>
-                        <tr>
-                            <th class="px-4 py-3">ประเภท</th>
-                            <th class="px-4 py-3">รายการ</th>
-                            <th class="px-4 py-3">จุดลง</th>
-                            <th class="px-4 py-3">ชื่อ - เบอร์โทร</th>
-                            <th class="px-d py-3">จำนวน</th>
+                        <tr class="text-center">
+                            <th class=" text-sm" >ประเภท</th>
+                            <th class="text-sm">รายการ</th>
+                            <th class=" text-sm">จุดลง</th>
+                            <th class=" text-sm">ชื่อ - เบอร์โทร</th>
+                            <th class="  text-sm">จำนวน</th>
                         </tr>
                     </thead>
                     <tbody >
@@ -114,23 +125,23 @@
                                 @endphp
                             @endforeach
                                 <tr>
-                                    <td>{{$order->type}}</td>
+                                    <td class="text-sm">{{$order->type}}</td>
                                     @if($order->list == null)
                                     <td> - </td>
                                     @else
-                                    <td>{{$order->list}}</td>
+                                    <td class="text-sm">{{$order->list}}</td>
                                     @endif
-                                    <td>{{$order->city->city}}</td>
-                                    <td>{{ $order->name }} ({{$order->phone}})</td>
-                                    <td>{{$quantitys}}</td>
+                                    <td class="text-sm">{{$order->city->city}}</td>
+                                    <td class="text-sm">{{ $order->name }} ({{$order->phone}})</td>
+                                    <td class="text-sm">{{$quantitys}}</td>
                                 </tr>
                                 @php
                                     $sum = $sum + $quantitys
                                 @endphp
                        @endforeach
                        <tr>
-                           <td colspan="4">รวม</td>
-                           <td>ทั้งหมด {{$sum}} รายการ</td>
+                           <td class="text-sm" colspan="4">รวม</td>
+                           <td class="text-sm">ทั้งหมด {{$sum}} รายการ</td>
                        </tr>
                     </tbody>
                 </table>

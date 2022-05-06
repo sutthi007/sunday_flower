@@ -587,7 +587,7 @@
                             <div class="m-auto rounded-md p-3">
                                 <div class="grid text-center m-auto relative h-200px">
                                     <div class="m-auto w-40 h-40  ">
-                                        <img src="" class="object-cover rounded-full h-full w-full " id="imag_s">
+                                        <img src="/img/name.png" class="object-cover rounded-full h-full w-full " id="imag_s">
                                     </div>
                                     <div class="custom-file">
                                         <div
@@ -596,12 +596,7 @@
                                         </div>
                                         <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg"
                                             name="image_Profile">
-                                        <div class="adsolute bottom-0 left-0">
-                                            @if ($errors->any('Path_imagePorfile'))
-                                                <p class="text-red-500 text-xs italic text-center">
-                                                    {{ $errors->first('image_Profile') }}</p>
-                                            @endif
-                                        </div>
+                                    
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-5">
@@ -839,25 +834,7 @@
         }
         switchTheme()
     </script>
-    <script>
-        function addSpaceTEl() {
-            var inputValue = document.getElementById("tell").value;
-            var inputValueLength = inputValue.length;
-
-            if (inputValueLength == 3) {
-                document.getElementById("tell").value = inputValue + "-";
-            }
-        }
-
-        function addSpaceTElS() {
-            var inputValue = document.getElementById("tells").value;
-            var inputValueLength = inputValue.length;
-
-            if (inputValueLength == 3) {
-                document.getElementById("tells").value = inputValue + "-";
-            }
-        }
-    </script>
+    
 
 </body>
 
