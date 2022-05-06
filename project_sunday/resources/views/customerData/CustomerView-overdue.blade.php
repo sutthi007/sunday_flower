@@ -1203,7 +1203,7 @@
                                         <th class="px-4 py-3"></th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center text-gray-500">
                                     @php
                                         $i = 1;
                                     @endphp
