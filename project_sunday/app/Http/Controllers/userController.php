@@ -21,16 +21,19 @@ class userController extends Controller
     }
     public function store(Request $request){
        $request->validate([
-            'name' =>'bail',
+            'name' =>'required',
             'province' =>'required',
             'subdistrict' =>'required',
-            'phone' => 'required',
+            'phone' => 'required|numeric|min:10|regex:/(0)[9,8,6,5]{9}/',
         ],
         [
-            'name.bail'=> 'กรุณากรอกชื่อ',
+            'name.required'=> 'กรุณากรอกชื่อ',
             'province.required'=>'กรุณาเลือกจังหวัด',
             'subdistrict.required'=>'กรุณาเลือกอำเภอ',
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.numeric'=> 'กรุณากรอกตัวเลข',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.min'=>'กรุณากรอให้ครบ 10 ตัว',
 
         ]
     );

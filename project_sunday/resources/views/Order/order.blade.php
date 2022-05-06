@@ -578,7 +578,7 @@
                                 <form class="" action="{{ route('projects.store') }}" method="post">
                                     @csrf
                                     <div class="grid  gap-6 mb-86 md:grid-cols-2 xl:grid-cols-2 ">
-                                        <div class="w-full  px-3  md:mb-0 m-auto">
+                                        <div class="w-full px-3   m-auto relative h-50px">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
@@ -593,13 +593,16 @@
                                                 @foreach($customer as $row)
                                                     <option value="{{$row->name}}">
                                                 @endforeach
+                                                
                                             </datalist>
-                                            @if ($errors->any('name'))
+                                            <div class="adsolute bottom-0 left-0"> 
+                                           @if ($errors->any('name'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('name') }}</p>
                                             @endif
+                                            </div>
                                         </div>
-                                        <div class="w-full px-3 m-auto">
+                                        <div class="w-full px-3 m-auto relative h-50px ">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
@@ -607,19 +610,15 @@
                                             </label>
                                             <input
                                                 class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
-<<<<<<< Updated upstream
-                                                id="grid-first-name" type="text" name="province" >
-                                                @if ($errors->any('province'))
-=======
-                                                id="grid-first-name" type="text" name="province"  value="เชียงใหม่">
+                                                id="grid-first-name" type="text" name="province"  value="">
+                                            <div class="adsolute bottom-0 left-0">    
                                             @if ($errors->any('province'))
->>>>>>> Stashed changes
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
                                             @endif
-                                         
+                                            </div>
                                         </div>
-                                        <div class="w-full px-3   m-auto">
+                                        <div class="w-full px-3  m-auto relative h-50px mt-5">
                                             <label
                                                 class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
@@ -628,12 +627,14 @@
                                             <input
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 id="grid-first-name" type="text"  name="subdistrict" >
+                                                <div class="adsolute bottom-0 left-0"> 
                                                 @if ($errors->any('subdistrict'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('subdistrict') }}</p>
                                             @endif
+                                                </div>
                                         </div>
-                                        <div class="w-full  px-3  m-auto">
+                                        <div class="w-full  px-3  m-auto relative h-50px mt-5">
                                             <label
                                                 class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
@@ -641,18 +642,20 @@
                                             </label>
                                             <input
                                                 class="phone appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-                                                type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
+                                                type="tel" placeholder="0588888" name="phone" size="10" maxlength="10"
                                                 id="tell" onkeypress="addSpaceTEl()">
                                             <input class="appearance-none block w-full" type="hidden" placeholder=""
                                                 name="employee" value="{{ Auth::user()->name }}">
+                                                <div class="adsolute bottom-0 left-0"> 
                                             @if ($errors->any('phone'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('phone') }}</p>
                                             @endif
+                                                </div>
 
                                         </div>
                                     </div>
-                                    <div class="h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 mt-5 ">
+                                    <div class="h-30px bg-pink  rounded mb-6 m-auto w-150px text-center p-1 mt-10 ">
                                         <button type="submit" class="text-white">ถัดไป</button>
                                     </div>
                                 </form>
@@ -707,25 +710,6 @@
             </main>
         </div>
     </div>
-    <script>
-        function addSpace() {
-            var inputValue = document.getElementById("telInput").value;
-            var inputValueLength = inputValue.length;
-
-            if (inputValueLength == 1 || inputValueLength == 6 || inputValueLength == 12 || inputValueLength == 15) {
-                document.getElementById("telInput").value = inputValue + "-";
-            }
-        }
-
-        function addSpaceTEl() {
-            var inputValue = document.getElementById("tell").value;
-            var inputValueLength = inputValue.length;
-
-            if (inputValueLength == 3) {
-                document.getElementById("tell").value = inputValue + "-";
-            }
-        }
-    </script>
 
 </body>
 
