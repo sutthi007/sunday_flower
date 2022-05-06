@@ -1221,7 +1221,9 @@
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">{{ $t++ }}</td>
                                             <td class="px-4 py-3 text-sm">
+                                                <div class="w-100px m-auto">
                                                 {{ $thaiDateHelper->simpleDateFormat($test) }}</td>
+                                                </div>
                                             <td class="px-4 py-3 text-sm">{{ $long->count() }}</td>
                                             <td class="px-4 py-3 text-sm">{{ $i }}</td>
                                             <td class="px-4 py-3 text-sm">
@@ -1246,9 +1248,9 @@
                                     <thead>
                                         <tr
                                             class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                            <th class="px-4 py-3">ลำดับ</th>
-                                            <th class="px-4 py-3">เดือน</th>
-                                            <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
+                                            <th class="px-4 py-3" ">ลำดับ</th>
+                                            <th class="px-4 py-3" ">เดือน</th>
+                                            <th class="px-8 py-3" ">ออเดอร์ทั้งหมด</th>
                                             <th class="px-8 py-3">รายการทั้งหมด</th>
                                             <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
 
@@ -1269,7 +1271,9 @@
                                                 <tr class="text-gray-700 dark:text-gray-400">
                                                     <td class="px-4 py-3 text-sm">{{ $t++ }}</td>
                                                     <td class="px-4 py-3 text-sm">
+                                                        <div class="w-100px m-auto">
                                                         {{ $thaiDateHelper->simpleDateFormatMonth($year . '-' . $row) }}
+                                                    </div>
                                                     </td>
                                                     <td class="px-4 py-3 text-sm">{{ $item->count() }}</td>
                                                     <td class="px-4 py-3 text-sm">{{ $i }}</td>
