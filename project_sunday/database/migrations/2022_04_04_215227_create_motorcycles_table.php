@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('province');
             $table->string('subdistrict');
             $table->integer('price');
-            $table->foreign('type_id')->references('id')->on('type_service');
+            $table->foreign('type_id')->references('id')->on('type_service')->onDelete('cascade');
             $table->timestamps();
         });
     }

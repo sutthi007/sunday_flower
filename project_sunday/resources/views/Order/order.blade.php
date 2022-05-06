@@ -593,9 +593,9 @@
                                                 @foreach($customer as $row)
                                                     <option value="{{$row->name}}">
                                                 @endforeach
-                                                
+
                                             </datalist>
-                                            <div class="adsolute bottom-0 left-0"> 
+                                            <div class="adsolute bottom-0 left-0">
                                            @if ($errors->any('name'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('name') }}</p>
@@ -611,7 +611,7 @@
                                             <input
                                                 class="appearance-none block w-full dark:text-white dark:bg-gray-900  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white"
                                                 id="grid-first-name" type="text" name="province"  value="">
-                                            <div class="adsolute bottom-0 left-0">    
+                                            <div class="adsolute bottom-0 left-0">
                                             @if ($errors->any('province'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('province') }}</p>
@@ -627,7 +627,7 @@
                                             <input
                                                 class="appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 id="grid-first-name" type="text"  name="subdistrict" >
-                                                <div class="adsolute bottom-0 left-0"> 
+                                                <div class="adsolute bottom-0 left-0">
                                                 @if ($errors->any('subdistrict'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('subdistrict') }}</p>
@@ -636,17 +636,18 @@
                                         </div>
                                         <div class="w-full  px-3  m-auto relative h-50px mt-5">
                                             <label
-                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
+                                                class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white"
                                                 for="grid-first-name">
                                                 เบอร์โทร
                                             </label>
                                             <input
                                                 class="phone appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
                                                 type="tel" placeholder="0588888" name="phone" size="10" maxlength="10"
-                                                id="tell" onkeypress="addSpaceTEl()">
+                                                id="tell" onkeypress="addSpaceTEl()"
+                                                value="">
                                             <input class="appearance-none block w-full" type="hidden" placeholder=""
                                                 name="employee" value="{{ Auth::user()->name }}">
-                                                <div class="adsolute bottom-0 left-0"> 
+                                                <div class="adsolute bottom-0 left-0">
                                             @if ($errors->any('phone'))
                                                 <p class="text-red-500 text-xs italic text-center">
                                                     {{ $errors->first('phone') }}</p>
@@ -706,6 +707,25 @@
                         }
                     }
                     switchTheme()
+                </script>
+                 <script type="text/javascript">
+                    $('.name').change(function() {
+                        if ($(this).val() != '') {
+                            var select = $(this).val();
+                            var _token = $('input[name="_token"]').val();
+                            $.ajax({
+                                url: "{{ route('getcustomer') }}",
+                                method: 'GET',
+                                data: {
+                                    select: select,
+                                    _token: _token
+                                },
+                                success: function(result) {
+                                    $('.phone').val(result);
+                                }
+                            });
+                        }
+                    });
                 </script>
             </main>
         </div>

@@ -30,10 +30,10 @@ return new class extends Migration
             $table->string('tracking');
             $table->string('phoneOne')->nullable();
             $table->integer('provinces_tos_id')->nullable();
-            $table->foreign('provinces_tos_id')->references('id')->on('province_tos')->onDelete('cascade');;
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');;
-            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');;
-            $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');;
+            $table->foreign('provinces_tos_id')->references('id')->on('province_tos')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->foreign('province_id')->references('id')->on('provinces')->onDelete('cascade');
             $table->enum('status',['order','send','success'])->default('order');
             $table->timestamps();
         });

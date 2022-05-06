@@ -31,11 +31,12 @@ class subController extends Controller
         $id = $request->get('select');
         $result =array();
         $query=customeradd::where('name',$id)->get();
-        $output = '<input
-        class="phone appearance-none block w-full  text-gray-700 border  rounded py-3 px-4  leading-tight focus:outline-none focus:bg-white dark:text-white dark:bg-gray-900"
-        type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
-        id="tell" onkeypress="addSpaceTEl()">';
+        $output = '<option value="">---เลือกอำเภอ----</option>';
+        foreach($query as $row){
+            $output.='<option value="'.$row->name.'">'.$row->name.'</option>';
+        }
 
-        echo $output;
+
+        echo $row->phone;
     }
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('priceS');
             $table->integer('priceM');
             $table->integer('priceL');
-            $table->foreign('type_id')->references('id')->on('type_service');
+            $table->foreign('type_id')->references('id')->on('type_service')->onDelete('cascade');
             $table->timestamps();
         });
     }

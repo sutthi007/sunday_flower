@@ -1208,7 +1208,7 @@
                                 <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
                                     @php($i = 1)
                                     @foreach ($customers as $customer)
-                                        @if ($customer->orders != null)
+                                        @if ($customer->total != null)
                                             <tr class="text-gray-700 dark:text-gray-400">
                                                 <td class="px-4 py-3 text-sm">{{ $i++ }}</td>
                                                 <td class="px-4 py-3 text-sm">

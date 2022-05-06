@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('nextsend');
             $table->integer('nextsend_price');
-            $table->foreign('type_id')->references('id')->on('type_service');
+            $table->foreign('type_id')->references('id')->on('type_service')->onDelete('cascade');
             $table->timestamps();
         });
     }
