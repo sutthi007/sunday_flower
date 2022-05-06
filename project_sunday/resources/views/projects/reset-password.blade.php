@@ -943,7 +943,7 @@
                             </li>
                         </ul>
                 @endcan
-                
+
                     <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
                         <div class="py-4 text-gray-500 dark:text-gray-400">
                             <a class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200" href="#">
@@ -1010,7 +1010,7 @@
                     </button>
                     <!-- Search input -->
                     <div class="flex justify-center flex-1 lg:mr-32">
-                       
+
                     </div>
                     <ul class="flex items-center flex-shrink-0 space-x-6">
                         <li class="flex mr-10">
@@ -1100,10 +1100,10 @@
                                         @csrf
                                         <div class="bg-neutral-300 rounded-lg  justify-center p-2 dark:bg-gray-900">
                                             <label class="dark:text-white" class="p-1"  for="">
-                                                รหัสผ่านเดิม 
+                                                รหัสผ่านเดิม
                                             </label>
                                              <input  class="bg-white p-4 ml-2  rounded-lg  h-30px dark:bg-gray-800" type="text" name="old_password" id="old_password">
-                                            
+
                                         </div>
                                             <div class="text-center text-xs mt-2" >
                                                 @if ($errors->any('old_password'))
@@ -1112,7 +1112,7 @@
                                             </div>
                                         <div class="bg-neutral-300  rounded-lg justify-center p-2 dark:bg-gray-900">
                                             <label class="p-1 dark:text-white" for="">
-                                                รหัสผ่านใหม่ 
+                                                รหัสผ่านใหม่
                                             </label>
                                             <input class="bg-white p-4 ml-2 rounded-lg  h-30px dark:bg-gray-800" type="text" name="new_password" id="new_password">
 
@@ -1124,9 +1124,9 @@
                                             </div>
                                         <div class="bg-neutral-300 rounded-lg  justify-center p-2 dark:bg-gray-900" >
                                             <label class="p-1 dark:text-white" for="">
-                                                ยืนยันรหัสผ่าน 
+                                                ยืนยันรหัสผ่าน
                                             </label>
-                                           
+
                                             <input class="bg-white p-4 ml-2 rounded-lg h-30px dark:bg-gray-800" type="password" name="confirm_password" id="confirm_password">
                                             <input type="hidden" value="{{Auth::user()->id}}" name="id">
 
@@ -1136,7 +1136,7 @@
                                                 <span class="text-rose-600">{{$errors->first('confirm_password')}}</span>
                                             @endif
                                             @if ($message = Session::get('error'))
-                                                <div class="text-rose-600">
+                                                <div id="namid" class="text-rose-600">
                                                     {{ $message }}
                                                 </div>
                                             @endif
@@ -1150,9 +1150,45 @@
                         </div>
                     </div>
                 </div>
-                
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
+
+                <script>
+                    $(document).ready(function() {
+                        var sessionError = sessionStorage.getItem("error");
+                        // var data=$('#namid').val();
+                        if (sessionError != null) {
+                           console.log(sessionError);
+                            if(data=='errro'){
+                                Swal.fire({
+                                    title: 'Hello its mina',
+                                    type: 'success',
+                                    showCloseButton: true
+                                })
+                            }else if(data=='raju'){
+                                Swal.fire({
+                                    title: 'Hello its raju',
+                                    type: 'warning',
+                                    showCloseButton: true
+                                })
+                            }else{
+                                Swal.fire({
+                                    title: 'ไม่สำเร็จ',
+                                    type: 'error',
+                                    showCloseButton: true
+                                })
+                            }
+                        }
+
+
+
+
+                    })
+                </script>
+
             </main>
-        </div>     
+        </div>
         <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');
