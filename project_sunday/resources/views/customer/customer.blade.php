@@ -1253,7 +1253,7 @@
                                                     <td class="px-4 py-3 text-sm w-100px ">
                                                         <form class="w-full m-auto"
                                                             action="{{ route('customer-systems.destroy', $customer->id) }}"
-                                                            method="post" onclick="javascript:return confirm('ยืนยันการอัปเดทสถานะ')">
+                                                            method="post" >
                                                             @csrf
                                                             @method('DELETE')
                                                             <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้อกการลบประวัติลูกค้า')"><svg

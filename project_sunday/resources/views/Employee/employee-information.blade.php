@@ -603,7 +603,7 @@
                                         <th class="px-4 py-3">ตำแหน่ง</th>
                                         <th class="px-4 py-3">เลขผู้ใช้</th>
                                         <th class="px-4 py-3">ระบบ</th>
-                                        <th class="px-4 py-3"></th>
+                                        <th class="px-4 py-3" ></th>
 
                                     </tr>
                                 </thead>
@@ -632,23 +632,19 @@
                                                 </td>
                                             @endif
                                             <td class="px-4 py-3 text-xs "> {{ $user->IDuser }}</td>
-                                            <td class="px-4 py-3 text-xsw-50px ">
+                                            <td class="px-4 py-3 text-xs w-50px ">
                                                 <div class="bg-pink w-50px h-30px text-center rounded-md m-auto">
                                                 <a class="text-white m-auto text-base" href="{{ route('Employee.show',$user->id)}}">ดู</a>
                                             </div>
                                             </td>
-                                            <td class="px-4 py-3 text-xs ">
-                                                <form action="{{ route('Employee.destroy', $user->id) }}"
+                                            <td class="px-4 py-3 text-xs w-100px" >
+                                                <form  action="{{ route('Employee.destroy', $user->id) }}"
                                                     method="post">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button id="" class="w-6 h-6" onclick="javascript:return confirm('ต้องการลบพนักงาน')"><svg
-                                                            xmlns="http://www.w3.org/2000/svg" class="h-6 w-6"
-                                                            fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                                            stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                        </svg></button>
+                                                    <button id="" class="w-100px h-30px bg-red-500 text-white rounded-md " onclick="javascript:return confirm('ต้องการลบพนักงาน')">
+                                                        ลบข้อมูลพนักงาน
+                                                    </button>
                                                 </form>
                                             </td>
 
