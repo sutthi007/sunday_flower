@@ -34,6 +34,31 @@ class EmployeeController extends Controller
     }
 
     public function update($id,Request $request){
+        $request->validate([
+            'name' => 'required',
+            'birthday' => 'required',
+            'city' => 'required', //อำเภอ
+            'province' => 'required',
+            'phone' => 'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
+            'phone_relative' => 'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
+        ],
+        [
+            'name.required'=> 'กรุณากรอกชื่อ',
+            'birthday.required'=> 'กรุณากรอกวัน/เดือน/ปี เกิด',
+            'city.required'=> 'กรุณากรอกอำเภอ',
+            'province.required'=> 'กรุณากรอกจังหวัด',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.numeric'=> 'กรุณากรอกตัวเลข',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.digits'=>'กรุณากรอให้ครบ 10 ตัว',
+            'phone_relative.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone_relative.numeric'=> 'กรุณากรอกตัวเลข',
+            'phone_relative.regex'=> 'กรุณากรอก 09 08 05',
+            'phone_relative.digits'=>'กรุณากรอให้ครบ 10 ตัว',
+            'email.required'=>'กรุณากรอกอีเมล',
+            'email.email'=> 'กรุณากรอบ @gmail'
+        ]
+    );
         $user = User::find($id);
         if($request->hasfile('image_Profile')) {
             $ImgaeProfile = time() . '-' . $request->name  . 'Profile' . '.' .
@@ -65,33 +90,28 @@ class EmployeeController extends Controller
             'city' => 'required', //อำเภอ
             'sub' => 'required',
             'province' => 'required',
-            'phone' => 'required|regex:/(0)[0-9]{9}/|size:10',
-            'phone_relative' => 'required|regex:/(0)[0-9]{9}/|size:10',
+            'phone' => 'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
+            'phone_relative' => 'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
             'zipcode' => 'required',
-           
         ],
         [
             'name.required'=> 'กรุณากรอกชื่อ',
             'role.required'=> 'กรุณาเลือกตำแหน่ง',
-            
-
             'birthday.required'=> 'กรุณากรอกวัน/เดือน/ปี เกิด',
             'city.required'=> 'กรุณากรอกอำเภอ',
             'sub.required'=> 'กรุณากรอกตำบล',
             'province.required'=> 'กรุณากรอกจังหวัด',
             'zipcode.required'=> 'กรุณากรอกไปรษณีย์',
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.numeric'=> 'กรุณากรอกตัวเลข',
             'phone.regex'=> 'กรุณากรอก 09 08 05',
-            'phone.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'phone.digits'=>'กรุณากรอให้ครบ 10 ตัว',
             'phone_relative.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone_relative.numeric'=> 'กรุณากรอกตัวเลข',
             'phone_relative.regex'=> 'กรุณากรอก 09 08 05',
-            'phone_relative.size'=>'กรุณากรอให้ครบ 10 ตัว',
+            'phone_relative.digits'=>'กรุณากรอให้ครบ 10 ตัว',
             'email.required'=>'กรุณากรอกอีเมล',
             'email.email'=> 'กรุณากรอบ @gmail'
-
-
-
-
         ]
     );
         if($request->role == 'employee'){
@@ -106,7 +126,7 @@ class EmployeeController extends Controller
         // make type file photo
 
         if($request->image_Profile != null ){
-            
+
         $ImageProfile = time() . '-' . $request->name  . 'Profile'. '.' .
         $request->image_Profile->extension();
 
@@ -115,7 +135,7 @@ class EmployeeController extends Controller
         }else{
             $ImageProfile = 'name.png';
         }
-        
+
 
         User::create([
             'name' => $request->name,

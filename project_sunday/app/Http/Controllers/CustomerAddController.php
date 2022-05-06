@@ -16,7 +16,7 @@ class CustomerAddController extends Controller
     public function store(Request $request){
         $request->validate([
             'name'=>'required',
-            'phone'=>'required',
+            'phone'=>'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
             'city'=>'required',
             'province'=>'required',
             'subdistrict' => 'required'
@@ -27,6 +27,9 @@ class CustomerAddController extends Controller
             'subdistrict.required'=> 'กรุณากรอกตำบล',
             'province.required'=> 'กรุณากรอกจังหวัด',
             'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.numeric'=> 'กรุณากรอกตัวเลข',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.digits'=>'กรุณากรอให้ครบ 10 ตัว',
         ]
     );
 
@@ -38,6 +41,23 @@ class CustomerAddController extends Controller
         return view('customerData.CustomerView-editor', compact('customer'));
     }
     public function update($id,Request $request){
+        $request->validate([
+            'name'=>'required',
+            'phone'=>'required|numeric|regex:/(0)[0-9]{9}/|digits:10',
+            'city'=>'required',
+            'province'=>'required',
+            'subdistrict' => 'required'
+        ],
+        [
+            'name.required'=> 'กรุณากรอกชื่อ',
+            'city.required'=> 'กรุณากรอกอำเภอ',
+            'subdistrict.required'=> 'กรุณากรอกตำบล',
+            'province.required'=> 'กรุณากรอกจังหวัด',
+            'phone.required'=> 'กรุณากรอกเบอร์โทร',
+            'phone.numeric'=> 'กรุณากรอกตัวเลข',
+            'phone.regex'=> 'กรุณากรอก 09 08 05',
+            'phone.digits'=>'กรุณากรอให้ครบ 10 ตัว',
+        ]);
         $customer = customeradd::find($id);
 
         $customer->update($request->all());

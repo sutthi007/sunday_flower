@@ -257,7 +257,7 @@
                     </a>
                     <ul class="mt-6">
                         <li class="relative px-6 py-3">
-                            
+
                             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                                 href="{{ route('projects.index') }}">
                                 <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round"
@@ -1191,7 +1191,7 @@
                             แก้ไขข้อมูลลูกค้า
                         </h2>
                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
-                            <div class="m-auto rounded-md p-3">                             
+                            <div class="m-auto rounded-md p-3">
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
                                         <label class=" dark:text-white" for="">
@@ -1199,7 +1199,10 @@
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->name}}" name="name">
-                                        
+                                        @if ($errors->any('name'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('name') }}</p>
+                                        @endif
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
@@ -1207,7 +1210,10 @@
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->subdistrict}}" name="subdistrict">
-                                      
+                                        @if ($errors->any('subdistrict'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('subdistrict') }}</p>
+                                        @endif
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
@@ -1215,7 +1221,10 @@
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->city}}" name="city">
-                                        
+                                        @if ($errors->any('city'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('city') }}</p>
+                                        @endif
                                     </div>
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
@@ -1223,10 +1232,12 @@
                                         </label>
                                         <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->province}}" name="province">
-                                        
-                                       
+                                        @if ($errors->any('province'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('province') }}</p>
+                                        @endif
                                     </div>
-                                  
+
                                     <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
                                         <label class=" dark:text-white" for="">
                                             เบอร์โทร :
@@ -1235,6 +1246,10 @@
                                             class="bg-235 w-150px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
                                             type="tel"  value="{{$customer->phone}}" name="phone" size="10" maxlength="11"
                                             id="tell" onkeypress="addSpaceTEl()"/>
+                                        @if ($errors->any('phone'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                            {{ $errors->first('phone') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
