@@ -24,7 +24,7 @@ class userController extends Controller
             'name' =>'required',
             'province' =>'required',
             'subdistrict' =>'required',
-            'phone' => 'required|numeric|min:10|regex:/(0)[9,8,6,5]{9}/',
+            'phone' => 'required|numeric|min:10|regex:/(0)[0-9]{9}/',
         ],
         [
             'name.required'=> 'กรุณากรอกชื่อ',
@@ -37,7 +37,7 @@ class userController extends Controller
 
         ]
     );
-   
+
         $customer = customer::create([
             'name' => $request->name,
             'province' => $request->province,
@@ -117,7 +117,7 @@ class userController extends Controller
                     $user->update([
                         'password' => bcrypt('123456789'),
                     ]);
-        
+
                     return redirect()->route('login')->with('success',('รีเซ็ตรหัสผ่านเรียบร้อย'));
                 }else{
                     return redirect()->back()->with('error',('เบอร์โทรไม่ถูกต้อง'));
@@ -125,7 +125,7 @@ class userController extends Controller
             }else{
                 return redirect()->back()->with('error',('เลขผู้ใช้ไม่ถูกต้อง'));
             }
-            
+
     }
 
 }
