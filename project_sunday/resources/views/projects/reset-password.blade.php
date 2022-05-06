@@ -24,6 +24,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
 
 
 
@@ -1136,8 +1139,7 @@
                                                 <span class="text-rose-600">{{$errors->first('confirm_password')}}</span>
                                             @endif
                                             @if ($message = Session::get('error'))
-                                                <div id="namid" class="text-rose-600">
-                                                    {{ $message }}
+                                                <div id="namid" class="name text-rose-600" value="0">
                                                 </div>
                                             @endif
                                             </div>
@@ -1150,40 +1152,18 @@
                         </div>
                     </div>
                 </div>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
-                <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
-
-                <script>
+                <script type="text/javascript">
                     $(document).ready(function() {
-                        var sessionError = sessionStorage.getItem("error");
-                        // var data=$('#namid').val();
-                        if (sessionError != null) {
-                           console.log(sessionError);
-                            if(data=='errro'){
+                        var data=$('.name').val()
+                        console.log(data);
+
+                        if (data == 0) {
                                 Swal.fire({
-                                    title: 'Hello its mina',
-                                    type: 'success',
-                                    showCloseButton: true
-                                })
-                            }else if(data=='raju'){
-                                Swal.fire({
-                                    title: 'Hello its raju',
-                                    type: 'warning',
-                                    showCloseButton: true
-                                })
-                            }else{
-                                Swal.fire({
-                                    title: 'ไม่สำเร็จ',
+                                    title: 'รหัสผ่านเก่าไม่ถูกต้อง',
                                     type: 'error',
                                     showCloseButton: true
                                 })
-                            }
                         }
-
-
-
-
                     })
                 </script>
 

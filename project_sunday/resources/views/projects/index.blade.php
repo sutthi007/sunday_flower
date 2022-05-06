@@ -18,6 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
 
 </head>
@@ -1184,11 +1187,6 @@
                     </ul>
                 </div>
             </header>
-            @if(session()->has('success'))
-                    <div class="bg-green-100 border border-red-400 text-green-700 px-4 py-3 rounded relative" role="alert">
-                        {{ session()->get('success') }}
-                    </div>
-                @endif
             @can('owner')
                 <main class="h-full overflow-y-auto">
                     <div class="container px-6 mx-auto grid ">
@@ -1410,11 +1408,16 @@
                                         </tbody>
                                     @endforeach
                                 </table>
+                                @if($message = Session::get('success'))
+                                    <div id="namid" class="name text-rose-600" value="0">
+                                    </div>
+                                @endif
                             </div>
                             {{ $orders->links() }}
                         </div>
                     </div>
                 </main>
+
             @endcan
             @can('admin')
                 <main class="h-full overflow-y-auto">
@@ -1630,6 +1633,10 @@
                                         </tbody>
                                     @endforeach
                                 </table>
+                                @if($message = Session::get('success'))
+                                    <div id="namid" class="name text-rose-600" value="0">
+                                    </div>
+                                @endif
                             </div>
                             {{ $orders->links() }}
                         </div>
@@ -1845,10 +1852,26 @@
                             {{ $orders->links() }}
                         </div>
                     </div>
+                    @if($message = Session::get('success'))
+                        <div id="namid" class="name text-rose-600" value="0">
+                        </div>
+                    @endif
                 </main>
             @endcan
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var data=$('.name').val()
+            if (data == 0) {
+                    Swal.fire({
+                        title: 'เปลี่ยนรหัสผ่านสำเร็จ',
+                        type: 'success',
+                        showCloseButton: true
+                    })
+            }
+        })
+    </script>
     <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');

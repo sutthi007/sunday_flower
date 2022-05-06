@@ -60,6 +60,7 @@ class ProfileController extends Controller
                 'old_password.required' => 'กรุณากรอกรหัสเดิม',
                 'new_password.required' => 'กรุณากรอกรหัสใหม่',
                 'confirm_password.required' => 'กรุณากรอกรหัสยืนยันรหัสผ่าน',
+                'confirm_password.same' => 'รหัสไม่ตรงกัน',
                 'old_password.min' => 'กรอกรหัสมากกว่า 6 ตัว และน้อยกว่า 20 ตัว',
                 'new_password.min' => 'กรอกรหัสมากกว่า 6 ตัว และน้อยกว่า 20 ตัว',
                 'old_password.same' => 'รหัสผ่านเก่าและใหม่ไม่ตรงกัน',
