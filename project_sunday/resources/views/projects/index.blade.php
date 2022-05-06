@@ -1257,7 +1257,7 @@
                                                 value="YYYY-MM-DD">
 
                                             <button
-                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                                class=" text-white xl:w-150px lg:w-full md:w-200px sm:w-200px ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
                                         </form>
                                     </div>
                                 </div>
