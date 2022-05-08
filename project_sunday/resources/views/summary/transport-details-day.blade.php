@@ -1209,8 +1209,7 @@
                                         @foreach($transports->where('province_id',$row->province_id) as $key)
                                             @php
                                                 $order = $key->quantity + $order;
-                                            @endphp   
-                                        
+                                            @endphp                  
                                         @endforeach
                                         <tr class="text-gray-700 dark:text-gray-400">
                                             <td class="px-4 py-3 text-sm">{{$i++}}</td>
@@ -1241,6 +1240,57 @@
                                                 </a>
                                             </td>
                                     @endforeach
+                                    </tbody>                                   
+                                </table>
+                            </div>
+                        </div>
+                </div>
+                <div class="container px-6 mx-auto grid ">
+                    <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
+                        รายงานส่งต่อ
+                    </h2>
+                        <!-- New Table -->
+                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                            <div class="w-full overflow-x-auto">
+                                <table class="w-full whitespace-no-wrap">
+                                    <thead>
+                                        <tr
+                                            class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                            <th class="px-4 py-3">วันที่</th>
+                                            <th class="px-8 py-3">ออเดอร์ทั้งหมด</th>
+                                            <th class="px-8 py-3">รายการทั้งหมด</th>
+                                            <th class="px-8 py-3">พนักงานรับผิดชอบ</th>
+                                            <th class="px-4 py-3">ไฟล์ดาวน์โหลด</th>
+
+                                        </tr>
+                                    </thead>
+                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                    @foreach($transport as $row )
+                                        @php
+                                            $order = 0;
+                                        @endphp
+                                        @foreach($transports->where('province_id',$row->province_id)->where('sendto','ส่งต่อ') as $key)
+                                            @php
+                                                $order = $key->quantity + $order;
+                                            @endphp                  
+                                        @endforeach
+                                        <tr class="text-gray-700 dark:text-gray-400">
+                                            <td class="px-4 py-3 text-sm">{{$thaiDateHelper->simpleDateFormat($date)}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->where('sendto','ส่งต่อ')->count()}}</td>
+                                            <td class="px-4 py-3 text-sm">{{$order}}</td>
+                                            <td class="px-4 py-3 text-sm">                                                   
+                                                    <div class="w-150px h-30px  bg-red-400 text-white rounded-md"> 
+                                                        พี่วัตร
+                                                    </div>
+                                            </td>
+                                            <td class="px-4 py-3 text-sm">
+                                                <a href="/transport-details-sento-day/{{$date}}" class="bg-pink w-94px h-24px rounded-md p-1  text-white"
+                                                    target="_blank"  type="button" onclick="toggleModal('modal-id')">
+                                                    PDF
+                                                </a>
+                                            </td>
+                                        @endforeach
                                     </tbody>                                   
                                 </table>
                             </div>

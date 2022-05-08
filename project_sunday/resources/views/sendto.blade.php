@@ -72,9 +72,10 @@
 </head>
 
 <body>
+    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
     <div class="text-center mt-10">
         <h1 class="text-4xl font-bold">รายการลงของพี่วัตร</h1>
-    <p class="text-2xl font-bold">วันที่</p>
+    <p class="text-2xl font-bold">วันที่ {{$thaiDateHelper->simpleDateFormat($date)}}</p>
 
     </div>
    
@@ -91,12 +92,26 @@
                         </tr>
                     </thead>
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
+                        @foreach($GroupOrder->where('sendto','ส่งต่อ') as $row)
+                                @php
+                                    $quantitys = 0;
+                                @endphp
+                            @foreach( $orders->where('province_id',$row->province_id) as $row)
+                                @php
+                                    $quantitys = $row->quantity + $quantitys;
+                                @endphp
+                            @endforeach
                         <tr class="text-xl border-4">
-                            <td>ดอกไม้</td>
-                            <td>อุบล</td>
-                            <td>นิตยา</td>
-                            <td>1</td>
+                            @if($row->list != null)
+                                <td>{{$row->list}}</td> 
+                            @else
+                                <td>{{$row->type}}</td>
+                            @endif
+                            <td>{{$row->province->province}}</td>
+                            <td>{{$row->name}}({{$row->phone}})</td>
+                            <td>{{$quantitys}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

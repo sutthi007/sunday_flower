@@ -173,14 +173,14 @@ class OrderController extends Controller
         $pdf = PDF::loadView('report',compact('orders','province','GroupOrder'));
         return @$pdf->stream();
     }
-    public function downloadPDFsendto($date,$province,Request $request){
+    public function downloadPDFsendto($date,Request $request){
         $orders = Order::whereDate('created_at',$date)->get();
         $GroupOrder = Order::whereDate('created_at',$date)
-                        ->select('list','type','name','city_id','province_id','phone')
-                        ->groupBy('list','type','name','city_id','province_id','phone')
+                        ->select('list','type','name','city_id','province_id','phone','sendto')
+                        ->groupBy('list','type','name','city_id','province_id','phone','sendto')
                         ->get();
 
-        $pdf = PDF::loadView('sendto',compact('orders','province','GroupOrder'));
+        $pdf = PDF::loadView('sendto',compact('orders','GroupOrder','date'));
         return @$pdf->stream();
     }
 

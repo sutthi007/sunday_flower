@@ -128,7 +128,7 @@ Route::get('/transport-details-day/{date}', function ($date){
 
 //PDF
 Route::get('/transport-details-day/{date}/{province}',[OrderController::class,'downloadPDF'])->middleware(['auth']);
-Route::get('/transport-details-sento-day/{date}/{province}',[OrderController::class,'downloadPDFsendto'])->middleware(['auth']);
+Route::get('/transport-details-sento-day/{date}',[OrderController::class,'downloadPDFsendto'])->middleware(['auth']);
 Route::get('/transpot/add-emplpyee/{provonce}/{date}',[ProvinceController::class,'editTransportEmployee'])->middleware(['auth']);
 Route::post('/transpot/add-update-emplpyee/{id}/{date}',[ProvinceController::class,'updateTransportEmployee'])->middleware(['auth'])->name('emp-update');
 
