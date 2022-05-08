@@ -92,6 +92,9 @@
                         </tr>
                     </thead>
                     <tbody class="w-full p-4 text-center border-4 text-2xl">
+                        @php
+                            $totalquantitys = 0;
+                        @endphp
                         @foreach($GroupOrder->where('sendto','ส่งต่อ') as $row)
                                 @php
                                     $quantitys = 0;
@@ -108,10 +111,17 @@
                                 <td>{{$row->type}}</td>
                             @endif
                             <td>{{$row->province->province}}</td>
-                            <td>{{$row->name}}({{$row->phone}})</td>
+                            <td>{{$row->name}} ({{$row->phone}})</td>
                             <td>{{$quantitys}}</td>
                         </tr>
+                        @php
+                            $totalquantitys = $quantitys + $totalquantitys;
+                        @endphp
                         @endforeach
+                        <tr>
+                            <td colspan="3">รวม</td>
+                            <td>ทั้งหมด {{$totalquantitys}} รายการ</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
