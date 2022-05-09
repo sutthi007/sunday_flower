@@ -9,7 +9,6 @@
     {{-- CSS --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     {{-- Js --}}
-    <script src="/js/popup-ouput.js"></script>
     <script src="/js/init-alpine.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
@@ -659,7 +658,7 @@
                         <li class="relative px-6 py-3">
 
                             <button
-                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
+                                class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                                 @click="togglePagesMenuss" aria-haspopup="true">
                                 <span class="inline-flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"

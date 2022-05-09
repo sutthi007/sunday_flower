@@ -11,7 +11,6 @@
     {{-- Js --}}
 
     <script src="/js/init-alpine.js"></script>
-    <script src="/js/popup-ouput.js"></script>
 
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
@@ -658,7 +657,7 @@
                     <li class="relative px-6 py-3">
 
                         <button
-                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 "
+                            class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
@@ -1280,7 +1279,7 @@
                                             <td class="px-4 py-3 text-sm">{{$transports->where('province_id',$row->province_id)->where('sendto','ส่งต่อ')->count()}}</td>
                                             <td class="px-4 py-3 text-sm">{{$order}}</td>
                                             <td class="px-4 py-3 text-sm">                                                   
-                                                    <div class="w-150px h-30px  bg-red-400 text-white rounded-md"> 
+                                                    <div class="w-150px h-30px p-1 bg-red-400 text-white rounded-md m-auto"> 
                                                         พี่วัตร
                                                     </div>
                                             </td>

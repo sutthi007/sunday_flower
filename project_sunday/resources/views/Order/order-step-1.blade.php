@@ -628,7 +628,7 @@
                                                 </label>
                                                 <input
                                                     class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                                                    id="telInput" onkeypress="addSpace()" type="tel" placeholder=""
+                                                    id="telInput"  type="tel" placeholder=""
                                                     name="phone" maxlength="10" />
                                                     @if ($errors->any('phone'))
                                                     <p class="text-red-500 text-xs italic text-center">
