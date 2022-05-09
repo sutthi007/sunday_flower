@@ -29,6 +29,7 @@ class UserSeeder extends Seeder
             'address' => '406/11',
             'phone' => '0638032438',
             'zipcode' => '50000',
+            'Path_imageProfile' =>'name.png'
         ]);
     }
 }
