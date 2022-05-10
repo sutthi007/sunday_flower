@@ -221,7 +221,7 @@
         </div>
         <div class= "w-full mt-10">
             <div class=" ">
-            <p class="text-xl ml-14">ผู้รับเงิน {{Auth::user()->name}} </p>
+            <p class="text-xl ml-14">ผู้รับเงิน <span>{{Auth::user()->name}}</span> </p>
             <p class="text-xl ml-15">(..............................................................)</p>
             </div>
             <div class="text-center mr-15 mt--20px">
