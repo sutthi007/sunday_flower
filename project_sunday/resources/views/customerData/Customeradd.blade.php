@@ -1196,11 +1196,12 @@
                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
                             <div class="m-auto rounded-md p-3">
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             ชื่อ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name">
                                         <div class="adsolute bottom-0 left-0 mt-2">
                                             @if ($errors->any('name'))
@@ -1209,11 +1210,12 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             ตำบล :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="พระราม" name="subdistrict">
                                         <div class="adsolute bottom-0 left-0 mt-2">
                                             @if ($errors->any('subdistrict'))
@@ -1222,11 +1224,12 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             อำเภอ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="เมือง" name="city">
                                         <div class="adsolute bottom-0 left-0 mt-2">
                                             @if ($errors->any('city'))
@@ -1235,11 +1238,12 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             จังหวัด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="กรุงเทพ" name="province">
                                         <input type="hidden" value="123456789" name="password">
                                         <div class="adsolute bottom-0 left-0 mt-2">
@@ -1250,12 +1254,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             เบอร์โทร :
                                         </label>
                                         <input
-                                            class="bg-235 w-150px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
                                             id="tell" onkeypress="addSpaceTEl()">
                                         <div class="adsolute bottom-0 left-0 mt-2">

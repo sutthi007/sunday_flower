@@ -107,25 +107,25 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -146,7 +146,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -155,11 +156,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -338,25 +339,25 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
                     <li class="relative px-6 py-3">
-                        
+
                         <button
                             class="inline-flex items-center justify-between w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -377,7 +378,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -386,11 +388,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -545,20 +547,13 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                <svg
-                                                class="w-4 h-4 mr-3"
-                                                aria-hidden="true"
-                                                fill="none"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                              >
-                                                <path
-                                                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                                ></path>
-                                              </svg>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -579,82 +574,86 @@
                         <div class="m-auto mt-3 mb-6">
                             <div class="bg-whtie   ">
                                 <div class="p-8">
-                                    <form action="{{ route('service.store') }}" method="POST">
+                                    <form class=" grid gap-6  md:grid-cols-1 xl:grid-cols-2  "
+                                        action="{{ route('service.store') }}" method="POST">
                                         @csrf
-                                        <div class="bg-220  w-300px m-auto  h-40px mb-6 dark:bg-gray-900 rounded-md">
-                                            <div class="p-2">
-                                                <label class="dark:text-white" for="">
-                                                    รายการ :
-                                                </label>
-                                                <input class="bg-220  w-150px dark:bg-gray-900 dark:text-white" type="text" placeholder="กล่องโฟม"
-                                                    name="list">
-                                            </div>
+                                        <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                            <label
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                                รายการ :
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                                type="text" placeholder="กล่องโฟม" name="list">
                                         </div>
-                                        <div class="bg-220  w-300px m-auto  h-40px mb-6 dark:bg-gray-900 rounded-md">
-                                            <div class="p-2">
-                                                <label class="dark:text-white" for="">
-                                                    ราคาค่าบริการ:
-                                                </label>
-                                                <input class="bg-220 w-150px dark:bg-gray-900 dark:text-white" type="text" placeholder="200"
-                                                    name="price">
-                                                <input type="hidden" value="3" name="type">
-                                            </div>
+                                        <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                            <label
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                                ราคาค่าบริการ:
+                                            </label>
+                                            <input
+                                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                                type="text" placeholder="200" name="price">
+                                            <input type="hidden" value="3" name="type">
                                         </div>
-                                        <div class=" w-150px h-30px m-auto mt-6">
-                                            <button
-                                                class="bg-pink w-150px h-30px rounded-md  text-white">บันทึก</button>
-                                    </form>
                                 </div>
+
+                                
+                                <div class=" w-150px h-30px m-auto mt-6">
+                                    <button class="bg-pink w-150px h-30px rounded-md  text-white">บันทึก</button>
+                                </div>
+                            </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
         </div>
-        <script>
-            const switchToggle = document.querySelector('#switch-toggle');
-            const html = document.querySelector('html');
-            let isDarkmode = false
-            const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
-            const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        </main>
+    </div>
+    <script>
+        const switchToggle = document.querySelector('#switch-toggle');
+        const html = document.querySelector('html');
+        let isDarkmode = false
+        const localDarkmode = JSON.parse(localStorage.getItem('isDarkmode'))
+        const darkIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
 </svg>`
-            const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        const lightIcon = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
 </svg>`
-            // Jika ada isDarkmode di localstorage 
-            if (localDarkmode) {
-                isDarkmode = localDarkmode
+        // Jika ada isDarkmode di localstorage 
+        if (localDarkmode) {
+            isDarkmode = localDarkmode
+            html.classList.add('dark')
+        } else {
+            html.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            isDarkmode = !isDarkmode
+            localStorage.setItem('isDarkmode', isDarkmode)
+            switchTheme()
+        }
+
+        function switchTheme() {
+            if (isDarkmode) {
                 html.classList.add('dark')
+                switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.add('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = darkIcon
+                }, 250);
             } else {
                 html.classList.remove('dark')
+                switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
+                switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
+                setTimeout(() => {
+                    switchToggle.innerHTML = lightIcon
+                }, 250);
             }
-
-            function toggleTheme() {
-                isDarkmode = !isDarkmode
-                localStorage.setItem('isDarkmode', isDarkmode)
-                switchTheme()
-            }
-
-            function switchTheme() {
-                if (isDarkmode) {
-                    html.classList.add('dark')
-                    switchToggle.classList.remove('bg-yellow-500', '-translate-x-2')
-                    switchToggle.classList.add('bg-gray-700', 'translate-x-full')
-                    setTimeout(() => {
-                        switchToggle.innerHTML = darkIcon
-                    }, 250);
-                } else {
-                    html.classList.remove('dark')
-                    switchToggle.classList.add('bg-yellow-500', '-translate-x-2')
-                    switchToggle.classList.remove('bg-gray-700', 'translate-x-full')
-                    setTimeout(() => {
-                        switchToggle.innerHTML = lightIcon
-                    }, 250);
-                }
-            }
-            switchTheme()
-        </script>
+        }
+        switchTheme()
+    </script>
 </body>
 
 </html>

@@ -1193,57 +1193,61 @@
                         <div class="bg-white rounded-lg shadow-lg dark:bg-gray-800 h-full">
                             <div class="m-auto rounded-md p-3">
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             ชื่อ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->name}}" name="name">
                                         @if ($errors->any('name'))
                                             <p class="text-red-500 text-xs italic text-center">
                                             {{ $errors->first('name') }}</p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             ตำบล :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->subdistrict}}" name="subdistrict">
                                         @if ($errors->any('subdistrict'))
                                             <p class="text-red-500 text-xs italic text-center">
                                             {{ $errors->first('subdistrict') }}</p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             อำเภอ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->city}}" name="city">
                                         @if ($errors->any('city'))
                                             <p class="text-red-500 text-xs italic text-center">
                                             {{ $errors->first('city') }}</p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             จังหวัด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" value="{{$customer->province}}" name="province">
                                         @if ($errors->any('province'))
                                             <p class="text-red-500 text-xs italic text-center">
                                             {{ $errors->first('province') }}</p>
                                         @endif
                                     </div>
-
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                             เบอร์โทร :
                                         </label>
                                         <input
-                                            class="bg-235 w-150px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="tel"  value="{{$customer->phone}}" name="phone" size="10" maxlength="11"
                                             id="tell" onkeypress="addSpaceTEl()"/>
                                         @if ($errors->any('phone'))

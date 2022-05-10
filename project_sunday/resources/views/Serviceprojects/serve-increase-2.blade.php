@@ -579,32 +579,31 @@
                         <div class="m-auto mt-3 mb-6">
                             <div class="bg-whtie   ">
                                 <div class="p-8">
-                                    <form action="{{ route('service.store') }}" method="POST">
+                                    <form class=" grid gap-6  md:grid-cols-1 xl:grid-cols-2  " action="{{ route('service.store') }}" method="POST">
                                         @csrf
-                                        <div class="bg-220  w-300px m-auto  h-40px mb-6 dark:bg-gray-900 rounded-md">
-                                            <div class="p-2">
-                                                <label class="dark:text-white" for="">
+                                        <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                            <label
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                                     จังหวัด :
                                                 </label>
-                                                <input class="bg-220  w-150px dark:bg-gray-900 dark:text-white"
+                                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white "
                                                     type="text" placeholder="กล่องโฟม" name="province">
-                                            </div>
+                                            
                                         </div>
-                                        <div class="bg-220  w-300px m-auto  h-40px mb-6 dark:bg-gray-900 rounded-md">
-                                            <div class="p-2">
-                                                <label class="dark:text-white" for="">
+                                        <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                            <label
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                                     อำเภอ :
                                                 </label>
-                                                <input class="bg-220  w-150px dark:bg-gray-900 dark:text-white"
+                                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white "
                                                     type="text" placeholder="150" name="sub">
-                                            </div>
                                         </div>
-                                        <div class="bg-220  w-300px m-auto  h-40px mb-6 dark:bg-gray-900 rounded-md">
-                                            <div class="p-2">
-                                                <label class="dark:text-white" for="">
+                                        <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                            <label
+                                                class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
                                                     ราคาค่าบริการ:
                                                 </label>
-                                                <input class="bg-220  w-150px dark:bg-gray-900 dark:text-white"
+                                                <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white "
                                                     type="text" placeholder="200" name="price">
                                                 <input type="hidden" value="2" name="type">
                                             </div>

@@ -578,74 +578,116 @@
                                             class="object-cover rounded-full h-full w-full ">
                                     </div>
                                 </div>
-                                <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                        <label class=" dark:text-white" for="">
+                                <div class=" grid gap-6  md:grid-cols-2 xl:grid-cols-3 mt-5">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ชื่อ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->name }}" disabled>
-                                    </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
 
-                                        <label class=" dark:text-white" for="">
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  name="name" value="{{ $user->name }}" readonly required>
+                                           
+                                    </div>
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ตำแหน่ง :
                                         </label>
-                                        <input class="bg-235 w-150px dark:bg-gray-900" type="text"
-                                            placeholder="{{ $user->role }}" disabled>
-
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            id="grid-first-name" type="text" value="{{ $user->role }}" readonly required>
+                                              
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-
-                                        <label class=" dark:text-white" for="">
-                                            เลขผู้ใช้ :
-                                        </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->IDuser }}" disabled>
-
-                                    </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             วันเกิด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->birthday }}" disabled>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white""
+                                            type="text" value="{{ $user->birthday }}" readonly required>
+                                           
                                     </div>
-                                  
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
-                                            เบอร์โทร :
+                                    <div class="w-full x-3 mb-6 md:mb-0">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            เลขที่บ้าน :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->phone }}" disabled>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            value="{{ $user->address }}" readonly required>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
-                                            เบอร์โทรญาติที่ติดต่อได้ :
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            ตำบล :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  w-100px dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->phone_relative }}" disabled>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  value="{{ $user->subdistrict }}" readonly required>
+                                           
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
-                                            ที่อยู่ :
-                                        </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->address }}" disabled>
-                                    </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             อำเภอ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->city }}" disabled>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->city }}" readonly required>
+                                           
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             จังหวัด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->province }}" disabled>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  value="{{ $user->province }}" readonly required>
+                                            
+                                    </div>
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            ไปรษณีย์ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  value="{{ $user->zipcode }}" readonly required>
+                                            
+                                    </div>
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            เบอร์โทร :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->phone }}" readonly required>
+                                           
+                                    </div>
+                                    <div class="w-full x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            เบอร์โทรญาติที่ติดต่อได้ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="tel"  value="{{ $user->phone_relative }}" readonly required>
+                                            
                                     </div>
                                 </div>
                             </div>

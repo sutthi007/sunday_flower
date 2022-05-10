@@ -587,7 +587,8 @@
                             <div class="m-auto rounded-md p-3">
                                 <div class="grid text-center m-auto relative h-200px">
                                     <div class="m-auto w-40 h-40  ">
-                                        <img src="/img/name.png" class="object-cover rounded-full h-full w-full " id="imag_s">
+                                        <img src="/img/name.png" class="object-cover rounded-full h-full w-full "
+                                            id="imag_s">
                                     </div>
                                     <div class="custom-file">
                                         <div
@@ -596,155 +597,168 @@
                                         </div>
                                         <input type="file" id="imag" accept="image/png, image/ipg, image/jpeg"
                                             name="image_Profile">
-                                    
+
                                     </div>
                                 </div>
-                                <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-5">
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative ">
-                                        <label class=" dark:text-white" for="">
+                                <div class=" grid gap-6  md:grid-cols-2 xl:grid-cols-3 mt-5">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ชื่อ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             type="text" placeholder="กรอก ชื่อ-นามสกุล" name="name">
-                                        <div class="adsolute bottom-0 left-0 mt-3">
                                             @if ($errors->any('name'))
-                                                <p class="text-red-500 text-xs italic text-center">
+                                                <p class="text-red-500 text-xs italic ">
                                                     {{ $errors->first('name') }}</p>
                                             @endif
-                                        </div>
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ตำแหน่ง :
                                         </label>
                                         <select
-                                            class="bg-235 rounded-lg h-30px ss:w-150px dark:bg-gray-900 dark:text-white"
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             id="grid-first-name" type="text" placeholder="" name="role">
-                                            <option value="">---เลือก----</option>
+                                            <option value="">-----เลือก-----</option>
                                             @can('owner')
                                                 <option value="admin">แอดมิน</option>
                                             @endcan
                                             <option value="employee">พนักงานขนส่ง</option>
                                         </select>
-                                        <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('role'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('role') }}</p>
-                                        @endif
-                                        </div>
+                                            @if ($errors->any('role'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('role') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             วันเกิด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="date" placeholder="12/12/2512" name="birthday">
-                                        <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('birthday'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('birthday') }}</p>
-                                        @endif
-                                        </div>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white""
+                                            type="date"  name="birthday">
+                                            @if ($errors->any('birthday'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('birthday') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ถนน :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             name="road">
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             เลขที่บ้าน :
                                         </label>
                                         <input
-                                            class="bg-235 w-160px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             name="address">
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ตำบล :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="พระราม" name="sub">
-                                        <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('sub'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('sub') }}</p>
-                                        @endif
-                                        </div>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  name="sub">
+                                            @if ($errors->any('sub'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('sub') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             อำเภอ :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="เมือง" name="city">
-                                            <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('city'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('city') }}</p>
-                                        @endif
-                                            </div>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  name="city">
+                                            @if ($errors->any('city'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('city') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             จังหวัด :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="กรุงเทพ" name="province">
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  name="province">
                                         <input type="hidden" value="123456789" name="password">
-                                        <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('province'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('province') }}</p>
-                                        @endif
-                                        </div>
+                                            @if ($errors->any('province'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('province') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ไปรษณีย์ :
                                         </label>
                                         <input
-                                            class="bg-235 rounded-lg h-30px w-150px dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="" name="zipcode" size="5" maxlength="5">
-                                            <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('zipcode'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('zipcode') }}</p>
-                                        @endif
-                                            </div>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  name="zipcode" size="5" maxlength="5">
+                                            @if ($errors->any('zipcode'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('zipcode') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             เบอร์โทร :
                                         </label>
                                         <input
-                                            class="bg-235 w-150px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="tel" placeholder="08x-xxx-xxxx" name="phone" size="10" maxlength="10"
                                             id="tell" onkeypress="addSpaceTEl()">
-                                            <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('phone'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('phone') }}</p>
-                                        @endif
-                                            </div>
+                                            @if ($errors->any('phone'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('phone') }}</p>
+                                            @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 relative">
-                                        <label class=" dark:text-white" for="">
+                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             เบอร์โทรญาติที่ติดต่อได้ :
                                         </label>
                                         <input
-                                            class="bg-235 w-140px rounded-lg h-30px  dark:bg-gray-900 dark:text-white"
-                                            type="tel" placeholder="0588888" name="phone_relative" size="10"
-                                            maxlength="11" id="tells" onkeypress="addSpaceTElS()">
-                                            <div class="adsolute bottom-0 left-0 mt-3">
-                                        @if ($errors->any('phone_relative'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('phone_relative') }}</p>
-                                        @endif
-                                            </div>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="tel" placeholder="08x-xxx-xxxx" name="phone_relative" size="10"
+                                            maxlength="10" id="tells" onkeypress="addSpaceTElS()">
+                                            @if ($errors->any('phone_relative'))
+                                                <p class="text-red-500 text-xs italic ">
+                                                    {{ $errors->first('phone_relative') }}</p>
+                                            @endif
                                     </div>
+
+
                                 </div>
                             </div>
                             <div class="mt-5 mb-9 w-250px m-auto">
@@ -834,7 +848,7 @@
         }
         switchTheme()
     </script>
-    
+
 
 </body>
 

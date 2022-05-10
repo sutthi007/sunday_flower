@@ -1185,53 +1185,65 @@
                             @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                             <div class=" mx-auto mt-10  ">
                                 <div class="w-full  m-auto items-center mx-auto p-3">
-                                    <div class="bg-neutral-300   h-50px mb-3 dark:bg-gray-900 rounded-lg ">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             วันเดือนปีเกิด :
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px w-94px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $thaiDateHelper->simpleDateFormat($user->birthday) }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $thaiDateHelper->simpleDateFormat($user->birthday) }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ตำบล:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->subdistrict }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->subdistrict }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full md:w- x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             อำเภอ:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->city }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->city }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             จังหวัด:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->province }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->province }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ที่อยู่:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->address }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->address }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3  dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ไปรษณีย์:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg h-30px  mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->zipcode }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->zipcode }}" disabled>
                                     </div>
                                 </div>
                             </div>
@@ -1245,38 +1257,44 @@
                                     </div>
                                 </div>
                                 <div class="m-auto w-300px p-3">
-                                    <div class="bg-neutral-300 h-50px mb-3 dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ชื่อ:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg w-100px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->name }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->name }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             เลขผู้ใช้งาน:
                                         </label>
                                         <input
-                                            class="bg-neutral-300 rounded-lg w-150px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                            type="text" placeholder="{{ $user->IDuser }}" disabled>
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->IDuser }}" disabled>
                                     </div>
-                                    <div class="bg-neutral-300  h-50px mb-3 dark:bg-gray-900 rounded-lg">
-                                        <label class="ml-4 dark:text-white" for="">
+                                    <div class="w-full x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
                                             ตำแหน่ง:
                                         </label>
                                         @if ($user->role == 'admin')
                                             <input
-                                                class="bg-neutral-300 rounded-lg w-100px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                                type="text" placeholder="แอดมิน" disabled>
+                                                class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                                type="text" value="แอดมิน" disabled>
                                         @elseif($user->role == 'employee')
                                             <input
-                                                class="bg-neutral-300 rounded-lg w-100px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                                type="text" placeholder="พนักงานขนส่ง" disabled>
+                                                class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                                type="text" value="พนักงานขนส่ง" disabled>
                                         @elseif($user->role == 'owner')
                                             <input
-                                                class="bg-neutral-300 rounded-lg w-100px h-30px mt-2 dark:bg-gray-900 dark:text-white"
-                                                type="text" placeholder="เจ้าของกิจการ" disabled>
+                                                class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                                type="text" value="เจ้าของกิจการ" disabled>
                                         @endif
                                     </div>
                                 </div>

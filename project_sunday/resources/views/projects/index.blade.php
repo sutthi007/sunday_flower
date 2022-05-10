@@ -1249,15 +1249,18 @@
                             <div
                                 class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
                                 <div
-                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    class=" rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
                                     <div class="p-3">
-                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                        <form action="{{ route('date') }}" method="get">
                                             @csrf
-                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date"
+                                            <div class="flex items-center border-b border-gray-500 py-2">
+                                                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="date" name="date"
                                                 value="YYYY-MM-DD">
-
-                                            <button
-                                                class=" text-white xl:w-150px lg:w-full md:w-200px sm:w-200px ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                                
+                                                <button class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded" >
+                                                  ค้นหา
+                                                </button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -1481,15 +1484,18 @@
                             <div
                                 class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
                                 <div
-                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    class=" rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
                                     <div class="p-3">
-                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                        <form action="{{ route('date') }}" method="get">
                                             @csrf
-                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date"
+                                            <div class="flex items-center border-b border-gray-500 py-2">
+                                                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="date" name="date"
                                                 value="YYYY-MM-DD">
-
-                                            <button
-                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                                
+                                                <button class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded" >
+                                                  ค้นหา
+                                                </button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -1725,15 +1731,18 @@
                             <div
                                 class="flex mb-4 xl:flex-row-reverse lg:flex-row-reverse  md:flex-row-reverse  ss:flex-col">
                                 <div
-                                    class="bg-white rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
+                                    class=" rounded-lg h-50px xl:w-300px lg:w-300px  md:w-full ss:w-full dark:bg-gray-800 mt-3">
                                     <div class="p-3">
-                                        <form class="flex" action="{{ route('date') }}" method="get">
+                                        <form action="{{ route('date') }}" method="get">
                                             @csrf
-                                            <input class="dark:text-white dark:bg-gray-800" type="date" name="date"
+                                            <div class="flex items-center border-b border-gray-500 py-2">
+                                                <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="date" name="date"
                                                 value="YYYY-MM-DD">
-
-                                            <button
-                                                class=" dark:text-white xl:w-150px lg:w-150px md:w-full ss:w-150px h-30px rounded-lg bg-pink">ค้นหา</button>
+                                                
+                                                <button class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded" >
+                                                  ค้นหา
+                                                </button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

@@ -117,11 +117,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -132,10 +132,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -156,7 +156,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -165,11 +166,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -348,11 +349,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -363,10 +364,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -387,7 +388,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -396,11 +398,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -556,20 +558,13 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                 <svg
-                                                 class="w-4 h-4 mr-3"
-                                                 aria-hidden="true"
-                                                 fill="none"
-                                                 stroke-linecap="round"
-                                                 stroke-linejoin="round"
-                                                 stroke-width="2"
-                                                 viewBox="0 0 24 24"
-                                                 stroke="currentColor"
-                                               >
-                                                 <path
-                                                   d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                                 ></path>
-                                               </svg>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -593,128 +588,177 @@
                             <div class="m-auto rounded-md p-5">
                                 <div class=" m-auto p-4">
                                     <div class=" m-auto w-40 h-40  ">
-                                        <img src="{{ asset('img/Profile/'.$user->Path_imageProfile) }}" class="object-cover rounded-full h-full w-full " id="display_image">
+                                        <img src="{{ asset('img/Profile/' . $user->Path_imageProfile) }}"
+                                            class="object-cover rounded-full h-full w-full " id="display_image">
                                     </div>
                                     <div class="custom-file">
-                                        <div class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
+                                        <div
+                                            class="rounded-md bg-pink h-30px w-150px m-auto text-white mt-2 p-1 text-center">
                                             <label for="image_input">อัปโหลดภาพ</label>
                                         </div>
-                                        <input type="file" id="image_input"
-                                            accept="image/png, image/ipg, image/jpeg"
-                                            value="{{$user->profile}}" name="image_Profile">
+                                        <input type="file" id="image_input" accept="image/png, image/ipg, image/jpeg"
+                                            value="{{ $user->profile }}" name="image_Profile">
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-1 xl:grid-cols-3 mt-3 ">
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                ชื่อ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->name }}" name="name">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            ชื่อ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->name }}" name="name">
                                         @if ($errors->any('name'))
                                             <p class="text-red-500 text-xs italic text-center">
                                                 {{ $errors->first('name') }}
                                             </p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                ตำแหน่ง :
-                                            </label>
-                                            <input class="bg-235 w-160px rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->role }}" disabled name="role">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            ตำแหน่ง :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->role }}" disabled name="role">
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                เลขผู้ใช้ :
-                                            </label>
-                                            <input class="bg-235 w-160px rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->IDuser }}" disabled name="IDuser">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            เลขผู้ใช้ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->IDuser }}" disabled name="IDuser">
                                         @if ($errors->any('IDuser'))
                                             <p class="text-red-500 text-xs italic text-center">
                                                 {{ $errors->first('IDuser') }}
                                             </p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                วันเกิด :
-                                            </label>
-                                            <input class="bg-235 w-160px rounded-lg h-30px  dark:bg-gray-900 dark:text-white" type="date"
-                                                value="{{ $user->birthday }}" name="birthday">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            วันเกิด :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="date" value="{{ $user->birthday }}" name="birthday">
                                         @if ($errors->any('birthday'))
                                             <p class="text-red-500 text-xs italic text-center">
                                                 {{ $errors->first('birthday') }}
                                             </p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                เบอร์โทร :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px w-160px dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->phone }}" name="phone">
-                                        @if ($errors->any('phone'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('phone') }}
-                                            </p>
-                                        @endif
-                                    </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                        <label class=" dark:text-white" for="">
-                                            เบอร์โทรญาติที่ติดต่อได้ :
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            เลขที่บ้าน :
                                         </label>
-                                        <input class="bg-235 rounded-lg h-30px w-120px dark:bg-gray-900 dark:text-white" type="text"
-                                            value="{{ $user->phone_relative }}" name="phone_relative">
-                                        @if ($errors->any('phone_relative'))
-                                            <p class="text-red-500 text-xs italic text-center">
-                                                {{ $errors->first('phone_relative') }}
-                                            </p>
-                                        @endif
-                                </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                ที่อยู่ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px w-160px dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->address }}" name="address">
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->address }}" name="address">
                                         @if ($errors->any('address'))
                                             <p class="text-red-500 text-xs italic text-center">
                                                 {{ $errors->first('address') }}
                                             </p>
                                         @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                อำเภอ :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px w-160px dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->city }}" name="city">
-                                            @if ($errors->any('city'))
-                                                <p class="text-red-500 text-xs italic text-center">
-                                                    {{ $errors->first('city') }}
-                                                </p>
-                                            @endif
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            ตำบล :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->subdistrict }}" name="city">
+                                        @if ($errors->any('city'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('city') }}
+                                            </p>
+                                        @endif
                                     </div>
-                                    <div class="bg-235 h-50px mb-3 dark:bg-gray-900 rounded-lg p-3 ">
-                                            <label class=" dark:text-white" for="">
-                                                จังหวัด :
-                                            </label>
-                                            <input class="bg-235 rounded-lg h-30px w-160px dark:bg-gray-900 dark:text-white" type="text"
-                                                value="{{ $user->province }}" name="province">
-                                            @if ($errors->any('province'))
-                                                <p class="text-red-500 text-xs italic text-center">
-                                                    {{ $errors->first('province') }}
-                                                </p>
-                                            @endif
-                                        </div>
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            อำเภอ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->city }}" name="city">
+                                        @if ($errors->any('city'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('city') }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            จังหวัด :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->province }}" name="province">
+                                        @if ($errors->any('province'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('province') }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                            for="">
+                                            ไปรษณีย์ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text"  value="{{ $user->zipcode }}" name="zipcode">
+                                            @if ($errors->any('zipcode'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('zipcode') }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            เบอร์โทร :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->phone }}" name="phone">
+                                        @if ($errors->any('phone'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('phone') }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
+                                        <label
+                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white ">
+                                            เบอร์โทรญาติที่ติดต่อได้ :
+                                        </label>
+                                        <input
+                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
+                                            type="text" value="{{ $user->phone_relative }}" name="phone_relative">
+                                        @if ($errors->any('phone_relative'))
+                                            <p class="text-red-500 text-xs italic text-center">
+                                                {{ $errors->first('phone_relative') }}
+                                            </p>
+                                        @endif
+                                    </div>
+                                 
                                 </div>
                             </div>
                             <div class="mt-10  mb-9">
                                 <div class="text-center mt-10 ">
                                     <button type="submit"
                                         class="bg-pink w-100px h-30px rounded-md text-white">บันทึก</button>
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -725,14 +769,14 @@
 
     <script>
         $(function() {
-           $("#image_input").change(function(event) {
-               var x = URL.createObjectURL(event.target.files[0]);
-               $("#display_image").attr("src", x);
-               console.log(event)
-           })
-       })
-   </script>
-     <script>
+            $("#image_input").change(function(event) {
+                var x = URL.createObjectURL(event.target.files[0]);
+                $("#display_image").attr("src", x);
+                console.log(event)
+            })
+        })
+    </script>
+    <script>
         const switchToggle = document.querySelector('#switch-toggle');
         const html = document.querySelector('html');
         let isDarkmode = false
