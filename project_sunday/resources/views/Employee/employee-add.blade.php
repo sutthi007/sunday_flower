@@ -601,7 +601,7 @@
                                     </div>
                                 </div>
                                 <div class=" grid gap-6  md:grid-cols-2 xl:grid-cols-3 mt-5">
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static ">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static ">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -616,7 +616,7 @@
                                                     {{ $errors->first('name') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -636,7 +636,7 @@
                                                     {{ $errors->first('role') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -650,7 +650,7 @@
                                                     {{ $errors->first('birthday') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -660,7 +660,7 @@
                                             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             name="road">
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0">
+                                    <div class="w-full  x-3 mb-6 md:mb-0">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -670,7 +670,7 @@
                                             class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                             name="address">
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -684,7 +684,7 @@
                                                     {{ $errors->first('sub') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -698,7 +698,7 @@
                                                     {{ $errors->first('city') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -713,7 +713,7 @@
                                                     {{ $errors->first('province') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -727,7 +727,7 @@
                                                     {{ $errors->first('zipcode') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">
@@ -742,7 +742,7 @@
                                                     {{ $errors->first('phone') }}</p>
                                             @endif
                                     </div>
-                                    <div class="w-full md:w-1/3 x-3 mb-6 md:mb-0 static">
+                                    <div class="w-full  x-3 mb-6 md:mb-0 static">
                                         <label
                                             class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                             for="">

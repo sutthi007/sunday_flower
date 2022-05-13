@@ -12,6 +12,11 @@
 
     <script src="/js/init-alpine.js"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+        integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="icon" type="/img/svg" href="/img/icon.svg" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
@@ -105,11 +110,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -120,10 +125,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -144,7 +149,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -153,11 +159,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -336,11 +342,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                <a class="w-full" href="{{ route('provinceTo.index') }}">
-                                    จังหวัดส่งต่อ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
+                                    <a class="w-full" href="{{ route('provinceTo.index') }}">
+                                        จังหวัดส่งต่อ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -351,10 +357,10 @@
                             @click="togglePagesMenuss" aria-haspopup="true">
                             <span class="inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                            </svg>
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
                                 <span class="ml-4">ข้อมูลลูกค้า</span>
                             </span>
 
@@ -375,7 +381,8 @@
                                 aria-label="submenu">
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
-                                    <a class="w-full" href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
+                                    <a class="w-full"
+                                        href="{{ route('customer.index') }}">เพิ่มข้อมูลลูกค้า</a>
                                 </li>
                                 <li
                                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 ">
@@ -384,11 +391,11 @@
                                     </a>
                                 </li>
                                 <li
-                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
-                                <a class="w-full" href="/CustomerView-overdue">
-                                    ลูกค้าค้างชำระ
-                                </a>
-                            </li>
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/CustomerView-overdue">
+                                        ลูกค้าค้างชำระ
+                                    </a>
+                                </li>
                             </ul>
                         </template>
                     </li>
@@ -543,20 +550,13 @@
                                             <a class="inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-colors duration-150 rounded-md hover:bg-gray-100 hover:text-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200"
                                                 href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                                <svg
-                                                class="w-4 h-4 mr-3"
-                                                aria-hidden="true"
-                                                fill="none"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                              >
-                                                <path
-                                                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                                                ></path>
-                                              </svg>
+                                                <svg class="w-4 h-4 mr-3" aria-hidden="true" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path
+                                                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                                                    </path>
+                                                </svg>
                                                 <span>ออกจากระบบ</span>
                                             </a>
                                         </form>
@@ -574,56 +574,57 @@
                         สรุปรายงาน บัญชี
                     </h2>
 
-                        <div class="mt-4 mb-6 text-xl dark:text-white">
-                            <p class="">รายวัน</p>
-                        </div>
-                        <!-- New Table -->
-                        <div class="w-full overflow-hidden rounded-lg shadow-xs">
-                            <div class="w-full overflow-x-auto">
-                                <table class="w-full whitespace-no-wrap">
-                                    <thead>
-                                        <tr
-                                            class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-                                            <th class="px-4 py-3">ลำดับ</th>
-                                            <th class="px-4 py-3">วันที่</th>
-                                            <th class="px-8 py-3">รายรับวันนี้</th>
-                                            <th class="px-4 py-3"></th>
+                    <div class="mt-4 mb-6 text-xl dark:text-white">
+                        <p class="">รายวัน</p>
+                    </div>
+                    <!-- New Table -->
+                    <div class="w-full overflow-hidden rounded-lg shadow-xs">
+                        <div class="w-full overflow-x-auto">
+                            <table class="w-full whitespace-no-wrap">
+                                <thead>
+                                    <tr
+                                        class="text-xs  font-semibold text-center tracking-wide  text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                                        <th class="px-4 py-3">ลำดับ</th>
+                                        <th class="px-4 py-3">วันที่</th>
+                                        <th class="px-8 py-3">รายรับวันนี้</th>
+                                        <th class="px-4 py-3"></th>
 
-                                        </tr>
-                                    </thead>
-                                    @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
+                                    </tr>
+                                </thead>
+                                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
 
-                                    <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                        @foreach($account as $key => $value)
+                                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
+                                    @foreach ($account as $key => $value)
+                                        @php
+                                            $i = 0;
+                                            $t = 1;
+                                        @endphp
+                                        @foreach ($value as $sum)
                                             @php
-                                                $i = 0;
-                                                $t = 1;
+                                                $i = $sum->quantity * $sum->price + $i;
                                             @endphp
-                                            @foreach($value as $sum)
-                                                @php
-                                                    $i = ($sum->quantity * $sum->price) +$i;
-                                                @endphp
-                                            @endforeach
+                                        @endforeach
                                         <tr class="text-gray-700 dark:text-gray-400">
-                                            <td class="px-4 py-3 text-sm">{{$t++}}</td>
+                                            <td class="px-4 py-3 text-sm">{{ $t++ }}</td>
                                             <td class="px-4 py-3 text-sm">
                                                 <div class="w-100px m-auto">
-                                                {{$thaiDateHelper->simpleDateFormat($key)}}
-                                            </div>
+                                                    {{ $thaiDateHelper->simpleDateFormat($key) }}
+                                                </div>
                                             </td>
-                                            <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
+                                            <td class="px-4 py-3 text-sm">{{ number_format((float) $i) }}</td>
                                             <td class="px-4 py-3 text-sm">
-                                                <a href="/account-details-day-pdf/{{$key}}" target="_blank">
-                                                    <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
+                                                <a href="/account-details-day-pdf/{{ $key }}" target="_blank">
+                                                    <button
+                                                        class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
                                                 </a>
                                             </td>
                                         </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                        @can('owner')
+                    </div>
+                    @can('owner')
                         <div class="mt-4 mb-6 text-xl dark:text-white">
                             <p class="">รายเดือน</p>
                         </div>
@@ -642,39 +643,82 @@
                                         </tr>
                                     </thead>
                                     <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800 text-center">
-                                        @foreach($accountYear as $year => $details)
-                                            @foreach($accountMonth as $row => $items)
+                                        @foreach ($accountYear as $year => $details)
+                                            @foreach ($accountMonth as $row => $items)
+                                                @php
+                                                    $i = 0;
+                                                    $t = 1;
+                                                @endphp
+                                                @foreach ($items as $item)
                                                     @php
-                                                        $i = 0;
-                                                        $t = 1;
+                                                        $i = $item->quantity * $item->price + $i;
                                                     @endphp
-                                                    @foreach($items as $item)
-                                                        @php
-                                                            $i = ($item->quantity * $item->price) +$i;
-                                                        @endphp
-                                                    @endforeach
-                                                    <tr class="text-gray-700 dark:text-gray-400">
-                                                        <td class="px-4 py-3 text-sm">{{$t++}}</td>
-                                                        <td class="px-4 py-3 text-sm">
-                                                            <div >
-                                                            {{$thaiDateHelper->simpleDateFormatMonth($year.'-'.$row)}}
+                                                @endforeach
+                                                <tr class="text-gray-700 dark:text-gray-400">
+                                                    <td class="px-4 py-3 text-sm">{{ $t++ }}</td>
+                                                    <td class="px-4 py-3 text-sm">
+                                                        <div>
+                                                            {{ $thaiDateHelper->simpleDateFormatMonth($year . '-' . $row) }}
                                                         </div>
-                                                        </td>
-                                                        <td class="px-4 py-3 text-sm">{{number_format((float)$i)}}</td>
-                                                        <td class="px-4 py-3 text-sm">
+                                                    </td>
+                                                    <td class="px-4 py-3 text-sm">{{ number_format((float) $i) }}</td>
+                                                    <td class="px-4 py-3 text-sm">
 
-                                                            <a href="/account-details-month-pdf/{{$row}}/{{$year}}" target="_blank">
-                                                                <button class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
+                                                        <a href="/account-details-month-pdf/{{ $row }}/{{ $year }}"
+                                                            target="_blank">
+                                                            <button
+                                                                class="bg-pink w-94px h-24px rounded-md text-white">PDF</button>
+                                                        </a>
+                                                    </td>
+                                                </tr>
                                             @endforeach
                                         @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        @endcan
+                    @endcan
+
+                    <div class="grid gap-6 mb-8 md:grid-cols-2 mt-6">
+                       
+                        <!-- Lines chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                Lines
+                            </h4>
+                            <canvas id="line"></canvas>
+                            <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
+                                <!-- Chart legend -->
+                                <div class="flex items-center">
+                                    <span class="inline-block w-3 h-3 mr-1 bg-teal-500 rounded-full"></span>
+                                    <span>Organic</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
+                                    <span>Paid</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bars chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                Bars
+                            </h4>
+                            <canvas id="bars"></canvas>
+                            <div class="flex justify-center mt-4 space-x-3 text-sm text-gray-600 dark:text-gray-400">
+                                <!-- Chart legend -->
+                                <div class="flex items-center">
+                                    <span class="inline-block w-3 h-3 mr-1 bg-teal-500 rounded-full"></span>
+                                    <span>Shoes</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="inline-block w-3 h-3 mr-1 bg-purple-600 rounded-full"></span>
+                                    <span>Bags</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </main>
         </div>
@@ -721,6 +765,112 @@
                 }
             }
             switchTheme()
+        </script>
+        <script>
+            /**
+             * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
+             */
+            const lineConfig = {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'Organic',
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#0694a2',
+                            borderColor: '#0694a2',
+                            data: [40, 40, 40, 40, 40, 40, 40],
+                            fill: false,
+                        },
+                        {
+                            label: 'Paid',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#7e3af2',
+                            borderColor: '#7e3af2',
+                            data: [10, 50, 60, 70, 80, 90, 100],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    /**
+                     * Default legends are ugly and impossible to style.
+                     * See examples in charts.html to add your own legends
+                     *  */
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true,
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Month',
+                            },
+                        },
+                        y: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value',
+                            },
+                        },
+                    },
+                },
+            }
+
+            // change this to the id of your chart element in HMTL
+            const lineCtx = document.getElementById('line')
+            window.myLine = new Chart(lineCtx, lineConfig)
+            ///
+            /**
+             * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
+             */
+            const barConfig = {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'Shoes',
+                            backgroundColor: '#0694a2',
+                            // borderColor: window.chartColors.red,
+                            borderWidth: 1,
+                            data: [-3, 14, 52, 74, 33, 90, 70],
+                        },
+                        {
+                            label: 'Bags',
+                            backgroundColor: '#7e3af2',
+                            // borderColor: window.chartColors.blue,
+                            borderWidth: 1,
+                            data: [66, 33, 43, 12, 54, 62, 84],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    },
+                },
+            }
+
+            const barsCtx = document.getElementById('bars')
+            window.myBar = new Chart(barsCtx, barConfig)
         </script>
 </body>
 
