@@ -144,20 +144,19 @@
                                     $p = $price + $p;
                                     $pt = $sendto + $pt;
                                     $i = 1 + $i;
-                                    $ps = number_format($p, 2);
-                                    $pts = number_format($pt, 2);
+                                  
                                 @endphp
                             @endforeach
                             <tr class="text-xl border-4 font-bold">
-                                <td class="" colspan="2"> รวม</td>
+                                <td class="" colspan="2">รวม</td>
                                 <td class="">{{ $a }}</td>
-                                <td class="text-right pr-l">{{ $ps }}</td>
+                                <td class="text-right pr-l">{{  number_format((float) $p,2) }}</td>
                                 <td class="">ค่าฝากต่อ</td>
-                                <td class="text-right pr-l">{{ $pts }}</td>
+                                <td class="text-right pr-l">{{  number_format((float) $pt,2) }}</td>
                             </tr>
                             <tr class="text-xl border-4 font-bold">
                                 <td class="" colspan="5">รวมรายได้ทั้งสิ้น</td>
-                                <td class="text-right pr-l">{{ number_format((float) $ps + $pts,2) }}</td>
+                                <td class="text-right pr-l">{{ number_format((float) $p + $pt,2) }}</td>
                             </tr>
                         </tbody>
                     </table>
