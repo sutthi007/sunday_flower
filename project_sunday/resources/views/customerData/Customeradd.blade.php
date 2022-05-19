@@ -1273,7 +1273,7 @@
                                         </label>
                                         <input
                                             class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
-                                            type="tel" placeholder="0588888" name="phone" size="10" maxlength="11"
+                                            type="tel" placeholder="0588888" name="phone" size="10" maxlength="10"
                                             id="tell" onkeypress="addSpaceTEl()">
                                         <div class="adsolute bottom-0 left-0 mt-2">
                                             @if ($errors->any('phone'))

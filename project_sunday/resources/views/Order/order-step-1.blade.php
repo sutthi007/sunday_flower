@@ -1069,7 +1069,7 @@
                         <div class="relative w-auto my-6 mx-auto max-w-3xl">
                             <!--content-->
                             <div
-                                class="border-0 rounded-lg shadow-lg relative flex flex-col   bg-white outline-none focus:outline-none xl:w-full xl:h-500px lg:w-full lg:h-500px md:w-full  md:h-500px sm:h-500px  ss:h-500px">
+                                class="border-0 rounded-lg shadow-lg relative flex flex-col   bg-white outline-none focus:outline-none xl:w-full xl:h-500px lg:w-full lg:h-500px md:w-full  md:h-500px sm:h-500px  ss:h-500px ss:w-300px  ">
                                 <!--header-->
                                 <div
                                     class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
@@ -1091,14 +1091,14 @@
                                         @csrf
 
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
-                                            <div class="w-full px-3 mb-6 md:mb-0">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     ชื่อ-ผู้รับ
                                                 </label>
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white "
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white "
                                                     id="grid-first-name" type="text" placeholder="ชื่อ - นามสกุล"
                                                     name="name" />
                                                 @if ($errors->any('name'))
@@ -1106,14 +1106,14 @@
                                                         {{ $errors->first('name') }}</p>
                                                 @endif
                                             </div>
-                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     จังหวัด
                                                 </label>
                                                 <select
-                                                    class="provinces appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="provinces appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="province"
                                                     id="provinces">
                                                     <option value="">---เลือกจังหวัด----</option>
@@ -1127,14 +1127,14 @@
                                                         {{ $errors->first('province') }}</p>
                                                 @endif
                                             </div>
-                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     อำเภอ
                                                 </label>
                                                 <select
-                                                    class="city appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="city appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="city">
                                                     <option value="">---เลือกอำเภอ----</option>
                                                 </select>
@@ -1143,14 +1143,14 @@
                                                         {{ $errors->first('city') }}</p>
                                                 @endif
                                             </div>
-                                            <div class="w-full px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     เบอร์โทร
                                                 </label>
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="telInput" type="tel" placeholder="" name="phone"
                                                     maxlength="10" />
                                                 @if ($errors->any('phone'))
@@ -1158,39 +1158,38 @@
                                                         {{ $errors->first('phone') }}</p>
                                                 @endif
                                             </div>
-                                            <div class="w-full px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     เบอร์โทรสำรอง(ถ้ามี)
                                                 </label>
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="telInput" onkeypress="addSpaces()" type="tels" placeholder=""
                                                     name="phone_one" maxlength="10" />
                                             </div>
                                             <div class=" w-full px-3 mb-6 md:mb-0 ">
-                                                <div class="flex">
+                                                <div class="flex ">
                                                     <input class="mr-4" type="checkbox" id="myCheck"
                                                         onclick="myFunction()" name="sendto" value="ส่งต่อ">
                                                     <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        for="grid-first-name">
+                                                        class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                        for="">
                                                         ส่งต่อ
                                                     </label>
                                                 </div>
-                                                <div class=" w-full px-3 mb-6 md:mb-0 " id="text" style="display:none">
+                                                <div class=" w-full  x-3 mb-6 md:mb-0 static " id="text" style="display:none">
                                                     <label
-                                                        class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                        id="showthis" name="showthis" size="50" type="text"
-                                                        value="text here">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                         ราคาส่งต่อ
                                                     </label>
                                                     <input
-                                                        class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                         name="price_sendto">
                                                 </div>
-                                                <div class=" w-full px-3 mb-6 md:mb-0 " id="texts"
+                                                <div class="w-full  x-3 mb-6 md:mb-0 static " id="texts"
                                                     style="display:none">
                                                     <label
                                                         class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -1199,7 +1198,7 @@
                                                         จังหวัดส่งต่อ
                                                     </label>
                                                     <select
-                                                        class=" appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                        class=" appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                         id="grid-first-name" type="text" placeholder=""
                                                         name="provinces_to" id="provinces">
                                                         <option value="">---เลือกจังหวัด----</option>
@@ -1213,14 +1212,14 @@
                                             </div>
                                         </div>
                                         <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ">
-                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     ประเภท
                                                 </label>
                                                 <select onchange="yesnoCheck(this);"
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="type">
                                                     <option value="">---เลือก----</option>
                                                     <option value="พัสดุภัณฑ์">พัสดุภัณฑ์</option>
@@ -1234,26 +1233,26 @@
                                                         {{ $errors->first('type') }}</p>
                                                 @endif
                                             </div>
-                                            <div class=" w-full px-3 mb-6 md:mb-0 " style="display:block;" id="ifYes">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     รายการ
                                                 </label>
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="list" />
                                             </div>
-                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
-                                                <div class="flex">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
+                                                <div class="grid  gap-6 mb-8 md:grid-cols-2 xl:grid-cols-2 ss:grid-cols-1">
                                                     <div class="mr-2">
                                                         <label
-                                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                            for="grid-first-name">
+                                                        class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                        for="">
                                                             จำนวน
                                                         </label>
                                                         <input
-                                                            class="appearance-none block w-200px text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                             id="grid-first-name" type="text" placeholder=""
                                                             name="quantity" />
                                                         @if ($errors->any('quantity'))
@@ -1261,14 +1260,14 @@
                                                                 {{ $errors->first('quantity') }}</p>
                                                         @endif
                                                     </div>
-                                                    <div>
+                                                    <div class="ml-2">
                                                         <label
-                                                            class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                            for="grid-first-name">
+                                                        class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                        for="">
                                                             หน่วย
                                                         </label>
                                                         <input
-                                                            class="appearance-none block  w-20 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                            class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                             id="grid-first-name" type="text" placeholder=""
                                                             name="amount" />
                                                         @if ($errors->any('amount'))
@@ -1278,14 +1277,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="w-full  px-3 mb-6 md:mb-0 ">
+                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
                                                 <label
-                                                    class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                                    for="grid-first-name">
+                                                    class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
+                                                    for="">
                                                     ราคา
                                                 </label>
                                                 <input
-                                                    class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                                                    class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white dark:bg-gray-900 dark:text-white"
                                                     id="grid-first-name" type="text" placeholder="" name="price" />
                                                 <input type="hidden" name="customer_id" value="{{ $customer->id }}">
                                                 @if ($errors->any('price'))
