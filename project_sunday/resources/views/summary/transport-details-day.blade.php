@@ -461,6 +461,12 @@
                                             สรุปรายงานขนส่ง
                                         </a>
                                     </li>
+                                    <li
+                                    class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                    <a class="w-full" href="/chart">
+                                        แผนภูมิกราฟ
+                                    </a>
+                                </li>
                                 </ul>
                             </template>
                         </li>
@@ -781,12 +787,18 @@
                                         สรุปรายงานขนส่ง
                                     </a>
                                 </li>
+                                <li
+                                class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200">
+                                <a class="w-full" href="/chart">
+                                    แผนภูมิกราฟ
+                                </a>
+                            </li>
                             </ul>
                         </template>
                     </li>
                 </ul>
             @endcan
-            @can('owner')
+            @can('admin')
                 <ul class="mt-6">
                     <li class="relative px-6 py-3">
                         <a class="inline-flex items-center w-full text-sm font-semibold  transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 "

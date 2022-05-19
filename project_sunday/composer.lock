@@ -8951,5 +8951,9 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
+<<<<<<< Updated upstream
     "plugin-api-version": "2.1.0"
+=======
+    "plugin-api-version": "2.3.0"
+>>>>>>> Stashed changes
 }

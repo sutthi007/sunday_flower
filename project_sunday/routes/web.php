@@ -151,3 +151,6 @@ Route::get('/tracking-search',function (Request $request){
     return view('tracking-search',compact('tracking'));
 });
 Route::post('forgot-password',[userController::class,'forgot_password'])->name('forgot');
+Route::get('chart', function (){
+    return view('chart');
+});
