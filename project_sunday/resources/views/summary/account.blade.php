@@ -1134,7 +1134,28 @@
                         </div>
                     @endcan
 
+<<<<<<< Updated upstream
                   
+=======
+                    <div class="grid gap-6 mb-8 md:grid-cols-2 mt-6">
+                       
+                        <!-- Lines chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                กราฟเส้น
+                            </h4>
+                            <canvas id="line"></canvas>
+                           
+                        </div>
+                        <!-- Bars chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                กราฟแท่ง
+                            </h4>
+                            <canvas id="bars"></canvas>
+                        </div>
+                    </div>
+>>>>>>> Stashed changes
                 </div>
             </main>
         </div>
@@ -1182,7 +1203,112 @@
             }
             switchTheme()
         </script>
-        
+        <script>
+            /**
+             * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
+             */
+            const lineConfig = {
+                type: 'line',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'ดอกไม้',
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#0694a2',
+                            borderColor: '#0694a2',
+                            data: [40, 40, 40, 40, 40, 40, 40],
+                            fill: false,
+                        },
+                        {
+                            label: 'Paid',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#7e3af2',
+                            borderColor: '#7e3af2',
+                            data: [10, 50, 60, 70, 80, 90, 500],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    /**
+                     * Default legends are ugly and impossible to style.
+                     * See examples in charts.html to add your own legends
+                     *  */
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true,
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Month',
+                            },
+                        },
+                        y: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value',
+                            },
+                        },
+                    },
+                },
+            }
+
+            // change this to the id of your chart element in HMTL
+            const lineCtx = document.getElementById('line')
+            window.myLine = new Chart(lineCtx, lineConfig)
+            ///
+            /**
+             * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
+             */
+            const barConfig = {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                    datasets: [{
+                            label: 'Shoes',
+                            backgroundColor: '#0694a2',
+                            // borderColor: window.chartColors.red,
+                            borderWidth: 1,
+                            data: [-3, 14, 52, 74, 33, 90, 70],
+                        },
+                        {
+                            label: 'Bags',
+                            backgroundColor: '#7e3af2',
+                            // borderColor: window.chartColors.blue,
+                            borderWidth: 1,
+                            data: [66, 33, 43, 12, 54, 62, 84],
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    legend: {
+                        display: false,
+                    },
+                },
+            }
+
+            const barsCtx = document.getElementById('bars')
+            window.myBar = new Chart(barsCtx, barConfig)
+        </script>
 </body>
 
 </html>

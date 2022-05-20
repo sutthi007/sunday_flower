@@ -26,7 +26,7 @@
           <div class="h-32 md:h-auto md:w-1/2 bg-pink  " >
             <div class=" text-center p-10 mt-6" >
               <img class="m-auto w-200px  md:block hidden"  src="/img/logo.png" alt="">
-              <h1 class="w-300px mt-6  text-3xl text-white m-auto md:block hidden">CHIAN MAI SUNDAY FLOWER</h1>
+              <h1 class="w-300px mt-6  text-3xl text-white m-auto md:block hidden">CHIANG MAI SUNDAY FLOWER</h1>
             </div>
           </div>
           <div class="flex items-center justify-center p-1 sm:p-12 md:w-1/2">

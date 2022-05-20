@@ -83,4 +83,25 @@ class ThaiDateHelperService
         $year = $date->year + 543;
         return $date->format("$month $year");
     }
+    public static function simpleDateFormatchart($arg)
+    {
+        $thai_months = [
+            1 => 'มกราคม',
+            2 => 'กุมภาพันธ์',
+            3 => 'มีนาคม',
+            4 => 'เมษายน',
+            5 => 'พฤษภาคม',
+            6 => 'มิถุนายน',
+            7 => 'กรกฎาคม',
+            8 => 'สิงหาคม',
+            9 => 'กันยายน',
+            10 => 'ตุลาคม',
+            11 => 'พฤศจิกายน',
+            12 => 'ธันวาคม',
+        ];
+        $date = Carbon::createFromFormat('m',$arg);
+        $month = $thai_months[$date->month];
+        $year = $date->year + 543;
+        return $date->format("$month");
+    }
 }

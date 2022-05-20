@@ -582,24 +582,39 @@
                 </div>
             </header>
             <!-- Form Order -->
-            <main class="h-full overflow-y-auto">
+            <main class="h-full overflow-y-auto">               
                 <div class="container px-6 mx-auto grid ">
+                @inject('thaiDateHelper', 'App\Services\ThaiDateHelperService')
                     <div class="grid gap-6 mb-8 md:grid-cols-2 mt-6">
 
                         <!-- Lines chart -->
                         <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
                             <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                                Lines
+                            รายงานรายได้ประจำปี
                             </h4>
-                            <canvas id="line"></canvas>
+                            <canvas id="account"></canvas>
 
                         </div>
                         <!-- Bars chart -->
                         <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
                             <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
-                                Bars
+                                รายงานจังหวัดขนส่งมากที่สุด 10 อันดับ
                             </h4>
                             <canvas id="bars"></canvas>
+                        </div>
+                        <!-- Bars chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                รายงานประภทบริการรายเดือน
+                            </h4>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <!-- Bars chart -->
+                        <div class="min-w-0 p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800">
+                            <h4 class="mb-4 font-semibold text-gray-800 dark:text-gray-300">
+                                รายงานประภทบริการรายปี
+                            </h4>
+                            <canvas id="type"></canvas>
                         </div>
                     </div>
                    
@@ -656,72 +671,72 @@
          * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
          */
         const lineConfig = {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                datasets: [{
-                        label: 'Organic',
-                        /**
-                         * These colors come from Tailwind CSS palette
-                         * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
-                         */
-                        backgroundColor: '#0694a2',
-                        borderColor: '#0694a2',
-                        data: [40, 40, 40, 40, 40, 40, 40],
-                        fill: false,
+                type: 'line',
+                data: {
+                    labels: JSON.parse('{!! json_encode($test) !!}'),
+                    datasets: [{
+                            label: '{!! ($year) !!}',
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#0694a2',
+                            borderColor: '#0694a2',
+                            data: JSON.parse('{!! json_encode($test1) !!}'),
+                            fill: false,
+                        },
+                        {
+                            label: '{!! ($oldYear) !!}',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#7e3af2',
+                            borderColor: '#7e3af2',
+                            data: JSON.parse('{!! json_encode($oldSum) !!}'),
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    /**
+                     * Default legends are ugly and impossible to style.
+                     * See examples in charts.html to add your own legends
+                     *  */
+                    legend: {
+                        display: false,
                     },
-                    {
-                        label: 'Paid',
-                        fill: false,
-                        /**
-                         * These colors come from Tailwind CSS palette
-                         * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
-                         */
-                        backgroundColor: '#7e3af2',
-                        borderColor: '#7e3af2',
-                        data: [10, 50, 60, 70, 80, 90, 100],
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
                     },
-                ],
-            },
-            options: {
-                responsive: true,
-                /**
-                 * Default legends are ugly and impossible to style.
-                 * See examples in charts.html to add your own legends
-                 *  */
-                legend: {
-                    display: false,
-                },
-                tooltips: {
-                    mode: 'index',
-                    intersect: false,
-                },
-                hover: {
-                    mode: 'nearest',
-                    intersect: true,
-                },
-                scales: {
-                    x: {
-                        display: true,
-                        scaleLabel: {
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true,
+                    },
+                    scales: {
+                        x: {
                             display: true,
-                            labelString: 'Month',
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Month',
+                            },
+                        },
+                        y: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value',
+                            },
                         },
                     },
-                    y: {
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value',
-                        },
-                    },
                 },
-            },
-        }
+            }
 
-        // change this to the id of your chart element in HMTL
-        const lineCtx = document.getElementById('line')
-        window.myLine = new Chart(lineCtx, lineConfig)
+            // change this to the id of your chart element in HMTL
+            const lineCtx = document.getElementById('account')
+            window.myLine = new Chart(lineCtx, lineConfig)
         ///
         /**
          * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
@@ -729,20 +744,20 @@
         const barConfig = {
             type: 'bar',
             data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                labels: JSON.parse('{!! json_encode($top10name) !!}'),
                 datasets: [{
-                        label: 'Shoes',
+                        label: '{!! ($year) !!}',
                         backgroundColor: '#0694a2',
                         // borderColor: window.chartColors.red,
                         borderWidth: 1,
-                        data: [-3, 14, 52, 74, 33, 90, 70],
+                        data: JSON.parse('{!! json_encode($top10sum) !!}'),
                     },
                     {
-                        label: 'Bags',
+                        label: '{!! ($oldYear) !!}',
                         backgroundColor: '#7e3af2',
                         // borderColor: window.chartColors.blue,
                         borderWidth: 1,
-                        data: [66, 33, 43, 12, 54, 62, 84],
+                        data: JSON.parse('{!! json_encode($top10sumold) !!}'),
                     },
                 ],
             },
@@ -756,6 +771,136 @@
 
         const barsCtx = document.getElementById('bars')
         window.myBar = new Chart(barsCtx, barConfig)
+
+        
+    </script>
+    <script>
+        /**
+         * For usage, visit Chart.js docs https://www.chartjs.org/docs/latest/
+         */
+        const lineConfigs = {
+                type: 'line',
+                data: {
+                    labels: JSON.parse('{!! json_encode($MonthType) !!}'),
+                    datasets: [{
+                            label: 'ดอกไม้',
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#0694a2',
+                            borderColor: '#0694a2',
+                            data: JSON.parse('{!! json_encode($countTypeflower) !!}'),
+                            fill: false,
+                        },
+                        {
+                            label: 'ผักผลไม้',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#7e3af2',
+                            borderColor: '#7e3af2',
+                            data: JSON.parse('{!! json_encode($countTypeVagetable) !!}'),
+                        },
+                        {
+                            label: 'สัตว์เลี้ยง',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#6699cc',
+                            borderColor: '#6699cc',
+                            data: JSON.parse('{!! json_encode($countTypeAnimal) !!}'),
+                        },
+                        {
+                            label: 'พัสดุ',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#fac863',
+                            borderColor: '#fac863',
+                            data: JSON.parse('{!! json_encode($countTypeParcel) !!}'),
+                        },
+                        {
+                            label: 'มอเตอร์ไซต์',
+                            fill: false,
+                            /**
+                             * These colors come from Tailwind CSS palette
+                             * https://tailwindcss.com/docs/customizing-colors/#default-color-palette
+                             */
+                            backgroundColor: '#e15a60',
+                            borderColor: '#e15a60',
+                            data: JSON.parse('{!! json_encode($countTypeMotocle) !!}'),
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    /**
+                     * Default legends are ugly and impossible to style.
+                     * See examples in charts.html to add your own legends
+                     *  */
+                    legend: {
+                        display: false,
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true,
+                    },
+                    scales: {
+                        x: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Month',
+                            },
+                        },
+                        y: {
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value',
+                            },
+                        },
+                    },
+                },
+            }
+
+            // change this to the id of your chart element in HMTL
+            const lineCon = document.getElementById('type')
+            window.myLine = new Chart(lineCon, lineConfigs)
+    </script>
+    <script>
+        var xValues = JSON.parse('{!! json_encode($months) !!}');
+        var yValues = JSON.parse('{!! json_encode($monthscount) !!}');
+        var barColors = ["#0694a2", "#7e3af2","#6699cc","fac863","e15a60"];
+
+        new Chart("myChart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "ยอดประเภทบริการในเดือนนี้"
+                }
+            }
+        });
     </script>
 </body>
 

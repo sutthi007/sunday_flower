@@ -14,9 +14,13 @@ use App\Http\Controllers\ProvincesToController;
 use App\Http\Controllers\subController;
 use App\Http\Controllers\CustomerAddController;
 use App\Http\Controllers\SummaryController;
+use App\Models\customer;
 use App\Models\Order;
 use App\Models\user;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+
+use function PHPSTORM_META\type;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +147,40 @@ Route::resource('expenses',expensesController::class)->middleware(['auth']);
 Route::get('/expenses-editor', function (){
     return view('summary/expenses-editor');
 })->middleware(['auth']);
+Route::get('ReportGraph/{date}/{year}', function($date,$year){       //////////////////////////////////////////////////////////////
+    $useMonths = Order::whereMonth('created_at',$date)->select('type')->groupBy('type')->get();
+    $acMonths = customer::whereYear('created_at',$year)->select('created_at')->get()->groupBy(function($data){
+        return $data->created_at->format('m');
+    });
+    // $data=Order::select('id','created_at')->get()->groupBy(function($data){
+    //     return Carbon::parse($data->created_at)->format('M');
+    // });
+    $test=[];
+    $test1=[];
+    foreach($acMonths as $account=>$row){
+        $test[] = $account;
+        $accountTotal = customer::whereMonth('created_at',$account)->get();
+        $sum = 0;
+        foreach($accountTotal as $row){     
+          $sum = $row->total + $sum;  
+        }
+        $test1[] = $sum;
+    }
+    $months=[];
+    $monthscount=[];
+    foreach($useMonths as $type){
+        $months[]=$type->type;
+        $useType = Order::all()->where('type',$type->type);
+        $countTypeUse = 0;
+        foreach($useType as $type){
+            $countTypeUse = $type->quantity + $countTypeUse;
+        } 
+        $monthscount[]=$countTypeUse;
+    }
+    return view('Report.Reportsummary',['months'=>$months,'monthCount'=>$monthscount,'test1'=>$test1,'test'=>$test]);
+});
+
+//not use middleware
 Route::get('/tracking',function (){
     return view('tranking');
 });
@@ -151,6 +189,4 @@ Route::get('/tracking-search',function (Request $request){
     return view('tracking-search',compact('tracking'));
 });
 Route::post('forgot-password',[userController::class,'forgot_password'])->name('forgot');
-Route::get('chart', function (){
-    return view('chart');
-});
+Route::get('chart/{date}/{year}',[SummaryController::class,'chart'])->name('chart');

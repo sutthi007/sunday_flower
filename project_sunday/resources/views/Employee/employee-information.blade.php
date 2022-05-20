@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -1160,6 +1161,27 @@
             }
         }
         switchTheme()
+    </script>
+    <script>
+        function submitForm(form){
+            Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+});
+    }
     </script>
 </body>
 
