@@ -1233,7 +1233,7 @@
                                                         {{ $errors->first('type') }}</p>
                                                 @endif
                                             </div>
-                                            <div class="w-full  x-3 mb-6 md:mb-0 static">
+                                            <div class=" w-full x-3 mb-6 md:mb-0 static" id="ifYes" style="display:block">
                                                 <label
                                                     class=" block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-white "
                                                     for="">

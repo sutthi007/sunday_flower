@@ -1801,28 +1801,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 500px;
   }
 
-  .ss\:w-full {
-    width: 100%;
-  }
-
-  .ss\:w-500px {
-    width: 500px;
-  }
-
-  .ss\:w-200px {
-    width: 200px;
-  }
-
-  .ss\:w-350px {
-    width: 350px;
-  }
-
   .ss\:w-300px {
     width: 300px;
   }
 
-  .ss\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .ss\:w-full {
+    width: 100%;
   }
 
   .ss\:grid-cols-1 {
